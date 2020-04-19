@@ -7,19 +7,21 @@
   
   
   
-  <title>Spring架构 | Kayleh</title>
+  <title>回文数 | Kayleh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Spring架构">
-<meta property="og:url" content="http://yoursite.com/2020/04/19/Spring%E6%9E%B6%E6%9E%84/index.html">
+  <meta name="description" content="什么是回文数？回文数指的是正序和倒序读都是一样的数，例如121从左到右，从右到左读都是121。任何一个自然数与它的倒序数相加，所得的和再与和的倒序数相加，……如此反复进行下去，经过有限次步骤后，最后必定能得到一个回文数。 问题：判断一个数是否为回文数，是返回true，否侧抛出false。1234567891011121314151617181920212223242526272829303132@">
+<meta property="og:type" content="article">
+<meta property="og:title" content="回文数">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/index.html">
 <meta property="og:site_name" content="Kayleh">
+<meta property="og:description" content="什么是回文数？回文数指的是正序和倒序读都是一样的数，例如121从左到右，从右到左读都是121。任何一个自然数与它的倒序数相加，所得的和再与和的倒序数相加，……如此反复进行下去，经过有限次步骤后，最后必定能得到一个回文数。 问题：判断一个数是否为回文数，是返回true，否侧抛出false。1234567891011121314151617181920212223242526272829303132@">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/04/19/Spring%E6%9E%B6%E6%9E%84/spring1.jpg">
-<meta property="article:published_time" content="2020-04-19T12:40:54.000Z">
-<meta property="article:modified_time" content="2020-04-19T12:57:32.562Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/1.jpg">
+<meta property="article:published_time" content="2020-04-19T13:17:57.000Z">
+<meta property="article:modified_time" content="2020-04-19T13:21:26.338Z">
 <meta property="article:author" content="Kayleh">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/19/Spring%E6%9E%B6%E6%9E%84/spring1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
   
@@ -276,11 +278,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Spring架构" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-回文数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/" class="article-date">
-      <time datetime="2020-04-19T12:40:54.000Z" itemprop="datePublished">2020-04-19</time>
+      <a  href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/" class="article-date">
+      <time datetime="2020-04-19T13:17:57.000Z" itemprop="datePublished">2020-04-19</time>
 </a>
 
     </div>
@@ -294,7 +296,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Spring架构
+      回文数
     </h1>
   
 
@@ -312,11 +314,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><img src="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/spring1.jpg" alt></p>
-<a id="more"></a>
+        <h3 id="什么是回文数？"><a href="#什么是回文数？" class="headerlink" title="什么是回文数？"></a>什么是回文数？</h3><p>回文数指的是正序和倒序读都是一样的数，例如121从左到右，从右到左读都是121。任何一个自然数与它的倒序数相加，所得的和再与和的倒序数相加，……如此反复进行下去，经过有限次步骤后，最后必定能得到一个回文数。</p>
+<h4 id="问题：判断一个数是否为回文数，是返回true，否侧抛出false。"><a href="#问题：判断一个数是否为回文数，是返回true，否侧抛出false。" class="headerlink" title="问题：判断一个数是否为回文数，是返回true，否侧抛出false。"></a>问题：判断一个数是否为回文数，是返回true，否侧抛出false。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@题目来源lettcode</span><br><span class="line"></span><br><span class="line">利用Java的StringBuilder通过把整数转换为字符串来实现↓</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line">/**</span><br><span class="line"> * @Author: Wizard</span><br><span class="line"> * @Date: 2020/4/12 13:14</span><br><span class="line"> */</span><br><span class="line">public class palindrome &#123;</span><br><span class="line">    public static boolean ispalindrome(int i) &#123;</span><br><span class="line">        String str = (new StringBuilder(i + <span class="string">""</span>)).reverse().toString();</span><br><span class="line">        <span class="built_in">return</span> (i + <span class="string">""</span>).equals(str);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"输入需要判断的整数"</span>);</span><br><span class="line">            Scanner scanner = new Scanner(System.in);</span><br><span class="line">            int str1 = scanner.nextInt();</span><br><span class="line">            System.out.println(ispalindrome(str1));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line"> * 输入需要判断的整数：1</span><br><span class="line"> * <span class="literal">false</span></span><br><span class="line"> * 输入需要判断的整数：12121</span><br><span class="line"> * <span class="literal">true</span></span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
 
+<hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">进阶：不改变整数为字符串</span><br><span class="line"></span><br><span class="line">通过取整和取余获取整数中的数字进行比较</span><br><span class="line">/**</span><br><span class="line"> * @Author: Wizard</span><br><span class="line"> * @Date: 2020/4/12 13:14</span><br><span class="line"> */</span><br><span class="line">public class palindrome &#123;</span><br><span class="line">    public static boolean ispalindrome(int i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;0||(i%10==0&amp;&amp;i!=0))</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        int number = 0;</span><br><span class="line">        <span class="keyword">while</span>(i&gt;number)&#123;</span><br><span class="line">            number = number * 10 + i % 10;</span><br><span class="line">            i /=10;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> i == number || i==number/10;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"输入需要判断的整数"</span>);</span><br><span class="line">            Scanner scanner = new Scanner(System.in);</span><br><span class="line">            int str1 = scanner.nextInt();</span><br><span class="line">            System.out.println(ispalindrome(str1));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>微信公众号:每日学习干货</p>
+<h6 id="微信公众号-每日学习干货↓"><a href="#微信公众号-每日学习干货↓" class="headerlink" title="微信公众号:每日学习干货↓"></a>微信公众号:每日学习干货↓</h6><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/1.jpg" alt> </p>
 
       
     </div>
@@ -325,13 +329,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/">Spring架构</a></p>
+        <p><span>本文标题:</span><a  href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/">回文数</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
-        <p><span>发布时间:</span>2020年04月19日 - 20时40分</p>
-        <p><span>最后更新:</span>2020年04月19日 - 20时57分</p>
+        <p><span>发布时间:</span>2020年04月19日 - 21时17分</p>
+        <p><span>最后更新:</span>2020年04月19日 - 21时21分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/" title="Spring架构">http://yoursite.com/2020/04/19/Spring%E6%9E%B6%E6%9E%84/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/04/19/Spring%E6%9E%B6%E6%9E%84/　　作者: Kayleh" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/" title="回文数">http://yoursite.com/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/　　作者: Kayleh" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -342,18 +346,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-ModelAttributehexo-n-%E3%80%90SpringMVC%E3%80%91-ModelAttribute/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          【SpringMVC】@ModelAttribute hexo n 【SpringMVC】@ModelAttribute
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">并发:原理</div>
+    <a  href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-ModelAttributehexo-n-%E3%80%90SpringMVC%E3%80%91-ModelAttribute/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【SpringMVC】@ModelAttribute hexo n 【SpringMVC】@ModelAttribute</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -365,7 +360,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是回文数？"><span class="toc-number">1.</span> <span class="toc-text">什么是回文数？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题：判断一个数是否为回文数，是返回true，否侧抛出false。"><span class="toc-number">1.1.</span> <span class="toc-text">问题：判断一个数是否为回文数，是返回true，否侧抛出false。</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#微信公众号-每日学习干货↓"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">微信公众号:每日学习干货↓</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -438,13 +433,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-ModelAttributehexo-n-%E3%80%90SpringMVC%E3%80%91-ModelAttribute/" title="上一篇: 【SpringMVC】@ModelAttribute hexo n 【SpringMVC】@ModelAttribute">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/" title="下一篇: 并发:原理">
+            <a  href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-ModelAttributehexo-n-%E3%80%90SpringMVC%E3%80%91-ModelAttribute/" title="下一篇: 【SpringMVC】@ModelAttribute hexo n 【SpringMVC】@ModelAttribute">
                 <i class="fa fa-angle-right"></i>
             </a>
         

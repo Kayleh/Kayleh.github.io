@@ -279,6 +279,70 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-回文数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/" class="article-date">
+      <time datetime="2020-04-19T13:17:57.000Z" itemprop="datePublished">2020-04-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/">回文数</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="什么是回文数？"><a href="#什么是回文数？" class="headerlink" title="什么是回文数？"></a>什么是回文数？</h3><p>回文数指的是正序和倒序读都是一样的数，例如121从左到右，从右到左读都是121。任何一个自然数与它的倒序数相加，所得的和再与和的倒序数相加，……如此反复进行下去，经过有限次步骤后，最后必定能得到一个回文数。</p>
+<h4 id="问题：判断一个数是否为回文数，是返回true，否侧抛出false。"><a href="#问题：判断一个数是否为回文数，是返回true，否侧抛出false。" class="headerlink" title="问题：判断一个数是否为回文数，是返回true，否侧抛出false。"></a>问题：判断一个数是否为回文数，是返回true，否侧抛出false。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@题目来源lettcode</span><br><span class="line"></span><br><span class="line">利用Java的StringBuilder通过把整数转换为字符串来实现↓</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line">/**</span><br><span class="line"> * @Author: Wizard</span><br><span class="line"> * @Date: 2020/4/12 13:14</span><br><span class="line"> */</span><br><span class="line">public class palindrome &#123;</span><br><span class="line">    public static boolean ispalindrome(int i) &#123;</span><br><span class="line">        String str = (new StringBuilder(i + <span class="string">""</span>)).reverse().toString();</span><br><span class="line">        <span class="built_in">return</span> (i + <span class="string">""</span>).equals(str);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"输入需要判断的整数"</span>);</span><br><span class="line">            Scanner scanner = new Scanner(System.in);</span><br><span class="line">            int str1 = scanner.nextInt();</span><br><span class="line">            System.out.println(ispalindrome(str1));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line"> * 输入需要判断的整数：1</span><br><span class="line"> * <span class="literal">false</span></span><br><span class="line"> * 输入需要判断的整数：12121</span><br><span class="line"> * <span class="literal">true</span></span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">进阶：不改变整数为字符串</span><br><span class="line"></span><br><span class="line">通过取整和取余获取整数中的数字进行比较</span><br><span class="line">/**</span><br><span class="line"> * @Author: Wizard</span><br><span class="line"> * @Date: 2020/4/12 13:14</span><br><span class="line"> */</span><br><span class="line">public class palindrome &#123;</span><br><span class="line">    public static boolean ispalindrome(int i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;0||(i%10==0&amp;&amp;i!=0))</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        int number = 0;</span><br><span class="line">        <span class="keyword">while</span>(i&gt;number)&#123;</span><br><span class="line">            number = number * 10 + i % 10;</span><br><span class="line">            i /=10;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> i == number || i==number/10;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"输入需要判断的整数"</span>);</span><br><span class="line">            Scanner scanner = new Scanner(System.in);</span><br><span class="line">            int str1 = scanner.nextInt();</span><br><span class="line">            System.out.println(ispalindrome(str1));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="微信公众号-每日学习干货↓"><a href="#微信公众号-每日学习干货↓" class="headerlink" title="微信公众号:每日学习干货↓"></a>微信公众号:每日学习干货↓</h6><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/1.jpg" alt> </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-【SpringMVC】-ModelAttributehexo-n-【SpringMVC】-ModelAttribute" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -308,17 +372,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="ModelAttribute？"><a href="#ModelAttribute？" class="headerlink" title="@ModelAttribute？"></a>@ModelAttribute？</h2><p>@ModelAttribute的原理比较复杂，需要对源码有一定的理解。它可以使被</p>
-<p>@ModelAttribute修饰的方法在控制器的处理方法之前调用。<br>但如果@ModelAttribute标注在方法的入参前，它可以从隐含对象中获取隐含的模型数据中获取对象，再将请求参数绑定到对象中，再传入入参。</p>
-<hr>
-<h3 id="实际场景："><a href="#实际场景：" class="headerlink" title="实际场景："></a>实际场景：</h3><p>Spring在进行数据库update全字段更新操作提交表单的时候，从页面获取的数据会封装成一个new的pojo对象，没有带的值为null；所以我们只能更新我们提交的数据。ModelAttribute暂时保存表单pojo对象，覆盖数据库保存的pojo对象的数据即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ModelAttribute提前与目标方法运行</span><br><span class="line">/**</span><br><span class="line"> * @author Kayleh</span><br><span class="line"> */</span><br><span class="line">@Controller</span><br><span class="line">public class ModelAttributeTest &#123;</span><br><span class="line">  </span><br><span class="line">  @RequestMapping(<span class="string">"/update"</span>)</span><br><span class="line">  public String <span class="function"><span class="title">update</span></span>()&#123;     </span><br><span class="line">    System.out.println(<span class="string">"页面update的bean对象："</span>+bean);  </span><br><span class="line">  &#125;</span><br><span class="line">  @ModelAttribute</span><br><span class="line">  public void <span class="function"><span class="title">modelAttribute</span></span>()&#123;     </span><br><span class="line">    System.out.println(<span class="string">"ModelAttribute调用了..."</span>);  </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">===========输出=========</span><br><span class="line">ModelAttribute调用了...</span><br><span class="line">页面update的bean对象：bean&#123;......&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="可以得出：ModelAttribute标注的方法总会在目标方法-update-前执行。"><a href="#可以得出：ModelAttribute标注的方法总会在目标方法-update-前执行。" class="headerlink" title="可以得出：ModelAttribute标注的方法总会在目标方法(update)前执行。"></a>可以得出：ModelAttribute标注的方法总会在目标方法(update)前执行。</h6><h3 id="ModelAttribute可以取出隐含对象的值"><a href="#ModelAttribute可以取出隐含对象的值" class="headerlink" title="ModelAttribute可以取出隐含对象的值"></a>ModelAttribute可以取出隐含对象的值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@ModelAttribute</span><br><span class="line">  public void TestModelAttribute(Map&lt;String, Object&gt; map)&#123;</span><br><span class="line">    </span><br><span class="line">    POJO pojo = new POJO(<span class="string">"kayleh"</span>, 1104);</span><br><span class="line">    map.put(<span class="string">"value"</span>,pojo);</span><br><span class="line">    System.out.println(<span class="string">"modelAttribute方法...);</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">@RequestMapping("</span>/updateBook<span class="string">")</span></span><br><span class="line"><span class="string">  public String updateBook(@RequestParam(value="</span>author<span class="string">")String author,</span></span><br><span class="line"><span class="string">      Map&lt;String, Object&gt; model,</span></span><br><span class="line"><span class="string">      HttpServletRequest request,</span></span><br><span class="line"><span class="string">      @ModelAttribute("</span>value<span class="string">")POJO pojo</span></span><br><span class="line"><span class="string">      )&#123;</span></span><br><span class="line"><span class="string">   </span></span><br><span class="line"><span class="string">    System.out.println(pojo);</span></span><br><span class="line"><span class="string">    return "</span>ok<span class="string">";</span></span><br><span class="line"><span class="string">  &#125;</span></span><br></pre></td></tr></table></figure>
-
-<p> @ModelAttribute(“value”)这里如果指定的”value”,value就是从map取出参数的key.如果是@ModelAttribute,没有指定key,SpringMVC会默认使用返回值类型的首字母小写作为key.如pOJO.</p>
-<h6 id="微信公众号-每日学习干货↓"><a href="#微信公众号-每日学习干货↓" class="headerlink" title="微信公众号:每日学习干货↓"></a>微信公众号:每日学习干货↓</h6><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-ModelAttributehexo-n-%E3%80%90SpringMVC%E3%80%91-ModelAttribute/1,jpg" alt> </p>
-
+              <h2 id="ModelAttribute？"><a href="#ModelAttribute？" class="headerlink" title="@ModelAttribute？"></a>@ModelAttribute？</h2><p>@ModelAttribute的原理比较复杂，需要对源码有一定的理解。它可以使被</p>
+          
       
     </div>
     
@@ -327,6 +382,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a   href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-ModelAttributehexo-n-%E3%80%90SpringMVC%E3%80%91-ModelAttribute/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

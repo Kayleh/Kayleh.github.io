@@ -213,7 +213,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/data/" style="font-size: 20px;">data</a> <a href="/tags/frame/" style="font-size: 17.5px;">frame</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/maintain/" style="font-size: 12.5px;">maintain</a>
+                        <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/data/" style="font-size: 20px;">data</a> <a href="/tags/frame/" style="font-size: 17.5px;">frame</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/maintain/" style="font-size: 12.5px;">maintain</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
                     </div>
                 </section>
                 
@@ -303,6 +303,71 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-SQL注入式攻击" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/" class="article-date">
+      <time datetime="2020-05-30T13:13:52.000Z" itemprop="datePublished">2020-05-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/">SQL注入式攻击</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="SQL注入式攻击"><a href="#SQL注入式攻击" class="headerlink" title="SQL注入式攻击"></a>SQL注入式攻击</h3><p> 攻击者把SQL命令插入到Web表单的输入域或页面请求的查询字符串，欺骗服务器执行恶意的SQL命令。在某些表单中，用户输入的内容直接用来构造（或者影响）动态SQL命令，或作为存储过程的输入参数，这类表单特别容易受到SQL注入式攻击。 </p>
+<h4 id="常见的SQL注入式攻击主要是利用Statement的缺陷，"><a href="#常见的SQL注入式攻击主要是利用Statement的缺陷，" class="headerlink" title="常见的SQL注入式攻击主要是利用Statement的缺陷，"></a>常见的SQL注入式攻击主要是利用Statement的缺陷，</h4><p>客户端验证：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(Account account)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line"></span><br><span class="line">        String sql = <span class="string">"insert into account values(null,"</span> + account.userName + <span class="string">","</span> + account.password + <span class="string">")"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> (Connection conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://127.0.0.1:3306/account?characterEncoding=UTF-8"</span>,</span><br><span class="line">                <span class="string">"root"</span>, <span class="string">"password"</span>)) &#123;</span><br><span class="line">            <span class="keyword">try</span> (Statement stmt = conn.createStatement()) &#123;</span><br><span class="line">                <span class="keyword">try</span> (ResultSet rs = stmt.executeQuery(<span class="string">"SELECT id, grade, name, gender FROM students WHERE gender=1"</span>)) &#123;</span><br><span class="line">                    <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                        <span class="keyword">int</span> id = rs.getInt(<span class="number">1</span>);</span><br><span class="line">                        String username = rs.getString(<span class="number">2</span>);</span><br><span class="line">                        String password = rs.getString(<span class="number">3</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/" rel="tag">sql</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-01面试题" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -880,72 +945,6 @@
       
         <p class="article-more-link">
           <a   href="/2020/05/12/%E9%93%BE%E8%A1%A8/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-栈Stack" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/05/11/%E6%A0%88Stack/" class="article-date">
-      <time datetime="2020-05-11T07:30:11.000Z" itemprop="datePublished">2020-05-11</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/05/11/%E6%A0%88Stack/">【数据结构】栈Stack</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈(stack)"></a>栈(stack)</h2><p>1<code>栈</code>是一个<strong>先入后出</strong>(FILO-First In Last Out)的有序列表。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/" rel="tag">data</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/05/11/%E6%A0%88Stack/#more">阅读原文 >></a>
         </p>
       
       <div class="clearfix"></div>

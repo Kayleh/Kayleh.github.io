@@ -213,7 +213,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/DesignPatterns/" style="font-size: 10px;">DesignPatterns</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/data/" style="font-size: 20px;">data</a> <a href="/tags/frame/" style="font-size: 17.5px;">frame</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/maintain/" style="font-size: 12.5px;">maintain</a> <a href="/tags/safe/" style="font-size: 12.5px;">safe</a>
+                        <a href="/tags/DesignPatterns/" style="font-size: 15px;">DesignPatterns</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/data/" style="font-size: 20px;">data</a> <a href="/tags/frame/" style="font-size: 17.5px;">frame</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/maintain/" style="font-size: 12.5px;">maintain</a> <a href="/tags/safe/" style="font-size: 12.5px;">safe</a>
                     </div>
                 </section>
                 
@@ -304,6 +304,87 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-依赖倒转原则" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/" class="article-date">
+      <time datetime="2020-06-03T12:29:20.000Z" itemprop="datePublished">2020-06-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/">依赖倒转原则</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="依赖倒转原则"><a href="#依赖倒转原则" class="headerlink" title="依赖倒转原则"></a>依赖倒转原则</h3><blockquote>
+<p> Dependence Inversion Priciple</p>
+</blockquote>
+<h5 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h5><ul>
+<li>高层模块不应该依赖低层模块，二者都应该依赖其抽象</li>
+<li>抽象不应该依赖细节，细节应该依赖抽象</li>
+<li>依赖倒转的中心思想是面向接口编程</li>
+<li>依赖倒转原则是基于这样的设计理念：相对于细节的多变性，抽象的东西要稳定的多。以抽象为基础搭建的架构比细节为基础的架构要稳定的多。在java中，抽象指的是接口或抽象类，细节就是具体的实现类</li>
+<li>使用接口或抽象类的目的是制定好规范，而不涉及任何具体的操作，把展现细节的任务交给他们的实现类去完成</li>
+</ul>
+<h4 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h4><ul>
+<li>低层模块尽量都要有抽象类或接口，或者两者都有，程序稳定性更好</li>
+<li>变量的声明类型尽量是抽象类或接口，这样我们的变量引用和实际对象间，就存在一个缓冲层。利于程序扩展和优化</li>
+<li>继承时遵循里氏替换原则</li>
+</ul>
+<h6 id="1通过接口传递实现依赖"><a href="#1通过接口传递实现依赖" class="headerlink" title="1通过接口传递实现依赖"></a>1通过接口传递实现依赖</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IOpenAndClose</span></span>&#123;</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(ITV tv)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ITV</span></span>&#123;</span><br><span class="line">    <span class="comment">//ITV接口</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Htc</span> <span class="keyword">implements</span> <span class="title">ITV</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"htc电视机，打开"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OpenAndClose</span> <span class="keyword">implements</span> <span class="title">IOpenAndClose</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(ITV tv)</span></span>&#123;</span><br><span class="line">        tv.play();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-通过构造方法依赖传递"><a href="#2-通过构造方法依赖传递" class="headerlink" title="2.通过构造方法依赖传递"></a>2.通过构造方法依赖传递</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IOpenAndClose</span></span>&#123;</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(ITV tv)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ITV</span></span>&#123;</span><br><span class="line">    <span class="comment">//ITV接口</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Htc</span> <span class="keyword">implements</span> <span class="title">ITV</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"htc电视机，打开"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OpenAndClose</span> <span class="keyword">implements</span> <span class="title">IOpenAndClose</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> ITV tv;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">OpenAndClose</span><span class="params">(ITV tv)</span></span>&#123;</span><br><span class="line">        <span class="comment">//构造器</span></span><br><span class="line">        <span class="keyword">this</span>.tv = tv;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">        tv.play();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-通过setter方法传递"><a href="#3-通过setter方法传递" class="headerlink" title="3.通过setter方法传递"></a>3.通过setter方法传递</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IOpenAndClose</span></span>&#123;</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(ITV tv)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">name</span><span class="params">(ITV tv)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ITV</span></span>&#123;</span><br><span class="line">    <span class="comment">//ITV接口</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Htc</span> <span class="keyword">implements</span> <span class="title">ITV</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"htc电视机，打开"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OpenAndClose</span> <span class="keyword">implements</span> <span class="title">IOpenAndClose</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> ITV tv;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">setTv</span><span class="params">(ITV tv)</span></span>&#123;</span><br><span class="line">        <span class="comment">//构造器</span></span><br><span class="line">        <span class="keyword">this</span>.tv = tv;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">        tv.play();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-接口隔离原则" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -333,7 +414,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h3 id="接口隔离原则"><a href="#接口隔离原则" class="headerlink" title="接口隔离原则"></a>接口隔离原则</h3><p>Interface Segregation Principle</p>
+<h5 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h5><ul>
+<li><p>客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应该建立在最小的接口上。</p>
+</li>
+<li><p>类A通过接口Interface依赖类D，类C通过接口Interface依赖类D，如果接口Interface对于类A和来说不是最小接口那么类B和类D必须去实现他们不需要的方法。</p>
+</li>
+</ul>
+<p>  按隔离原则应当这样处理：</p>
+<blockquote>
+<p>将接口Interface拆分为独立的几个接口，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则。</p>
+</blockquote>
+
       
     </div>
     
@@ -342,6 +434,10 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -877,68 +973,6 @@
       
         <p class="article-more-link">
           <a   href="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机组成原理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="article-date">
-      <time datetime="2020-05-14T14:04:21.000Z" itemprop="datePublished">2020-05-14</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h1><h4 id="1-第一台电子计算机何时何地诞生？英文全称？"><a href="#1-第一台电子计算机何时何地诞生？英文全称？" class="headerlink" title="1.第一台电子计算机何时何地诞生？英文全称？"></a>1.第一台电子计算机何时何地诞生？英文全称？</h4><p>1946年2月14日 美国宾夕法尼亚大学</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a   href="/2020/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/#more">阅读原文 >></a>
         </p>
       
       <div class="clearfix"></div>

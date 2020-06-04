@@ -8,22 +8,20 @@
   
   
   
-  <title>SQL注入式攻击 | Kayleh</title>
+  <title>里氏替换原则 | Kayleh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SQL注入式攻击 攻击者把SQL命令插入到Web表单的输入域或页面请求的查询字符串，欺骗服务器执行恶意的SQL命令。在某些表单中，用户输入的内容直接用来构造（或者影响）动态SQL命令，或作为存储过程的输入参数，这类表单特别容易受到SQL注入式攻击。">
+  <meta name="description" content="里氏替换原则 Liskov Substitution Principle   里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。  如果对每个类型为T1的对象o1，都有类型为T2的对象o2，使得以T1定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有发生变化，那么类型T2是类型T1的子类型。所有引用基类的地方必须能透明地使用其子类的对象。换句话说，既然抽象出来当作共同的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL注入式攻击">
-<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/index.html">
+<meta property="og:title" content="里氏替换原则">
+<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/index.html">
 <meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="SQL注入式攻击 攻击者把SQL命令插入到Web表单的输入域或页面请求的查询字符串，欺骗服务器执行恶意的SQL命令。在某些表单中，用户输入的内容直接用来构造（或者影响）动态SQL命令，或作为存储过程的输入参数，这类表单特别容易受到SQL注入式攻击。">
+<meta property="og:description" content="里氏替换原则 Liskov Substitution Principle   里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。  如果对每个类型为T1的对象o1，都有类型为T2的对象o2，使得以T1定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有发生变化，那么类型T2是类型T1的子类型。所有引用基类的地方必须能透明地使用其子类的对象。换句话说，既然抽象出来当作共同的">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/1.png">
-<meta property="article:published_time" content="2020-05-30T13:13:52.000Z">
-<meta property="article:modified_time" content="2020-05-31T13:11:37.890Z">
+<meta property="article:published_time" content="2020-06-04T10:13:11.000Z">
+<meta property="article:modified_time" content="2020-06-04T11:48:04.803Z">
 <meta property="article:author" content="Kayleh">
-<meta property="article:tag" content="safe">
+<meta property="article:tag" content="DesignPatterns">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://dqlcr5.coding-pages.com/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
   
@@ -300,11 +298,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-SQL注入式攻击" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-里氏替换原则" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/" class="article-date">
-      <time datetime="2020-05-30T13:13:52.000Z" itemprop="datePublished">2020-05-30</time>
+      <a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" class="article-date">
+      <time datetime="2020-06-04T10:13:11.000Z" itemprop="datePublished">2020-06-04</time>
 </a>
 
     </div>
@@ -318,7 +316,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SQL注入式攻击
+      里氏替换原则
     </h1>
   
 
@@ -330,7 +328,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/safe/" rel="tag">safe</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -340,23 +338,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="SQL注入式攻击"><a href="#SQL注入式攻击" class="headerlink" title="SQL注入式攻击"></a>SQL注入式攻击</h3><p> 攻击者把SQL命令插入到Web表单的输入域或页面请求的查询字符串，欺骗服务器执行恶意的SQL命令。在某些表单中，用户输入的内容直接用来构造（或者影响）动态SQL命令，或作为存储过程的输入参数，这类表单特别容易受到SQL注入式攻击。 </p>
-<a id="more"></a>
-
-<h4 id="常见的SQL注入式攻击主要是利用Statement的缺陷，"><a href="#常见的SQL注入式攻击主要是利用Statement的缺陷，" class="headerlink" title="常见的SQL注入式攻击主要是利用Statement的缺陷，"></a>常见的SQL注入式攻击主要是利用Statement的缺陷，</h4><p>服务端验证：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(Account account)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line"></span><br><span class="line">        String sql = <span class="string">"insert into account values(null,"</span> + account.userName + <span class="string">","</span> + account.password + <span class="string">")"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> (Connection conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://127.0.0.1:3306/account?characterEncoding=UTF-8"</span>,</span><br><span class="line">                <span class="string">"root"</span>, <span class="string">"password"</span>)) &#123;</span><br><span class="line">            <span class="keyword">try</span> (Statement stmt = conn.createStatement()) &#123;</span><br><span class="line">                <span class="keyword">try</span> (ResultSet rs = stmt.executeQuery(<span class="string">"SELECT id, grade, name, gender FROM students WHERE gender=1"</span>)) &#123;</span><br><span class="line">                    <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                        <span class="keyword">int</span> id = rs.getInt(<span class="number">1</span>);</span><br><span class="line">                        String username = rs.getString(<span class="number">2</span>);</span><br><span class="line">                        String password = rs.getString(<span class="number">3</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>客户端</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"</span> <span class="attr">integrity</span>=<span class="string">"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"</span> <span class="attr">integrity</span>=<span class="string">"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-8 col-sm-8 col-md-8 jumbotron"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"exampleInputEmail1"</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">id</span>=<span class="string">"exampleInputEmail1"</span> <span class="attr">placeholder</span>=<span class="string">"Email"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"exampleInputPassword1"</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">id</span>=<span class="string">"exampleInputPassword1"</span> <span class="attr">placeholder</span>=<span class="string">"Password"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"exampleInputFile"</span>&gt;</span>File input<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"exampleInputFile"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"help-block"</span>&gt;</span>Example block-level help text here.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"checkbox"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span> Check me out</span><br><span class="line">            <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/1.png" alt="img"></p>
-<p>如果是客户端精心构造的字符串，例如</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = "kayleh' OR pass=", pass = " OR pass='"</span><br><span class="line">' or 1= ' 1</span><br></pre></td></tr></table></figure>
-
-<p>命令行永远为真，导致注入成功。</p>
-<blockquote>
-<p>所以使用JDBC时，尽量使用速度比较快且安全的 PreparedStatement ，PreparedStatement 使用的是预编译机制。</p>
+        <h3 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h3><blockquote>
+<p>Liskov Substitution Principle</p>
 </blockquote>
+<ul>
+<li><p>里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。</p>
+</li>
+<li><p>如果对每个类型为T1的对象o1，都有类型为T2的对象o2，使得以T1定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有发生变化，那么类型T2是类型T1的子类型。所有引用基类的地方必须能透明地使用其子类的对象。换句话说，既然抽象出来当作共同的实现方法就不应再具体实现类中重写。</p>
+</li>
+<li><p>在使用继承时，遵守里氏替换原则，在子类中尽量不要重写父类的方法</p>
+</li>
+<li><p>里氏替换原则告诉我们，继承实际上让两个类耦合性增强了，在适当的情况下，可以通过聚合，组合，依赖来解决问题。</p>
+</li>
+</ul>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回两个数的差</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> in <span class="title">func1</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num1 - num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//B类继承了A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//    ↓重写了A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func1(a,b)+<span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  改进：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//把更加基础的方法和成员写到Base类</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回两个数的差</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> in <span class="title">func1</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num1 - num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//B类继承了A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果B需要使用A类的方法，使用组合关系</span></span><br><span class="line">    <span class="keyword">private</span> A a = <span class="keyword">new</span> A();</span><br><span class="line">    <span class="comment">//    ↓重写了A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func1(a,b)+<span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//使用A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func3</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.a.func1(a,b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
     </div>
@@ -365,13 +368,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/">SQL注入式攻击</a></p>
+        <p><span>本文标题:</span><a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">里氏替换原则</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
-        <p><span>发布时间:</span>2020年05月30日 - 21时13分</p>
-        <p><span>最后更新:</span>2020年05月31日 - 21时11分</p>
+        <p><span>发布时间:</span>2020年06月04日 - 18时13分</p>
+        <p><span>最后更新:</span>2020年06月04日 - 19时48分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/" title="SQL注入式攻击">http://dqlcr5.coding-pages.com/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/　　作者: Kayleh" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" title="里氏替换原则">http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/　　作者: Kayleh" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -382,18 +385,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          XSS跨站脚本攻击
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2020/05/23/01%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">01面试题</div>
+    <a  href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">依赖倒转原则</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -405,7 +399,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL注入式攻击"><span class="toc-number">1.</span> <span class="toc-text">SQL注入式攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常见的SQL注入式攻击主要是利用Statement的缺陷，"><span class="toc-number">1.1.</span> <span class="toc-text">常见的SQL注入式攻击主要是利用Statement的缺陷，</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#里氏替换原则"><span class="toc-number">1.</span> <span class="toc-text">里氏替换原则</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -466,7 +460,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: 'SQL注入式攻击', // 可选。默认为 location.href
+  id: '里氏替换原则', // 可选。默认为 location.href
   owner: 'Kayleh',
   repo: 'Kayleh.github.io',
   oauth: {
@@ -484,13 +478,11 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/" title="上一篇: XSS跨站脚本攻击">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2020/05/23/01%E9%9D%A2%E8%AF%95%E9%A2%98/" title="下一篇: 01面试题">
+            <a  href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/" title="下一篇: 依赖倒转原则">
                 <i class="fa fa-angle-right"></i>
             </a>
         

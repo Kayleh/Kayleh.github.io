@@ -8,19 +8,19 @@
   
   
   
-  <title>栈Stack | Kayleh</title>
+  <title>开闭原则 | Kayleh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="栈(stack)1栈是一个先入后出(FILO-First In Last Out)的有序列表。">
+  <meta name="description" content="开闭原则 Open Closed Principle  基本介绍">
 <meta property="og:type" content="article">
-<meta property="og:title" content="栈Stack">
-<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/05/11/%E6%A0%88Stack/index.html">
+<meta property="og:title" content="开闭原则">
+<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/index.html">
 <meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="栈(stack)1栈是一个先入后出(FILO-First In Last Out)的有序列表。">
+<meta property="og:description" content="开闭原则 Open Closed Principle  基本介绍">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-11T07:30:11.000Z">
-<meta property="article:modified_time" content="2020-06-05T02:30:23.310Z">
+<meta property="article:published_time" content="2020-06-05T01:07:12.000Z">
+<meta property="article:modified_time" content="2020-06-05T01:51:47.697Z">
 <meta property="article:author" content="Kayleh">
-<meta property="article:tag" content="data">
+<meta property="article:tag" content="DesignPatterns">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
@@ -298,11 +298,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-栈Stack" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-开闭原则" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/05/11/%E6%A0%88Stack/" class="article-date">
-      <time datetime="2020-05-11T07:30:11.000Z" itemprop="datePublished">2020-05-11</time>
+      <a  href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/" class="article-date">
+      <time datetime="2020-06-05T01:07:12.000Z" itemprop="datePublished">2020-06-05</time>
 </a>
 
     </div>
@@ -316,7 +316,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      栈Stack
+      开闭原则
     </h1>
   
 
@@ -328,7 +328,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/" rel="tag">data</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -338,26 +338,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈(stack)"></a>栈(stack)</h2><p>1<code>栈</code>是一个<strong>先入后出</strong>(FILO-First In Last Out)的有序列表。</p>
+        <h3 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h3><blockquote>
+<p>Open Closed Principle</p>
+</blockquote>
+<p>基本介绍</p>
 <a id="more"></a>
 
-<p>2栈(stack)是限制线性表中元素的插入和删除<strong>只能在线性表的同一端</strong>进行的一种特殊线性表。允许插入和删除的一端，为变化的一端，称为<strong>栈顶</strong>(Top)，另一端为固定的一端，称为<strong>栈底</strong>(Bottom)。</p>
-<p>3.根据栈的定义可知，最先放入栈中元素在栈底，最后放入的元素在栈顶，而删除元素刚好相反，最后放入的元素最先删除，最先放入的元素最后删除</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">           ───────────────────────────────┐</span><br><span class="line">  (\(\       (\(\    (\(\    (\(\    (\(\ │</span><br><span class="line"> (&#x3D;&#39;.&#39;) &lt;─&gt; (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)│</span><br><span class="line">O(_&quot;)&quot;)    O(_&quot;)&quot;) O(_&quot;)&quot;) O(_&quot;)&quot;) O(_&quot;)&quot;)│</span><br><span class="line">           ───────────────────────────────┘</span><br><span class="line">           stack</span><br></pre></td></tr></table></figure>
-
-<!--more-->
-
-<p>和队列区别开</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">          ────────────────────────</span><br><span class="line">  (\(\      (\(\    (\(\    (\(\      (\(\</span><br><span class="line"> (&#x3D;&#39;.&#39;) ─&gt; (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;) ─&gt; (&#x3D;&#39;.&#39;)</span><br><span class="line">O(_&quot;)&quot;)   O(_&quot;)&quot;) O(_&quot;)&quot;) O(_&quot;)&quot;)   O(_&quot;)&quot;)</span><br><span class="line">          ────────────────────────</span><br><span class="line">           Queue</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h5 id="栈的结构"><a href="#栈的结构" class="headerlink" title="栈的结构"></a>栈的结构</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> ───────────────────────────────┐</span><br><span class="line">   (\(\    (\(\    (\(\    (\(\ │</span><br><span class="line">  (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)│</span><br><span class="line"> O(_&quot;)&quot;) O(_&quot;)&quot;) O(_&quot;)&quot;) O(_&quot;)&quot;)│</span><br><span class="line"> ───────────────────────────────┘</span><br><span class="line">   ↑                        ↑</span><br><span class="line"> Top栈顶                 Bottom栈底</span><br><span class="line">初始化为-1</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="入栈"><a href="#入栈" class="headerlink" title="入栈"></a>入栈</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">           ───────────────────────────────┐</span><br><span class="line">  (\(\               (\(\    (\(\    (\(\ │</span><br><span class="line"> (&#x3D;&#39;.&#39;)  ─&gt;         (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)│</span><br><span class="line">O(_&quot;)&quot;)            O(_&quot;)&quot;) O(_&quot;)&quot;) O(_&quot;)&quot;)│</span><br><span class="line">  data     ───────────────────────────────┘</span><br><span class="line">           push入栈</span><br><span class="line">           top++;</span><br><span class="line">           stack[top]&#x3D;data</span><br></pre></td></tr></table></figure>
-
-<h5 id="出栈"><a href="#出栈" class="headerlink" title="出栈"></a>出栈</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">       ───────────────────────────────┐</span><br><span class="line">     (\(\        (\(\    (\(\    (\(\ │</span><br><span class="line">&lt;─  (&#x3D;&#39;.&#39;)      (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)  (&#x3D;&#39;.&#39;)│</span><br><span class="line">   O(_&quot;)&quot;)     O(_&quot;)&quot;) O(_&quot;)&quot;) O(_&quot;)&quot;)│</span><br><span class="line">       ───────────────────────────────┘</span><br><span class="line">       pop出栈</span><br><span class="line">      int value &#x3D; stack[top];</span><br><span class="line">      top--;</span><br><span class="line">      return value;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>开闭原则是编程中最基础、最重要的设计原则</li>
+<li>一个软件实体如类，模块和函数应该对扩展开放，对修改关闭。<strong>用抽象构建框架，用实体扩展细节。</strong></li>
+<li>当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化。</li>
+<li>编程中遵循其他原则，以及使用设计模式的目的就是遵循开闭原则。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Ocp</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> status <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        GraphicEditor graphicEditor = <span class="keyword">new</span> GraphicEditor();</span><br><span class="line">        graphicEditor.drawShape(<span class="keyword">new</span> Rectangle());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GraphicEditor</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drawShape</span><span class="params">(Shape shape)</span></span>&#123;</span><br><span class="line">        shape.draw();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Shape类，基类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m_type;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;<span class="comment">//抽象方法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> <span class="keyword">extends</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">    Rectangle()&#123;</span><br><span class="line">        <span class="keyword">super</span>.m_type = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"绘制矩形"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">extends</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">    Circle()&#123;</span><br><span class="line">        <span class="keyword">super</span>.m_type = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"绘制圆形"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -367,13 +360,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/05/11/%E6%A0%88Stack/">栈Stack</a></p>
+        <p><span>本文标题:</span><a  href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/">开闭原则</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
-        <p><span>发布时间:</span>2020年05月11日 - 15时30分</p>
-        <p><span>最后更新:</span>2020年06月05日 - 10时30分</p>
+        <p><span>发布时间:</span>2020年06月05日 - 09时07分</p>
+        <p><span>最后更新:</span>2020年06月05日 - 09时51分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/05/11/%E6%A0%88Stack/" title="栈Stack">http://dqlcr5.coding-pages.com/2020/05/11/%E6%A0%88Stack/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/05/11/%E6%A0%88Stack/　　作者: Kayleh" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/" title="开闭原则">http://dqlcr5.coding-pages.com/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/　　作者: Kayleh" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -384,18 +377,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/2020/05/12/%E9%93%BE%E8%A1%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          链表
+          迪米特法则
         
       </div>
     </a>
   
   
-    <a  href="/2020/05/07/SparseArray%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SparseArray稀疏数组</div>
+    <a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">里氏替换原则</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -407,7 +400,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#栈的结构"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">栈的结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#入栈"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">入栈</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#出栈"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">出栈</span></a></li></ol></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#开闭原则"><span class="toc-number">1.</span> <span class="toc-text">开闭原则</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -468,7 +461,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '栈Stack', // 可选。默认为 location.href
+  id: '开闭原则', // 可选。默认为 location.href
   owner: 'Kayleh',
   repo: 'Kayleh.github.io',
   oauth: {
@@ -486,13 +479,13 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2020/05/12/%E9%93%BE%E8%A1%A8/" title="上一篇: 链表">
+            <a  href="/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/" title="上一篇: 迪米特法则">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2020/05/07/SparseArray%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/" title="下一篇: SparseArray稀疏数组">
+            <a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" title="下一篇: 里氏替换原则">
                 <i class="fa fa-angle-right"></i>
             </a>
         

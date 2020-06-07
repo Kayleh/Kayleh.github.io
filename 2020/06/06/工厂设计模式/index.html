@@ -8,16 +8,19 @@
   
   
   
-  <title>Kayleh</title>
+  <title>工厂设计模式 | Kayleh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kayleh">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kayleh">
-<meta property="og:url" content="http://dqlcr5.coding-pages.com/index.html">
+  <meta name="description" content="工厂设计模式工厂方法工厂方法即Factory Method，是一种对象创建型模式。 工厂方法的目的是使得创建对象和使用对象是分离的，并且客户端总是引用抽象工厂和抽象产品： 12345678┌─────────────┐      ┌─────────────┐│   Product   │      │   Factory   │└─────────────┘      └────────────">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工厂设计模式">
+<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="Kayleh">
+<meta property="og:description" content="工厂设计模式工厂方法工厂方法即Factory Method，是一种对象创建型模式。 工厂方法的目的是使得创建对象和使用对象是分离的，并且客户端总是引用抽象工厂和抽象产品： 12345678┌─────────────┐      ┌─────────────┐│   Product   │      │   Factory   │└─────────────┘      └────────────">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-06T12:42:10.000Z">
+<meta property="article:modified_time" content="2020-06-07T10:46:16.784Z">
 <meta property="article:author" content="Kayleh">
+<meta property="article:tag" content="DesignPatterns">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
@@ -36,9 +39,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -49,8 +49,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -298,9 +298,7 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-工厂设计模式" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-工厂设计模式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="article-date">
@@ -317,13 +315,24 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">工厂设计模式</a>
+    <h1 class="article-title" itemprop="name">
+      工厂设计模式
     </h1>
   
 
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -403,645 +412,159 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-单例模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="article-date">
-      <time datetime="2020-06-06T06:05:04.000Z" itemprop="datePublished">2020-06-06</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">单例模式</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><p>所谓类的单例设计模式，就是采用一定的方法保证在整个软件系统中，对某个类<strong>只能存在一个对象实例</strong>，并且该类只提供一个取得对象实例的方法(静态方法)。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#more">阅读原文 >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">工厂设计模式</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
+        <p><span>发布时间:</span>2020年06月06日 - 20时42分</p>
+        <p><span>最后更新:</span>2020年06月07日 - 18时46分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="工厂设计模式">http://dqlcr5.coding-pages.com/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/　　作者: Kayleh" title=""></span>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-合成复用原则" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/05/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99/" class="article-date">
-      <time datetime="2020-06-05T07:42:54.000Z" itemprop="datePublished">2020-06-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/05/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99/">合成复用原则</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="合成复用原则"><a href="#合成复用原则" class="headerlink" title="合成复用原则"></a>合成复用原则</h3><blockquote>
-<p>Composite Resue Principle</p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/05/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99/#more">阅读原文 >></a>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
         </p>
-      
-      <div class="clearfix"></div>
     </div>
-    
-  </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">单例模式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#工厂设计模式"><span class="toc-number">1.</span> <span class="toc-text">工厂设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂方法"><span class="toc-number">1.1.</span> <span class="toc-text">工厂方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象工厂"><span class="toc-number">1.2.</span> <span class="toc-text">抽象工厂</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
 
-
-
-  
-    <article id="post-迪米特法则" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/" class="article-date">
-      <time datetime="2020-06-05T03:09:31.000Z" itemprop="datePublished">2020-06-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+        <section id="comments">
+<link rel="stylesheet" href="/css/gitment.min.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '工厂设计模式', // 可选。默认为 location.href
+  owner: 'Kayleh',
+  repo: 'Kayleh.github.io',
+  oauth: {
+    client_id: '18b262108cfc988352c9',
+    client_secret: 'd205b1ca0ce30fec1eec1100a1101fffcc55aadc',
+  },
+})
+gitment.render('comments')
+</script>
+
+</section>
     
-    
-      <header class="article-header">
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/">迪米特法则</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><blockquote>
-<p>Demeter Principle</p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开闭原则" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/" class="article-date">
-      <time datetime="2020-06-05T01:07:12.000Z" itemprop="datePublished">2020-06-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/">开闭原则</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h3><blockquote>
-<p>Open Closed Principle</p>
-</blockquote>
-<p>基本介绍</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-里氏替换原则" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" class="article-date">
-      <time datetime="2020-06-04T10:13:11.000Z" itemprop="datePublished">2020-06-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">里氏替换原则</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h3><blockquote>
-<p>Liskov Substitution Principle</p>
-</blockquote>
-<ul>
-<li><p>里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。</p></li></ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-依赖倒转原则" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/" class="article-date">
-      <time datetime="2020-06-03T12:29:20.000Z" itemprop="datePublished">2020-06-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a  href="/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" title="下一篇: 单例模式">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/">依赖倒转原则</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="依赖倒转原则"><a href="#依赖倒转原则" class="headerlink" title="依赖倒转原则"></a>依赖倒转原则</h3><blockquote>
-<p> Dependence Inversion Priciple</p></blockquote>
-          
-      
     </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">工厂设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99/">合成复用原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/">迪米特法则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/">开闭原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">里氏替换原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/">依赖倒转原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99/">接口隔离原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99/">单一职责原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/">XSS跨站脚本攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/">SQL注入式攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/23/01%E9%9D%A2%E8%AF%95%E9%A2%98/">01面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/21/%E7%BB%B4%E6%8A%A42/">维护2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/20/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">二叉排序树</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/18/%E5%A0%86%E6%8E%92%E5%BA%8F/">堆排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">7种排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/14/%E9%98%9F%E5%88%97/">队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/13/Inversion-of-Control%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/">Inversion of Control控制反转</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/12/%E9%93%BE%E8%A1%A8/">链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/11/%E6%A0%88Stack/">栈Stack</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/07/SparseArray%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/">SparseArray稀疏数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/01/%E7%BB%B4%E6%8A%A41/">维护1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/30/Java-memory-model%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">Java memory model内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/29/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81/">面向对象的特征</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/26/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/">动态数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">斐波那契数列</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/20/Spring%E3%80%81SpringMVC%E3%80%81Mybatis%E6%95%B4%E5%90%88/">Spring、SpringMVC、Mybatis整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/">回文数</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/">【SpringMVC】-@ModelAttribute</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/">Spring架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/">并发:原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/unix/">unix的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/">Rest架构风格</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">SpringMVC环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/17/HelloWord/hello-world/">Hello World</a></li></ul>
     
-    <div class="article-info article-info-index">
-      
-      
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
 
 
-
-
-
-
-  
-    <article id="post-接口隔离原则" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/03/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99/" class="article-date">
-      <time datetime="2020-06-03T09:56:04.000Z" itemprop="datePublished">2020-06-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <script>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/03/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99/">接口隔离原则</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="接口隔离原则"><a href="#接口隔离原则" class="headerlink" title="接口隔离原则"></a>接口隔离原则</h3><blockquote>
-<p>Interface Segregation Principle</p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/03/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-单一职责原则" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/03/%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99/" class="article-date">
-      <time datetime="2020-06-03T08:57:48.000Z" itemprop="datePublished">2020-06-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/06/03/%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99/">单一职责原则</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h3><hr>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/03/%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-XSS跨站脚本攻击" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/" class="article-date">
-      <time datetime="2020-05-31T12:58:53.000Z" itemprop="datePublished">2020-05-31</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/">XSS跨站脚本攻击</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="XSS跨站脚本攻击"><a href="#XSS跨站脚本攻击" class="headerlink" title="XSS跨站脚本攻击"></a>XSS跨站脚本攻击</h3><p>在做社区项目的时候，发现了一个XSS漏洞。</p>
-<p><img src="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/xss.png" alt="img"></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/safe/" rel="tag">safe</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/#more">阅读原文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
+    </script>
 
 </div>
       <footer id="footer">

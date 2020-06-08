@@ -8,17 +8,17 @@
   
   
   
-  <title>里氏替换原则 | Kayleh</title>
+  <title>原型 | Kayleh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="里氏替换原则 Liskov Substitution Principle   里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。">
+  <meta name="description" content="原型 用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="里氏替换原则">
-<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/index.html">
+<meta property="og:title" content="原型">
+<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/08/%E5%8E%9F%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="里氏替换原则 Liskov Substitution Principle   里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。">
+<meta property="og:description" content="原型 用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-04T10:13:11.000Z">
-<meta property="article:modified_time" content="2020-06-05T01:52:00.733Z">
+<meta property="article:published_time" content="2020-06-08T01:43:14.000Z">
+<meta property="article:modified_time" content="2020-06-08T01:48:58.795Z">
 <meta property="article:author" content="Kayleh">
 <meta property="article:tag" content="DesignPatterns">
 <meta name="twitter:card" content="summary">
@@ -298,11 +298,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-里氏替换原则" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-原型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" class="article-date">
-      <time datetime="2020-06-04T10:13:11.000Z" itemprop="datePublished">2020-06-04</time>
+      <a  href="/2020/06/08/%E5%8E%9F%E5%9E%8B/" class="article-date">
+      <time datetime="2020-06-08T01:43:14.000Z" itemprop="datePublished">2020-06-08</time>
 </a>
 
     </div>
@@ -316,7 +316,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      里氏替换原则
+      原型
     </h1>
   
 
@@ -338,29 +338,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h3><blockquote>
-<p>Liskov Substitution Principle</p>
-</blockquote>
-<ul>
-<li><p>里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。</p>
+        <h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><blockquote>
+<p>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。</p>
 <a id="more"></a>
-</li>
-<li><p>如果对每个类型为T1的对象o1，都有类型为T2的对象o2，使得以T1定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有发生变化，那么类型T2是类型T1的子类型。所有引用基类的地方必须能透明地使用其子类的对象。换句话说，既然抽象出来当作共同的实现方法就不应再具体实现类中重写。</p>
-</li>
-<li><p>在使用继承时，遵守里氏替换原则，在子类中尽量不要重写父类的方法</p>
-</li>
-<li><p>里氏替换原则告诉我们，继承实际上让两个类耦合性增强了，在适当的情况下，可以通过聚合，组合，依赖来解决问题。</p>
-</li>
-</ul>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回两个数的差</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> in <span class="title">func1</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num1 - num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//B类继承了A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//    ↓重写了A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func1(a,b)+<span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>原型模式</strong>，即Prototype，是指创建新对象的时候，根据现有的一个原型来创建。</p>
+<p>我们举个例子：如果我们已经有了一个<code>String[]</code>数组，想再创建一个一模一样的<code>String[]</code>数组，怎么写？</p>
+<p>实际上创建过程很简单，就是把现有数组的元素复制到新数组。如果我们把这个创建过程封装一下，就成了原型模式。用代码实现如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原型:</span></span><br><span class="line">String[] original = &#123; <span class="string">"Apple"</span>, <span class="string">"Pear"</span>, <span class="string">"Banana"</span> &#125;;</span><br><span class="line"><span class="comment">// 新对象:</span></span><br><span class="line">String[] copy = Arrays.copyOf(original, original.length);</span><br></pre></td></tr></table></figure>
 
-<p>  改进：</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//把更加基础的方法和成员写到Base类</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回两个数的差</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> in <span class="title">func1</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num1 - num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//B类继承了A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果B需要使用A类的方法，使用组合关系</span></span><br><span class="line">    <span class="keyword">private</span> A a = <span class="keyword">new</span> A();</span><br><span class="line">    <span class="comment">//    ↓重写了A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func1(a,b)+<span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//使用A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func3</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.a.func1(a,b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于普通类，我们如何实现原型拷贝？Java的<code>Object</code>提供了一个<code>clone()</code>方法，它的意图就是复制一个新的对象出来，我们需要实现一个<code>Cloneable</code>接口来标识一个对象是“可复制”的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Cloneable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> score;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 复制新对象并返回:</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Employee employee = <span class="keyword">new</span> Employee();</span><br><span class="line">        employee.id = <span class="keyword">this</span>.id;</span><br><span class="line">        employee.name = <span class="keyword">this</span>.name;</span><br><span class="line">        employee.score = <span class="keyword">this</span>.score;</span><br><span class="line">        <span class="keyword">return</span> employee;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>使用的时候，因为<code>clone()</code>的方法签名是定义在<code>Object</code>中，返回类型也是<code>Object</code>，所以要强制转型，比较麻烦：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Employee employee = <span class="keyword">new</span> Employee();</span><br><span class="line">employee.setId(<span class="number">123</span>);</span><br><span class="line">employee.setName(<span class="string">"Bob"</span>);</span><br><span class="line">employee.setScore(<span class="number">88</span>);</span><br><span class="line"><span class="comment">// 复制新对象:</span></span><br><span class="line">Employee employee2 = (Employee) employee.clone();</span><br><span class="line">System.out.println(employee);</span><br><span class="line">System.out.println(employee2);</span><br><span class="line">System.out.println(employee == employee2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 
+<p>实际上，使用原型模式更好的方式是定义一个<code>copy()</code>方法，返回明确的类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> score;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Employee <span class="title">copy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Student employee = <span class="keyword">new</span> Employee();</span><br><span class="line">        employee.id = <span class="keyword">this</span>.id;</span><br><span class="line">        employee.name = <span class="keyword">this</span>.name;</span><br><span class="line">        employee.score = <span class="keyword">this</span>.score;</span><br><span class="line">        <span class="keyword">return</span> employee;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
+<p>原型模式应用不是很广泛，因为很多实例会持有类似文件、Socket这样的资源，而这些资源是无法复制给另一个对象共享的，只有存储简单类型的“值”对象可以复制。</p>
 
       
     </div>
@@ -369,13 +365,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">里氏替换原则</a></p>
+        <p><span>本文标题:</span><a  href="/2020/06/08/%E5%8E%9F%E5%9E%8B/">原型</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
-        <p><span>发布时间:</span>2020年06月04日 - 18时13分</p>
-        <p><span>最后更新:</span>2020年06月05日 - 09时52分</p>
+        <p><span>发布时间:</span>2020年06月08日 - 09时43分</p>
+        <p><span>最后更新:</span>2020年06月08日 - 09时48分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" title="里氏替换原则">http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/　　作者: Kayleh" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/08/%E5%8E%9F%E5%9E%8B/" title="原型">http://dqlcr5.coding-pages.com/2020/06/08/%E5%8E%9F%E5%9E%8B/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/08/%E5%8E%9F%E5%9E%8B/　　作者: Kayleh" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -386,18 +382,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          开闭原则
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">依赖倒转原则</div>
+    <a  href="/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">生成器</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -409,7 +396,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#里氏替换原则"><span class="toc-number">1.</span> <span class="toc-text">里氏替换原则</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#原型"><span class="toc-number">1.</span> <span class="toc-text">原型</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -470,7 +457,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '里氏替换原则', // 可选。默认为 location.href
+  id: '原型', // 可选。默认为 location.href
   owner: 'Kayleh',
   repo: 'Kayleh.github.io',
   oauth: {
@@ -488,13 +475,11 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/" title="上一篇: 开闭原则">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/" title="下一篇: 依赖倒转原则">
+            <a  href="/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/" title="下一篇: 生成器">
                 <i class="fa fa-angle-right"></i>
             </a>
         

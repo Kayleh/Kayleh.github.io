@@ -8,17 +8,17 @@
   
   
   
-  <title>里氏替换原则 | Kayleh</title>
+  <title>生成器 | Kayleh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="里氏替换原则 Liskov Substitution Principle   里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。">
+  <meta name="description" content="生成器 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="里氏替换原则">
-<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/index.html">
+<meta property="og:title" content="生成器">
+<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/index.html">
 <meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="里氏替换原则 Liskov Substitution Principle   里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。">
+<meta property="og:description" content="生成器 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-04T10:13:11.000Z">
-<meta property="article:modified_time" content="2020-06-05T01:52:00.733Z">
+<meta property="article:published_time" content="2020-06-08T01:39:43.000Z">
+<meta property="article:modified_time" content="2020-06-08T01:49:07.345Z">
 <meta property="article:author" content="Kayleh">
 <meta property="article:tag" content="DesignPatterns">
 <meta name="twitter:card" content="summary">
@@ -298,11 +298,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-里氏替换原则" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-生成器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" class="article-date">
-      <time datetime="2020-06-04T10:13:11.000Z" itemprop="datePublished">2020-06-04</time>
+      <a  href="/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/" class="article-date">
+      <time datetime="2020-06-08T01:39:43.000Z" itemprop="datePublished">2020-06-08</time>
 </a>
 
     </div>
@@ -316,7 +316,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      里氏替换原则
+      生成器
     </h1>
   
 
@@ -338,30 +338,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h3><blockquote>
-<p>Liskov Substitution Principle</p>
-</blockquote>
-<ul>
-<li><p>里氏替换原则在1988年，由麻省理工学院的一位姓里的女士提出的。</p>
+        <h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><blockquote>
+<p>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。 </p>
 <a id="more"></a>
-</li>
-<li><p>如果对每个类型为T1的对象o1，都有类型为T2的对象o2，使得以T1定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有发生变化，那么类型T2是类型T1的子类型。所有引用基类的地方必须能透明地使用其子类的对象。换句话说，既然抽象出来当作共同的实现方法就不应再具体实现类中重写。</p>
-</li>
-<li><p>在使用继承时，遵守里氏替换原则，在子类中尽量不要重写父类的方法</p>
-</li>
-<li><p>里氏替换原则告诉我们，继承实际上让两个类耦合性增强了，在适当的情况下，可以通过聚合，组合，依赖来解决问题。</p>
-</li>
-</ul>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回两个数的差</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> in <span class="title">func1</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num1 - num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//B类继承了A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//    ↓重写了A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func1(a,b)+<span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>生成器模式（Builder）</strong>是使用多个“小型”工厂来最终创建出一个完整对象。</p>
+<p>当我们使用Builder的时候，一般来说，是因为创建这个对象的步骤比较多，每个步骤都需要一个零部件，最终组合成一个完整的对象。</p>
+<h5 id="使用Builder模式时，适用于创建的对象比较复杂，最好一步一步创建出“零件”，最后再装配起来。"><a href="#使用Builder模式时，适用于创建的对象比较复杂，最好一步一步创建出“零件”，最后再装配起来。" class="headerlink" title="使用Builder模式时，适用于创建的对象比较复杂，最好一步一步创建出“零件”，最后再装配起来。"></a>使用Builder模式时，适用于创建的对象比较复杂，最好一步一步创建出“零件”，最后再装配起来。</h5><p>JavaMail的<code>MimeMessage</code>就可以看作是一个Builder模式，只不过Builder和最终产品合二为一，都是<code>MimeMessage</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Multipart multipart &#x3D; new MimeMultipart();</span><br><span class="line">&#x2F;&#x2F; 添加text:</span><br><span class="line">BodyPart textpart &#x3D; new MimeBodyPart();</span><br><span class="line">textpart.setContent(body, &quot;text&#x2F;html;charset&#x3D;utf-8&quot;);</span><br><span class="line">multipart.addBodyPart(textpart);</span><br><span class="line">&#x2F;&#x2F; 添加image:</span><br><span class="line">BodyPart imagepart &#x3D; new MimeBodyPart();</span><br><span class="line">imagepart.setFileName(fileName);</span><br><span class="line">imagepart.setDataHandler(new DataHandler(new ByteArrayDataSource(input, &quot;application&#x2F;octet-stream&quot;)));</span><br><span class="line">multipart.addBodyPart(imagepart);</span><br><span class="line"></span><br><span class="line">MimeMessage message &#x3D; new MimeMessage(session);</span><br><span class="line">&#x2F;&#x2F; 设置发送方地址:</span><br><span class="line">message.setFrom(new InternetAddress(&quot;me@example.com&quot;));</span><br><span class="line">&#x2F;&#x2F; 设置接收方地址:</span><br><span class="line">message.setRecipient(Message.RecipientType.TO, new InternetAddress(&quot;xiaoming@somewhere.com&quot;));</span><br><span class="line">&#x2F;&#x2F; 设置邮件主题:</span><br><span class="line">message.setSubject(&quot;Hello&quot;, &quot;UTF-8&quot;);</span><br><span class="line">&#x2F;&#x2F; 设置邮件内容为multipart:</span><br><span class="line">message.setContent(multipart);</span><br></pre></td></tr></table></figure>
 
-<p>  改进：</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//把更加基础的方法和成员写到Base类</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回两个数的差</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> in <span class="title">func1</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num1 - num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//B类继承了A类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果B需要使用A类的方法，使用组合关系</span></span><br><span class="line">    <span class="keyword">private</span> A a = <span class="keyword">new</span> A();</span><br><span class="line">    <span class="comment">//    ↓重写了A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func1(a,b)+<span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//使用A的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func3</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.a.func1(a,b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码："><a href="#很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码：" class="headerlink" title="很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码："></a>很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder builder &#x3D; new StringBuilder();</span><br><span class="line">builder.append(secure ? &quot;https:&#x2F;&#x2F;&quot; : &quot;http:&#x2F;&#x2F;&quot;)</span><br><span class="line">       .append(&quot;www.liaoxuefeng.com&quot;)</span><br><span class="line">       .append(&quot;&#x2F;&quot;)</span><br><span class="line">       .append(&quot;?t&#x3D;0&quot;);</span><br><span class="line">String url &#x3D; builder.toString();</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
+<h5 id="由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下："><a href="#由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下：" class="headerlink" title="由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下："></a>由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String url &#x3D; URLBuilder.builder() &#x2F;&#x2F; 创建Builder</span><br><span class="line">        .setDomain(&quot;www.liaoxuefeng.com&quot;) &#x2F;&#x2F; 设置domain</span><br><span class="line">        .setScheme(&quot;https&quot;) &#x2F;&#x2F; 设置scheme</span><br><span class="line">        .setPath(&quot;&#x2F;&quot;) &#x2F;&#x2F; 设置路径</span><br><span class="line">        .setQuery(Map.of(&quot;a&quot;, &quot;123&quot;, &quot;q&quot;, &quot;K&amp;R&quot;)) &#x2F;&#x2F; 设置query</span><br><span class="line">        .build(); &#x2F;&#x2F; 完成build</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -369,13 +357,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">里氏替换原则</a></p>
+        <p><span>本文标题:</span><a  href="/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/">生成器</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
-        <p><span>发布时间:</span>2020年06月04日 - 18时13分</p>
-        <p><span>最后更新:</span>2020年06月05日 - 09时52分</p>
+        <p><span>发布时间:</span>2020年06月08日 - 09时39分</p>
+        <p><span>最后更新:</span>2020年06月08日 - 09时49分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/" title="里氏替换原则">http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/　　作者: Kayleh" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/" title="生成器">http://dqlcr5.coding-pages.com/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/　　作者: Kayleh" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -386,18 +374,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2020/06/08/%E5%8E%9F%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          开闭原则
+          原型
         
       </div>
     </a>
   
   
-    <a  href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">依赖倒转原则</div>
+    <a  href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">工厂设计模式</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -409,7 +397,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#里氏替换原则"><span class="toc-number">1.</span> <span class="toc-text">里氏替换原则</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成器"><span class="toc-number">1.</span> <span class="toc-text">生成器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#使用Builder模式时，适用于创建的对象比较复杂，最好一步一步创建出“零件”，最后再装配起来。"><span class="toc-number">1.0.1.</span> <span class="toc-text">使用Builder模式时，适用于创建的对象比较复杂，最好一步一步创建出“零件”，最后再装配起来。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码："><span class="toc-number">1.0.2.</span> <span class="toc-text">很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下："><span class="toc-number">1.0.3.</span> <span class="toc-text">由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下：</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -470,7 +458,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '里氏替换原则', // 可选。默认为 location.href
+  id: '生成器', // 可选。默认为 location.href
   owner: 'Kayleh',
   repo: 'Kayleh.github.io',
   oauth: {
@@ -488,13 +476,13 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/" title="上一篇: 开闭原则">
+            <a  href="/2020/06/08/%E5%8E%9F%E5%9E%8B/" title="上一篇: 原型">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/" title="下一篇: 依赖倒转原则">
+            <a  href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="下一篇: 工厂设计模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         

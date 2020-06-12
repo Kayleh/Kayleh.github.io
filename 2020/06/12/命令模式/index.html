@@ -8,20 +8,22 @@
   
   
   
-  <title>斐波那契数列 | Kayleh</title>
+  <title>命令模式 | Kayleh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="斐波那契数列斐波那契数列（Fibonacci sequence），又称黄金分割数列、因数学家列昂纳多·斐波那契（Leonardoda Fibonacci）以兔子繁殖为例子而引入，故又称为“兔子数列”，指的是这样一个数列：1、1、2、3、5、8、13、21、34、……在数学上，斐波那契数列以如下被以递推的方法定义：F(1)&#x3D;1，F(2)&#x3D;1, F(n)&#x3D;F(n - 1)+F(n - 2)（n ≥ 3">
+  <meta name="description" content="命令模式 命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="斐波那契数列">
-<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/index.html">
+<meta property="og:title" content="命令模式">
+<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="斐波那契数列斐波那契数列（Fibonacci sequence），又称黄金分割数列、因数学家列昂纳多·斐波那契（Leonardoda Fibonacci）以兔子繁殖为例子而引入，故又称为“兔子数列”，指的是这样一个数列：1、1、2、3、5、8、13、21、34、……在数学上，斐波那契数列以如下被以递推的方法定义：F(1)&#x3D;1，F(2)&#x3D;1, F(n)&#x3D;F(n - 1)+F(n - 2)（n ≥ 3">
+<meta property="og:description" content="命令模式 命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-22T12:25:59.000Z">
-<meta property="article:modified_time" content="2020-06-06T09:12:23.104Z">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2014/08/command_pattern_uml_diagram.jpg">
+<meta property="article:published_time" content="2020-06-12T10:12:06.000Z">
+<meta property="article:modified_time" content="2020-06-12T10:21:46.585Z">
 <meta property="article:author" content="Kayleh">
-<meta property="article:tag" content="dataAlgorithm">
+<meta property="article:tag" content="DesignPatterns">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2014/08/command_pattern_uml_diagram.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
   
@@ -302,11 +304,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-斐波那契数列" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-命令模式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" class="article-date">
-      <time datetime="2020-04-22T12:25:59.000Z" itemprop="datePublished">2020-04-22</time>
+      <a  href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" class="article-date">
+      <time datetime="2020-06-12T10:12:06.000Z" itemprop="datePublished">2020-06-12</time>
 </a>
 
     </div>
@@ -320,7 +322,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      斐波那契数列
+      命令模式
     </h1>
   
 
@@ -332,7 +334,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dataAlgorithm/" rel="tag">dataAlgorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -342,26 +344,53 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p>斐波那契数列（Fibonacci sequence），又称黄金分割数列、因数学家列昂纳多·斐波那契（Leonardoda Fibonacci）以兔子繁殖为例子而引入，故又称为“兔子数列”，指的是这样一个数列：1、1、2、3、5、8、13、21、34、……在数学上，斐波那契数列以如下被以递推的方法定义：F(1)=1，F(2)=1, F(n)=F(n - 1)+F(n - 2)（n ≥ 3，n ∈ N*）在现代物理、准晶体结构、化学等领域，斐波纳契数列都有直接的应用，为此，美国数学会从 1963 年起出版了以《斐波纳契数列季刊》为名的一份数学杂志，用于专门刊载这方面的研究成果。</p>
+        <h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><blockquote>
+<p>命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p>
+</blockquote>
 <a id="more"></a>
 
-<h4 id="求：斐波那契数列的第n个数是？"><a href="#求：斐波那契数列的第n个数是？" class="headerlink" title="求：斐波那契数列的第n个数是？"></a>求：斐波那契数列的第n个数是？</h4><p>简单的代码就可以实现：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Wizard</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2020/4/22 20:38</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">main</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 斐波那契数列</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(fib(<span class="number">21</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><strong>意图：</strong>将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化。</p>
+<p><strong>主要解决：</strong>在软件系统中，行为请求者与行为实现者通常是一种紧耦合的关系，但某些场合，比如需要对行为进行记录、撤销或重做、事务等处理时，这种无法抵御变化的紧耦合的设计就不太合适。</p>
+<p><strong>何时使用：</strong>在某些场合，比如要对行为进行”记录、撤销/重做、事务”等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将”行为请求者”与”行为实现者”解耦？将一组行为抽象为对象，可以实现二者之间的松耦合。</p>
+<p><strong>如何解决：</strong>通过调用者调用接受者执行命令，顺序：调用者→接受者→命令。</p>
+<p><strong>关键代码：</strong>定义三个角色：1、received 真正的命令执行对象 2、Command 3、invoker 使用命令对象的入口</p>
+<p><strong>应用实例：</strong>struts 1 中的 action 核心控制器 ActionServlet 只有一个，相当于 Invoker，而模型层的类会随着不同的应用有不同的模型类，相当于具体的 Command。</p>
+<p><strong>优点：</strong> 1、降低了系统耦合度。 2、新的命令可以很容易添加到系统中去。</p>
+<p><strong>缺点：</strong>使用命令模式可能会导致某些系统有过多的具体命令类。</p>
+<p><strong>使用场景：</strong>认为是命令的地方都可以使用命令模式，比如： 1、GUI 中每一个按钮都是一条命令。 2、模拟 CMD。</p>
+<p><strong>注意事项：</strong>系统需要支持命令的撤销(Undo)操作和恢复(Redo)操作，也可以考虑使用命令模式，见命令模式的扩展。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>我们首先创建作为命令的接口 <em>Order*，然后创建作为请求的 *Stock</em> 类。实体命令类 <em>BuyStock</em> 和 <em>SellStock*，实现了 *Order</em> 接口，将执行实际的命令处理。创建作为调用对象的类 <em>Broker</em>，它接受订单并能下订单。</p>
+<p><em>Broker</em> 对象使用命令模式，基于命令的类型确定哪个对象执行哪个命令。<em>CommandPatternDemo*，我们的演示类使用 *Broker</em> 类来演示命令模式。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/08/command_pattern_uml_diagram.jpg" alt="命令模式的 UML 图"></p>
+<h4 id="步骤1"><a href="#步骤1" class="headerlink" title="步骤1"></a>步骤1</h4><p>创建一个命令接口。</p>
+<h5 id="Order-java"><a href="#Order-java" class="headerlink" title="Order.java"></a>Order.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>运用递归的写法，可以实现但是有个缺点</p>
-<p>我们可以用currentTimeMillis计算耗时 fib( 40 )：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">耗时5.16秒</span><br></pre></td></tr></table></figure>
-
-<p>换一种算法，不实现递归。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 0  1   2   3   4   5   6</span></span><br><span class="line"><span class="comment">     * 0  1   1   2   4   8  16</span></span><br><span class="line"><span class="comment">     *   fr  sd  sum</span></span><br><span class="line"><span class="comment">     *       fr  sd</span></span><br><span class="line"><span class="comment">     *	思想是假设计算第3个斐波那契数时,用于计算的数是第一个数(fr)和第二个数(sd)相加,得到第三个数sum.</span></span><br><span class="line"><span class="comment">     *  那么计算第四个数是第三个数加第四个数,也就是sd和sum, 把sd和sum赋值给计算第四个数计算的时候的fr和sd	  *  就可以了.我们可以先把数列的第一个数first,第二个数second赋值为0,1.在进行for循环.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fib1</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">int</span> first = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> second = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> sum = first + second;</span><br><span class="line">            first = second;</span><br><span class="line">            second = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> second;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h4><p>创建一个请求类。</p>
+<h5 id="Stock-java"><a href="#Stock-java" class="headerlink" title="Stock.java"></a>Stock.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stock</span> </span>&#123;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">private</span> String name = <span class="string">"ABC"</span>;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> quantity = <span class="number">10</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buy</span><span class="params">()</span></span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Stock [ Name: "</span>+name+<span class="string">", </span></span><br><span class="line"><span class="string">         Quantity: "</span> + quantity +<span class="string">" ] bought"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sell</span><span class="params">()</span></span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Stock [ Name: "</span>+name+<span class="string">", </span></span><br><span class="line"><span class="string">         Quantity: "</span> + quantity +<span class="string">" ] sold"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<p>当我们测试运行第123112340的数:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">耗时0.54秒</span><br></pre></td></tr></table></figure>
+<h4 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤 3"></a>步骤 3</h4><p>创建实现了 <em>Order</em> 接口的实体类。</p>
+<h5 id="BuyStock-java"><a href="#BuyStock-java" class="headerlink" title="BuyStock.java"></a>BuyStock.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BuyStock</span> <span class="keyword">implements</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> Stock abcStock;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">BuyStock</span><span class="params">(Stock abcStock)</span></span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.abcStock = abcStock;</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      abcStock.buy();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>性能比递归高了不少.</p>
 
+
+<h5 id="SellStock-java"><a href="#SellStock-java" class="headerlink" title="SellStock.java"></a>SellStock.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SellStock</span> <span class="keyword">implements</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> Stock abcStock;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SellStock</span><span class="params">(Stock abcStock)</span></span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.abcStock = abcStock;</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      abcStock.sell();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤 4"></a>步骤 4</h4><p>创建命令调用类。</p>
+<h5 id="Broker-java"><a href="#Broker-java" class="headerlink" title="Broker.java"></a>Broker.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Broker</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> List&lt;Order&gt; orderList = <span class="keyword">new</span> ArrayList&lt;Order&gt;(); </span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">takeOrder</span><span class="params">(Order order)</span></span>&#123;</span><br><span class="line">      orderList.add(order);      </span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">placeOrders</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">for</span> (Order order : orderList) &#123;</span><br><span class="line">         order.execute();</span><br><span class="line">      &#125;</span><br><span class="line">      orderList.clear();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用 Broker 类来接受并执行命令。</p>
+<h5 id="CommandPatternDemo-java"><a href="#CommandPatternDemo-java" class="headerlink" title="CommandPatternDemo.java"></a>CommandPatternDemo.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommandPatternDemo</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      Stock abcStock = <span class="keyword">new</span> Stock();</span><br><span class="line"> </span><br><span class="line">      BuyStock buyStockOrder = <span class="keyword">new</span> BuyStock(abcStock);</span><br><span class="line">      SellStock sellStockOrder = <span class="keyword">new</span> SellStock(abcStock);</span><br><span class="line"> </span><br><span class="line">      Broker broker = <span class="keyword">new</span> Broker();</span><br><span class="line">      broker.takeOrder(buyStockOrder);</span><br><span class="line">      broker.takeOrder(sellStockOrder);</span><br><span class="line"> </span><br><span class="line">      broker.placeOrders();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="步骤-6"><a href="#步骤-6" class="headerlink" title="步骤 6"></a>步骤 6</h4><p>执行程序，输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stock [ Name: ABC, Quantity: 10 ] bought</span><br><span class="line">Stock [ Name: ABC, Quantity: 10 ] sold</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -369,13 +398,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">斐波那契数列</a></p>
+        <p><span>本文标题:</span><a  href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/">命令模式</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
-        <p><span>发布时间:</span>2020年04月22日 - 20时25分</p>
-        <p><span>最后更新:</span>2020年06月06日 - 17时12分</p>
+        <p><span>发布时间:</span>2020年06月12日 - 18时12分</p>
+        <p><span>最后更新:</span>2020年06月12日 - 18时21分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" title="斐波那契数列">http://dqlcr5.coding-pages.com/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/　　作者: Kayleh" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" title="命令模式">http://dqlcr5.coding-pages.com/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/　　作者: Kayleh" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -386,18 +415,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2020/04/26/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          动态数组
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2020/04/20/Spring%E3%80%81SpringMVC%E3%80%81Mybatis%E6%95%B4%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spring、SpringMVC、Mybatis整合</div>
+    <a  href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">责任链模式</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -409,7 +429,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#斐波那契数列"><span class="toc-number">1.</span> <span class="toc-text">斐波那契数列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#求：斐波那契数列的第n个数是？"><span class="toc-number">1.0.1.</span> <span class="toc-text">求：斐波那契数列的第n个数是？</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令模式"><span class="toc-number">1.</span> <span class="toc-text">命令模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-number">1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">1.2.</span> <span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤1"><span class="toc-number">1.2.1.</span> <span class="toc-text">步骤1</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Order-java"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Order.java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤-2"><span class="toc-number">1.2.2.</span> <span class="toc-text">步骤 2</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Stock-java"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">Stock.java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤-3"><span class="toc-number">1.2.3.</span> <span class="toc-text">步骤 3</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#BuyStock-java"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">BuyStock.java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SellStock-java"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">SellStock.java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤-4"><span class="toc-number">1.2.4.</span> <span class="toc-text">步骤 4</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Broker-java"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">Broker.java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CommandPatternDemo-java"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">CommandPatternDemo.java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤-6"><span class="toc-number">1.2.5.</span> <span class="toc-text">步骤 6</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -470,7 +490,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '斐波那契数列', // 可选。默认为 location.href
+  id: '命令模式', // 可选。默认为 location.href
   owner: 'Kayleh',
   repo: 'Kayleh.github.io',
   oauth: {
@@ -488,13 +508,11 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2020/04/26/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/" title="上一篇: 动态数组">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2020/04/20/Spring%E3%80%81SpringMVC%E3%80%81Mybatis%E6%95%B4%E5%90%88/" title="下一篇: Spring、SpringMVC、Mybatis整合">
+            <a  href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" title="下一篇: 责任链模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         

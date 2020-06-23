@@ -17,11 +17,14 @@
 <meta property="og:site_name" content="Kayleh">
 <meta property="og:description" content="OS Kernel的特征">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/C:%5CUsers%5CKara%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1592883946725.png">
 <meta property="article:published_time" content="2020-06-20T13:14:21.000Z">
-<meta property="article:modified_time" content="2020-06-22T13:29:53.491Z">
+<meta property="article:modified_time" content="2020-06-23T05:02:29.644Z">
 <meta property="article:author" content="Kayleh">
 <meta property="article:tag" content="Operating Systems">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dqlcr5.coding-pages.com/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
   
@@ -369,6 +372,61 @@
 </ul>
 </li>
 </ul>
+<h4 id="关系："><a href="#关系：" class="headerlink" title="关系："></a>关系：</h4><p>DISK：存放OS</p>
+<p>BIOS：基本I/O处理系统，最基本的功能是电源开启后检测外设，之后加载相应的软件来执行</p>
+<p>Bootloader：加载OS，把OS从硬盘放到内存里，让CPU可以操作系统，</p>
+<p><img src="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.png" alt="1592878521236"></p>
+<p>从图可以看出，计算机里面有一部分空间（硬盘）已经给BIOS占用了，但是还有很多地方是空的，BIOS需要从一个特定的地址开始执行，以X86为例，固定的地址为0xf000:fff0. CS寄存器和IP寄存器一起可以形成一个内存地址，一开始加电，BIOS就从这个地址开始执行。执行一系列的工作：</p>
+<ul>
+<li><p>POST（加电自检）</p>
+<p>寻找显卡和执行BIOS，检查设备是否可以正常工作。初始化的检擦。</p>
+</li>
+<li><p>BIOS是如何把bootloader放进去的：</p>
+</li>
+</ul>
+<p><img src="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/C:%5CUsers%5CKara%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1592883946725.png" alt="1592883946725"></p>
+<p>Bootloader一般是放在硬盘的第一个主引导扇区。第一个扇区是512个字节。把bootloader放到内存里，CPU的掌控权就在bootloader；</p>
+<h3 id="操作系统与设备和程序交互。"><a href="#操作系统与设备和程序交互。" class="headerlink" title="操作系统与设备和程序交互。"></a>操作系统与设备和程序交互。</h3><h4 id="系统调用、异常、中断"><a href="#系统调用、异常、中断" class="headerlink" title="系统调用、异常、中断"></a>系统调用、异常、中断</h4><ul>
+<li><p>系统调用（来源于应用程序）sys call</p>
+<ul>
+<li>应用程序主动向操作系统发出服务请求。</li>
+</ul>
+</li>
+<li><p>异常（来源于不良的应用程序） exception</p>
+<ul>
+<li>非法指令或者其他坏的处理状态（如：内存出错）</li>
+</ul>
+</li>
+<li><p>中断（来源与外设）interrupt</p>
+<ul>
+<li>来自不同硬件设备的计时器和网络中断。</li>
+</ul>
+</li>
+</ul>
+<p>为什么应用程序不直接使用外设而要经过操作系统？</p>
+<ul>
+<li>在计算机运行中，内核是被信任的第三方</li>
+<li>只有内核可以执行特权指令</li>
+<li>为了方便应用程序</li>
+</ul>
+<p>产生的源头：</p>
+<ul>
+<li>中断：外设</li>
+<li>异常：应用程序意想不到的行为</li>
+<li>系统调用：应用程序请求操作提供服务。</li>
+</ul>
+<p>处理时间：</p>
+<ul>
+<li>中断：异步，异步：当这个事件产生的时候，我们应用程序并不知道什么时候产生。</li>
+<li>异常：同步，异常执行到某条特定的指令后一定会产生</li>
+<li>系统调用：异步或同步，当系统调用发出请求的时候，返回的时间是异步的</li>
+</ul>
+<p>响应：</p>
+<ul>
+<li>中断：持续，对用户应用程序是透明的、</li>
+<li>异常: 杀死或者重新执行意想不到的应用程序指令</li>
+<li>系统调用：等待和持续</li>
+</ul>
 
       
     </div>
@@ -380,7 +438,7 @@
         <p><span>本文标题:</span><a  href="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
         <p><span>发布时间:</span>2020年06月20日 - 21时14分</p>
-        <p><span>最后更新:</span>2020年06月22日 - 21时29分</p>
+        <p><span>最后更新:</span>2020年06月23日 - 13时02分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统">http://dqlcr5.coding-pages.com/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/　　作者: Kayleh" title=""></span>
@@ -408,7 +466,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-Kernel的特征"><span class="toc-number">1.</span> <span class="toc-text">OS Kernel的特征</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-Kernel的特征"><span class="toc-number">1.</span> <span class="toc-text">OS Kernel的特征</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关系："><span class="toc-number">1.1.</span> <span class="toc-text">关系：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统与设备和程序交互。"><span class="toc-number">2.</span> <span class="toc-text">操作系统与设备和程序交互。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#系统调用、异常、中断"><span class="toc-number">2.1.</span> <span class="toc-text">系统调用、异常、中断</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

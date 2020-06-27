@@ -8,19 +8,19 @@
   
   
   
-  <title>编码算法 | Kayleh</title>
+  <title>Redis | Kayleh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="编码算法">
+  <meta name="description" content="Redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编码算法">
-<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="Redis">
+<meta property="og:url" content="http://dqlcr5.coding-pages.com/2020/06/27/Redis/index.html">
 <meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="编码算法">
+<meta property="og:description" content="Redis">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-19T00:53:22.000Z">
-<meta property="article:modified_time" content="2020-06-19T01:08:34.559Z">
+<meta property="article:published_time" content="2020-06-27T09:30:29.000Z">
+<meta property="article:modified_time" content="2020-06-27T11:39:58.101Z">
 <meta property="article:author" content="Kayleh">
-<meta property="article:tag" content="dataAlgorithm">
+<meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
@@ -302,11 +302,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-编码算法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Redis" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/" class="article-date">
-      <time datetime="2020-06-19T00:53:22.000Z" itemprop="datePublished">2020-06-19</time>
+      <a  href="/2020/06/27/Redis/" class="article-date">
+      <time datetime="2020-06-27T09:30:29.000Z" itemprop="datePublished">2020-06-27</time>
 </a>
 
     </div>
@@ -320,7 +320,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      编码算法
+      Redis
     </h1>
   
 
@@ -332,7 +332,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dataAlgorithm/" rel="tag">dataAlgorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/" rel="tag">sql</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -342,119 +342,66 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="编码算法"><a href="#编码算法" class="headerlink" title="编码算法"></a>编码算法</h2><a id="more"></a>
+        <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><a id="more"></a>
 
-<hr>
-<p>要学习编码算法，先来看一看什么是编码。</p>
-<p>ASCII码就是一种编码，字母<code>A</code>的编码是十六进制的<code>0x41</code>，字母<code>B</code>是<code>0x42</code>，以此类推：</p>
-<table>
-<thead>
-<tr>
-<th align="left">字母</th>
-<th align="left">ASCII编码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">A</td>
-<td align="left">0x41</td>
-</tr>
-<tr>
-<td align="left">B</td>
-<td align="left">0x42</td>
-</tr>
-<tr>
-<td align="left">C</td>
-<td align="left">0x43</td>
-</tr>
-<tr>
-<td align="left">D</td>
-<td align="left">0x44</td>
-</tr>
-<tr>
-<td align="left">…</td>
-<td align="left">…</td>
-</tr>
-</tbody></table>
-<p>因为ASCII编码最多只能有127个字符，要想对更多的文字进行编码，就需要用Unicode。而中文的中使用Unicode编码就是<code>0x4e2d</code>，使用UTF-8则需要3个字节编码：</p>
-<table>
-<thead>
-<tr>
-<th align="left">汉字</th>
-<th align="left">Unicode编码</th>
-<th align="left">UTF-8编码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">中</td>
-<td align="left">0x4e2d</td>
-<td align="left">0xe4b8ad</td>
-</tr>
-<tr>
-<td align="left">文</td>
-<td align="left">0x6587</td>
-<td align="left">0xe69687</td>
-</tr>
-<tr>
-<td align="left">编</td>
-<td align="left">0x7f16</td>
-<td align="left">0xe7bc96</td>
-</tr>
-<tr>
-<td align="left">码</td>
-<td align="left">0x7801</td>
-<td align="left">0xe7a081</td>
-</tr>
-<tr>
-<td align="left">…</td>
-<td align="left">…</td>
-<td align="left">…</td>
-</tr>
-</tbody></table>
-<p>因此，最简单的编码是直接给每个字符指定一个若干字节表示的整数，复杂一点的编码就需要根据一个已有的编码推算出来。</p>
-<p>比如UTF-8编码，它是一种不定长编码，但可以从给定字符的Unicode编码推算出来。</p>
-<h3 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h3><p>URL编码是浏览器发送数据给服务器时使用的编码，它通常附加在URL的参数部分，例如：</p>
-<p><a href="https://www.baidu.com/s?wd=中文" target="_blank" rel="noopener">https://www.baidu.com/s?wd=%E4%B8%AD%E6%96%87</a></p>
-<p>之所以需要URL编码，是因为出于兼容性考虑，很多服务器只识别ASCII字符。但如果URL中包含中文、日文这些非ASCII字符怎么办？不要紧，URL编码有一套规则：</p>
-<ul>
-<li>如果字符是<code>A</code><del><code>Z</code>，<code>a</code></del><code>z</code>，<code>0</code>~<code>9</code>以及<code>-</code>、<code>_</code>、<code>.</code>、<code>*</code>，则保持不变；</li>
-<li>如果是其他字符，先转换为UTF-8编码，然后对每个字节以<code>%XX</code>表示。</li>
-</ul>
-<p>例如：字符<code>中</code>的UTF-8编码是<code>0xe4b8ad</code>，因此，它的URL编码是<code>%E4%B8%AD</code>。URL编码总是大写。</p>
-<p>Java标准库提供了一个<code>URLEncoder</code>类来对任意字符串进行URL编码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String encoded = URLEncoder.encode(<span class="string">"中文!"</span>, StandardCharsets.UTF_8);</span><br><span class="line">        System.out.println(encoded);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-在Linux下安装"><a href="#1-在Linux下安装" class="headerlink" title="1.在Linux下安装"></a>1.在Linux下安装</h3><p> <a href="https://redis.io/" target="_blank" rel="noopener">https://redis.io/</a> 官网下载，移动到<code>/opt</code> 目录下. 在终端使用命令解压</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tar -zxvf redis-XXXXXX.tar.gz</span></span><br></pre></td></tr></table></figure>
 
-<p>上述代码的运行结果是<code>%E4%B8%AD%E6%96%87%21</code>，<code>中</code>的URL编码是<code>%E4%B8%AD</code>，<code>文</code>的URL编码是<code>%E6%96%87</code>，<code>!</code>虽然是ASCII字符，也要对其编码为<code>%21</code>。</p>
-<p>和标准的URL编码稍有不同，URLEncoder把空格字符编码成<code>+</code>，而现在的URL编码标准要求空格被编码为<code>%20</code>，不过，服务器都可以处理这两种情况。</p>
-<p>如果服务器收到URL编码的字符串，就可以对其进行解码，还原成原始字符串。Java标准库的<code>URLDecoder</code>就可以解码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String decoded = URLDecoder.decode(<span class="string">"%E4%B8%AD%E6%96%87%21"</span>, StandardCharsets.UTF_8);</span><br><span class="line">        System.out.println(decoded);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>进入解压后的目录,运行make指令(需要GCC编译器)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd redis.XXX</span><br><span class="line">$ make</span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
 
-<p>要特别注意：URL编码是编码算法，不是加密算法。URL编码的目的是把任意文本数据编码为<code>%</code>前缀表示的文本，编码后的文本仅包含<code>A</code><del><code>Z</code>，<code>a</code></del><code>z</code>，<code>0</code>~<code>9</code>，<code>-</code>，<code>_</code>，<code>.</code>，<code>*</code>和<code>%</code>，便于浏览器和服务器处理。</p>
-<h3 id="Base64编码"><a href="#Base64编码" class="headerlink" title="Base64编码"></a>Base64编码</h3><p>URL编码是对字符进行编码，表示成<code>%xx</code>的形式，而Base64编码是对二进制数据进行编码，表示成文本格式。</p>
-<p>Base64编码可以把任意长度的二进制数据变为纯文本，且只包含<code>A</code><del><code>Z</code>、<code>a</code></del><code>z</code>、<code>0</code>~<code>9</code>、<code>+</code>、<code>/</code>、<code>=</code>这些字符。它的原理是把3字节的二进制数据按6bit一组，用4个int整数表示，然后查表，把int整数用索引对应到字符，得到编码后的字符串。</p>
-<p>举个例子：3个byte数据分别是<code>e4</code>、<code>b8</code>、<code>ad</code>，按6bit分组得到<code>39</code>、<code>0b</code>、<code>22</code>和<code>2d</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌───────────────┬───────────────┬───────────────┐</span><br><span class="line">│      e4       │      b8       │      ad       │</span><br><span class="line">└───────────────┴───────────────┴───────────────┘</span><br><span class="line">┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐</span><br><span class="line">│1│1│1│0│0│1│0│0│1│0│1│1│1│0│0│0│1│0│1│0│1│1│0│1│</span><br><span class="line">└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</span><br><span class="line">┌───────────┬───────────┬───────────┬───────────┐</span><br><span class="line">│    39     │    0b     │    22     │    2d     │</span><br><span class="line">└───────────┴───────────┴───────────┴───────────┘</span><br></pre></td></tr></table></figure>
+<p>进入默认安装的目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd usr&#x2F;local&#x2F;bin</span><br></pre></td></tr></table></figure>
 
-<p>因为6位整数的范围总是<code>0</code><del><code>63</code>，所以，能用64个字符表示：字符<code>A</code></del><code>Z</code>对应索引<code>0</code><del><code>25</code>，字符<code>a</code></del><code>z</code>对应索引<code>26</code><del><code>51</code>，字符<code>0</code></del><code>9</code>对应索引<code>52</code>~<code>61</code>，最后两个索引<code>62</code>、<code>63</code>分别用字符<code>+</code>和<code>/</code>表示。</p>
-<p>在Java中，二进制数据就是<code>byte[]</code>数组。Java标准库提供了<code>Base64</code>来对<code>byte[]</code>数组进行编解码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] input = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; (<span class="keyword">byte</span>) <span class="number">0xe4</span>, (<span class="keyword">byte</span>) <span class="number">0xb8</span>, (<span class="keyword">byte</span>) <span class="number">0xad</span> &#125;;</span><br><span class="line">        String b64encoded = Base64.getEncoder().encodeToString(input);</span><br><span class="line">        System.out.println(b64encoded);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在根目录创建一个文件夹/myredis，把安装目录下的redis.conf复制到/myredis，复制的目的是不影响出厂的设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp redis.conf &#x2F;myredis</span><br></pre></td></tr></table></figure>
 
-<p> 编码后得到<code>5Lit</code>4个字符。要对<code>Base64</code>解码，仍然用<code>Base64</code>这个类： </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] output = Base64.getDecoder().decode(<span class="string">"5Lit"</span>);</span><br><span class="line">        System.out.println(Arrays.toString(output)); <span class="comment">// [-28, -72, -83]</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>要把myredis的权限修改,否则会出现redis无法SHUTDOWN的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 &#x2F;myredis</span><br></pre></td></tr></table></figure>
 
-<p>有的童鞋会问：如果输入的<code>byte[]</code>数组长度不是3的整数倍肿么办？这种情况下，需要对输入的末尾补一个或两个<code>0x00</code>，编码后，在结尾加一个<code>=</code>表示补充了1个<code>0x00</code>，加两个<code>=</code>表示补充了2个<code>0x00</code>，解码的时候，去掉末尾补充的一个或两个<code>0x00</code>即可。</p>
-<p>实际上，因为编码后的长度加上<code>=</code>总是4的倍数，所以即使不加<code>=</code>也可以计算出原始输入的<code>byte[]</code>。Base64编码的时候可以用<code>withoutPadding()</code>去掉<code>=</code>，解码出来的结果是一样的：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] input = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; (<span class="keyword">byte</span>) <span class="number">0xe4</span>, (<span class="keyword">byte</span>) <span class="number">0xb8</span>, (<span class="keyword">byte</span>) <span class="number">0xad</span>, <span class="number">0x21</span> &#125;;</span><br><span class="line">        String b64encoded = Base64.getEncoder().encodeToString(input);</span><br><span class="line">        String b64encoded2 = Base64.getEncoder().withoutPadding().encodeToString(input);</span><br><span class="line">        System.out.println(b64encoded);</span><br><span class="line">        System.out.println(b64encoded2);</span><br><span class="line">        <span class="keyword">byte</span>[] output = Base64.getDecoder().decode(b64encoded2);</span><br><span class="line">        System.out.println(Arrays.toString(output));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改复制过来的conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim redis.conf</span><br></pre></td></tr></table></figure>
 
-<p> 因为标准的Base64编码会出现<code>+</code>、<code>/</code>和<code>=</code>，所以不适合把Base64编码后的字符串放到URL中。一种针对URL的Base64编码可以在URL中使用的Base64编码，它仅仅是把<code>+</code>变成<code>-</code>，<code>/</code>变成<code>_</code>： </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] input = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; <span class="number">0x01</span>, <span class="number">0x02</span>, <span class="number">0x7f</span>, <span class="number">0x00</span> &#125;;</span><br><span class="line">        String b64encoded = Base64.getUrlEncoder().encodeToString(input);</span><br><span class="line">        System.out.println(b64encoded);</span><br><span class="line">        <span class="keyword">byte</span>[] output = Base64.getUrlDecoder().decode(b64encoded);</span><br><span class="line">        System.out.println(Arrays.toString(output));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改为为yes</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">原来的：</span><br><span class="line">##########GENERAL###################</span><br><span class="line">XXX</span><br><span class="line">daemonzie no</span><br><span class="line"></span><br><span class="line">修改为:</span><br><span class="line">daemonize yes</span><br></pre></td></tr></table></figure>
 
-<p>Base64编码的目的是把二进制数据变成文本格式，这样在很多文本中就可以处理二进制数据。例如，电子邮件协议就是文本协议，如果要在电子邮件中添加一个二进制文件，就可以用Base64编码，然后以文本的形式传送。</p>
-<p>Base64编码的缺点是传输效率会降低，因为它把原始数据的长度增加了1/3。</p>
-<p>和URL编码一样，Base64编码是一种编码算法，不是加密算法。</p>
-<p>如果把Base64的64个字符编码表换成32个、48个或者58个，就可以使用Base32编码，Base48编码和Base58编码。字符越少，编码的效率就会越低。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>URL编码和Base64编码都是编码算法，它们不是加密算法；</p>
-<p>URL编码的目的是把任意文本数据编码为%前缀表示的文本，便于浏览器和服务器处理；</p>
-<p>Base64编码的目的是把任意二进制数据编码为文本，但编码后数据量会增加1/3。</p>
+<p>检查有没有启动Redis</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef|gref redis</span><br></pre></td></tr></table></figure>
+
+<p>结果是没有启动的</p>
+<h5 id="启动方法："><a href="#启动方法：" class="headerlink" title="启动方法："></a>启动方法：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ redis-server &#x2F;myredis&#x2F;redis.conf</span><br></pre></td></tr></table></figure>
+
+<p>默认端口是6379</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ redis-cli -p 6379</span><br></pre></td></tr></table></figure>
+
+<p>检查是否连接成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; ping</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PONG</span><br></pre></td></tr></table></figure>
+
+<p>返回PONG表示成功</p>
+<p>退出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; SHUTDOWN</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<h3 id="KEY关键字"><a href="#KEY关键字" class="headerlink" title="KEY关键字"></a>KEY关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DBSIZE &#x2F;&#x2F;当前数据库的key的数量</span><br><span class="line">select db &#x2F;&#x2F;切换数据库</span><br><span class="line">Flushdb  &#x2F;&#x2F;清空当前库</span><br><span class="line">Flushall &#x2F;&#x2F;清空所有库</span><br><span class="line">key * 当前库所有的key</span><br><span class="line">exists key &#x2F;&#x2F;判断key是否存在，有返回1，无则0</span><br><span class="line">move key db &#x2F;&#x2F;移动到目标库，当前库的移除</span><br><span class="line">expire key 秒钟 &#x2F;&#x2F;给key设置过期时间，过期后查询到的是nid空值</span><br><span class="line">ttl key &#x2F;&#x2F;查看还有多久过期，-1表示永不过期，-2表示已过期</span><br><span class="line">type key &#x2F;&#x2F;查看key是什么类型</span><br></pre></td></tr></table></figure>
+
+<h3 id="redis五种数据结构"><a href="#redis五种数据结构" class="headerlink" title="redis五种数据结构"></a>redis五种数据结构</h3><h5 id="String：字符串"><a href="#String：字符串" class="headerlink" title="String：字符串"></a>String：字符串</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">set key value</span><br><span class="line">get key</span><br><span class="line">del key</span><br><span class="line">append key value &#x2F;&#x2F;在value后追加</span><br><span class="line">strlen &#x2F;&#x2F;String长度</span><br><span class="line">INCR&#x2F;DECR KEY&#x2F;&#x2F;一定要是数字，自增自减</span><br><span class="line">INCRBY&#x2F;DECRBY KEY 步长  &#x2F;&#x2F;多步递增递减</span><br><span class="line">getrange&#x2F;setrange key index index  &#x2F;&#x2F;根据索引取值设置值</span><br><span class="line">setex key 秒钟 value   &#x2F;&#x2F;设置值的时候设置过期时间</span><br><span class="line">setnx  &#x2F;&#x2F;set if not exist</span><br><span class="line">mset key1 value1 key2 value2 &#x2F;&#x2F; 设置多个值</span><br><span class="line">mget&#x2F;msetnx</span><br></pre></td></tr></table></figure>
+
+<h5 id="List：列表"><a href="#List：列表" class="headerlink" title="List：列表"></a>List：列表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">LPUSH list1 1 2 3 4 5 (类似栈)</span><br><span class="line">LRANGE list1 0 -1</span><br><span class="line">5</span><br><span class="line">4</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">lpop list1</span><br><span class="line">&quot;5&quot;</span><br><span class="line">rpop list1</span><br><span class="line">&quot;1&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">RPUSH list2 1 2 3 4 5</span><br><span class="line">LRANGE list2 0 -1</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">lpop list2</span><br><span class="line">&quot;1&quot;</span><br><span class="line">rpop list2</span><br><span class="line">&quot;5&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lindex &#x2F;&#x2F;按照索引下标获得元素，（从上到下）</span><br><span class="line">llen  &#x2F;&#x2F;长度</span><br><span class="line">LREM KEY N Value  &#x2F;&#x2F;删除key数组中的N个Value</span><br><span class="line">LTRIM KEY 开始index 结束index &#x2F;&#x2F;截取指定范围的值后在赋值给key</span><br><span class="line">rpoplpush 源列表 目的列表  &#x2F;&#x2F;把源列表的最底的值移动到目的列表的最上面</span><br><span class="line">lset key index value &#x2F;&#x2F;根据数组下标设置成value</span><br><span class="line">linsert key before&#x2F;after 值1 值2  &#x2F;&#x2F;把值2的值插入到key数组值1的前面&#x2F;后面</span><br></pre></td></tr></table></figure>
+
+<h5 id="Set：集合"><a href="#Set：集合" class="headerlink" title="Set：集合"></a>Set：集合</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sadd  key value1，value1，value2  &#x2F;&#x2F;只会进去不重复的值 </span><br><span class="line">smembers key value 0 -1 &#x2F;&#x2F;打印全部</span><br><span class="line">sismember key value &#x2F;&#x2F;判断value是否在key里</span><br><span class="line">scard  &#x2F;&#x2F;获取集合里面的元素</span><br><span class="line">srem key value &#x2F;&#x2F;删除集合中元素</span><br><span class="line">srandmember key &#x2F;&#x2F;随机出几个数</span><br><span class="line">spop key &#x2F;&#x2F;随机出栈</span><br><span class="line">smove key1 key2 在key1里某个值  &#x2F;&#x2F;将key1里的某个值赋给key2</span><br><span class="line">sdiff set1 set2  &#x2F;&#x2F;差集，set1里有的，set2没有的</span><br><span class="line">sinter set1 set2 &#x2F;&#x2F;交集，都有的</span><br><span class="line">sunion set1 set2 &#x2F;&#x2F;并集</span><br></pre></td></tr></table></figure>
+
+<h5 id="Hash-：哈希"><a href="#Hash-：哈希" class="headerlink" title="Hash ：哈希"></a>Hash ：哈希</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">value是一个键值对</span><br><span class="line">hset key &lt;key1,value1&gt;</span><br><span class="line">hget key key1</span><br><span class="line">hmset KEY1 keyA valueA KEY2 keyB valueB</span><br><span class="line">hmgetall  </span><br><span class="line">hdel KEY1 keyA</span><br><span class="line">HEXISTS KEY1 keyA &#x2F;&#x2F;判断是否存在</span><br><span class="line">hkeys&#x2F;kvals KEY1</span><br><span class="line">hincrby&#x2F;hincrbyfloat KEY1  keyA  步长&#x2F;浮点数    &#x2F;&#x2F;自增自减</span><br><span class="line">hsetnx</span><br></pre></td></tr></table></figure>
+
+<h5 id="Zset（sorted-set）：有序集合"><a href="#Zset（sorted-set）：有序集合" class="headerlink" title="Zset（sorted set）：有序集合"></a>Zset（sorted set）：有序集合</h5><p>在set基础上，加一个score值</p>
+<p>set是 k1 v1 v2 v3 </p>
+<p>zset是 k1  score1  v1  score2  v2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">zadd  key  k1  score1  v1  score2  v2</span><br><span class="line">zrange key 0 -1  &#x2F;&#x2F;只会打印value</span><br><span class="line">zrange key 0 -1 withscores  &#x2F;&#x2F;会打印v1，score，v2，score</span><br><span class="line">zrangebyscore key 开始score 结束score &#x2F;&#x2F;  &quot;（&quot; 表示不包含， a（ b  表示大于等于a，小于b </span><br><span class="line">zrangebyscore key 开始score 结束score withscore</span><br><span class="line">zrangebyscore key 开始score 结束score limit 开始下标步 多少步  </span><br><span class="line">zrem key score对应的value  &#x2F;&#x2F;删除元素</span><br><span class="line">zacard  key  &#x2F;&#x2F;统计key里value的个数</span><br><span class="line">zcount key score区间</span><br><span class="line">zrank key value  &#x2F;&#x2F;获取下标</span><br><span class="line">zrevrank  key value &#x2F;&#x2F;获取反转后的下标</span><br><span class="line">zrevrange key 0 -1&#x2F;&#x2F;反转集合</span><br><span class="line">zrevrangebyscore key 结束score 开始score   &#x2F;&#x2F;反转集合，index也要反转</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -463,13 +410,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/">编码算法</a></p>
+        <p><span>本文标题:</span><a  href="/2020/06/27/Redis/">Redis</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
-        <p><span>发布时间:</span>2020年06月19日 - 08时53分</p>
-        <p><span>最后更新:</span>2020年06月19日 - 09时08分</p>
+        <p><span>发布时间:</span>2020年06月27日 - 17时30分</p>
+        <p><span>最后更新:</span>2020年06月27日 - 19时39分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/" title="编码算法">http://dqlcr5.coding-pages.com/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/　　作者: Kayleh" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/27/Redis/" title="Redis">http://dqlcr5.coding-pages.com/2020/06/27/Redis/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/27/Redis/　　作者: Kayleh" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -480,18 +427,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          操作系统
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2020/06/17/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">哈希算法</div>
+    <a  href="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">操作系统</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -503,7 +441,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编码算法"><span class="toc-number">1.</span> <span class="toc-text">编码算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#URL编码"><span class="toc-number">1.1.</span> <span class="toc-text">URL编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Base64编码"><span class="toc-number">1.2.</span> <span class="toc-text">Base64编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-number">1.3.</span> <span class="toc-text">小结</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">1.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在Linux下安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.在Linux下安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#启动方法："><span class="toc-number">1.1.0.1.</span> <span class="toc-text">启动方法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KEY关键字"><span class="toc-number">1.2.</span> <span class="toc-text">KEY关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redis五种数据结构"><span class="toc-number">1.3.</span> <span class="toc-text">redis五种数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#String：字符串"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">String：字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#List：列表"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">List：列表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Set：集合"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">Set：集合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Hash-：哈希"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">Hash ：哈希</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Zset（sorted-set）：有序集合"><span class="toc-number">1.3.0.5.</span> <span class="toc-text">Zset（sorted set）：有序集合</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -564,7 +502,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '编码算法', // 可选。默认为 location.href
+  id: 'Redis', // 可选。默认为 location.href
   owner: 'Kayleh',
   repo: 'Kayleh.github.io',
   oauth: {
@@ -582,13 +520,11 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="上一篇: 操作系统">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2020/06/17/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/" title="下一篇: 哈希算法">
+            <a  href="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="下一篇: 操作系统">
                 <i class="fa fa-angle-right"></i>
             </a>
         

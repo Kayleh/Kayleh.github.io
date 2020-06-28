@@ -17,11 +17,15 @@
 <meta property="og:site_name" content="Kayleh">
 <meta property="og:description" content="Redis">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/06/27/Redis/1.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/06/27/Redis/2.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/06/27/Redis/3.png">
 <meta property="article:published_time" content="2020-06-27T09:30:29.000Z">
-<meta property="article:modified_time" content="2020-06-27T11:39:58.101Z">
+<meta property="article:modified_time" content="2020-06-28T08:22:42.519Z">
 <meta property="article:author" content="Kayleh">
 <meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dqlcr5.coding-pages.com/2020/06/27/Redis/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
   
@@ -368,6 +372,9 @@
 <p>检查有没有启动Redis</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef|gref redis</span><br></pre></td></tr></table></figure>
 
+<p>检查端口是否启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i :6379</span><br></pre></td></tr></table></figure>
+
 <p>结果是没有启动的</p>
 <h5 id="启动方法："><a href="#启动方法：" class="headerlink" title="启动方法："></a>启动方法：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ redis-server &#x2F;myredis&#x2F;redis.conf</span><br></pre></td></tr></table></figure>
 
@@ -402,6 +409,219 @@
 <p>zset是 k1  score1  v1  score2  v2</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">zadd  key  k1  score1  v1  score2  v2</span><br><span class="line">zrange key 0 -1  &#x2F;&#x2F;只会打印value</span><br><span class="line">zrange key 0 -1 withscores  &#x2F;&#x2F;会打印v1，score，v2，score</span><br><span class="line">zrangebyscore key 开始score 结束score &#x2F;&#x2F;  &quot;（&quot; 表示不包含， a（ b  表示大于等于a，小于b </span><br><span class="line">zrangebyscore key 开始score 结束score withscore</span><br><span class="line">zrangebyscore key 开始score 结束score limit 开始下标步 多少步  </span><br><span class="line">zrem key score对应的value  &#x2F;&#x2F;删除元素</span><br><span class="line">zacard  key  &#x2F;&#x2F;统计key里value的个数</span><br><span class="line">zcount key score区间</span><br><span class="line">zrank key value  &#x2F;&#x2F;获取下标</span><br><span class="line">zrevrank  key value &#x2F;&#x2F;获取反转后的下标</span><br><span class="line">zrevrange key 0 -1&#x2F;&#x2F;反转集合</span><br><span class="line">zrevrangebyscore key 结束score 开始score   &#x2F;&#x2F;反转集合，index也要反转</span><br></pre></td></tr></table></figure>
 
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><h4 id="Units"><a href="#Units" class="headerlink" title="Units"></a>Units</h4><p>1.配置大小单位，开头定义了一些基本的度量单位，只支持bytes，不支持bit</p>
+<p>2.对大小写不敏感</p>
+<p><img src="/2020/06/27/Redis/1.png" alt="1593308699248"></p>
+<h4 id="INCLUDES"><a href="#INCLUDES" class="headerlink" title="INCLUDES"></a>INCLUDES</h4><p>可以通过includes包含，redis.conf可以作为总闸,包含其他</p>
+<p><img src="/2020/06/27/Redis/2.png" alt="1593308936736"></p>
+<h4 id="GENERAL"><a href="#GENERAL" class="headerlink" title="GENERAL"></a>GENERAL</h4><p>daemonize 默认为no</p>
+<p>pidfile 进程管道id文件</p>
+<p>port 默认端口</p>
+<p>tcp-backlog,backlog  511是一个连接队列,在高并发环境下你需要一个高backlog值来避免慢客户端连接问题</p>
+<p>bind 端口及网卡的绑定</p>
+<p>timeout 0 当系统空闲一段时间后中断</p>
+<p>Tcp-keepalive 单位为秒,设置为0则不会进行Keepalive检测</p>
+<p>loglevel notice 日志级别</p>
+<p>logfile 日志文件</p>
+<p>syslog-enabled 是否把日志输出到syslog中</p>
+<p>syslog-ident 指定syslog里的日志标志</p>
+<p>syslog-facility 指定syslog设备,值可以是USER或LOCAL0-LOCAL7</p>
+<p>databases 默认有16个库</p>
+<p><img src="/2020/06/27/Redis/3.png" alt="1593309132453"></p>
+<h4 id="SECURITY"><a href="#SECURITY" class="headerlink" title="SECURITY"></a>SECURITY</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">config get requirepass</span><br><span class="line">config set requirepass &quot;123456&quot;   &#x2F;&#x2F;立即生效</span><br><span class="line">访问任何命令前使用 auth 123456</span><br></pre></td></tr></table></figure>
+
+<h4 id="LIMIT"><a href="#LIMIT" class="headerlink" title="LIMIT"></a>LIMIT</h4><p>maxclients 10000   允许10000人连接</p>
+<p>maxmemory <bytes></bytes></p>
+<p>maxmemory-policy  noexiction  缓存过期清洁策略 ,默认永不过期</p>
+<ul>
+<li>volatile-lru:使用LRU算法移除key,只对设置了过期时间的键</li>
+<li>allkeys-lru:使用LRU算法移除key</li>
+<li>volatile-random:在过期集合中移除随机的key,只对设置了过期时间的键</li>
+<li>allkeys-random:移除随机的key</li>
+<li>volatile-ttl:移除那些TTL值最小的key,即那些最近要过期的key</li>
+<li>noexiction :不进行移除.针对写操作,只是返回错误信息</li>
+</ul>
+<p>LRU算法:最近最少使用的</p>
+<p>Maxmemory-samples  设置样本数量,LRU算法和最小TTL算法都并非是精确的算法,而是估算值,所以你可以设置样本的大小,redis默认会检查这么多个key并选择其中LRU的那个;</p>
+<h4 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h4><ul>
+<li><p>redis默认不是以守护进程的方式运行,可以通过该配置项修改,使用yes启动守护进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">daemonize no</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当Redis以守护进程方式运行时,Redis默认会把pid写入/var/run/redis.pid文件,可以通过pidfile指定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pid &#x2F;var&#x2F;run&#x2F;redis.pid</span><br></pre></td></tr></table></figure></li>
+<li><p>指定redis监听端口,默认端口为6379</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">port 6379</span><br></pre></td></tr></table></figure></li>
+<li><p>绑定的主机地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blind 127.0.0.1</span><br></pre></td></tr></table></figure></li>
+<li><p>当客户端闲置多长时间后关闭连接,如果指定为0,表示关闭该功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timeout 300</span><br></pre></td></tr></table></figure></li>
+<li><p>指定日志记录级别,Redis总共支持四个级别,debug、verbose、notice、warning，默认为verbose</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loglevel verbose</span><br></pre></td></tr></table></figure></li>
+<li><p>日志记录方式，默认为标准输出，如果配置Redis为守护进程方式，而这里又配置为日志记录方式为标准输出，则日志将会发送给/dev/null</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logfile stdout</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置数据库的数量，默认数据库为0，可以使用<dbid>命令在连接上指定数据库id</dbid></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">databases 16</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">save &lt;seconds&gt; &lt;changes&gt;</span><br><span class="line">Redis默认配置文件中提供了三个条件:</span><br><span class="line">save 900 1</span><br><span class="line">save 300 10</span><br><span class="line">save 60 10000</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定存储至本地数据库时是否压缩数据，默认为yes，Redis采用LZF压缩，如果为了节省CPU时间，可以关闭该选项，但会导致数据库文件变的巨大</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rdbcompression yes</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定本地数据库文件名，默认为dump.rdb</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dbfilename dump.rdb</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定本地数据库存放目录</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir .&#x2F;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置当本机为slav服务时，设置master服务的IP地址及端口，在Redis启动时，它会自动从master进行数据同步</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slaveof &lt;masterip&gt; &lt;masterport&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>当master服务先设置了密码保护，slav服务连接master的密码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">masterauth &lt;master-password&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置Redis连接密码，如果配置了连接密码，客户端在连接Redis时需要通过AUTH <password>命令提供密码，默认关闭</password></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass foobared</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置同一时间最大客户端连接数，默认无限制，Redis可以同时打开的客户端连接数为Redis进程可以打开的最大文件描述符，如果设置 maxclients 0，表示不作限制。当客户端连接数到达限制时，Redis会关闭新的连接并向客户端返回max numbers of clients reached 错误信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">maxclients 128</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定Redis最大内存限制，Redis在启动时会把数据加载到内存中，达到最大内存后，redis会先尝试清除已到期或即将到期的Key，当此方法处理后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。Redis新的vm机制，会把key存放内存，value会存放在swap区。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">maxmemory &lt;bytes&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定是否在每次更新操作后进行日志记录。Redis在默认情况下时异步的把数据写入磁盘，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为redis本身同步数据文件时按save条件来同步的，所以有的数据会在一段时间内只存在内存中。默认为no</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appendonly no</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定更新日志文件名，默认为appendonly.aof</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appendfilename appendonly.aof</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定更新日志条件，共有3个可选值：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">appendfsync everysec</span><br><span class="line">no: 表示等操作系统进行数据缓存同步到磁盘（快）</span><br><span class="line">always：表示每次更新操作后手动调用fsync()将数据写到磁盘（慢，安全）</span><br><span class="line">everysec：表示每秒同步一次（折中，默认值）</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定是否启用虚拟内存机制，默认为no。VM机制将数据分页存放，有Redis将访问量较少的页即冷数据swap到磁盘上，访问多的页面由磁盘换出到内存中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm-enabled no</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>虚拟内存文件路径,默认值为/tmp/redis.swap</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm-swap-file &#x2F;tmp&#x2F;redis.swap</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将所有大于vm-max-memory的数据存入虚拟内存，无论vm-max-memory设置多小，所有索引数据都是内存存储的(Redis的索引数据 就是keys)，也就是说，当vm-max-memory设置为0的时候，其实是所有value都存在于磁盘。默认为0</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm-max-memory 0</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Redis swap文件分成了很多page，一个对象可以保存在多个page上面，但一个page上不能被多个对象共享，vm-page-size是要根据存储的数据大小来设定的，作者建议如果存储很多小对象，page大小最好设置为32或者64bytes;如果存储很大的对象，则可以使用更大的page，如果不确定，就使用默认值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm-page-size 32</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置swap文件中的page数量，由于页表(一种表示页面空闲或使用的bitmap)是放在内存中的，在磁盘上每8个page将消耗1bytes的内存</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm-pages 134217728</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置访问swap文件的线程数，最好不要超过机器的核数，如果设置为0，那么所有对swap文件的操作都是串行的，可能会造成比较长时间的延迟。默认值为4</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm-max-threads 4</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置在向客户端应答时，是否把较小的包含并为一个包发送，默认为开启</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glueoutputbuf yes</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定在超过一定的数量或者最大的元素超过某一临界值时，采用一种特殊的哈希算法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hash-max-zipmap-entries 64</span><br><span class="line">hash-max-zipmap-value 512</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定是否激活重置哈希，默认为开启</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activerehashing yes</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定包含其他的配置文件，可以在同一主机上多个Redis实例之间同一份配置文件，而同时各个实例又拥有自己的特定配置文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inclue &#x2F;path&#x2F;to.local,conf</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis持久化RDB"><a href="#Redis持久化RDB" class="headerlink" title="Redis持久化RDB"></a>Redis持久化RDB</h2><blockquote>
+<p>在指定的时间间隔内将内存中的数据集快照写入磁盘，即Snapshot快照，它恢复时是将快照文件直接读到内存里</p>
+</blockquote>
+<h4 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h4><p>Redis会单独创建(fork)一个子进程来进行持久化，会先将数据写入到一个临时文件中，待持久化过程都结束了，再用这个临时文件，替换上次持久化好的文件。</p>
+<p>整个过程中，主进程是不进行任何IO操作的，这就确保了极高的性能。</p>
+<p>如果需要进行大规模数据的恢复，且对于数据恢复的完整性不是非常敏感，那RDB方法要比AOF方式更加的高效。</p>
+<p>RDB的缺点是最后一次持久化后的数据可能丢失。</p>
+<h4 id="Fork"><a href="#Fork" class="headerlink" title="Fork"></a>Fork</h4><blockquote>
+<p>Fork的作用是复制一个与当前进程一样的进程。新进程的所有数据（变量、环境变量、程序计数器等）</p>
+<p>数值都和原进程一致，但是是一个全新的进程，并作为原进程的子进程</p>
+</blockquote>
+<p>RDB保存的是dump.rdb文件,</p>
+<p>先拷贝一份rdb，删除原rdb，再重命名为dump.rdb，即可恢复</p>
+<h4 id="配置文件的位置"><a href="#配置文件的位置" class="headerlink" title="配置文件的位置"></a>配置文件的位置</h4><p>##########SNAPSHOT###########</p>
+<p>save 秒钟 写操作次数</p>
+<p>禁用 save “”</p>
+<p>stop-writes-on-bgsave-error   yes</p>
+<p>如果后台在save操作出现错误的时候，停止写入</p>
+<p>如果配置为no，表示你不在乎数据不一致或者有其他的手段发现和控制</p>
+<p>rgbchecksum  yes</p>
+<p>在存储快照后，</p>
+<p>命令</p>
+<p>save 手动保存</p>
+<p>bgsave Redis会在后台异步进行快照操作，快照同时还可以响应客户端请求，可以通过lastsave命令获得最后一次成功执行快照的时间</p>
+<p>执行flushall命令，也会产生dump.rdb文件，但里面是空的，无意义。</p>
+<p>config get dir获取目录</p>
+<p>停止</p>
+<p>动态所有停止RDB保存规则的方法：redis-cli config set save “”</p>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><p>1.适合大规模的数据恢复</p>
+<p>2.对数据完整性和一致性要求不高</p>
+<h3 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h3><p>1.在一定间隔时间做一次备份，所有如果redis意外down掉的话，就会丢失最后一次快照后的所有修改</p>
+<p>2.fork的时候，内存中的数据被克隆了一份，大致2倍的膨胀性需要考虑</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">内存中的      rdbSave     磁盘中的</span><br><span class="line">数据对象   ----------》    RDB文件</span><br><span class="line">            rdbload</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>RDB是一个非常紧凑的文件</p>
+</li>
+<li><p>RDB在保存文件时父进程唯一要做的就是fork出一个子进程来做，接下来的工作全部由子进程来做，</p>
+<p>父进程不需要再做其他IO操作，所以RDB持久化方式可以最大化redis的性能</p>
+</li>
+<li><p>与AOF相比，在恢复大的数据集的时候，RDB方式会更快一些。</p>
+</li>
+</ul>
+<ul>
+<li>数据丢失风险大</li>
+<li>RDB需要经常fork子进程来保存数据集到硬盘上，当数据集比较大的时候，fork的过程是非常耗时的，可能会导致Redis在一些毫秒级不能响应客户端的请求。</li>
+</ul>
 
       
     </div>
@@ -413,7 +633,7 @@
         <p><span>本文标题:</span><a  href="/2020/06/27/Redis/">Redis</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
         <p><span>发布时间:</span>2020年06月27日 - 17时30分</p>
-        <p><span>最后更新:</span>2020年06月27日 - 19时39分</p>
+        <p><span>最后更新:</span>2020年06月28日 - 16时22分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/06/27/Redis/" title="Redis">http://dqlcr5.coding-pages.com/2020/06/27/Redis/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/06/27/Redis/　　作者: Kayleh" title=""></span>
@@ -441,7 +661,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">1.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在Linux下安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.在Linux下安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#启动方法："><span class="toc-number">1.1.0.1.</span> <span class="toc-text">启动方法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KEY关键字"><span class="toc-number">1.2.</span> <span class="toc-text">KEY关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redis五种数据结构"><span class="toc-number">1.3.</span> <span class="toc-text">redis五种数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#String：字符串"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">String：字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#List：列表"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">List：列表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Set：集合"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">Set：集合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Hash-：哈希"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">Hash ：哈希</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Zset（sorted-set）：有序集合"><span class="toc-number">1.3.0.5.</span> <span class="toc-text">Zset（sorted set）：有序集合</span></a></li></ol></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">1.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在Linux下安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.在Linux下安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#启动方法："><span class="toc-number">1.1.0.1.</span> <span class="toc-text">启动方法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KEY关键字"><span class="toc-number">1.2.</span> <span class="toc-text">KEY关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redis五种数据结构"><span class="toc-number">1.3.</span> <span class="toc-text">redis五种数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#String：字符串"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">String：字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#List：列表"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">List：列表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Set：集合"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">Set：集合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Hash-：哈希"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">Hash ：哈希</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Zset（sorted-set）：有序集合"><span class="toc-number">1.3.0.5.</span> <span class="toc-text">Zset（sorted set）：有序集合</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">1.4.</span> <span class="toc-text">配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Units"><span class="toc-number">1.4.1.</span> <span class="toc-text">Units</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#INCLUDES"><span class="toc-number">1.4.2.</span> <span class="toc-text">INCLUDES</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GENERAL"><span class="toc-number">1.4.3.</span> <span class="toc-text">GENERAL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SECURITY"><span class="toc-number">1.4.4.</span> <span class="toc-text">SECURITY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LIMIT"><span class="toc-number">1.4.5.</span> <span class="toc-text">LIMIT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用配置"><span class="toc-number">1.4.6.</span> <span class="toc-text">常用配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis持久化RDB"><span class="toc-number">2.</span> <span class="toc-text">Redis持久化RDB</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#是什么？"><span class="toc-number">2.0.1.</span> <span class="toc-text">是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fork"><span class="toc-number">2.0.2.</span> <span class="toc-text">Fork</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置文件的位置"><span class="toc-number">2.0.3.</span> <span class="toc-text">配置文件的位置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优势"><span class="toc-number">2.1.</span> <span class="toc-text">优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#劣势"><span class="toc-number">2.2.</span> <span class="toc-text">劣势</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">2.2.1.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

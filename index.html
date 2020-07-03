@@ -333,7 +333,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>网络连接的三种形式</p>
+        <a id="more"></a>
+
+<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>网络连接的三种形式</p>
 <p><strong>桥连接</strong>：Linux可以和其他系统通信，但是会造成IP冲突</p>
 <p><strong>NAT</strong>：网络地址转换方式，Linux可以访问外网，不会造成IP冲突</p>
 <p><strong>主机模式</strong>：你的Linux是一个独立的主机，不能访问外网</p>
@@ -396,7 +398,36 @@
 <p>箭头指向的是ip地址。</p>
 <p>填写到xshell</p>
 <p><img src="/2020/07/02/Linux/1593769808715.png" alt="1593769808715"></p>
-<p>Ubuntu需要配置</p>
+<p>Ubuntu需要配置sshd服务</p>
+<p>输入Linux的用户名和密码。成功连接。</p>
+<p>如果远程使用命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<p>服务器也会重启</p>
+<h3 id="文件的上传下载XFTP"><a href="#文件的上传下载XFTP" class="headerlink" title="文件的上传下载XFTP"></a>文件的上传下载XFTP</h3><p>协议选择SFTP</p>
+<p>端口号选择22</p>
+<p><img src="/2020/07/02/Linux/1593782048647.png" alt="1593782048647"></p>
+<p><strong>乱码解决</strong>：<img src="/2020/07/02/Linux/1593782224041.png" alt="1593782224041"></p>
+<p>选择要传输的文件，右键传输就可以了。</p>
+<h3 id="Vi和Vim编辑器"><a href="#Vi和Vim编辑器" class="headerlink" title="Vi和Vim编辑器"></a>Vi和Vim编辑器</h3><p> <img src="/2020/07/02/Linux/078207F0-B204-4464-AAEF-982F45EDDAE9.jpg" alt="img"> </p>
+<h4 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h4><p>在正常模式下，我们可以使用快捷键。</p>
+<p>以 vim 打开一个档案就直接进入一般模式了(这是默认的模式)。在这个模式中， 你可以使用『上下左右』按键来移动光标，你可以使用『删除字符』或『删除整行』来处理档案内容， 也可以使用『复制、贴上』来处理你的文件数据。</p>
+<h4 id="插入模式-编辑模式"><a href="#插入模式-编辑模式" class="headerlink" title="插入模式/编辑模式"></a>插入模式/编辑模式</h4><p>在模式下，程序员可以输入内容。</p>
+<p>按下 i, I 等任何一个字母之后才会进入编辑模式, 一般来说按 i 即可</p>
+<h4 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h4><p>在这个模式当中， 可以提供你相关指令，完成读取、存盘、替换、离开 vim 、显示行号等的动作则是在此模式中达成的！</p>
+<h4 id="各模式之间的互相转换"><a href="#各模式之间的互相转换" class="headerlink" title="各模式之间的互相转换"></a>各模式之间的互相转换</h4><p><img src="/2020/07/02/Linux/1593783036444.png" alt="1593783036444"></p>
+<h4 id="快捷键的使用案例"><a href="#快捷键的使用案例" class="headerlink" title="快捷键的使用案例"></a>快捷键的使用案例</h4><p>1)  拷贝当前行   yy , 拷贝当前行向下的 5 行 5yy，并粘贴（p）。</p>
+<p>2)  删除当前行  dd  , 删除当前行向下的 5 行 5dd</p>
+<p>3)  在文件中查找某个单词  [命令行下  /关键字  ， 回车  查找  ,    输入 n 就是查找下一个 ],查询</p>
+<p>hello.</p>
+<p>4)  设置文件的行号，取消文件的行号.[命令行下  : set nu 和  :set nonu]</p>
+<p>5)  编辑 /etc/profile 文件，使用快捷键到底文档的最末行[G]和最首行[gg],注意这些都是在正常模式下执行的。</p>
+<p>6)  在一个文件中输入  “hello” ,然后又撤销这个动作，再正常模式下输入 u</p>
+<p>7)  编辑  /etc/profile 文件，并将光标移动到  第 20 行  shift+g</p>
+<p>第一步：显示行号 :set nu </p>
+<p>第二步：输入 20 这个数</p>
+<p>第三步: 输入 shift+g</p>
+<p> <img src="/2020/07/02/Linux/vi-vim-cheat-sheet-sch.gif" alt="img"> </p>
 
       
     </div>

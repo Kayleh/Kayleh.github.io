@@ -364,6 +364,39 @@
 <p>/var 变量，日志</p>
 <p><img src="/2020/07/02/Linux/clip_image004.png" alt="img">  </p>
 <p><img src="/2020/07/02/Linux/clip_image0014.png" alt="img">  </p>
+<h3 id="远程登陆"><a href="#远程登陆" class="headerlink" title="远程登陆"></a>远程登陆</h3><p>XShell</p>
+<ul>
+<li>需要Linux开启一个sshd服务22</li>
+</ul>
+<p>终端打开setup，打开系统服务，找到sshd，空格键打开服务。tab键退出。</p>
+<p>该服务会监听22端口。</p>
+<p><strong>ubuntu方法：</strong> </p>
+<p>先试着开启SSH服务</p>
+<p>在使用SSH之前，可以先检查SSH服务有没有开启。使用命令：sudo ps -e | grep ssh来查看，如果返回的结果是“xxxx? 00:00:00 sshd”,代表服务开启。那个四个x代表四位数字，每台机数字不一样的，如图：</p>
+<p><img src="/2020/07/02/Linux/894368-20181110064124048-505138018.png" alt="img"></p>
+<p>如果没有反应或者其他结果，再试着开启SSH服务。使用命令sudo /etc/init.d/ssh start来开启服务，如图：</p>
+<p><img src="/2020/07/02/Linux/894368-20181110064515920-1613146923.png" alt="img"></p>
+<p>如果是图中结果，说明没有安装SSH服务，此时需要安装 SSH服务，为了能提高安装成功率，建议先更新源：sudo apt-get update更新安装源，如图：</p>
+<p><img src="/2020/07/02/Linux/894368-20181110065024263-2090018697.png" alt="img"></p>
+<p>然后安装SSH服务，使用命令：sudo apt-get install openssh-server。如图：</p>
+<p><img src="/2020/07/02/Linux/894368-20181110065349975-237913277.png" alt="img"></p>
+<p>等待安装结束即可。然后再次查看服务有没有启动：sudo ps -e | grep ssh：</p>
+<p> <img src="/2020/07/02/Linux/894368-20181110065558878-1157322075.png" alt="img"></p>
+<p>有sshd那个东西，说明服务启动了，如果需要再次确认或者没有图中的结果，使用命令来启动:sudo /etc/init.d/ssh start:</p>
+<p><img src="/2020/07/02/Linux/894368-20181110065759521-304903884.png" alt="img"></p>
+<p>看到服务starting了，服务成功开启。另外，还有几条命令需要记住：</p>
+<p>sudo service ssh status 查看服务状态：</p>
+<p><img src="/2020/07/02/Linux/894368-20181110070229962-1792308008.png" alt="img"></p>
+<p>sudo service ssh stop 关闭服务：</p>
+<p>sudo service ssh restart 重启服务</p>
+<p>Xshell新建会话，先查看linux的ip地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/02/Linux/1593769665771.png" alt="1593769665771"></p>
+<p>箭头指向的是ip地址。</p>
+<p>填写到xshell</p>
+<p><img src="/2020/07/02/Linux/1593769808715.png" alt="1593769808715"></p>
+<p>Ubuntu需要配置</p>
 
       
     </div>

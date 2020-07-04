@@ -41,8 +41,27 @@
 <meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593843382522.png">
 <meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593844669367.png">
 <meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593845537786.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593864434878.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593864576338.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593864639589.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593865387296.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593865717951.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593865847037.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593866461439.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593866504885.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593866558942.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593866819855.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593866872283.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593866984875.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593867122713.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593867129607.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593867173773.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593867219396.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593867266232.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593867293834.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/02/Linux/1593867344404.png">
 <meta property="article:published_time" content="2020-07-02T13:26:15.000Z">
-<meta property="article:modified_time" content="2020-07-04T09:30:38.517Z">
+<meta property="article:modified_time" content="2020-07-04T13:41:09.582Z">
 <meta property="article:author" content="Kayleh">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -538,7 +557,8 @@
 <p>help cd</p>
 <h3 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h3><h4 id="pwd-指令"><a href="#pwd-指令" class="headerlink" title="pwd 指令"></a>pwd 指令</h4><p>pwd   (功能描述：显示当前工作目录的绝对路径)</p>
 <h4 id="ls-指令"><a href="#ls-指令" class="headerlink" title="ls 指令"></a>ls 指令</h4><p>ls [ 选 项] [目录或是文件]</p>
-<h4 id="cd-指令"><a href="#cd-指令" class="headerlink" title="cd 指令"></a>cd 指令</h4><p>cd  [参数] (功能描述：切换到指定目录)</p>
+<h4 id="cd-指令"><a href="#cd-指令" class="headerlink" title="cd 指令"></a>cd 指令</h4><p>cd .当前目录(不变)</p>
+<p>cd  [参数] (功能描述：切换到指定目录)</p>
 <p>cd ~ 或者 cd ：回到自己的家目录</p>
 <p>cd .. 回到当前目录的上一级目录</p>
 <p>cd   /root  使用绝对路径切换到 root 目录</p>
@@ -591,7 +611,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tail 文件			（功能描述：查看文件后 10 行内容）</span><br><span class="line">tail -n 5 文件  	（功能描述：查看文件后 5 行内容，5 可以是任意行数）</span><br><span class="line">tail -f	文件		（功能描述：实时追踪该文档的所有更新，工作经常使用）</span><br></pre></td></tr></table></figure>
 
 <h4 id="ln-指令"><a href="#ln-指令" class="headerlink" title="ln 指令"></a>ln 指令</h4><p>软链接也叫符号链接，类似于 windows 里的快捷方式，主要存放了链接其他文件的路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s [原文件或目录] [软链接名] （功能描述：给原文件创建一个软链接）</span><br><span class="line">ln -s &#x2F;root linkToRoot		在&#x2F;home 目录下创建一个软连接 linkToRoot，连接到 &#x2F;root 目录</span><br><span class="line">rm -rf  linkToRoot          删除软连接</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ln -s [原文件或目录] [软链接名] （功能描述：给原文件创建一个软链接）</span><br><span class="line">ln -s &#x2F;root linkToRoot		在&#x2F;home 目录下创建一个软连接 linkToRoot，连接到 &#x2F;root 目录</span><br><span class="line">rm -rf  linkToRoot          删除软连接</span><br><span class="line">ln 硬链接 </span><br><span class="line">##软链接可以跨文件系统，硬链接不可以；软链接可以对一个不存在的文件名（filename）进行链接（当然此时如果你vi这个软链接文件，linux会自动新建一个文件名为filename的文件），硬链接不可以（其文件必须存在，inode必须存在）；软链接可以对目录进行连接，硬链接不可以。两种链接都可以通过命令 ln 来创建。ln 默认创建的是硬链接。使用 -s 开关可以创建软链接。</span><br></pre></td></tr></table></figure>
 
 <p>当我们使用 pwd 指令查看目录时，仍然看到的是软链接所在目录。</p>
 <h4 id="history-指令"><a href="#history-指令" class="headerlink" title="history 指令"></a>history 指令</h4><p>查看已经执行过历史命令,也可以执行历史指令</p>
@@ -640,38 +660,137 @@
 
 
 
+<h3 id="组管理和权限管理"><a href="#组管理和权限管理" class="headerlink" title="组管理和权限管理"></a>组管理和权限管理</h3><h4 id="Linux-组基本介绍"><a href="#Linux-组基本介绍" class="headerlink" title="Linux 组基本介绍"></a>Linux 组基本介绍</h4><p>在 linux 中的每个用户必须属于一个组，不能独立于组外。在 linux 中每个文件有所有者、所在组、其它组的概念。</p>
+<p>1)    所有者<br>2)    所在组<br>3)    其它组<br>4)    改变用户所在的组</p>
+<p><img src="/2020/07/02/Linux/1593864434878.png" alt="1593864434878"></p>
+<h4 id="文件-目录-所有者"><a href="#文件-目录-所有者" class="headerlink" title="文件/目录 所有者"></a>文件/目录 所有者</h4><p>一般为文件的创建者,谁创建了该文件，就自然的成为该文件的所有者。</p>
+<h3 id="查看文件的所有者"><a href="#查看文件的所有者" class="headerlink" title="查看文件的所有者"></a>查看文件的所有者</h3><p>指令：ls  -ahl</p>
+<p>创建一个组 police,再创建一个用户 tom,将 tom 放在 police 组 ,然后使用 tom 来创建一个文件 ok.txt</p>
+<p><img src="/2020/07/02/Linux/1593864576338.png" alt="1593864576338"></p>
+<p>所有者👆</p>
+<h4 id="修改文件所有者"><a href="#修改文件所有者" class="headerlink" title="修改文件所有者"></a>修改文件所有者</h4><p>指令：chown 用户名 文件名</p>
+<p>使用 root 创建一个文件 apple.txt ，然后将其所有者修改成 tom</p>
+<p><img src="/2020/07/02/Linux/1593864639589.png" alt="1593864639589"></p>
+<h4 id="组的创建"><a href="#组的创建" class="headerlink" title="组的创建"></a>组的创建</h4><p>groupadd 组 名</p>
+<p>创建一个组, ,monster</p>
+<p>创建一个用户  fox ，并放入到 monster 组中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd monster</span><br><span class="line">useradd -g monster fox</span><br><span class="line">id fox &#x2F;&#x2F;查看</span><br></pre></td></tr></table></figure>
 
+<h4 id="文件-目录-所在组"><a href="#文件-目录-所在组" class="headerlink" title="文件/目录 所在组"></a>文件/目录 所在组</h4><p>当某个用户创建了一个文件后，默认这个文件的所在组就是该用户所在的组。</p>
+<h4 id="查看文件-目录所在组"><a href="#查看文件-目录所在组" class="headerlink" title="查看文件/目录所在组"></a>查看文件/目录所在组</h4><p>ls –ahl </p>
+<h4 id="修改文件所在的组"><a href="#修改文件所在的组" class="headerlink" title="修改文件所在的组"></a>修改文件所在的组</h4><p>chgrp 组名 文件名</p>
+<p>使用 root 用户创建文件 orange.txt ,看看当前这个文件属于哪个组，然后将这个文件所在组，修改到 police 组 。</p>
+<p><img src="/2020/07/02/Linux/1593865387296.png" alt="1593865387296"></p>
+<h4 id="其它组"><a href="#其它组" class="headerlink" title="其它组"></a>其它组</h4><p>除文件的所有者和所在组的用户外，系统的其它用户都是文件的其它组.</p>
+<h4 id="改变用户所在组"><a href="#改变用户所在组" class="headerlink" title="改变用户所在组"></a>改变用户所在组</h4><p>在添加用户时，可以指定将该用户添加到哪个组中，同样的用 root 的管理权限可以改变某个用户所在的组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usermod   –g    组名  用户名</span><br><span class="line">usermod –d  目录名 用户名  改变该用户</span><br></pre></td></tr></table></figure>
 
+<p>创建一个土匪组（bandit）将 tom 这个用户从原来所在的 police 组，修改到 bandit(土匪) 组</p>
+<p><img src="/2020/07/02/Linux/1593865717951.png" alt="1593865717951"></p>
+<h3 id="权限的基本介绍"><a href="#权限的基本介绍" class="headerlink" title="权限的基本介绍"></a>权限的基本介绍</h3><p>ls  -l 中显示的内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rwxrw-r-- 1 root root 1213 Feb 2 09:39 abc</span><br></pre></td></tr></table></figure>
 
+<p>0-9 位说明</p>
+<p>1)第 0 位确定文件类型(d, - , l , c , b)</p>
+<p>2)第 1-3 位确定所有者（该文件的所有者）拥有该文件的权限。—User</p>
+<p>3)第 4-6 位确定所属组（同用户组的）拥有该文件的权限，—Group</p>
+<p>4)第 7-9 位确定其他用户拥有该文件的权限 —Other</p>
+<p><img src="/2020/07/02/Linux/1593865847037.png" alt="1593865847037"></p>
+<h3 id="rwx权限详解"><a href="#rwx权限详解" class="headerlink" title="rwx权限详解"></a>rwx权限详解</h3><h4 id="rwx作用到文件"><a href="#rwx作用到文件" class="headerlink" title="rwx作用到文件"></a>rwx作用到文件</h4><p>1) [ r ]代表可读(read): 可以读取,查看</p>
+<p>2)  [ w ]代表可写(write): 可以修改,但是不代表可以删除该文件,删除一个文件的前提条件是对该文件所在的目录有写权限，才能删除该文件.</p>
+<p>3) [ x ]代表可执行(execute):可以被执行</p>
+<h4 id="rwx作用到目录"><a href="#rwx作用到目录" class="headerlink" title="rwx作用到目录"></a>rwx作用到目录</h4><p>1) [ r ]代表可读(read): 可以读取，ls 查看目录内容</p>
+<p>2) [ w ]代表可写(write): 可以修改,目录内创建+删除+重命名目录</p>
+<p>3) [ x ]代表可执行(execute):可以进入该目录</p>
+<h3 id="文件及目录权限实际案例"><a href="#文件及目录权限实际案例" class="headerlink" title="文件及目录权限实际案例"></a>文件及目录权限实际案例</h3><p>ls  -l 中显示的内容如下：</p>
+<p>-rwxrw-r– 1 root root 1213 Feb 2 09:39 abc</p>
+<p>10 个字符确定不同用户能对文件干什么</p>
+<p>第一个字符代表文件类型： 文件 (-),目录(d),链接(l)<br>其余字符每 3 个一组(rwx) 读(r) 写(w) 执行(x)<br>第一组 rwx : 文件拥有者的权限是读、写和执行<br>第二组 rw- :  与文件拥有者同一组的用户的权限是读、写但不能执行</p>
+<p>第三组 r– :    不与文件拥有者同组的其他用户的权限是读不能写和执行</p>
+<p>可用数字表示为: r=4,w=2,x=1  因此 rwx=4+2+1=7</p>
+<table>
+<thead>
+<tr>
+<th><strong>1</strong></th>
+<th><strong>文件：硬连接数或    目录：子目录数</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>root</strong></td>
+<td><strong>用户</strong></td>
+</tr>
+<tr>
+<td><strong>root</strong></td>
+<td><strong>组</strong></td>
+</tr>
+<tr>
+<td><strong>1213</strong></td>
+<td><strong>文件大小(字节)，如果是文件夹，显示 4096 字节</strong></td>
+</tr>
+<tr>
+<td><strong>Feb 2 09:39</strong></td>
+<td><strong>最后修改日期</strong></td>
+</tr>
+<tr>
+<td><strong>abc</strong></td>
+<td><strong>文件名</strong></td>
+</tr>
+</tbody></table>
+<p>​    </p>
+<h4 id="修改权限-chmod"><a href="#修改权限-chmod" class="headerlink" title="修改权限-chmod"></a>修改权限-chmod</h4><p>通过 chmod 指令，可以修改文件或者目录的权限</p>
+<h4 id="第一种方式：-、-、-变更权限"><a href="#第一种方式：-、-、-变更权限" class="headerlink" title="第一种方式：+ 、-、= 变更权限"></a>第一种方式：+ 、-、= 变更权限</h4><p>u:所有者  g:所有组  o:其他人  a:所有人(u、g、o 的总和)</p>
+<p>1) chmod   u=rwx,g=rx,o=x   文件目录名</p>
+<p>2) chmod   o+w    文件目录名</p>
+<p>3) chmod   a-x    文件目录名</p>
+<p>给 abc 文件 的所有者读写执行的权限，给所在组读执行权限，给其它组读执行权限。<br><img src="/2020/07/02/Linux/1593866461439.png" alt="1593866461439"></p>
+<p>给 abc 文件的所有者除去执行的权限，增加组写的权限</p>
+<p><img src="/2020/07/02/Linux/1593866504885.png" alt="1593866504885"></p>
+<p>给 abc 文件的所有用户添加读的权限  </p>
+<p><img src="/2020/07/02/Linux/1593866558942.png" alt="1593866558942"></p>
+<h4 id="第二种方式：通过数字变更权限"><a href="#第二种方式：通过数字变更权限" class="headerlink" title="第二种方式：通过数字变更权限"></a>第二种方式：通过数字变更权限</h4><p>规则：r=4 w=2 x=1,rwx=4+2+1=7 </p>
+<p>chmod u=rwx,g=rx,o=x    文件目录名</p>
+<p>相当于  chmod  751    文件目录名</p>
+<p>将  /home/abc.txt    文件的权限修改成    rwxr-xr-x, 使用给数字的方式实现：</p>
+<p>rwx = 4+2+1 = 7</p>
+<p>r-x = 4+1=5</p>
+<p>r-x = 4+1 =5</p>
+<p>指令：chmod 755 /home/abc.txt</p>
+<h4 id="修改文件所有者-chown"><a href="#修改文件所有者-chown" class="headerlink" title="修改文件所有者-chown"></a>修改文件所有者-chown</h4><p>chown  newowner  file                          改变文件的所有者</p>
+<p>chown newowner:newgroup file     改变用户的所有者和所有组    </p>
+<p>-R                       如果是目录 则使其下所有子文件或目录递归生效</p>
+<p>请将 /home/abc .txt 文件的所有者修改成 tom</p>
+<p><img src="/2020/07/02/Linux/1593866819855.png" alt="1593866819855"></p>
+<p>请将 /home/kkk 目录下所有的文件和目录的所有者都修改成 tom</p>
+<p>首选我们应该使用 root 操作。  </p>
+<p><img src="/2020/07/02/Linux/1593866872283.png" alt="1593866872283"></p>
+<h4 id="修改文件所在组-chgrp"><a href="#修改文件所在组-chgrp" class="headerlink" title="修改文件所在组-chgrp"></a>修改文件所在组-chgrp</h4><p>chgrp newgroup file  改变文件的所有组</p>
+<p>1)    请将 /home/abc .txt 文件的所在组修改成 bandit (土匪)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chgrp bandit /home/abc.txt</span><br></pre></td></tr></table></figure>
 
+<p>2)    请将 /home/kkk 目录下所有的文件和目录的所在组都修改成 bandit(土匪)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chgrp -R bandit &#x2F;home&#x2F;kkk</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p><img src="/2020/07/02/Linux/1593866984875.png" alt="1593866984875"></p>
+<h3 id="最佳实践-警察和土匪游戏"><a href="#最佳实践-警察和土匪游戏" class="headerlink" title="最佳实践-警察和土匪游戏"></a>最佳实践-警察和土匪游戏</h3><p>police警察     bandit土匪</p>
+<p>jack, jerry: 警 察</p>
+<p>xh, xq: 土 匪</p>
+<p>(1)  创建组</p>
+<p>bash&gt; groupadd police </p>
+<p>bash&gt; groupadd bandit</p>
+<p>(2)  创建用户 </p>
+<p> <img src="/2020/07/02/Linux/1593867122713.png" alt="1593867122713"></p>
+<p> <img src="/2020/07/02/Linux/1593867129607.png" alt="1593867129607"></p>
+<p> (3)    jack 创建一个文件，自己可以读写，本组人可以读，其它组没人任何权限</p>
+<p> <img src="/2020/07/02/Linux/1593867173773.png" alt="1593867173773"></p>
+<p> (4)   jack 修改该文件，让其它组人可以读, 本组人可以读写</p>
+<p> <img src="/2020/07/02/Linux/1593867219396.png" alt="1593867219396"></p>
+<p> (5)   xh 投靠 警察，看看是否可以读写. </p>
+<p>先用 root 修改 xh 的组 ：</p>
+<p> <img src="/2020/07/02/Linux/1593867266232.png" alt="1593867266232"></p>
+<p>使用 jack 给他的家目录 /home/jack 的所在组一个 rx 的权限</p>
+<p> <img src="/2020/07/02/Linux/1593867293834.png" alt="1593867293834"></p>
+<p>xh 需要重新注销在到 jack 目录就可以操作    jack 的文件  </p>
+<p><img src="/2020/07/02/Linux/1593867344404.png" alt="1593867344404"></p>
 
       
     </div>
@@ -683,7 +802,7 @@
         <p><span>本文标题:</span><a  href="/2020/07/02/Linux/">Linux</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
         <p><span>发布时间:</span>2020年07月02日 - 21时26分</p>
-        <p><span>最后更新:</span>2020年07月04日 - 17时30分</p>
+        <p><span>最后更新:</span>2020年07月04日 - 21时41分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/07/02/Linux/" title="Linux">http://dqlcr5.coding-pages.com/2020/07/02/Linux/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/07/02/Linux/　　作者: Kayleh" title=""></span>
@@ -713,7 +832,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机"><span class="toc-number">1.</span> <span class="toc-text">虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程登陆"><span class="toc-number">2.</span> <span class="toc-text">远程登陆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的上传下载XFTP"><span class="toc-number">3.</span> <span class="toc-text">文件的上传下载XFTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vi和Vim编辑器"><span class="toc-number">4.</span> <span class="toc-text">Vi和Vim编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#正常模式"><span class="toc-number">4.1.</span> <span class="toc-text">正常模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入模式-编辑模式"><span class="toc-number">4.2.</span> <span class="toc-text">插入模式&#x2F;编辑模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令行模式"><span class="toc-number">4.3.</span> <span class="toc-text">命令行模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#各模式之间的互相转换"><span class="toc-number">4.4.</span> <span class="toc-text">各模式之间的互相转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快捷键的使用案例"><span class="toc-number">4.5.</span> <span class="toc-text">快捷键的使用案例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关机-amp-重启命令"><span class="toc-number">5.</span> <span class="toc-text">关机&amp;重启命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本介绍"><span class="toc-number">5.1.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意细节"><span class="toc-number">5.2.</span> <span class="toc-text">注意细节</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户登录和注销"><span class="toc-number">6.</span> <span class="toc-text">用户登录和注销</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用细节"><span class="toc-number">6.1.</span> <span class="toc-text">使用细节</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户管理"><span class="toc-number">7.</span> <span class="toc-text">用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加用户"><span class="toc-number">7.1.</span> <span class="toc-text">添加用户</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本语法"><span class="toc-number">7.1.1.</span> <span class="toc-text">基本语法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置密码"><span class="toc-number">7.2.</span> <span class="toc-text">设置密码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除用户"><span class="toc-number">7.3.</span> <span class="toc-text">删除用户</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本语法-1"><span class="toc-number">7.3.1.</span> <span class="toc-text">基本语法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查询用户信息"><span class="toc-number">7.4.</span> <span class="toc-text">查询用户信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本语法-2"><span class="toc-number">7.4.1.</span> <span class="toc-text">基本语法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#切换用户"><span class="toc-number">7.5.</span> <span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户组"><span class="toc-number">7.6.</span> <span class="toc-text">用户组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户和组的相关文件"><span class="toc-number">7.7.</span> <span class="toc-text">用户和组的相关文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行级别"><span class="toc-number">8.</span> <span class="toc-text">运行级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#指定运行级别"><span class="toc-number">8.1.</span> <span class="toc-text">指定运行级别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#如何找回-root-密码"><span class="toc-number">8.1.1.</span> <span class="toc-text">如何找回 root 密码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获得帮助信息"><span class="toc-number">9.</span> <span class="toc-text">获得帮助信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#man"><span class="toc-number">9.1.</span> <span class="toc-text">man</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#help-指令"><span class="toc-number">9.2.</span> <span class="toc-text">help 指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件目录类"><span class="toc-number">10.</span> <span class="toc-text">文件目录类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pwd-指令"><span class="toc-number">10.1.</span> <span class="toc-text">pwd 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ls-指令"><span class="toc-number">10.2.</span> <span class="toc-text">ls 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cd-指令"><span class="toc-number">10.3.</span> <span class="toc-text">cd 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkdir-指令"><span class="toc-number">10.4.</span> <span class="toc-text">mkdir 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rmdir-指令"><span class="toc-number">10.5.</span> <span class="toc-text">rmdir 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#touch-指令"><span class="toc-number">10.6.</span> <span class="toc-text">touch 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cp-指令"><span class="toc-number">10.7.</span> <span class="toc-text">cp 指令[*]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rm-指令"><span class="toc-number">10.8.</span> <span class="toc-text">rm 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mv-指令"><span class="toc-number">10.9.</span> <span class="toc-text">mv 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cat-指令"><span class="toc-number">10.10.</span> <span class="toc-text">cat 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#more-指令"><span class="toc-number">10.11.</span> <span class="toc-text">more 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less-指令"><span class="toc-number">10.12.</span> <span class="toc-text">less 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gt-指令-和-gt-gt-指令"><span class="toc-number">10.13.</span> <span class="toc-text">&gt; 指令 和 &gt;&gt; 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#echo-指令"><span class="toc-number">10.14.</span> <span class="toc-text">echo 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#head-指令"><span class="toc-number">10.15.</span> <span class="toc-text">head 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tail-指令"><span class="toc-number">10.16.</span> <span class="toc-text">tail 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ln-指令"><span class="toc-number">10.17.</span> <span class="toc-text">ln 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history-指令"><span class="toc-number">10.18.</span> <span class="toc-text">history 指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间日期类"><span class="toc-number">11.</span> <span class="toc-text">时间日期类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#date-指令-显示当前日期"><span class="toc-number">11.1.</span> <span class="toc-text">date 指令-显示当前日期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#date-指令-设置日期"><span class="toc-number">11.2.</span> <span class="toc-text">date 指令-设置日期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看日历指令"><span class="toc-number">11.3.</span> <span class="toc-text">查看日历指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索查找类"><span class="toc-number">12.</span> <span class="toc-text">搜索查找类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find-指令"><span class="toc-number">12.1.</span> <span class="toc-text">find 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#locate-指令"><span class="toc-number">12.2.</span> <span class="toc-text">locate 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep-指令和-管道符号"><span class="toc-number">12.3.</span> <span class="toc-text">grep 指令和 管道符号 |</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩和解压类"><span class="toc-number">13.</span> <span class="toc-text">压缩和解压类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#gzip-gunzip-指令"><span class="toc-number">13.1.</span> <span class="toc-text">gzip&#x2F;gunzip 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zip-unzip-指令"><span class="toc-number">13.2.</span> <span class="toc-text">zip&#x2F;unzip 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tar-指令"><span class="toc-number">13.3.</span> <span class="toc-text">tar 指令</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机"><span class="toc-number">1.</span> <span class="toc-text">虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程登陆"><span class="toc-number">2.</span> <span class="toc-text">远程登陆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的上传下载XFTP"><span class="toc-number">3.</span> <span class="toc-text">文件的上传下载XFTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vi和Vim编辑器"><span class="toc-number">4.</span> <span class="toc-text">Vi和Vim编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#正常模式"><span class="toc-number">4.1.</span> <span class="toc-text">正常模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入模式-编辑模式"><span class="toc-number">4.2.</span> <span class="toc-text">插入模式&#x2F;编辑模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令行模式"><span class="toc-number">4.3.</span> <span class="toc-text">命令行模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#各模式之间的互相转换"><span class="toc-number">4.4.</span> <span class="toc-text">各模式之间的互相转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快捷键的使用案例"><span class="toc-number">4.5.</span> <span class="toc-text">快捷键的使用案例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关机-amp-重启命令"><span class="toc-number">5.</span> <span class="toc-text">关机&amp;重启命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本介绍"><span class="toc-number">5.1.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意细节"><span class="toc-number">5.2.</span> <span class="toc-text">注意细节</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户登录和注销"><span class="toc-number">6.</span> <span class="toc-text">用户登录和注销</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用细节"><span class="toc-number">6.1.</span> <span class="toc-text">使用细节</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户管理"><span class="toc-number">7.</span> <span class="toc-text">用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加用户"><span class="toc-number">7.1.</span> <span class="toc-text">添加用户</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本语法"><span class="toc-number">7.1.1.</span> <span class="toc-text">基本语法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置密码"><span class="toc-number">7.2.</span> <span class="toc-text">设置密码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除用户"><span class="toc-number">7.3.</span> <span class="toc-text">删除用户</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本语法-1"><span class="toc-number">7.3.1.</span> <span class="toc-text">基本语法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查询用户信息"><span class="toc-number">7.4.</span> <span class="toc-text">查询用户信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本语法-2"><span class="toc-number">7.4.1.</span> <span class="toc-text">基本语法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#切换用户"><span class="toc-number">7.5.</span> <span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户组"><span class="toc-number">7.6.</span> <span class="toc-text">用户组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户和组的相关文件"><span class="toc-number">7.7.</span> <span class="toc-text">用户和组的相关文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行级别"><span class="toc-number">8.</span> <span class="toc-text">运行级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#指定运行级别"><span class="toc-number">8.1.</span> <span class="toc-text">指定运行级别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#如何找回-root-密码"><span class="toc-number">8.1.1.</span> <span class="toc-text">如何找回 root 密码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获得帮助信息"><span class="toc-number">9.</span> <span class="toc-text">获得帮助信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#man"><span class="toc-number">9.1.</span> <span class="toc-text">man</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#help-指令"><span class="toc-number">9.2.</span> <span class="toc-text">help 指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件目录类"><span class="toc-number">10.</span> <span class="toc-text">文件目录类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pwd-指令"><span class="toc-number">10.1.</span> <span class="toc-text">pwd 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ls-指令"><span class="toc-number">10.2.</span> <span class="toc-text">ls 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cd-指令"><span class="toc-number">10.3.</span> <span class="toc-text">cd 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkdir-指令"><span class="toc-number">10.4.</span> <span class="toc-text">mkdir 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rmdir-指令"><span class="toc-number">10.5.</span> <span class="toc-text">rmdir 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#touch-指令"><span class="toc-number">10.6.</span> <span class="toc-text">touch 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cp-指令"><span class="toc-number">10.7.</span> <span class="toc-text">cp 指令[*]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rm-指令"><span class="toc-number">10.8.</span> <span class="toc-text">rm 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mv-指令"><span class="toc-number">10.9.</span> <span class="toc-text">mv 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cat-指令"><span class="toc-number">10.10.</span> <span class="toc-text">cat 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#more-指令"><span class="toc-number">10.11.</span> <span class="toc-text">more 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less-指令"><span class="toc-number">10.12.</span> <span class="toc-text">less 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gt-指令-和-gt-gt-指令"><span class="toc-number">10.13.</span> <span class="toc-text">&gt; 指令 和 &gt;&gt; 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#echo-指令"><span class="toc-number">10.14.</span> <span class="toc-text">echo 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#head-指令"><span class="toc-number">10.15.</span> <span class="toc-text">head 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tail-指令"><span class="toc-number">10.16.</span> <span class="toc-text">tail 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ln-指令"><span class="toc-number">10.17.</span> <span class="toc-text">ln 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history-指令"><span class="toc-number">10.18.</span> <span class="toc-text">history 指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间日期类"><span class="toc-number">11.</span> <span class="toc-text">时间日期类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#date-指令-显示当前日期"><span class="toc-number">11.1.</span> <span class="toc-text">date 指令-显示当前日期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#date-指令-设置日期"><span class="toc-number">11.2.</span> <span class="toc-text">date 指令-设置日期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看日历指令"><span class="toc-number">11.3.</span> <span class="toc-text">查看日历指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索查找类"><span class="toc-number">12.</span> <span class="toc-text">搜索查找类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find-指令"><span class="toc-number">12.1.</span> <span class="toc-text">find 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#locate-指令"><span class="toc-number">12.2.</span> <span class="toc-text">locate 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep-指令和-管道符号"><span class="toc-number">12.3.</span> <span class="toc-text">grep 指令和 管道符号 |</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩和解压类"><span class="toc-number">13.</span> <span class="toc-text">压缩和解压类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#gzip-gunzip-指令"><span class="toc-number">13.1.</span> <span class="toc-text">gzip&#x2F;gunzip 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zip-unzip-指令"><span class="toc-number">13.2.</span> <span class="toc-text">zip&#x2F;unzip 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tar-指令"><span class="toc-number">13.3.</span> <span class="toc-text">tar 指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组管理和权限管理"><span class="toc-number">14.</span> <span class="toc-text">组管理和权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-组基本介绍"><span class="toc-number">14.1.</span> <span class="toc-text">Linux 组基本介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件-目录-所有者"><span class="toc-number">14.2.</span> <span class="toc-text">文件&#x2F;目录 所有者</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看文件的所有者"><span class="toc-number">15.</span> <span class="toc-text">查看文件的所有者</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#修改文件所有者"><span class="toc-number">15.1.</span> <span class="toc-text">修改文件所有者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组的创建"><span class="toc-number">15.2.</span> <span class="toc-text">组的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件-目录-所在组"><span class="toc-number">15.3.</span> <span class="toc-text">文件&#x2F;目录 所在组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看文件-目录所在组"><span class="toc-number">15.4.</span> <span class="toc-text">查看文件&#x2F;目录所在组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改文件所在的组"><span class="toc-number">15.5.</span> <span class="toc-text">修改文件所在的组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其它组"><span class="toc-number">15.6.</span> <span class="toc-text">其它组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#改变用户所在组"><span class="toc-number">15.7.</span> <span class="toc-text">改变用户所在组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#权限的基本介绍"><span class="toc-number">16.</span> <span class="toc-text">权限的基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rwx权限详解"><span class="toc-number">17.</span> <span class="toc-text">rwx权限详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rwx作用到文件"><span class="toc-number">17.1.</span> <span class="toc-text">rwx作用到文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rwx作用到目录"><span class="toc-number">17.2.</span> <span class="toc-text">rwx作用到目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件及目录权限实际案例"><span class="toc-number">18.</span> <span class="toc-text">文件及目录权限实际案例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#修改权限-chmod"><span class="toc-number">18.1.</span> <span class="toc-text">修改权限-chmod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第一种方式：-、-、-变更权限"><span class="toc-number">18.2.</span> <span class="toc-text">第一种方式：+ 、-、&#x3D; 变更权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二种方式：通过数字变更权限"><span class="toc-number">18.3.</span> <span class="toc-text">第二种方式：通过数字变更权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改文件所有者-chown"><span class="toc-number">18.4.</span> <span class="toc-text">修改文件所有者-chown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改文件所在组-chgrp"><span class="toc-number">18.5.</span> <span class="toc-text">修改文件所在组-chgrp</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最佳实践-警察和土匪游戏"><span class="toc-number">19.</span> <span class="toc-text">最佳实践-警察和土匪游戏</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

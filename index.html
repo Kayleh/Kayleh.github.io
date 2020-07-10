@@ -333,80 +333,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="MYSQL索引"><a href="#MYSQL索引" class="headerlink" title="MYSQL索引"></a>MYSQL索引</h1><blockquote>
-<p>MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。</p>
-<p>打个比方，如果合理的设计且使用索引的MySQL是一辆兰博基尼的话，那么没有设计和使用索引的MySQL就是一个人力三轮车。</p>
-<p>拿汉语字典的目录页（索引）打比方，我们可以按拼音、笔画、偏旁部首等排序的目录（索引）快速查找到需要的字。</p>
-<p>索引分单列索引和组合索引。单列索引，即一个索引只包含单个列，一个表可以有多个单列索引，但这不是组合索引。组合索引，即一个索引包含多个列。</p>
-<p>创建索引时，你需要确保该索引是应用在 SQL 查询语句的条件(一般作为 WHERE 子句的条件)。</p>
-<p>实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录。</p>
-<p>上面都在说使用索引的好处，但过多的使用索引将会造成滥用。因此索引也会有它的缺点：虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行INSERT、UPDATE和DELETE。因为更新表时，MySQL不仅要保存数据，还要保存一下索引文件。</p>
-<p>建立索引会占用磁盘空间的索引文件。</p>
-</blockquote>
-<h2 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h2><h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>这是最基本的索引，它没有任何限制。它有以下几种创建方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX indexName ON mytable(username(length));</span><br></pre></td></tr></table></figure>
-
-<p>如果是CHAR，VARCHAR类型，length可以小于字段实际长度；如果是BLOB和TEXT类型，必须指定 length。</p>
-<h3 id="修改表结构-添加索引"><a href="#修改表结构-添加索引" class="headerlink" title="修改表结构(添加索引)"></a>修改表结构(添加索引)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER table tableName ADD INDEX indexName(columnName)</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建表的时候直接指定"><a href="#创建表的时候直接指定" class="headerlink" title="创建表的时候直接指定"></a>创建表的时候直接指定</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE mytable(  </span><br><span class="line"> </span><br><span class="line">ID INT NOT NULL,   </span><br><span class="line"> </span><br><span class="line">username VARCHAR(16) NOT NULL,  </span><br><span class="line"> </span><br><span class="line">INDEX [indexName] (username(length))  </span><br><span class="line"> </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除索引的语法"><a href="#删除索引的语法" class="headerlink" title="删除索引的语法"></a>删除索引的语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> [indexName] <span class="keyword">ON</span> mytable;</span><br></pre></td></tr></table></figure>
-
-<h2 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h2><p>它与前面的普通索引类似，不同的就是：索引列的值必须唯一，但允许有空值。如果是组合索引，则列值的组合必须唯一。它有以下几种创建方式：</p>
-<h3 id="创建索引-1"><a href="#创建索引-1" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE UNIQUE INDEX indexName ON mytable(username(length))</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER table mytable ADD UNIQUE [indexName] (username(length))</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建表的时候直接指定-1"><a href="#创建表的时候直接指定-1" class="headerlink" title="创建表的时候直接指定"></a>创建表的时候直接指定</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE mytable(  </span><br><span class="line"> </span><br><span class="line">ID INT NOT NULL,   </span><br><span class="line"> </span><br><span class="line">username VARCHAR(16) NOT NULL,  </span><br><span class="line">    </span><br><span class="line">UNIQUE [indexName] (username(length))  </span><br><span class="line"> </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用ALTER-命令添加和删除索引"><a href="#使用ALTER-命令添加和删除索引" class="headerlink" title="使用ALTER 命令添加和删除索引"></a>使用ALTER 命令添加和删除索引</h3><p>有四种方式来添加数据表的索引：</p>
-<ul>
-<li><p><strong>ALTER TABLE tbl_name ADD PRIMARY KEY (column_list):</strong></p>
-<p> 该语句添加一个主键，这意味着索引值必须是唯一的，且不能为NULL。</p>
-</li>
-<li><p><strong>ALTER TABLE tbl_name ADD UNIQUE index_name (column_list):</strong> </p>
-<p>这条语句创建索引的值必须是唯一的（除了NULL外，NULL可能会出现多次）。</p>
-</li>
-<li><p><strong>ALTER TABLE tbl_name ADD INDEX index_name (column_list):</strong> </p>
-<p>添加普通索引，索引值可出现多次。</p>
-</li>
-<li><p><strong>ALTER TABLE tbl_name ADD FULLTEXT index_name (column_list):</strong></p>
-<p>该语句指定了索引为 FULLTEXT ，用于全文索引。</p>
-</li>
-</ul>
-<p>以下实例为在表中添加索引。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE testalter_tbl ADD INDEX (c);</span><br></pre></td></tr></table></figure>
-
-<p>你还可以在 ALTER 命令中使用 DROP 子句来删除索引。尝试以下实例删除索引:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE testalter_tbl DROP INDEX c;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="使用-ALTER-命令添加和删除主键"><a href="#使用-ALTER-命令添加和删除主键" class="headerlink" title="使用 ALTER 命令添加和删除主键"></a>使用 ALTER 命令添加和删除主键</h3><p>主键只能作用于一个列上，添加主键索引时，你需要确保该主键默认不为空（NOT NULL）。实例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE testalter_tbl MODIFY i INT NOT NULL;</span><br><span class="line">mysql&gt; ALTER TABLE testalter_tbl ADD PRIMARY KEY (i);</span><br></pre></td></tr></table></figure>
-
-<p>你也可以使用 ALTER 命令删除主键：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE testalter_tbl DROP PRIMARY KEY;</span><br></pre></td></tr></table></figure>
-
-<p>删除主键时只需指定PRIMARY KEY，但在删除索引时，你必须知道索引名。</p>
-<hr>
-<h3 id="显示索引信息"><a href="#显示索引信息" class="headerlink" title="显示索引信息"></a>显示索引信息</h3><p>你可以使用 SHOW INDEX 命令来列出表中的相关的索引信息。可以通过添加 \G 来格式化输出信息。</p>
-<p>尝试以下实例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW INDEX FROM table_name; \G</span><br><span class="line">........</span><br></pre></td></tr></table></figure>
-
-<h1 id="MySQL-临时表"><a href="#MySQL-临时表" class="headerlink" title="MySQL 临时表"></a>MySQL 临时表</h1><blockquote>
-<p>MySQL 临时表在我们需要保存一些临时数据时是非常有用的。临时表只在当前连接可见，当关闭连接时，Mysql会自动删除表并释放所有空间。临时表在MySQL 3.23版本中添加，如果你的MySQL版本低于 3.23版本就无法使用MySQL的临时表。不过现在一般很少有再使用这么低版本的MySQL数据库服务了。</p>
-<p>MySQL临时表只在当前连接可见，如果你使用PHP脚本来创建MySQL临时表，那每当PHP脚本执行完成后，该临时表也会自动销毁。</p>
-<p>如果你使用了其他MySQL客户端程序连接MySQL数据库服务器来创建临时表，那么只有在关闭客户端程序时才会销毁临时表，当然你也可以手动销毁。</p>
-</blockquote>
-<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>以下展示了使用MySQL 临时表的简单实例，以下的SQL代码可以适用于PHP脚本的mysql_query()函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TEMPORARY TABLE SalesSummary (</span><br><span class="line">    -&gt; product_name VARCHAR(50) NOT NULL</span><br><span class="line">    -&gt; , total_sales DECIMAL(12,2) NOT NULL DEFAULT 0.00</span><br><span class="line">    -&gt; , avg_unit_price DECIMAL(7,2) NOT NULL DEFAULT 0.00</span><br><span class="line">    -&gt; , total_units_sold INT UNSIGNED NOT NULL DEFAULT 0</span><br><span class="line">);</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; INSERT INTO SalesSummary</span><br><span class="line">    -&gt; (product_name, total_sales, avg_unit_price, total_units_sold)</span><br><span class="line">    -&gt; VALUES</span><br><span class="line">    -&gt; (&#39;cucumber&#39;, 100.25, 90, 2);</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * FROM SalesSummary;</span><br><span class="line">+--------------+-------------+----------------+------------------+</span><br><span class="line">| product_name | total_sales | avg_unit_price | total_units_sold |</span><br><span class="line">+--------------+-------------+----------------+------------------+</span><br><span class="line">| cucumber     |      100.25 |          90.00 |                2 |</span><br><span class="line">+--------------+-------------+----------------+------------------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
-
-<p>当你使用 <strong>SHOW TABLES</strong>命令显示数据表列表时，你将无法看到 SalesSummary表。</p>
-<p>如果你退出当前MySQL会话，再使用 <strong>SELECT</strong>命令来读取原先创建的临时表数据，那你会发现数据库中没有该表的存在，因为在你退出时该临时表已经被销毁了。</p>
-<h2 id="删除MySQL-临时表"><a href="#删除MySQL-临时表" class="headerlink" title="删除MySQL 临时表"></a>删除MySQL 临时表</h2><p>默认情况下，当你断开与数据库的连接后，临时表就会自动被销毁。当然你也可以在当前MySQL会话使用 <strong>DROP TABLE</strong> 命令来手动删除临时表。</p>
-<p>以下是手动删除临时表的实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TEMPORARY TABLE SalesSummary (</span><br><span class="line">    -&gt; product_name VARCHAR(50) NOT NULL</span><br><span class="line">    -&gt; , total_sales DECIMAL(12,2) NOT NULL DEFAULT 0.00</span><br><span class="line">    -&gt; , avg_unit_price DECIMAL(7,2) NOT NULL DEFAULT 0.00</span><br><span class="line">    -&gt; , total_units_sold INT UNSIGNED NOT NULL DEFAULT 0</span><br><span class="line">);</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; INSERT INTO SalesSummary</span><br><span class="line">    -&gt; (product_name, total_sales, avg_unit_price, total_units_sold)</span><br><span class="line">    -&gt; VALUES</span><br><span class="line">    -&gt; (&#39;cucumber&#39;, 100.25, 90, 2);</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * FROM SalesSummary;</span><br><span class="line">+--------------+-------------+----------------+------------------+</span><br><span class="line">| product_name | total_sales | avg_unit_price | total_units_sold |</span><br><span class="line">+--------------+-------------+----------------+------------------+</span><br><span class="line">| cucumber     |      100.25 |          90.00 |                2 |</span><br><span class="line">+--------------+-------------+----------------+------------------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line">mysql&gt; DROP TABLE SalesSummary;</span><br><span class="line">mysql&gt;  SELECT * FROM SalesSummary;</span><br><span class="line">ERROR 1146: Table &#39;RUNOOB.SalesSummary&#39; doesn&#39;t exist</span><br></pre></td></tr></table></figure>
+              <h1 id="MYSQL索引"><a href="#MYSQL索引" class="headerlink" title="MYSQL索引"></a>MYSQL索引</h1>
+          
       
     </div>
     
@@ -419,6 +347,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/" rel="tag">sql</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a   href="/2020/07/09/MYSQL/#more">阅读原文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

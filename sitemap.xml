@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://dqlcr5.coding-pages.com/2020/07/14/Mybatis/</loc>
+    
+    <lastmod>2020-07-16T07:40:48.739Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://dqlcr5.coding-pages.com/2020/07/16/JDBC/</loc>
     
     <lastmod>2020-07-16T07:39:48.302Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://dqlcr5.coding-pages.com/2020/07/14/MVC/</loc>
     
     <lastmod>2020-07-14T05:44:08.737Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://dqlcr5.coding-pages.com/2020/07/14/Mybatis/</loc>
-    
-    <lastmod>2020-07-14T05:42:44.680Z</lastmod>
     
   </url>
   

@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>计算机网络</title>
-      <link href="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/"/>
-      <url>/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/</url>
-      
-        <content type="html"><![CDATA[<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><a id="more"></a><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>计算机网络是一个分散的、具有独立功能的计算机系统，通过通讯设备与线路连接起来由功能完善的软件实现资源共享和信息共享的系统。</p><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><h5 id="1-组成部分"><a href="#1-组成部分" class="headerlink" title="1.组成部分"></a>1.组成部分</h5><p>硬件、软件、协议</p><h5 id="2-工作方式"><a href="#2-工作方式" class="headerlink" title="2.工作方式"></a>2.工作方式</h5><p>边缘部分 用户直接使用</p><ul><li>C/S方式</li><li>P2P方式</li></ul><p>核心部分 为边缘部分服务</p><p>3.功能组成</p><ul><li>通信子网      实现数据通信</li><li>资源子网      实现资源共享/数据处理</li></ul><p><img src="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/D:%5CBlog%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1%5C1.png" alt="1595656824503"></p><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>1.按分布范围分:广域网WAN，城域网MAN，局域网LAN，个人区域网PAN</p><p>2.按使用者分: 公用网(中国电信),     专用网(军事)</p><p>3.按交换技术分:电路交换、报文交换、分组交换</p><p>4.按拓扑结构分：<img src="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/D:%5CBlog%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1%5C1595657228752.png" alt="1595657228752"></p><p>5.按传输技术来分：</p><p>广播式网络：共享公共通信信道</p><p>点对点网络：使用分组存储转发和路由选择机制</p><p><img src="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/D:%5CBlog%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1%5C1595657435356.png" alt="1595657435356"></p><h2 id="标准化工作"><a href="#标准化工作" class="headerlink" title="标准化工作"></a>标准化工作</h2><p>要实现不同厂商的硬、软件之间相互连通，必须遵从统一的标准。</p><h3 id="标准的分类"><a href="#标准的分类" class="headerlink" title="标准的分类"></a>标准的分类</h3><p>法定标准</p><blockquote><p>由权威机构制定的正式的、合法的标准             OSI</p></blockquote><p>事实标准</p><blockquote><p>某些公司的产品在竞争中占据了主流，时间长了</p><p>这些产品中的协议和技术就成了标准                 TCP/IP</p></blockquote><p><img src="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/D:%5CBlog%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1%5C1595658054792.png" alt="1595658054792"></p><h2 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h2><p>速率即</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> TCP </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>设计模式</title>
       <link href="/2020/07/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/07/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>

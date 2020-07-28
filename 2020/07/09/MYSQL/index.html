@@ -17,11 +17,30 @@
 <meta property="og:site_name" content="Kayleh">
 <meta property="og:description" content="MYSQL索引">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595839986393.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595842885282.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595843892063.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595843971185.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595844045065.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595844384514.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595844849986.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595905536134.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595911864015.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595920057502.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595923227254.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595923535216.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595923570837.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595923735876.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595927315197.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595927536666.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595928872305.png">
+<meta property="og:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595929240606.png">
 <meta property="article:published_time" content="2020-07-09T09:54:25.000Z">
-<meta property="article:modified_time" content="2020-07-09T13:15:40.380Z">
+<meta property="article:modified_time" content="2020-07-28T09:51:37.005Z">
 <meta property="article:author" content="Kayleh">
 <meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595839986393.png">
   
     <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
   
@@ -463,6 +482,113 @@
 <p>create table 新表 like 旧表 </p>
 <p><strong>第二、复制表结构及数据到新表</strong></p>
 <p>create table新表 select * from 旧表 </p>
+<h1 id="主要配置文件"><a href="#主要配置文件" class="headerlink" title="主要配置文件"></a>主要配置文件</h1><h3 id="二进制文件日志log-bin"><a href="#二进制文件日志log-bin" class="headerlink" title="二进制文件日志log-bin"></a>二进制文件日志log-bin</h3><p>主从复制</p>
+<h3 id="错误日志log-error"><a href="#错误日志log-error" class="headerlink" title="错误日志log-error"></a>错误日志log-error</h3><p>默认是关闭的,记录严重的警告和错误信息,每次启动和关闭的详细信息等</p>
+<h4 id="查询日志log"><a href="#查询日志log" class="headerlink" title="查询日志log"></a>查询日志log</h4><p>默认关闭,记录查询的sql语句,如果开启会减低mysql的整体性能,因为记录日志也是需要消耗系统资源的</p>
+<h4 id="数据文件"><a href="#数据文件" class="headerlink" title="数据文件"></a>数据文件</h4><h5 id="库"><a href="#库" class="headerlink" title="库"></a>库</h5><p>默认路径: /var/lib/mysql</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595839986393.png" alt="1595839986393"></p>
+<h5 id="frm文件"><a href="#frm文件" class="headerlink" title="frm文件"></a>frm文件</h5><p>存放表结构</p>
+<h5 id="MYD文件"><a href="#MYD文件" class="headerlink" title="MYD文件"></a>MYD文件</h5><p>存放的是数据,DATA</p>
+<h5 id="MYI文件"><a href="#MYI文件" class="headerlink" title="MYI文件"></a>MYI文件</h5><p>存放的是查找数据的索引,INDEX</p>
+<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595842885282.png" alt="1595842885282"></p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595843892063.png" alt="1595843892063"></p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595843971185.png" alt="1595843971185"></p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595844045065.png" alt="1595844045065"></p>
+<h3 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show enigines</span><br></pre></td></tr></table></figure>
+
+<p>查看mysql当前默认的存储引擎</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variable like &#39;%storage_engine%&#39;</span><br></pre></td></tr></table></figure>
+
+<h4 id="MyisAm和InnoDB区别"><a href="#MyisAm和InnoDB区别" class="headerlink" title="MyisAm和InnoDB区别"></a>MyisAm和InnoDB区别</h4><p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595844384514.png" alt="1595844384514"></p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CLinux%5C1595844849986.png" alt="1595844849986"></p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><blockquote>
+<p>MYSQL官方对索引的定义：索引(Index)是帮助MYSQL高效获取数据的数据结构.可以得到索引的本质:索引就是数据结构.</p>
+<p>“排好序的快速查找数据结构”  对排序和查找都有影响</p>
+<ul>
+<li><p>在数据之外,数据库系统还维护着满足特定查找算法的数据结构,这些数据结构以某种方式引用(指向)数据.</p>
+<p>这样可以在这些数据结构上实现高级查找算法.这种数据结构,就是索引.下图就是一种可能的索引方式示例:</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595905536134.png" alt="1595905536134"></p>
+</li>
+</ul>
+<p>索引的目的在于提高查找效率,可以类比字典;</p>
+<p>一般来说索引本身也很大,不可能全部存储在内存中,因此索引往往以索引文件的形式存储的磁盘上</p>
+<p>我们平常所说的索引,如果没有特别指明,都是指b+树(多路搜索树,并不一定是二叉的)结构组织的索引,其中聚集索引,次要索引,覆盖索引,复合索引,前缀索引,唯一索引默认都是使用B+树索引,统称索引.当然,除了B+树这种类型的索引之外,还有哈希索引(hash index)等</p>
+</blockquote>
+<h4 id="索引优势"><a href="#索引优势" class="headerlink" title="索引优势"></a>索引优势</h4><p>类似大学图书馆建书目索引,提高数据检索的效率,降低数据库的IO成本,通过索引对数据进行排序,降低数据排序的成本,降低了CPU的消耗. </p>
+<h4 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h4><p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595911864015.png" alt="1595911864015"></p>
+<h4 id="索引的分类"><a href="#索引的分类" class="headerlink" title="索引的分类"></a>索引的分类</h4><h5 id="单值索引"><a href="#单值索引" class="headerlink" title="单值索引"></a>单值索引</h5><p>即一个索引只包含单个列，一个表可以有多个单列索引</p>
+<h5 id="唯一索引-1"><a href="#唯一索引-1" class="headerlink" title="唯一索引"></a>唯一索引</h5><p>索引列的值必须唯一，但允许有空值</p>
+<h5 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a>复合索引</h5><p>即一个索引包含多个列</p>
+<h3 id="索引的命名语句"><a href="#索引的命名语句" class="headerlink" title="索引的命名语句"></a>索引的命名语句</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><blockquote>
+<p>CREATE [UNIQUE] INDEX indexName ON mytable(columnname(length));</p>
+<p>ALTER mytable ADD [UNIQUE] INDEX [indexName] ON (columnname(name));</p>
+</blockquote>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595920057502.png" alt="1595920057502"></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><blockquote>
+<p>DROP INDEX [indexName] ON mytable;</p>
+</blockquote>
+<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><blockquote>
+<p>SHOW INDEX FROM table_name\G</p>
+</blockquote>
+<p>使用ALTER命令</p>
+<h3 id="索引结构"><a href="#索引结构" class="headerlink" title="索引结构"></a>索引结构</h3><h5 id="BTree索引"><a href="#BTree索引" class="headerlink" title="BTree索引"></a>BTree索引</h5><p>b+树</p>
+<h5 id="Hash索引"><a href="#Hash索引" class="headerlink" title="Hash索引"></a>Hash索引</h5><h5 id="full-text全文索引"><a href="#full-text全文索引" class="headerlink" title="full-text全文索引"></a>full-text全文索引</h5><h5 id="R-Tree索引"><a href="#R-Tree索引" class="headerlink" title="R-Tree索引"></a>R-Tree索引</h5><h3 id="哪些情况需要创建索引？"><a href="#哪些情况需要创建索引？" class="headerlink" title="哪些情况需要创建索引？"></a>哪些情况需要创建索引？</h3><ol>
+<li>主键自动创建索引</li>
+<li>频繁作为查询条件的字段应该创建索引</li>
+<li>查询中与其他表关联的字段，外键关系建立索引</li>
+<li>频繁更新的字段不适合创建索引，因为每次更新不单单是更新了记录还会更新索引</li>
+<li>where条件里用不到的字段不创建索引</li>
+<li>单键/组合索引的选择问题（在高并发下倾向创建组合索引）</li>
+<li>查询中排序的字段，排序字段若通过索引去访问将大大提高排序速度</li>
+<li>查询中统计或者分组的字段</li>
+</ol>
+<h3 id="哪些情况不需要创建索引？"><a href="#哪些情况不需要创建索引？" class="headerlink" title="哪些情况不需要创建索引？"></a>哪些情况不需要创建索引？</h3><ol>
+<li><p>表记录太少</p>
+</li>
+<li><p>经常增删改的表</p>
+<blockquote>
+<p>提高了查询速度，同时会降低更新表的速度，如对表进行INSERT、UPDATE和DELETE。</p>
+<p>因为在更新表时，MYSQL不仅要保存数据，还要保存一些索引文件。</p>
+</blockquote>
+</li>
+<li><p>数据重复且分布均匀的表字段，因此应该只为最经常查询和最经常排序的数据建立索引。</p>
+<p>如果某个数据列包含许多重复内容，为它建立索引就没有太大的实际效果。</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595923227254.png" alt="1595923227254"></p>
+</li>
+</ol>
+<h3 id="性能分析（查询执行计划）"><a href="#性能分析（查询执行计划）" class="headerlink" title="性能分析（查询执行计划）"></a>性能分析（查询执行计划）</h3><p>MYSQL QUERY Optimizer</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595923535216.png" alt="1595923535216"></p>
+<p>MYSQL的常见瓶颈</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595923570837.png" alt="1595923570837"></p>
+<h4 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h4><p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595923735876.png" alt="1595923735876"></p>
+<p>能干吗</p>
+<ul>
+<li>表的读取顺序</li>
+<li>数据读取操作的操作类型</li>
+<li>哪些索引可以使用</li>
+<li>那些索引被实际使用</li>
+<li>表之间的引用</li>
+<li>每张表有多少行被优化器查询</li>
+</ul>
+<h5 id="使用：Explain-SQL语句"><a href="#使用：Explain-SQL语句" class="headerlink" title="使用：Explain + SQL语句"></a>使用：Explain + SQL语句</h5><p>执行计划包含的信息</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595927315197.png" alt="1595927315197"></p>
+<p>id：</p>
+<blockquote>
+<p>select查询的序列号,包含一组数字,表示查询中执行select子句或操作表的顺序</p>
+<p>三种情况: </p>
+<ul>
+<li><p>id相同,执行顺序由上至下</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595927536666.png" alt=" "></p>
+</li>
+<li><p>id不同,如果是子查询,id的序号会递增,id值越大优先级会越高,越先被执行.</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595928872305.png" alt="1595928872305"></p>
+</li>
+<li><p>id相同不同,同时存在</p>
+<p><img src="/2020/07/09/MYSQL/D:%5CBlog%5Csource_posts%5CMYSQL%5C1595929240606.png" alt="1595929240606"></p>
+<p>derive的2指的是id为2的t3.</p>
+</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -474,7 +600,7 @@
         <p><span>本文标题:</span><a  href="/2020/07/09/MYSQL/">MYSQL</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
         <p><span>发布时间:</span>2020年07月09日 - 17时54分</p>
-        <p><span>最后更新:</span>2020年07月09日 - 21时15分</p>
+        <p><span>最后更新:</span>2020年07月28日 - 17时51分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/07/09/MYSQL/" title="MYSQL">http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/　　作者: Kayleh" title=""></span>
@@ -515,7 +641,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MYSQL索引"><span class="toc-number">1.</span> <span class="toc-text">MYSQL索引</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#普通索引"><span class="toc-number">1.1.</span> <span class="toc-text">普通索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改表结构-添加索引"><span class="toc-number">1.1.2.</span> <span class="toc-text">修改表结构(添加索引)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表的时候直接指定"><span class="toc-number">1.1.3.</span> <span class="toc-text">创建表的时候直接指定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除索引的语法"><span class="toc-number">1.1.4.</span> <span class="toc-text">删除索引的语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#唯一索引"><span class="toc-number">1.2.</span> <span class="toc-text">唯一索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改表结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">修改表结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表的时候直接指定-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">创建表的时候直接指定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用ALTER-命令添加和删除索引"><span class="toc-number">1.2.4.</span> <span class="toc-text">使用ALTER 命令添加和删除索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-ALTER-命令添加和删除主键"><span class="toc-number">1.2.5.</span> <span class="toc-text">使用 ALTER 命令添加和删除主键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示索引信息"><span class="toc-number">1.2.6.</span> <span class="toc-text">显示索引信息</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL-临时表"><span class="toc-number">2.</span> <span class="toc-text">MySQL 临时表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除MySQL-临时表"><span class="toc-number">2.1.</span> <span class="toc-text">删除MySQL 临时表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-复制表"><span class="toc-number">2.2.</span> <span class="toc-text">MySQL 复制表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#另一种完整复制表的方法"><span class="toc-number">2.2.2.</span> <span class="toc-text">另一种完整复制表的方法:</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MYSQL索引"><span class="toc-number">1.</span> <span class="toc-text">MYSQL索引</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#普通索引"><span class="toc-number">1.1.</span> <span class="toc-text">普通索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改表结构-添加索引"><span class="toc-number">1.1.2.</span> <span class="toc-text">修改表结构(添加索引)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表的时候直接指定"><span class="toc-number">1.1.3.</span> <span class="toc-text">创建表的时候直接指定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除索引的语法"><span class="toc-number">1.1.4.</span> <span class="toc-text">删除索引的语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#唯一索引"><span class="toc-number">1.2.</span> <span class="toc-text">唯一索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改表结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">修改表结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表的时候直接指定-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">创建表的时候直接指定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用ALTER-命令添加和删除索引"><span class="toc-number">1.2.4.</span> <span class="toc-text">使用ALTER 命令添加和删除索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-ALTER-命令添加和删除主键"><span class="toc-number">1.2.5.</span> <span class="toc-text">使用 ALTER 命令添加和删除主键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示索引信息"><span class="toc-number">1.2.6.</span> <span class="toc-text">显示索引信息</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL-临时表"><span class="toc-number">2.</span> <span class="toc-text">MySQL 临时表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除MySQL-临时表"><span class="toc-number">2.1.</span> <span class="toc-text">删除MySQL 临时表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-复制表"><span class="toc-number">2.2.</span> <span class="toc-text">MySQL 复制表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#另一种完整复制表的方法"><span class="toc-number">2.2.2.</span> <span class="toc-text">另一种完整复制表的方法:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主要配置文件"><span class="toc-number">3.</span> <span class="toc-text">主要配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二进制文件日志log-bin"><span class="toc-number">3.0.1.</span> <span class="toc-text">二进制文件日志log-bin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误日志log-error"><span class="toc-number">3.0.2.</span> <span class="toc-text">错误日志log-error</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查询日志log"><span class="toc-number">3.0.2.1.</span> <span class="toc-text">查询日志log</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据文件"><span class="toc-number">3.0.2.2.</span> <span class="toc-text">数据文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#库"><span class="toc-number">3.0.2.2.1.</span> <span class="toc-text">库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#frm文件"><span class="toc-number">3.0.2.2.2.</span> <span class="toc-text">frm文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MYD文件"><span class="toc-number">3.0.2.2.3.</span> <span class="toc-text">MYD文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MYI文件"><span class="toc-number">3.0.2.2.4.</span> <span class="toc-text">MYI文件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑结构"><span class="toc-number">3.1.</span> <span class="toc-text">逻辑结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储引擎"><span class="toc-number">3.1.1.</span> <span class="toc-text">存储引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MyisAm和InnoDB区别"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">MyisAm和InnoDB区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引"><span class="toc-number">3.2.</span> <span class="toc-text">索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#索引优势"><span class="toc-number">3.2.0.1.</span> <span class="toc-text">索引优势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#劣势"><span class="toc-number">3.2.0.2.</span> <span class="toc-text">劣势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#索引的分类"><span class="toc-number">3.2.0.3.</span> <span class="toc-text">索引的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#单值索引"><span class="toc-number">3.2.0.3.1.</span> <span class="toc-text">单值索引</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#唯一索引-1"><span class="toc-number">3.2.0.3.2.</span> <span class="toc-text">唯一索引</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#复合索引"><span class="toc-number">3.2.0.3.3.</span> <span class="toc-text">复合索引</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引的命名语句"><span class="toc-number">3.2.1.</span> <span class="toc-text">索引的命名语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除"><span class="toc-number">3.2.1.2.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看"><span class="toc-number">3.2.1.3.</span> <span class="toc-text">查看</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">索引结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#BTree索引"><span class="toc-number">3.2.2.0.1.</span> <span class="toc-text">BTree索引</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Hash索引"><span class="toc-number">3.2.2.0.2.</span> <span class="toc-text">Hash索引</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#full-text全文索引"><span class="toc-number">3.2.2.0.3.</span> <span class="toc-text">full-text全文索引</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#R-Tree索引"><span class="toc-number">3.2.2.0.4.</span> <span class="toc-text">R-Tree索引</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哪些情况需要创建索引？"><span class="toc-number">3.2.3.</span> <span class="toc-text">哪些情况需要创建索引？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哪些情况不需要创建索引？"><span class="toc-number">3.2.4.</span> <span class="toc-text">哪些情况不需要创建索引？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性能分析（查询执行计划）"><span class="toc-number">3.2.5.</span> <span class="toc-text">性能分析（查询执行计划）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Explain"><span class="toc-number">3.2.5.1.</span> <span class="toc-text">Explain</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#使用：Explain-SQL语句"><span class="toc-number">3.2.5.1.1.</span> <span class="toc-text">使用：Explain + SQL语句</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/</loc>
+    
+    <lastmod>2020-07-28T09:51:37.005Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://dqlcr5.coding-pages.com/2020/07/02/Linux/</loc>
+    
+    <lastmod>2020-07-27T08:44:52.070Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://dqlcr5.coding-pages.com/2020/07/27/TCP-IP/</loc>
     
-    <lastmod>2020-07-27T03:11:57.312Z</lastmod>
+    <lastmod>2020-07-27T07:19:28.065Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://dqlcr5.coding-pages.com/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/</loc>
     
-    <lastmod>2020-07-27T03:11:18.175Z</lastmod>
+    <lastmod>2020-07-27T03:43:39.105Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>http://dqlcr5.coding-pages.com/2020/07/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2020-07-25T10:25:55.901Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://dqlcr5.coding-pages.com/2020/07/02/Linux/</loc>
-    
-    <lastmod>2020-07-25T05:44:33.189Z</lastmod>
     
   </url>
   
@@ -180,13 +187,6 @@
     <loc>http://dqlcr5.coding-pages.com/2020/05/23/Interview(updating)/</loc>
     
     <lastmod>2020-07-13T12:08:53.881Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://dqlcr5.coding-pages.com/2020/07/09/MYSQL/</loc>
-    
-    <lastmod>2020-07-09T13:15:40.380Z</lastmod>
     
   </url>
   

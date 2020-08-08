@@ -340,7 +340,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="控制反转的定义："><a href="#控制反转的定义：" class="headerlink" title="控制反转的定义："></a>控制反转的定义：</h3><p>Inversion of Control控制反转，贯穿Spring的始终，Spring的核心。由spring来负责控制对象的生命周期和对象间的关系。</p><a id="more"></a><p>IOC的思想是反转资源获取方向.传统的资源查找方式要求组件向容器发起请求查找资源.作为回应,容器适时的返回资源,而应用IOC之后,则是容器主动的将资源推送给它所管理的组件,组件所要做的仅仅是选择一种合适的方式来接受资源,这种行为也被称为查找的被动形式.</p><p>▼传统的方法获取：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pojo pojo = <span class="keyword">new</span> Pojo( );</span><br></pre></td></tr></table></figure><p>▼Spring管理的bean获取：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AutowiredPojo</span> </span><br><span class="line">pojo;</span><br></pre></td></tr></table></figure><p>’ 对象的生命周期由Spring来管理，直接从Spring那里去获取一个对象。IOC是反转控制 (Inversion Of Control)的缩写，就像控制权从本来在自己手里，交给了Spring。‘</p>
+        <h3 id="控制反转的定义："><a href="#控制反转的定义：" class="headerlink" title="控制反转的定义："></a>控制反转的定义：</h3><p>Inversion of Control控制反转，贯穿Spring的始终，Spring的核心。由spring来负责控制对象的生命周期和对象间的关系。</p>
+<a id="more"></a>
+
+<p>IOC的思想是反转资源获取方向.传统的资源查找方式要求组件向容器发起请求查找资源.作为回应,容器适时的返回资源,而应用IOC之后,则是容器主动的将资源推送给它所管理的组件,组件所要做的仅仅是选择一种合适的方式来接受资源,这种行为也被称为查找的被动形式.</p>
+<p>▼传统的方法获取：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pojo pojo = <span class="keyword">new</span> Pojo( );</span><br></pre></td></tr></table></figure>
+
+
+
+<p>▼Spring管理的bean获取：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AutowiredPojo</span> </span><br><span class="line">pojo;</span><br></pre></td></tr></table></figure>
+
+<p>’ 对象的生命周期由Spring来管理，直接从Spring那里去获取一个对象。IOC是反转控制 (Inversion Of Control)的缩写，就像控制权从本来在自己手里，交给了Spring。‘</p>
+
       
     </div>
     

@@ -344,7 +344,29 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="XSS跨站脚本攻击"><a href="#XSS跨站脚本攻击" class="headerlink" title="XSS跨站脚本攻击"></a>XSS跨站脚本攻击</h3><p>在做社区项目的时候，发现了一个XSS漏洞。</p><p><img src="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/xss.png" alt="img"></p><a id="more"></a><h5 id="什么是XSS跨站脚本攻击？"><a href="#什么是XSS跨站脚本攻击？" class="headerlink" title="什么是XSS跨站脚本攻击？"></a>什么是XSS跨站脚本攻击？</h5><blockquote><p>XSS攻击全称跨站脚本攻击，是一种在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。</p></blockquote><p>在点击回复二级评论时，JavaScript脚本会注入页面:</p><p>示例：</p><p><img src="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/2.png" alt="img"></p><p><img src="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/3.png" alt="img"></p><p>然后客户端就调用脚本alert导致无限弹窗。</p><p>还可以使用</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="built_in">document</span>.cookie)&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure><p>获取页面cookie，比如登录的token。</p><p>解决办法：</p><blockquote><p>Jsoup使用标签白名单的机制用来进行防止XSS攻击</p></blockquote><p>参考：</p><p><a href="https://www.zykcoderman.xyz/web/post/detail/401" target="_blank" rel="noopener" title="XSS">[XSS跨站脚本攻击]</a></p>
+        <h3 id="XSS跨站脚本攻击"><a href="#XSS跨站脚本攻击" class="headerlink" title="XSS跨站脚本攻击"></a>XSS跨站脚本攻击</h3><p>在做社区项目的时候，发现了一个XSS漏洞。</p>
+<p><img src="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/xss.png" alt="img"></p>
+<a id="more"></a>
+
+<h5 id="什么是XSS跨站脚本攻击？"><a href="#什么是XSS跨站脚本攻击？" class="headerlink" title="什么是XSS跨站脚本攻击？"></a>什么是XSS跨站脚本攻击？</h5><blockquote>
+<p>XSS攻击全称跨站脚本攻击，是一种在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。</p>
+</blockquote>
+<p>在点击回复二级评论时，JavaScript脚本会注入页面:</p>
+<p>示例：</p>
+<p> <img src="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/2.png" alt="img"> </p>
+<p> <img src="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/3.png" alt="img"> </p>
+<p>然后客户端就调用脚本alert导致无限弹窗。</p>
+<p>还可以使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="built_in">document</span>.cookie)&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>获取页面cookie，比如登录的token。</p>
+<p>解决办法：</p>
+<blockquote>
+<p>Jsoup使用标签白名单的机制用来进行防止XSS攻击</p>
+</blockquote>
+<p>参考：</p>
+<p><a href="https://www.zykcoderman.xyz/web/post/detail/401" target="_blank" rel="noopener" title="XSS">[XSS跨站脚本攻击]</a></p>
+
       
     </div>
     

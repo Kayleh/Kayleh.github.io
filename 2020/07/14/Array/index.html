@@ -502,6 +502,24 @@
 
 
     
+        <section id="comments">
+  <link rel="stylesheet" href="/css/gitment.min.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+    var gitment = new Gitment({
+      id: 'Array', // 可选。默认为 location.href
+      owner: 'Kayleh',
+      repo: 'kayleh.github.io',
+      oauth: {
+        client_id: 'bcc026fd4e9db003dac4',
+        client_secret: '343390c580dc0383692430041a338dee654609b5',
+      },
+    })
+    gitment.render('comments')
+  </script>
+  
+</section>
+    
 
 
 

@@ -27,16 +27,13 @@ window.onload = function(){
     //4:fillText(str,x,y);原理就是去更改y的坐标位置
     //绘画的函数
     function draw(){
-        context.fillStyle = "rgba(65,65,65,.08)";//遮盖层
         // context.fillStyle = "rgba(238,238,238,.08)";//遮盖层
-
+        context.fillStyle = "rgba(176,176,176,.08)";//遮盖层
         context.fillRect(0,0,W,H);
         //给字体设置样式
         context.font = "600 "+fontSize+"px  Georgia";
         //给字体添加颜色
-        context.fillStyle = ["#329808"]
-        // context.fillStyle = ["#33B5E5", "#0099CC", "#AA66CC", "#9933CC", "#99CC00", "#669900", "#FFBB33", "#FF8800", "#FF4444", "#CC0000"][parseInt(Math.random() * 10)];//randColor();可以rgb,hsl, 标准色，十六进制颜色
-
+        context.fillStyle = ["#33B5E5", "#0099CC", "#AA66CC", "#9933CC", "#99CC00", "#669900", "#FFBB33", "#FF8800", "#FF4444", "#CC0000"][parseInt(Math.random() * 10)];//randColor();可以rgb,hsl, 标准色，十六进制颜色
         //写入画布中
         for(var i=0;i<colunms;i++){
             var index = Math.floor(Math.random() * str.length);

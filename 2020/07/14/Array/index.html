@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/2.jpg">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/2.jpg">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.kayleh.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="pIti0h4vOD" />
+  <!-- <meta name="baidu-site-verification" content="L6Lm9d5Crl"/> -->
+  
+  
+  
+  
+  <title>Array | Kayleh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Array">
@@ -35,188 +25,330 @@
 <meta property="article:tag" content="Interview">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.kayleh.top/2020/07/14/Array/1034884_1581738199162_50125D538C24748FCB1032CB38EEE0A9.png">
-
-<link rel="canonical" href="http://www.kayleh.top/2020/07/14/Array/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'en'
-  };
-</script>
-
-  <title>Array | Kayleh</title>
   
+    <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/1.jpeg">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-<link rel="alternate" href="/atom.xml" title="Kayleh" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Kayleh</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">90</span></a>
-
-  </li>
-        <li class="menu-item menu-item-简历">
-
-    <a href="/2020/06/11/RESUME/" rel="section"><i class="fa fa-sitemap fa-fw"></i>简历</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
+        <a href="/" class="profilepic">
             
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.kayleh.top/2020/07/14/Array/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/2.jpg">
-      <meta itemprop="name" content="Kayleh">
-      <meta itemprop="description" content="Kayleh">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kayleh">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Array
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-07-14 13:29:08 / Modified: 13:48:30" itemprop="dateCreated datePublished" datetime="2020-07-14T13:29:08+08:00">2020-07-14</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span><br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>6.3k</span>
-            </span>
-
+            <img lazy-src="/img/2.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Kayleh</a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="http://39.108.121.213/" target="_blank" rel="noopener">个人网站</a></li>
+                        
+                            <li><a  href="/2020/06/11/RESUME/">简历</a></li>
+                        
+                            <li><a  href="https://github.com/Kayleh" target="_blank" rel="noopener">开源项目</a></li>
+                        
+                            <li><a  href="/tags/DistributedMicroservices">分布式/集群/微服务</a></li>
+                        
+                            <li><a  href="/tags/frontDesign">前端/平面设计</a></li>
+                        
+                            <li><a  href="/tags/spider">数据采集/爬虫</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Kayleh" title="github">github</a>
+                            
+                                <a class="fl facebook"  target="_blank" href="https://www.facebook.com/kayleh.yao.7" title="facebook">facebook</a>
+                            
+                                <a class="fl twitter"  target="_blank" href="https://twitter.com/y40jinqing" title="twitter">twitter</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+                            
+                                <a class="fl zhihu"  target="_blank" href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" title="zhihu">zhihu</a>
+                            
+                                <a class="fl youtube"  target="_blank" href="https://www.youtube.com/channel/UC60fbKqc9kjOom-o76OID_A?view_as=subscriber" title="youtube">youtube</a>
+                            
+                                <a class="fl linkedin"  target="_blank" href="https://www.linkedin.com/in/jinqing-yao-97a750186/" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Concurrency/" style="font-size: 10px;">Concurrency</a> <a href="/tags/DesignPatterns/" style="font-size: 20px;">DesignPatterns</a> <a href="/tags/DistributedMicroservices/" style="font-size: 10px;">DistributedMicroservices</a> <a href="/tags/Interview/" style="font-size: 18px;">Interview</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Operating-Systems/" style="font-size: 10px;">Operating Systems</a> <a href="/tags/dataAlgorithm/" style="font-size: 16px;">dataAlgorithm</a> <a href="/tags/frame/" style="font-size: 14px;">frame</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/maintain/" style="font-size: 12px;">maintain</a> <a href="/tags/network/" style="font-size: 12px;">network</a> <a href="/tags/resume/" style="font-size: 10px;">resume</a> <a href="/tags/safe/" style="font-size: 12px;">safe</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.csdn.net/key1379">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jianshu.com/u/30643eb3e669">简书</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de">知乎</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">不会剪辑的平面设计师不是好程序员</div>
+                </section>
+                
+                
+            </div>
         </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=558261233&auto=1&height=66"></iframe>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Kayleh</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/2.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Kayleh</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="http://39.108.121.213/" target="_blank" rel="noopener">个人网站</a></li>
+                
+                    <li><a href="/2020/06/11/RESUME/">简历</a></li>
+                
+                    <li><a href="https://github.com/Kayleh" target="_blank" rel="noopener">开源项目</a></li>
+                
+                    <li><a href="/tags/DistributedMicroservices">分布式/集群/微服务</a></li>
+                
+                    <li><a href="/tags/frontDesign">前端/平面设计</a></li>
+                
+                    <li><a href="/tags/spider">数据采集/爬虫</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Kayleh" title="github">github</a>
+                    
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/kayleh.yao.7" title="facebook">facebook</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/y40jinqing" title="twitter">twitter</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" title="zhihu">zhihu</a>
+                    
+                        <a class="youtube" target="_blank" href="https://www.youtube.com/channel/UC60fbKqc9kjOom-o76OID_A?view_as=subscriber" title="youtube">youtube</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/jinqing-yao-97a750186/" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Array" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/14/Array/" class="article-date">
+      <time datetime="2020-07-14T05:29:08.000Z" itemprop="datePublished">2020-07-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Array
+    </h1>
+  
+
+
       </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
         <h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><a id="more"></a>
 
 <h3 id="List、Map、Set三个接口存取元素时，各有什么特点？"><a href="#List、Map、Set三个接口存取元素时，各有什么特点？" class="headerlink" title="List、Map、Set三个接口存取元素时，各有什么特点？"></a>List、Map、Set三个接口存取元素时，各有什么特点？</h3><p> List以特定索引来存取元素，可以有重复元素。</p>
@@ -269,420 +401,368 @@
 <h3 id="如果hashMap的key是一个自定义的类，怎么办？"><a href="#如果hashMap的key是一个自定义的类，怎么办？" class="headerlink" title="如果hashMap的key是一个自定义的类，怎么办？"></a>如果hashMap的key是一个自定义的类，怎么办？</h3><p>使用HashMap，如果key是自定义的类，就必须重写hashcode()和equals()。</p>
 <h3 id="解释一下hashMap具体如何实现的？"><a href="#解释一下hashMap具体如何实现的？" class="headerlink" title="解释一下hashMap具体如何实现的？"></a>解释一下hashMap具体如何实现的？</h3><p> Hashmap基于数组实现的，通过对key的hashcode &amp; 数组的长度得到在数组中位置，如当前数组有元素，则数组当前元素next指向要插入的元素，这样来解决hash冲突的，形成了拉链式的结构。put时在多线程情况下，会形成环从而导致死循环。数组长度一般是2n，从0开始编号，所以hashcode &amp; （2n-1），（2n-1）每一位都是1，这样会让散列均匀。需要注意的是，HashMap在JDK1.8的版本中引入了红黑树结构做优化，当链表元素个数大于等于8时，链表转换成树结构；若桶中链表元素个数小于等于6时，树结构还原成链表。因为红黑树的平均查找长度是log(n)，长度为8的时候，平均查找长度为3，如果继续使用链表，平均查找长度为8/2=4，这才有转换为树的必要。链表长度如果是小于等于6，6/2=3，虽然速度也很快的，但是转化为树结构和生成树的时间并不会太短。还有选择6和8，中间有个差值7可以有效防止链表和树频繁转换。假设一下，如果设计成链表个数超过8则链表转换成树结构，链表个数小于8则树结构转换成链表，如果一个HashMap不停的插入、删除元素，链表个数在8左右徘徊，就会频繁的发生树转链表、链表转树，效率会很低。 </p>
 
-    </div>
-
-    
-    
-    
-        <div class="reward-container">
-  <div></div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    Donate
-  </button>
-  <div id="qr" style="display: none;">
       
-      <div style="display: inline-block;">
-        <img src="/images/wechatpay.jpg" alt="Kayleh WeChat Pay">
-        <p>WeChat Pay</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="Kayleh Alipay">
-        <p>Alipay</p>
-      </div>
-
-  </div>
-</div>
-
-        
-
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:  </strong>Kayleh
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link: </strong>
-    <a href="http://www.kayleh.top/2020/07/14/Array/" title="Array">http://www.kayleh.top/2020/07/14/Array/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
-
-        
-
-  <div class="followme">
-    <p>Welcome to my other publishing channels</p>
-
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/images/wechat.jpg">
-            <span class="icon">
-              <i class="fab fa-weixin"></i>
-            </span>
-
-            <span class="label">WeChat</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://www.facebook.com/kayleh.yao.7">
-            <span class="icon">
-              <i class="fab fa-facebook"></i>
-            </span>
-
-            <span class="label">Facebook</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://www.linkedin.com/in/jinqing-yao-97a750186/">
-            <span class="icon">
-              <i class="fab fa-linkedin"></i>
-            </span>
-
-            <span class="label">Linkedin</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://github.com/Kayleh">
-            <span class="icon">
-              <i class="fab fa-github"></i>
-            </span>
-
-            <span class="label">GitHub</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo">
-            <span class="icon">
-              <i class="fab fa-weibo"></i>
-            </span>
-
-            <span class="label">Weibo</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://plus.google.com/kayleh">
-            <span class="icon">
-              <i class="fab fa-google"></i>
-            </span>
-
-            <span class="label">Google</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://twitter.com/y40jinqing">
-            <span class="icon">
-              <i class="fab fa-twitter"></i>
-            </span>
-
-            <span class="label">Twitter</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://stackoverflow.com/yourname">
-            <span class="icon">
-              <i class="fab fa-stack-overflow"></i>
-            </span>
-
-            <span class="label">StackOverflow</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UC60fbKqc9kjOom-o76OID_A?view_as=subscriber">
-            <span class="icon">
-              <i class="fab fa-youtube"></i>
-            </span>
-
-            <span class="label">YouTube</span>
-          </a>
-        </div>
     </div>
+    
   </div>
-
-
-<div>
   
-    <div>
     
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-
-  
-</div>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Interview/" rel="tag"># Interview</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/07/14/J2SE/" rel="prev" title="J2SE">
-      <i class="fa fa-chevron-left"></i> J2SE
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/07/14/Thread/" rel="next" title="Thread">
-      Thread <i class="fa fa-chevron-right"></i>
-    </a></div>
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2020/07/14/Array/">Array</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
+        <p><span>发布时间:</span>2020年07月14日 - 13时29分</p>
+        <p><span>最后更新:</span>2020年07月14日 - 13时48分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/07/14/Array/" title="Array">http://www.kayleh.top/2020/07/14/Array/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.kayleh.top/2020/07/14/Array/　　作者: Kayleh" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
-      </footer>
-    
-  </article>
-  
-  
-  
 
 
 
-          </div>
-          
+<nav id="article-nav">
+  
+    <a  href="/2020/07/14/Thread/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <!-- <strong class="article-nav-caption">&lt</strong> -->
+
+      <div class="article-nav-title">
+        
+          Thread
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2020/07/14/J2SE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">J2SE</div>
+      <strong class="article-nav-caption">></strong>
+      <!-- <strong class="article-nav-caption">&gt</strong> -->
+
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Array"><span class="toc-number">1.</span> <span class="toc-text">Array</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#List、Map、Set三个接口存取元素时，各有什么特点？"><span class="toc-number">1.0.1.</span> <span class="toc-text">List、Map、Set三个接口存取元素时，各有什么特点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阐述ArrayList、Vector、LinkedList的存储性能和特性"><span class="toc-number">1.0.2.</span> <span class="toc-text">阐述ArrayList、Vector、LinkedList的存储性能和特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断List、Set、Map是否继承自Collection接口？"><span class="toc-number">1.0.3.</span> <span class="toc-text">判断List、Set、Map是否继承自Collection接口？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#你所知道的常用集合类以及主要方法？"><span class="toc-number">1.0.4.</span> <span class="toc-text">你所知道的常用集合类以及主要方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明Collection-和-Collections的区别"><span class="toc-number">1.0.5.</span> <span class="toc-text">说明Collection 和 Collections的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明ArrayList-Vector-LinkedList的存储性能和特性是什么？"><span class="toc-number">1.0.6.</span> <span class="toc-text">说明ArrayList,Vector,LinkedList的存储性能和特性是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList和LinkedList的区别？-链表和数组的优缺点"><span class="toc-number">1.0.7.</span> <span class="toc-text">ArrayList和LinkedList的区别？(链表和数组的优缺点)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明HashMap和Hashtable的区别？"><span class="toc-number">1.0.8.</span> <span class="toc-text">说明HashMap和Hashtable的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请说说快速失败-fail-fast-和安全失败-fail-safe-的区别？"><span class="toc-number">1.0.9.</span> <span class="toc-text">请说说快速失败(fail-fast)和安全失败(fail-safe)的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说说Iterator和ListIterator的区别？"><span class="toc-number">1.0.10.</span> <span class="toc-text">说说Iterator和ListIterator的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请简单说明一下什么是迭代器？"><span class="toc-number">1.0.11.</span> <span class="toc-text">请简单说明一下什么是迭代器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释为什么集合类没有实现Cloneable和Serializable接口？"><span class="toc-number">1.0.12.</span> <span class="toc-text">解释为什么集合类没有实现Cloneable和Serializable接口？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java集合类框架的基本接口有哪些？"><span class="toc-number">1.0.13.</span> <span class="toc-text">Java集合类框架的基本接口有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConcurrentHashMap的原理？"><span class="toc-number">1.0.14.</span> <span class="toc-text">ConcurrentHashMap的原理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释一下TreeMap"><span class="toc-number">1.0.15.</span> <span class="toc-text">解释一下TreeMap?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请说明ArrayList是否会越界？"><span class="toc-number">1.0.16.</span> <span class="toc-text">请说明ArrayList是否会越界？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明concurrenthashmap有什么优势以及1-7和1-8区别？"><span class="toc-number">1.0.17.</span> <span class="toc-text">说明concurrenthashmap有什么优势以及1.7和1.8区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TreeMap的底层实现？"><span class="toc-number">1.0.18.</span> <span class="toc-text">TreeMap的底层实现？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明ConcurrentHashMap锁加在了哪些地方？"><span class="toc-number">1.0.19.</span> <span class="toc-text">说明ConcurrentHashMap锁加在了哪些地方？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释HashMap的容量为什么是2的n次幂？"><span class="toc-number">1.0.20.</span> <span class="toc-text">解释HashMap的容量为什么是2的n次幂？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你简单介绍一下ArrayList和LinkedList的区别，并说明如果一直在list的尾部添加元素，用哪种方式的效率高？"><span class="toc-number">1.0.21.</span> <span class="toc-text">请你简单介绍一下ArrayList和LinkedList的区别，并说明如果一直在list的尾部添加元素，用哪种方式的效率高？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果hashMap的key是一个自定义的类，怎么办？"><span class="toc-number">1.0.22.</span> <span class="toc-text">如果hashMap的key是一个自定义的类，怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释一下hashMap具体如何实现的？"><span class="toc-number">1.0.23.</span> <span class="toc-text">解释一下hashMap具体如何实现的？</span></a></li></ol></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
 <script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
     }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
 </script>
 
-        </div>
-          
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <link rel="stylesheet" href="/css/gitment.min.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+    var gitment = new Gitment({
+      id: 'Array', // 可选。默认为 location.href
+      owner: 'Kayleh',
+      repo: 'kayleh.github.io',
+      oauth: {
+        client_id: 'bcc026fd4e9db003dac4',
+        client_secret: '343390c580dc0383692430041a338dee654609b5',
+      },
+    })
+    gitment.render('comments')
+  </script>
   
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
+</section>
+    
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List、Map、Set三个接口存取元素时，各有什么特点？"><span class="nav-number">1.0.1.</span> <span class="nav-text">List、Map、Set三个接口存取元素时，各有什么特点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阐述ArrayList、Vector、LinkedList的存储性能和特性"><span class="nav-number">1.0.2.</span> <span class="nav-text">阐述ArrayList、Vector、LinkedList的存储性能和特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断List、Set、Map是否继承自Collection接口？"><span class="nav-number">1.0.3.</span> <span class="nav-text">判断List、Set、Map是否继承自Collection接口？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你所知道的常用集合类以及主要方法？"><span class="nav-number">1.0.4.</span> <span class="nav-text">你所知道的常用集合类以及主要方法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明Collection-和-Collections的区别"><span class="nav-number">1.0.5.</span> <span class="nav-text">说明Collection 和 Collections的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明ArrayList-Vector-LinkedList的存储性能和特性是什么？"><span class="nav-number">1.0.6.</span> <span class="nav-text">说明ArrayList,Vector,LinkedList的存储性能和特性是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList和LinkedList的区别？-链表和数组的优缺点"><span class="nav-number">1.0.7.</span> <span class="nav-text">ArrayList和LinkedList的区别？(链表和数组的优缺点)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明HashMap和Hashtable的区别？"><span class="nav-number">1.0.8.</span> <span class="nav-text">说明HashMap和Hashtable的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请说说快速失败-fail-fast-和安全失败-fail-safe-的区别？"><span class="nav-number">1.0.9.</span> <span class="nav-text">请说说快速失败(fail-fast)和安全失败(fail-safe)的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说说Iterator和ListIterator的区别？"><span class="nav-number">1.0.10.</span> <span class="nav-text">说说Iterator和ListIterator的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请简单说明一下什么是迭代器？"><span class="nav-number">1.0.11.</span> <span class="nav-text">请简单说明一下什么是迭代器？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释为什么集合类没有实现Cloneable和Serializable接口？"><span class="nav-number">1.0.12.</span> <span class="nav-text">解释为什么集合类没有实现Cloneable和Serializable接口？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java集合类框架的基本接口有哪些？"><span class="nav-number">1.0.13.</span> <span class="nav-text">Java集合类框架的基本接口有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap的原理？"><span class="nav-number">1.0.14.</span> <span class="nav-text">ConcurrentHashMap的原理？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释一下TreeMap"><span class="nav-number">1.0.15.</span> <span class="nav-text">解释一下TreeMap?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请说明ArrayList是否会越界？"><span class="nav-number">1.0.16.</span> <span class="nav-text">请说明ArrayList是否会越界？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明concurrenthashmap有什么优势以及1-7和1-8区别？"><span class="nav-number">1.0.17.</span> <span class="nav-text">说明concurrenthashmap有什么优势以及1.7和1.8区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeMap的底层实现？"><span class="nav-number">1.0.18.</span> <span class="nav-text">TreeMap的底层实现？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明ConcurrentHashMap锁加在了哪些地方？"><span class="nav-number">1.0.19.</span> <span class="nav-text">说明ConcurrentHashMap锁加在了哪些地方？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释HashMap的容量为什么是2的n次幂？"><span class="nav-number">1.0.20.</span> <span class="nav-text">解释HashMap的容量为什么是2的n次幂？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请你简单介绍一下ArrayList和LinkedList的区别，并说明如果一直在list的尾部添加元素，用哪种方式的效率高？"><span class="nav-number">1.0.21.</span> <span class="nav-text">请你简单介绍一下ArrayList和LinkedList的区别，并说明如果一直在list的尾部添加元素，用哪种方式的效率高？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果hashMap的key是一个自定义的类，怎么办？"><span class="nav-number">1.0.22.</span> <span class="nav-text">如果hashMap的key是一个自定义的类，怎么办？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释一下hashMap具体如何实现的？"><span class="nav-number">1.0.23.</span> <span class="nav-text">解释一下hashMap具体如何实现的？</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Kayleh"
-      src="/images/2.jpg">
-  <p class="site-author-name" itemprop="name">Kayleh</p>
-  <div class="site-description" itemprop="description">Kayleh</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+    <div class="scroll" id="post-nav-button">
         
-          <span class="site-state-item-count">90</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">15</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://www.facebook.com/kayleh.yao.7" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;kayleh.yao.7" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;ni-hui-gan-xie-wo-de" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>Zhihu</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/jinqing-yao-97a750186/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;jinqing-yao-97a750186&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://github.com/Kayleh" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Kayleh" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;5737136689&#x2F;profile?rightmod&#x3D;1&amp;wvr&#x3D;6&amp;mod&#x3D;personinfo" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://plus.google.com/kayleh" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kayleh" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/y40jinqing" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;y40jinqing" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.youtube.com/channel/UC60fbKqc9kjOom-o76OID_A?view_as=subscriber" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC60fbKqc9kjOom-o76OID_A?view_as&#x3D;subscriber" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
-      </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
-
-
-
-      </div>
-
+            <a  href="/2020/07/14/Thread/" title="上一篇: Thread">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2020/07/14/J2SE/" title="下一篇: J2SE">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/08/03/SpringCloud/">SpringCloud</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/02/MYSQL/">MYSQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/27/HTTP/">HTTP</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/27/TCP-IP/">TCP/IP</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/">计算机网络概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">操作系统概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/XML/">XML</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/16/JDBC/">JDBC</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/J2EE/">J2EE</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/MVC/">MVC</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Mybatis/">Mybatis</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Spring/">Spring</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/IO/">IO</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/GC/">GC</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/JVM/">JVM</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Reflection/">Reflection</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/JDK/">JDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Lock/">Lock</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Thread/">Thread</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Array/">Array</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/J2SE/">J2SE</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/02/Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/28/C-prime-plus/">C prime plus</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/27/Redis/">Redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/">编码算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/17/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/">哈希算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/17/%E6%8F%92%E5%80%BC%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">插值查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/17/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">二分查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/17/%E7%BA%BF%E6%80%A7%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">线性查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/">模板方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">访问者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">策略模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/">备忘录模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/">中介者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/">迭代器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/12/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">解释器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">责任链模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/11/RESUME/">RESUME</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">享元模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/">装饰器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">组合模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/08/%E5%8E%9F%E5%9E%8B/">原型</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/">生成器</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">工厂设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99/">合成复用原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/">迪米特法则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/">开闭原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">里氏替换原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/">依赖倒转原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99/">接口隔离原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99/">单一职责原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/">XSS跨站脚本攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/">SQL注入式攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/23/Interview(updating)/">Interview(updating)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/21/%E7%BB%B4%E6%8A%A42/">维护2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/20/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">二叉排序树</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/18/%E5%A0%86%E6%8E%92%E5%BA%8F/">堆排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">7种排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/14/%E9%98%9F%E5%88%97/">队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/13/Inversion-of-Control%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/">Inversion of Control控制反转</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/12/%E9%93%BE%E8%A1%A8/">链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/11/%E6%A0%88Stack/">栈Stack</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/07/SparseArray%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/">SparseArray稀疏数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/01/%E7%BB%B4%E6%8A%A41/">维护1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/30/Java-memory-model%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">Java memory model内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/29/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81/">面向对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/26/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/">动态数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">斐波那契数列</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/20/Spring%E3%80%81SpringMVC%E3%80%81Mybatis%E6%95%B4%E5%90%88/">Spring、SpringMVC、Mybatis整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/">回文数</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/">【SpringMVC】-@ModelAttribute</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/">Spring架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/">并发:原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/unix/">unix的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/">Rest架构风格</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">SpringMVC环境搭建</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
-      </div>
-    </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
+
+    <script>
         
+    </script>
 
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Kayleh</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-      <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">522k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2020 Kayleh
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank">
+                    Hexo &nbsp;&nbsp;
+                </a>
+                <a href="https://github.com/maochunguang" target="_blank">
+                    Blog
+                </a>  -->
+                by Kayleh @2020
+            </div>
+        </div>
+
+        
+
+        <div class="visit">
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                你是第
+                <span id="site-visit">
+                    <!-- 访问数 -->
+                    <span id="busuanzi_value_site_uv">
+
+                    </span>
+                </span>
+                位访问该站的人哦~
+            </span>
+            
+            
+            <!-- <span>, </span> -->
+            
+            
+
+            <span class="post-meta-divider">|</span>
+
+            <span id="busuanzi_container_page_pv" style='display:none'>
+                <span id="page-visit">
+                    本页阅读量:
+                    <span id="busuanzi_value_page_pv">
+                        <!--本页阅读量-->
+                    </span>
+                </span>
+            </span>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+            <span class="post-meta-divider">|</span>
+
+            <span id="busuanzi_container_site_pv">
+                本站总访问量
+                <span id="busuanzi_value_site_pv">
+                </span>次
+            </span>
+
+            <!-- <span class="post-meta-divider">|</span> -->
+            <!-- <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv" </span>人</span> -->
+
+            
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?05JpXkxLDz";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
   </div>
 
-<!--统计-->
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Symbols count total: </span>
-    
-	<span title="post.totalcount">
-     246.1k字 </span>
-    <!--<span title="Symbols count total">522k</span>-->
-  
+  <!--mouse css-->
+  <!-- <script type="text/javascript" color="220,220,220" opacity='0.7' zIndex="-2" count="200"
+    src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script> -->
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="Total Visitors">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="Total Views">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
+  <!-- snow -->
+  <script type="text/javascript" src="\js\snow.js"></script>
 
+  <!-- DigitalRain -->
+  <canvas id="canvas" width="1440" height="900"></canvas>
+  <script type="text/javascript" src="/js/DigitalRain.js"></script>
 
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
-
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
 
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>

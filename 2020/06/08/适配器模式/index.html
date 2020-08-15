@@ -1,383 +1,109 @@
 <!DOCTYPE html>
-<html>
+
+
+<html lang="en">
+
 
 <head>
-  <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="pIti0h4vOD" />
-  <!-- <meta name="baidu-site-verification" content="L6Lm9d5Crl"/> -->
+  <meta charset="utf-8" />
+    
+  <meta name="description" content="Kayleh" />
   
-  
-  
-  
-  <title>适配器模式 | Kayleh</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="适配器模式 将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="适配器模式">
-<meta property="og:url" content="http://www.kayleh.top/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/index.html">
-<meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="适配器模式 将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.kayleh.top/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/1.png">
-<meta property="article:published_time" content="2020-06-08T06:28:13.000Z">
-<meta property="article:modified_time" content="2020-06-08T10:02:43.483Z">
-<meta property="article:author" content="Kayleh">
-<meta property="article:tag" content="DesignPatterns">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.kayleh.top/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/1.png">
-  
-  <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
-  
-  
-  <link rel="icon" href="/img/1.jpeg">
-  
-  
-  
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <title>
+    适配器模式 |  Kayleh
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/2.jpg" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
 
-  <!-- 加载特效 -->
-  <script src="/js/pace.js"></script>
-  <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-    var yiliaConfig = {
-      fancybox: true,
-      animate: true,
-      isHome: false,
-      isPost: true,
-        isArchive: false,
-          isTag: false,
-            isCategory: false,
-              open_in_new: false
-      }
-  </script>
-<meta name="generator" content="Hexo 4.2.0"></head>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
 
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+
+<!-- 看板娘 -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/> -->
+  <!-- <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script> -->
+<link rel="alternate" href="/atom.xml" title="Kayleh" type="application/atom+xml">
+</head>
+
+</html>
 
 <body>
-  <div id="container">
-    <div class="left-col">
-      <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="/img/2.jpg" class="js-avatar">
-            
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">Kayleh</a></h1>
-        </hgroup>
-        
-        
-        <form>
-            <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下"
-                autocomplete="off">
-        </form>
-        <div id="local-search-result"></div>
-        
-        
-        <script type="text/javascript">
-            (function () {
-                'use strict';
-                function getMatchData(keyword, data) {
-                    var matchData = [];
-                    for (var i = 0; i < data.length; i++) {
-                        if (data[i].title.toLowerCase().indexOf(keyword) >= 0)
-                            matchData.push(data[i])
-                    }
-                    return matchData;
-                }
-                var $input = $('#local-search-input');
-                var $resultContent = $('#local-search-result');
-                $input.keyup(function () {
-                    $.ajax({
-                        url: '/search.json',
-                        dataType: "json",
-                        success: function (json) {
-                            var str = '<ul class=\"search-result-list\">';
-                            var keyword = $input.val().trim().toLowerCase();
-                            $resultContent.innerHTML = "";
-                            if ($input.val().trim().length <= 0) {
-                                $resultContent.empty();
-                                $('#switch-area').show();
-                                return;
-                            }
-                            var results = getMatchData(keyword, json);
-                            if (results.length === 0) {
-                                $resultContent.empty();
-                                $('#switch-area').show();
-                                return;
-                            }
-                            for (var i = 0; i < results.length; i++) {
-                                str += "<li><a href='" + results[i].url + "' class='search-result-title'>" + results[i].title + "</a></li>";
-                            }
-                            str += "</ul>";
-                            $resultContent.empty();
-                            $resultContent.append(str);
-                            $('#switch-area').hide();
-                        }
-                    });
-                });
-            })();
-        </script>
-        
-        
-        <div id="switch-btn" class="switch-btn">
-            <div class="icon">
-                <div class="icon-ctn">
-                    <div class="icon-wrap icon-house" data-idx="0">
-                        <div class="birdhouse"></div>
-                        <div class="birdhouse_holes"></div>
-                    </div>
-                    <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                        <div class="ribbon"></div>
-                    </div>
-                    
-                    <div class="icon-wrap icon-link hide" data-idx="2">
-                        <div class="loopback_l"></div>
-                        <div class="loopback_r"></div>
-                    </div>
-                    
-                        
-                    <div class="icon-wrap icon-me hide" data-idx="3">
-                        <div class="user"></div>
-                        <div class="shoulder"></div>
-                    </div>
-                    
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                    <li>友情链接</li>
-                    
-                        
-                    <li>关于我</li>
-                    
-                    </ul>
-                </div>
-            </div>
-        
-                    <div id="switch-area" class="switch-area">
-                        <div class="switch-wrap">
-                            <section class="switch-part switch-part1">
-                                <nav class="header-menu">
-                                    <ul>
-                                        
-                                        <li><a href="/archives/">所有文章</a></li>
-                                        
-                                        <li><a href="http://39.108.121.213/" target="_blank" rel="noopener">个人网站</a></li>
-                                        
-                                        <li><a href="/2020/06/11/RESUME/">简历</a></li>
-                                        
-                                        <li><a href="https://github.com/Kayleh" target="_blank" rel="noopener">开源项目</a></li>
-                                        
-                                        <li><a href="/tags/DistributedMicroservices">分布式/集群/微服务</a></li>
-                                        
-                                        <li><a href="/tags/frontDesign">前端/平面设计</a></li>
-                                        
-                                        <li><a href="/tags/spider">数据采集/爬虫</a></li>
-                                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                        <a class="fl github" target="_blank" href="https://github.com/Kayleh"
-                                            title="github">github</a>
-                                        
-                                        <a class="fl facebook" target="_blank" href="https://www.facebook.com/kayleh.yao.7"
-                                            title="facebook">facebook</a>
-                                        
-                                        <a class="fl twitter" target="_blank" href="https://twitter.com/y40jinqing"
-                                            title="twitter">twitter</a>
-                                        
-                                        <a class="fl weibo" target="_blank" href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo"
-                                            title="weibo">weibo</a>
-                                        
-                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de"
-                                            title="zhihu">zhihu</a>
-                                        
-                                        <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/jinqing-yao-97a750186/"
-                                            title="linkedin">linkedin</a>
-                                        
-                                        <a class="fl rss" target="_blank" href="/atom.xml"
-                                            title="rss">rss</a>
-                                        
-                                        <a class="fl google" target="_blank" href="https://kaylehisdied@gmail.com"
-                                            title="google">google</a>
-                                        
-                        </ul>
-                    </nav>
-
-                    
-
-                </section>
-                
-                                        <section class="switch-part switch-part2">
-                                            <div class="widget tagcloud" id="js-tagcloud">
-                                                <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Concurrency/" style="font-size: 10px;">Concurrency</a> <a href="/tags/DesignPatterns/" style="font-size: 20px;">DesignPatterns</a> <a href="/tags/DistributedMicroservices/" style="font-size: 15px;">DistributedMicroservices</a> <a href="/tags/Interview/" style="font-size: 18.33px;">Interview</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Operating-Systems/" style="font-size: 10px;">Operating Systems</a> <a href="/tags/dataAlgorithm/" style="font-size: 16.67px;">dataAlgorithm</a> <a href="/tags/frame/" style="font-size: 13.33px;">frame</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/maintain/" style="font-size: 11.67px;">maintain</a> <a href="/tags/network/" style="font-size: 11.67px;">network</a> <a href="/tags/resume/" style="font-size: 10px;">resume</a> <a href="/tags/safe/" style="font-size: 11.67px;">safe</a> <a href="/tags/sql/" style="font-size: 11.67px;">sql</a>
-                                            </div>
-                                        </section>
-                                        
-                
-                                        <section class="switch-part switch-part3">
-                                            <div id="js-friends">
-                                                
-                                                <a target="_blank" class="main-nav-link switch-friends-link"
-                                                    href="https://blog.csdn.net/key1379">csdn</a>
-                                                
-                                                <a target="_blank" class="main-nav-link switch-friends-link"
-                                                    href="https://www.jianshu.com/u/30643eb3e669">简书</a>
-                                                
-                                                <a target="_blank" class="main-nav-link switch-friends-link"
-                                                    href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de">知乎</a>
-                                                
-                                            </div>
-                                        </section>
-                                        
-                
-                                        
-                                            <section class="switch-part switch-part4">
-                                                
-                    <div id="js-aboutme">不会剪辑的平面设计师不是好程序员
-                        </div>
-                        </section>
-                        
-                
-            </div>
-            
-        </div>
-        <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=558261233&auto=1&height=66"></iframe> -->
-        
-    </header>
-    <p></p>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=2&id=558261233&auto=1&height=32"></iframe>
-
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Kayleh</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/2.jpg" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">Kayleh</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="http://39.108.121.213/" target="_blank" rel="noopener">个人网站</a></li>
-                
-                    <li><a href="/2020/06/11/RESUME/">简历</a></li>
-                
-                    <li><a href="https://github.com/Kayleh" target="_blank" rel="noopener">开源项目</a></li>
-                
-                    <li><a href="/tags/DistributedMicroservices">分布式/集群/微服务</a></li>
-                
-                    <li><a href="/tags/frontDesign">前端/平面设计</a></li>
-                
-                    <li><a href="/tags/spider">数据采集/爬虫</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="github" target="_blank" href="https://github.com/Kayleh" title="github">github</a>
-                    
-                        <a class="facebook" target="_blank" href="https://www.facebook.com/kayleh.yao.7" title="facebook">facebook</a>
-                    
-                        <a class="twitter" target="_blank" href="https://twitter.com/y40jinqing" title="twitter">twitter</a>
-                    
-                        <a class="weibo" target="_blank" href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
-                    
-                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" title="zhihu">zhihu</a>
-                    
-                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/jinqing-yao-97a750186/" title="linkedin">linkedin</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-                    
-                        <a class="google" target="_blank" href="https://kaylehisdied@gmail.com" title="google">google</a>
-                    
-                </div>
-            </nav>
-        </header>
-    </div>
-</nav>
-      <div class="body-wrap"><article id="post-适配器模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="article-date">
-      <time datetime="2020-06-08T06:28:13.000Z" itemprop="datePublished">2020-06-08</time>
-</a>
-
-    </div>
-  
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-适配器模式"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      适配器模式
-    </h1>
-  
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  适配器模式
+</h1>
+ 
 
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <time datetime="2020-06-08T06:28:13.000Z" itemprop="datePublished">2020-06-08</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">971</span>
+        </span>
+    </span>
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">3 min</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
+      
+    <div class="tocbot"></div>
 
-        <div class="clearfix"></div>
-      </div>
-      
-    
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><blockquote>
+       
+  <h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><blockquote>
 <p><em>将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</em> </p>
 <a id="more"></a>
 </blockquote>
@@ -417,359 +143,559 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FileReader reader = <span class="keyword">new</span> InputStreamReader(input, <span class="string">"UTF-8"</span>); <span class="comment">// compile error!</span></span><br></pre></td></tr></table></figure>
 
 <p>直接使用<code>InputStreamReader</code>这个Adapter是不行的，因为它只能转换出<code>Reader</code>接口。事实上，要把<code>InputStream</code>转换为<code>FileReader</code>也不是不可能，但需要花费十倍以上的功夫。这时，<strong>面向抽象编程</strong>这一原则就体现出了威力：<strong>持有高层接口不但代码更灵活，而且把各种接口组合起来也更容易。一旦持有某个具体的子类类型，要想做一些改动就非常困难。</strong></p>
-
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
       
     </div>
     
-  </div>
-  
+
+    <!-- copyright -->
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">适配器模式</a></p>
-        <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
-        <p><span>发布时间:</span>2020年06月08日 - 14时28分</p>
-        <p><span>最后更新:</span>2020年06月08日 - 18时02分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" title="适配器模式">http://www.kayleh.top/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.kayleh.top/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/　　作者: Kayleh" title=""></span>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+        </li>
+      </ul>
     </div>
-
-
-
-<nav id="article-nav">
-  
-    <a  href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <!-- <strong class="article-nav-caption">&lt</strong> -->
-
-      <div class="article-nav-title">
-        
-          桥接模式
-        
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
       </div>
-    </a>
-  
-  
-    <a  href="/2020/06/08/%E5%8E%9F%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">原型</div>
-      <strong class="article-nav-caption">></strong>
-      <!-- <strong class="article-nav-caption">&gt</strong> -->
+</div>
 
-    </a>
-  
-</nav>
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://www.kayleh.top/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码">
+    </div>
+</div>
 
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
 
-  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            桥接模式
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/08/%E5%8E%9F%E5%9E%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">原型</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz",
+    app_key: "OBHyEdMVsi8FSFA0aqJNh4HE",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
 </article>
 
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#适配器模式"><span class="toc-number">1.</span> <span class="toc-text">适配器模式</span></a></li></ol>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020
+        <i class="ri-heart-fill heart_icon"></i> Kayleh
+      </li>
+    </ul>
+    <!-- <ul> -->
+    <!-- <li> -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Powered by <a href="https://hexo.io" target="_blank">Hexo</a>-->
+    <!--<span class="division">|</span>-->
+    <!--Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>-->
+    <!--  -->
+    <!-- </li> -->
+    <!-- </ul> -->
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <!-- <ul> -->
+    <!-- <li> -->
+    <!-- cnzz统计 -->
+    <!-- -->
+    <!--<script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>-->
+    <!-- -->
+    <!-- </li> -->
+    <!-- </ul> -->
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
 </div>
-<style>
-    .left-col .switch-btn {
-        display: none;
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/2.jpg" alt="Kayleh"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives/">所有文章</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="http://39.108.121.213/" target="_blank" rel="noopener">个人网站</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2020/08/15/Contract/">联系</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2020/06/11/RESUME/">简历</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://github.com/Kayleh" target="_blank" rel="noopener">开源项目</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/DistributedMicroservices">分布式/集群/微服务</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/frontDesign">前端/平面设计</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/spider">数据采集/爬虫</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechatpay.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
     }
-    .left-col .switch-area {
-        display: none;
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+
+<script src="/js/clickLove.js"></script>
+
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="86"
+        src="//music.163.com/outchain/player?type=2&id=571339492&auto=0&height=66"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
     }
 </style>
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
-</script>
-
-
-
-
-<div class="bdsharebuttonbox">
-	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-
-
-
     
-        <section id="comments">
-  <link rel="stylesheet" href="/css/gitment.min.css">
-  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-  <script>
-    var gitment = new Gitment({
-      id: '适配器模式', // 可选。默认为 location.href
-      owner: 'Kayleh',
-      repo: 'kayleh.github.io',
-      oauth: {
-        client_id: 'bcc026fd4e9db003dac4',
-        client_secret: '343390c580dc0383692430041a338dee654609b5',
-      },
-    })
-    gitment.render('comments')
-  </script>
-  
-</section>
-    
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a  href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" title="上一篇: 桥接模式">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a  href="/2020/06/08/%E5%8E%9F%E5%9E%8B/" title="下一篇: 原型">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/">分布式的微服务架构7</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/">分布式的微服务架构6</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%845/">分布式的微服务架构5</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%844/">分布式的微服务架构4</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%843/">分布式的微服务架构3</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%842/">分布式的微服务架构2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/03/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%841/">分布式的微服务架构1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/02/MYSQL/">MYSQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/27/HTTP/">HTTP</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/27/TCP-IP/">TCP/IP</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/">计算机网络概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">操作系统概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/24/XML/">XML</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/16/JDBC/">JDBC</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/J2EE/">J2EE</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/MVC/">MVC</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Mybatis/">Mybatis</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Spring/">Spring</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/IO/">IO</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/GC/">GC</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/JVM/">JVM</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Reflection/">Reflection</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/JDK/">JDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Lock/">Lock</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Thread/">Thread</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/Array/">Array</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/14/J2SE/">J2SE</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/02/Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/28/C-prime-plus/">C prime plus</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/27/Redis/">Redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/">编码算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/17/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/">哈希算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/17/%E6%8F%92%E5%80%BC%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">插值查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/17/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">二分查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/17/%E7%BA%BF%E6%80%A7%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">线性查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/">模板方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">访问者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">策略模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/">备忘录模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/">中介者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/">迭代器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/12/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">解释器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">责任链模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/11/RESUME/">RESUME</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">享元模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/">装饰器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">组合模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/08/%E5%8E%9F%E5%9E%8B/">原型</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/">生成器</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">工厂设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99/">合成复用原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/">迪米特法则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/">开闭原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">里氏替换原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/">依赖倒转原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99/">接口隔离原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/03/%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99/">单一职责原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/">XSS跨站脚本攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/">SQL注入式攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/23/Interview(updating)/">Interview(updating)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/21/%E7%BB%B4%E6%8A%A42/">维护2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/20/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">二叉排序树</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/18/%E5%A0%86%E6%8E%92%E5%BA%8F/">堆排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">7种排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/14/%E9%98%9F%E5%88%97/">队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/13/Inversion-of-Control%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/">Inversion of Control控制反转</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/12/%E9%93%BE%E8%A1%A8/">链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/11/%E6%A0%88Stack/">栈Stack</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/07/SparseArray%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/">SparseArray稀疏数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/01/%E7%BB%B4%E6%8A%A41/">维护1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/30/Java-memory-model%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">Java memory model内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/29/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81/">面向对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/26/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/">动态数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/22/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">斐波那契数列</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/20/Spring%E3%80%81SpringMVC%E3%80%81Mybatis%E6%95%B4%E5%90%88/">Spring、SpringMVC、Mybatis整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/">回文数</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/">【SpringMVC】-@ModelAttribute</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/">Spring架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/">并发:原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/19/unix/">unix的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/">Rest架构风格</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">SpringMVC环境搭建</a></li></ul>
-    
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-    <script>
-        $(".post-list").addClass("toc-article");
-        // $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#toc, .switch-btn, .switch-area").toggle();
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-                $(".switch-btn, .switch-area").fadeToggle(300);
-            }
-        })
-    </script>
-
-
-
-
-    <script>
-        
-    </script>
-
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2020 Kayleh
-            </div>
-            <div class="footer-right">
-                <!-- <a href="http://hexo.io/" target="_blank">
-                    Hexo &nbsp;&nbsp;
-                </a>
-                <a href="https://github.com/maochunguang" target="_blank">
-                    Blog
-                </a>  -->
-                by Kayleh @2020
-            </div>
-        </div>
-
-        
-
-        <div class="visit">
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                你是第
-                <span id="site-visit">
-                    <!-- 访问数 -->
-                    <span id="busuanzi_value_site_uv">
-
-                    </span>
-                </span>
-                位访问该站的人哦~
-            </span>
-            
-            
-            <!-- <span>, </span> -->
-            
-            
-
-            <span class="post-meta-divider">|</span>
-
-            <span id="busuanzi_container_page_pv" style='display:none'>
-                <span id="page-visit">
-                    本页阅读量:
-                    <span id="busuanzi_value_page_pv">
-                        <!--本页阅读量-->
-                    </span>
-                </span>
-            </span>
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-            <span class="post-meta-divider">|</span>
-
-            <span id="busuanzi_container_site_pv">
-                本站总访问量
-                <span id="busuanzi_value_site_pv">
-                </span>次
-            </span>
-
-            <!-- <span class="post-meta-divider">|</span> -->
-            <!-- <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv" </span>人</span> -->
-
-            
-        </div>
-        
-    </div>
-</footer>
-    </div>
-    
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-
-<script src="/js/main.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 1;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'xxxxx', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?05JpXkxLDz";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-<script type="text/javascript" src="/js/clicklove.js"></script>
-
   </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":112,"height":225},"mobile":{"show":true},"log":false});</script></body>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
 
-
-  <!-- mouse css
-  <script type="text/javascript" color="220,220,220" opacity='0.7' zIndex="-2" count="200"
-    src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-    </script> -->
-
-  <!-- snow -->
-  <!-- <script type="text/javascript" src="\js\snow.js"></script> -->
-
-  <!-- fireworks -->
-  <!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
-  <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-  <script type="text/javascript" src="/js/fireworks.js"></script> -->
-
-  <!-- {% if theme.fireworks %}
-  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
-  <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-  <script type="text/javascript" src="/js/clicklove.js"></script>
-  {% endif %} -->
-
-  <!-- DigitalRain -->
-  <!-- <canvas id="canvas" width="1440" height="900"></canvas> -->
-  <!-- <script type="text/javascript" src="/js/DigitalRain.js"></script> -->
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
-
+  <!-- 数字雨-->
+  <!-- <canvas id="canvas" width="1440" height="900" ></canvas> -->
+  <!-- <script type="text/javascript" src="/js/DigitalRain.js"></script>  -->
 </html>

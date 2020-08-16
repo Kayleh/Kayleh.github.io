@@ -49,6 +49,13 @@
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+  <!-- valie-->
+  <meta charset="UTF-8">
+  <title>Valine - A simple comment system based on Leancloud.</title>
+  <!--Leancloud 操作库:-->
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
   <!-- 加载特效 -->
   <script src="/js/pace.js"></script>
   <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
@@ -65,6 +72,18 @@
       }
   </script>
 <meta name="generator" content="Hexo 4.2.0"></head>
+
+<!-- <div class="comment"></div>
+<script>
+    new Valine({
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV,
+        el: '.comment', // 
+        app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz', // 这里填写上面得到的APP ID
+        app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE', // 这里填写上面得到的APP KEY
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' // [v1.0.7 new]留言框占位提示文字
+    });
+</script> -->
 
 
 <body>
@@ -554,7 +573,7 @@
 
 
     
-        <section id="comments">
+        <!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -569,8 +588,24 @@
     })
     gitment.render('comments')
   </script>
-  
-</section>
+</section> -->
+
+<div style="margin: 50px;margin-left: 75px;margin-right: 75px;">
+  <p>评论</p>
+  <div><span></span></div>
+  <div class="comment" style="color: white;"></div>
+
+  <script>
+    new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      // av: AV,
+      el: '.comment', // 
+      app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz', // 这里填写上面得到的APP ID
+      app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE', // 这里填写上面得到的APP KEY
+      placeholder: '回复评论吧~~' // [v1.0.7 new]留言框占位提示文字
+    });
+  </script>
+</div>
     
 
 
@@ -772,6 +807,21 @@ ga('send', 'pageview');
 </script>
 
 <script type="text/javascript" src="/js/clicklove.js"></script>
+
+<!-- <div class="comment"></div>
+<script>
+    new Valine({
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV,
+        el: '.comment', // 
+        app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz', // 这里填写上面得到的APP ID
+        app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE', // 这里填写上面得到的APP KEY
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' // [v1.0.7 new]留言框占位提示文字
+    });
+</script> -->
+
+
+
 
   </div>
 

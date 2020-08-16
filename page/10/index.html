@@ -1,32 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/2.jpg">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/2.jpg">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="pIti0h4vOD" />
+  <!-- <meta name="baidu-site-verification" content="L6Lm9d5Crl"/> -->
+  
+  
+  
+  
+  <title>Kayleh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Kayleh">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kayleh">
+<meta property="og:url" content="http://www.kayleh.top/page/10/index.html">
+<meta property="og:site_name" content="Kayleh">
+<meta property="og:description" content="Kayleh">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Kayleh">
+<meta name="twitter:card" content="summary">
+  
+  <link rel="alternative" href="/atom.xml" title="Kayleh" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="/img/1.jpeg">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
 
-<!--在线联系-->
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+  
+
+  <!--在线联系-->
+  <!-- {% if (theme.daovoice) %} -->
   <script>
-  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
-  daovoice('init', {
+    (function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+    daovoice('init', {
       app_id: "38b1c911"
     });
-  daovoice('update');
+    daovoice('update');
   </script>
+  <!-- {% endif %} -->
+
+  
+  
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+
+  <script data-ad-client="ca-pub-7457165067653912" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- 加载特效 -->
+  <script src="/js/pace.js"></script>
+  <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+    var yiliaConfig = {
+      fancybox: true,
+      animate: true,
+      isHome: true,
+      isPost: false,
+        isArchive: false,
+          isTag: false,
+            isCategory: false,
+              open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 
-<link rel="stylesheet" href="/css/main.css">
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/2.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Kayleh</a></h1>
+        </hgroup>
+        
+        
+        <form>
+            <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下"
+                autocomplete="off">
+        </form>
+        <div id="local-search-result"></div>
+        
+        
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                function getMatchData(keyword, data) {
+                    var matchData = [];
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].title.toLowerCase().indexOf(keyword) >= 0)
+                            matchData.push(data[i])
+                    }
+                    return matchData;
+                }
+                var $input = $('#local-search-input');
+                var $resultContent = $('#local-search-result');
+                $input.keyup(function () {
+                    $.ajax({
+                        url: '/search.json',
+                        dataType: "json",
+                        success: function (json) {
+                            var str = '<ul class=\"search-result-list\">';
+                            var keyword = $input.val().trim().toLowerCase();
+                            $resultContent.innerHTML = "";
+                            if ($input.val().trim().length <= 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            var results = getMatchData(keyword, json);
+                            if (results.length === 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            for (var i = 0; i < results.length; i++) {
+                                str += "<li><a href='" + results[i].url + "' class='search-result-title'>" + results[i].title + "</a></li>";
+                            }
+                            str += "</ul>";
+                            $resultContent.empty();
+                            $resultContent.append(str);
+                            $('#switch-area').hide();
+                        }
+                    });
+                });
+            })();
+        </script>
+        
+        
+        <div id="switch-btn" class="switch-btn">
+            <div class="icon">
+                <div class="icon-ctn">
+                    <div class="icon-wrap icon-house" data-idx="0">
+                        <div class="birdhouse"></div>
+                        <div class="birdhouse_holes"></div>
+                    </div>
+                    <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                        <div class="ribbon"></div>
+                    </div>
+                    
+                    <div class="icon-wrap icon-link hide" data-idx="2">
+                        <div class="loopback_l"></div>
+                        <div class="loopback_r"></div>
+                    </div>
+                    
+                        
+                    <div class="icon-wrap icon-me hide" data-idx="3">
+                        <div class="user"></div>
+                        <div class="shoulder"></div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                    <li>友情链接</li>
+                    
+                        
+                    <li>关于我</li>
+                    
+                    </ul>
+                </div>
+            </div>
+        
+                    <div id="switch-area" class="switch-area">
+                        <div class="switch-wrap">
+                            <section class="switch-part switch-part1">
+                                <nav class="header-menu">
+                                    <ul>
+                                        
+                                        <li><a href="/archives/">所有</a></li>
+                                        
+                                        <li><a href="http://39.108.121.213/" target="_blank" rel="noopener">个人网站</a></li>
+                                        
+                                        <li><a href="/2020/06/11/RESUME/">简历</a></li>
+                                        
+                                        <li><a href="https://github.com/Kayleh" target="_blank" rel="noopener">开源项目</a></li>
+                                        
+                                        <li><a href="/tags/DistributedMicroservices">分布式/集群/微服务</a></li>
+                                        
+                                        <li><a href="/tags/frontDesign">前端/平面设计</a></li>
+                                        
+                                        <li><a href="/tags/spider">数据采集/爬虫</a></li>
+                                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                        <a class="fl github" target="_blank" href="https://github.com/Kayleh"
+                                            title="github">github</a>
+                                        
+                                        <a class="fl facebook" target="_blank" href="https://www.facebook.com/kayleh.yao.7"
+                                            title="facebook">facebook</a>
+                                        
+                                        <a class="fl twitter" target="_blank" href="https://twitter.com/y40jinqing"
+                                            title="twitter">twitter</a>
+                                        
+                                        <a class="fl weibo" target="_blank" href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo"
+                                            title="weibo">weibo</a>
+                                        
+                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de"
+                                            title="zhihu">zhihu</a>
+                                        
+                                        <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/jinqing-yao-97a750186/"
+                                            title="linkedin">linkedin</a>
+                                        
+                                        <a class="fl google" target="_blank" href="/kaylehisdied@gmail.com"
+                                            title="google">google</a>
+                                        
+                                        <a class="fl rss" target="_blank" href="/atom.xml"
+                                            title="rss">rss</a>
+                                        
+                        </ul>
+                    </nav>
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+                    
 
-
+                </section>
+                
+                                        <section class="switch-part switch-part2">
+                                            <div class="widget tagcloud" id="js-tagcloud">
+                                                <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Concurrency/" style="font-size: 10px;">Concurrency</a> <a href="/tags/DesignPatterns/" style="font-size: 20px;">DesignPatterns</a> <a href="/tags/DistributedMicroservices/" style="font-size: 15px;">DistributedMicroservices</a> <a href="/tags/Interview/" style="font-size: 18.33px;">Interview</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Operating-Systems/" style="font-size: 10px;">Operating Systems</a> <a href="/tags/dataAlgorithm/" style="font-size: 16.67px;">dataAlgorithm</a> <a href="/tags/frame/" style="font-size: 13.33px;">frame</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/maintain/" style="font-size: 11.67px;">maintain</a> <a href="/tags/network/" style="font-size: 11.67px;">network</a> <a href="/tags/resume/" style="font-size: 10px;">resume</a> <a href="/tags/safe/" style="font-size: 11.67px;">safe</a> <a href="/tags/sql/" style="font-size: 11.67px;">sql</a>
+                                            </div>
+                                        </section>
+                                        
+                
+                                        <section class="switch-part switch-part3">
+                                            <div id="js-friends">
+                                                
+                                                <a target="_blank" class="main-nav-link switch-friends-link"
+                                                    href="https://blog.csdn.net/key1379">csdn</a>
+                                                
+                                                <a target="_blank" class="main-nav-link switch-friends-link"
+                                                    href="https://www.jianshu.com/u/30643eb3e669">简书</a>
+                                                
+                                                <a target="_blank" class="main-nav-link switch-friends-link"
+                                                    href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de">知乎</a>
+                                                
+                                            </div>
+                                        </section>
+                                        
+                
+                                        
+                                            <section class="switch-part switch-part4">
+                                                
+                    <div id="js-aboutme">不会剪辑的平面设计师不是好程序员
+                        </div>
+                        </section>
+                        
+                
+            </div>
+            
+        </div>
+        <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=558261233&auto=1&height=66"></iframe> -->
+        
 
 
 <!--动态字体-->
@@ -83,1255 +336,716 @@
   </script>
 
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.kayleh.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-
-  <meta name="description" content="Kayleh">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kayleh">
-<meta property="og:url" content="http://www.kayleh.top/page/10/index.html">
-<meta property="og:site_name" content="Kayleh">
-<meta property="og:description" content="Kayleh">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Kayleh">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://www.kayleh.top/page/10/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
-
-
-  <title>Kayleh</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-<link rel="alternate" href="/atom.xml" title="Kayleh" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Kayleh</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-个人网站">
-
-    <a href="http://39.108.121.213/" rel="noopener" target="_blank"><i class="fa fa-heartbeat fa-fw"></i>个人网站</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">97</span></a>
-
-  </li>
-        <li class="menu-item menu-item-简历">
-
-    <a href="/2020/06/11/RESUME/" rel="section"><i class="fa fa-sitemap fa-fw"></i>简历</a>
-
-  </li>
-        <li class="menu-item menu-item-联系">
-
-    <a href="/2020/07/15/Contract/" rel="section"><i class="fa fa-calendar fa-fw"></i>联系</a>
-
-  </li>
-        <li class="menu-item menu-item-开源项目">
-
-    <a href="https://github.com/Kayleh" rel="noopener" target="_blank"><i class="fa fa-calendar fa-fw"></i>开源项目</a>
-
-  </li>
-        <li class="menu-item menu-item-分布式/集群/微服务">
-
-    <a href="/tags/DistributedMicroservices" rel="section"><i class="fa fa-th fa-fw"></i>分布式/集群/微服务</a>
-
-  </li>
-        <li class="menu-item menu-item-前端/平面设计">
-
-    <a href="/tags/frontDesign" rel="section"><i class="fa fa-th fa-fw"></i>前端/平面设计</a>
-
-  </li>
-        <li class="menu-item menu-item-数据采集/爬虫">
-
-    <a href="/tags/spider" rel="section"><i class="fa fa-th fa-fw"></i>数据采集/爬虫</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
     </header>
 
+
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
 
+    <p></p>
+    <!-- 网易云 -->
+    <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=2&id=558261233&auto=1&height=32"></iframe> -->
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Kayleh</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/2.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Kayleh</a></h1>
+            </hgroup>
             
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有</a></li>
+                
+                    <li><a href="http://39.108.121.213/" target="_blank" rel="noopener">个人网站</a></li>
+                
+                    <li><a href="/2020/06/11/RESUME/">简历</a></li>
+                
+                    <li><a href="https://github.com/Kayleh" target="_blank" rel="noopener">开源项目</a></li>
+                
+                    <li><a href="/tags/DistributedMicroservices">分布式/集群/微服务</a></li>
+                
+                    <li><a href="/tags/frontDesign">前端/平面设计</a></li>
+                
+                    <li><a href="/tags/spider">数据采集/爬虫</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Kayleh" title="github">github</a>
+                    
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/kayleh.yao.7" title="facebook">facebook</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/y40jinqing" title="twitter">twitter</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" title="zhihu">zhihu</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/jinqing-yao-97a750186/" title="linkedin">linkedin</a>
+                    
+                        <a class="google" target="_blank" href="/kaylehisdied@gmail.com" title="google">google</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-回文数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/" class="article-date">
+      <time datetime="2020-04-19T13:17:57.000Z" itemprop="datePublished">2020-04-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/">回文数</a>
+    </h1>
+  
+
+
+      </header>
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.kayleh.top/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/2.jpg">
-      <meta itemprop="name" content="Kayleh">
-      <meta itemprop="description" content="Kayleh">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kayleh">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
-            <a href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/" class="post-title-link" itemprop="url">回文数</a>
-        </h2>
+              <h3 id="什么是回文数？"><a href="#什么是回文数？" class="headerlink" title="什么是回文数？"></a>什么是回文数？</h3><p>回文数指的是正序和倒序读都是一样的数，例如121从左到右，从右到左读都是121。任何一个自然数与它的倒序数相加，所得的和再与和的倒序数相加，……如此反复进行下去，经过有限次步骤后，最后必定能得到一个回文数。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dataAlgorithm/" rel="tag">dataAlgorithm</a></li></ul>
+    </div>
 
-              <time title="Created: 2020-04-19 21:17:57" itemprop="dateCreated datePublished" datetime="2020-04-19T21:17:57+08:00">2020-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
+      
+        <p class="article-more-link">
+          <a   href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/#more">阅读原文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-【SpringMVC】-@ModelAttribute" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/" class="article-date">
+      <time datetime="2020-04-19T13:04:07.000Z" itemprop="datePublished">2020-04-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/">【SpringMVC】-@ModelAttribute</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="ModelAttribute？"><a href="#ModelAttribute？" class="headerlink" title="@ModelAttribute？"></a>@ModelAttribute？</h2><p>@ModelAttribute的原理比较复杂，需要对源码有一定的理解。它可以使被</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frame/" rel="tag">frame</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/#more">阅读原文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Spring架构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/" class="article-date">
+      <time datetime="2020-04-19T12:40:54.000Z" itemprop="datePublished">2020-04-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/">Spring架构</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><img src="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/spring1.jpg" alt></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frame/" rel="tag">frame</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/#more">阅读原文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-并发：原理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/" class="article-date">
+      <time datetime="2020-04-19T03:32:02.990Z" itemprop="datePublished">2020-04-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/">并发:原理</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="为什么要创建线程池"><a href="#为什么要创建线程池" class="headerlink" title="为什么要创建线程池"></a>为什么要创建线程池</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果系统要运行多个线程,大量反复的启动创建和回收线程会非常占用系统资源,导致性能下降.</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a   href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/#more">阅读原文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-unix" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/04/19/unix/" class="article-date">
+      <time datetime="2020-04-19T03:24:46.854Z" itemprop="datePublished">2020-04-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/04/19/unix/">unix的常用指令</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="unix的常用指令"><a href="#unix的常用指令" class="headerlink" title="unix的常用指令"></a>unix的常用指令</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a   href="/2020/04/19/unix/#more">阅读原文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rest架构/Rest架构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/" class="article-date">
+      <time datetime="2020-04-18T08:26:55.693Z" itemprop="datePublished">2020-04-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/">Rest架构风格</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Rest是什么"><a href="#Rest是什么" class="headerlink" title="Rest是什么?"></a>Rest是什么?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REST(Representational State Transfe),是一种软件架构风格，它结构清晰、符合标准、易于理解、扩展方便，并且规范了URI的风格；规范了HTTP请求动作的使用，具有对应的语义。Spring支持并推荐使用这种风格的URL地址。他可以处理除POST或GET的其他请求.</span><br><span class="line">rest可以把普通的请求转化(如:GET.POST)为规定形式的请求(DELETE等等),使URL请求地址状态化.</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a   href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/#more">阅读原文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-SpringMVC环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
+      <time datetime="2020-04-17T11:59:30.293Z" itemprop="datePublished">2020-04-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">SpringMVC环境搭建</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="什么是SpringMVC？"><a href="#什么是SpringMVC？" class="headerlink" title="什么是SpringMVC？"></a>什么是SpringMVC？</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Spring MVC是Spring Framework的一部分，是基于Java实现MVC的轻量级Web框架，实现MVC模块，简化了Web开发。</span><br><span class="line"></span><br><span class="line">MVC提倡每一层只写自己的东西，不写其他任何代码。为了解耦，为了维护方便和分工合作。</span><br><span class="line"></span><br><span class="line">SpringMVC为展现层提供的基于MVC设计理念的优秀Web框架，是目前最主流的框架之一。</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frame/" rel="tag">frame</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#more">阅读原文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2020 Kayleh
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank">
+                    Hexo &nbsp;&nbsp;
+                </a>
+                <a href="https://github.com/maochunguang" target="_blank">
+                    Blog
+                </a>  -->
+                by Kayleh @2020
+            </div>
+        </div>
+
+        
+
+        <div class="visit">
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                你是第
+                <span id="site-visit">
+                    <!-- 访问数 -->
+                    <span id="busuanzi_value_site_uv">
+
+                    </span>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-06 18:15:54" itemprop="dateModified" datetime="2020-06-06T18:15:54+08:00">2020-06-06</time>
-              </span>
-
-          
-            <span id="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/" class="post-meta-item leancloud_visitors" data-flag-title="回文数" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
+                位访问该站的人哦~
             </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
+            
+            
+            <!-- <span>, </span> -->
+            
+            
 
-        </div>
-      </header>
+            <span class="post-meta-divider">|</span>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="什么是回文数？"><a href="#什么是回文数？" class="headerlink" title="什么是回文数？"></a>什么是回文数？</h3><p>回文数指的是正序和倒序读都是一样的数，例如121从左到右，从右到左读都是121。任何一个自然数与它的倒序数相加，所得的和再与和的倒序数相加，……如此反复进行下去，经过有限次步骤后，最后必定能得到一个回文数。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.kayleh.top/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/2.jpg">
-      <meta itemprop="name" content="Kayleh">
-      <meta itemprop="description" content="Kayleh">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kayleh">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/" class="post-title-link" itemprop="url">【SpringMVC】-@ModelAttribute</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-19 21:04:07" itemprop="dateCreated datePublished" datetime="2020-04-19T21:04:07+08:00">2020-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
+            <span id="busuanzi_container_page_pv" style='display:none'>
+                <span id="page-visit">
+                    本页阅读量:
+                    <span id="busuanzi_value_page_pv">
+                        <!--本页阅读量-->
+                    </span>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-21 18:07:53" itemprop="dateModified" datetime="2020-05-21T18:07:53+08:00">2020-05-21</time>
-              </span>
+            </span>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-          
-            <span id="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/" class="post-meta-item leancloud_visitors" data-flag-title="【SpringMVC】-@ModelAttribute" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+            <span class="post-meta-divider">|</span>
+
+            <span id="busuanzi_container_site_pv">
+                本站总访问量
+                <span id="busuanzi_value_site_pv">
+                </span>次
             </span>
 
+            <!-- <span class="post-meta-divider">|</span> -->
+            <!-- <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv" </span>人</span> -->
+
+            
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="ModelAttribute？"><a href="#ModelAttribute？" class="headerlink" title="@ModelAttribute？"></a>@ModelAttribute？</h2><p>@ModelAttribute的原理比较复杂，需要对源码有一定的理解。它可以使被</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.kayleh.top/2020/04/19/Spring%E6%9E%B6%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/2.jpg">
-      <meta itemprop="name" content="Kayleh">
-      <meta itemprop="description" content="Kayleh">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kayleh">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/" class="post-title-link" itemprop="url">Spring架构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-19 20:40:54" itemprop="dateCreated datePublished" datetime="2020-04-19T20:40:54+08:00">2020-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-21 18:08:19" itemprop="dateModified" datetime="2020-05-21T18:08:19+08:00">2020-05-21</time>
-              </span>
-
-          
-            <span id="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/" class="post-meta-item leancloud_visitors" data-flag-title="Spring架构" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>12</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/spring1.jpg" alt></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/19/Spring%E6%9E%B6%E6%9E%84/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+</footer>
     </div>
-
     
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.kayleh.top/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/2.jpg">
-      <meta itemprop="name" content="Kayleh">
-      <meta itemprop="description" content="Kayleh">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kayleh">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">并发:原理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-19 11:32:02" itemprop="dateCreated datePublished" datetime="2020-04-19T11:32:02+08:00">2020-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-22 14:51:27" itemprop="dateModified" datetime="2020-04-22T14:51:27+08:00">2020-04-22</time>
-              </span>
-
-          
-            <span id="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/" class="post-meta-item leancloud_visitors" data-flag-title="并发:原理" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="为什么要创建线程池"><a href="#为什么要创建线程池" class="headerlink" title="为什么要创建线程池"></a>为什么要创建线程池</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果系统要运行多个线程,大量反复的启动创建和回收线程会非常占用系统资源,导致性能下降.</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.kayleh.top/2020/04/19/unix/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/2.jpg">
-      <meta itemprop="name" content="Kayleh">
-      <meta itemprop="description" content="Kayleh">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kayleh">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/19/unix/" class="post-title-link" itemprop="url">unix的常用指令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-04-19 11:24:46 / Modified: 12:28:07" itemprop="dateCreated datePublished" datetime="2020-04-19T11:24:46+08:00">2020-04-19</time>
-            </span>
-
-          
-            <span id="/2020/04/19/unix/" class="post-meta-item leancloud_visitors" data-flag-title="unix的常用指令" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/19/unix/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/19/unix/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>242</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="unix的常用指令"><a href="#unix的常用指令" class="headerlink" title="unix的常用指令"></a>unix的常用指令</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/19/unix/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.kayleh.top/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/2.jpg">
-      <meta itemprop="name" content="Kayleh">
-      <meta itemprop="description" content="Kayleh">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kayleh">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/" class="post-title-link" itemprop="url">Rest架构风格</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-04-18 16:26:55 / Modified: 16:35:41" itemprop="dateCreated datePublished" datetime="2020-04-18T16:26:55+08:00">2020-04-18</time>
-            </span>
-
-          
-            <span id="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/" class="post-meta-item leancloud_visitors" data-flag-title="Rest架构风格" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Rest是什么"><a href="#Rest是什么" class="headerlink" title="Rest是什么?"></a>Rest是什么?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REST(Representational State Transfe),是一种软件架构风格，它结构清晰、符合标准、易于理解、扩展方便，并且规范了URI的风格；规范了HTTP请求动作的使用，具有对应的语义。Spring支持并推荐使用这种风格的URL地址。他可以处理除POST或GET的其他请求.</span><br><span class="line">rest可以把普通的请求转化(如:GET.POST)为规定形式的请求(DELETE等等),使URL请求地址状态化.</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.kayleh.top/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/2.jpg">
-      <meta itemprop="name" content="Kayleh">
-      <meta itemprop="description" content="Kayleh">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kayleh">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">SpringMVC环境搭建</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-17 19:59:30" itemprop="dateCreated datePublished" datetime="2020-04-17T19:59:30+08:00">2020-04-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-21 18:08:15" itemprop="dateModified" datetime="2020-05-21T18:08:15+08:00">2020-05-21</time>
-              </span>
-
-          
-            <span id="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-meta-item leancloud_visitors" data-flag-title="SpringMVC环境搭建" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="什么是SpringMVC？"><a href="#什么是SpringMVC？" class="headerlink" title="什么是SpringMVC？"></a>什么是SpringMVC？</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Spring MVC是Spring Framework的一部分，是基于Java实现MVC的轻量级Web框架，实现MVC模块，简化了Web开发。</span><br><span class="line"></span><br><span class="line">MVC提倡每一层只写自己的东西，不写其他任何代码。为了解耦，为了维护方便和分工合作。</span><br><span class="line"></span><br><span class="line">SpringMVC为展现层提供的基于MVC设计理念的优秀Web框架，是目前最主流的框架之一。</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
-  </nav>
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?05JpXkxLDz";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
 
-          </div>
-          
 
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
 <script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Kayleh"
-      src="/images/2.jpg">
-  <p class="site-author-name" itemprop="name">Kayleh</p>
-  <div class="site-description" itemprop="description">Kayleh</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">97</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">15</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://www.facebook.com/kayleh.yao.7" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;kayleh.yao.7" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;ni-hui-gan-xie-wo-de" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>Zhihu</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/jinqing-yao-97a750186/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;jinqing-yao-97a750186&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://github.com/Kayleh" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Kayleh" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://weibo.com/5737136689/profile?rightmod=1&wvr=6&mod=personinfo" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;5737136689&#x2F;profile?rightmod&#x3D;1&amp;wvr&#x3D;6&amp;mod&#x3D;personinfo" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://plus.google.com/kayleh" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kayleh" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/y40jinqing" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;y40jinqing" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.youtube.com/channel/UC60fbKqc9kjOom-o76OID_A?view_as=subscriber" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC60fbKqc9kjOom-o76OID_A?view_as&#x3D;subscriber" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
-      </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Kayleh</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-      <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">522k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">7:55</span>
-</div>
-
-
-<!--
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
--->
-
-<!--统计-->
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Symbols count total: </span>
-    
-	<span title="post.totalcount">
-     246.2k字 </span>
-    <!--<span title="Symbols count total">522k</span>-->
-  
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="Total Visitors">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="Total Views">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-  <script defer src="/lib/three/three.min.js"></script>
-    <script defer src="/lib/three/canvas_sphere.min.js"></script>
-
-
-  
-
-
-
-  <script>
-  if (CONFIG.page.isPost) {
-    wpac_init = window.wpac_init || [];
-    wpac_init.push({
-      widget: 'Rating',
-      id    : ,
-      el    : 'wpac-rating',
-      color : 'fc6423'
-    });
-    (function() {
-      if ('WIDGETPACK_LOADED' in window) return;
-      WIDGETPACK_LOADED = true;
-      var mc = document.createElement('script');
-      mc.type = 'text/javascript';
-      mc.async = true;
-      mc.src = '//embed.widgetpack.com/widget.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-    })();
-  }
-  </script>
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : true,
-      notify     : false,
-      appId      : 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz',
-      appKey     : 'OBHyEdMVsi8FSFA0aqJNh4HE',
-      placeholder: "Well written!",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : true,
-      lang       : '' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
 
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+  </div>
+
+
+  <!-- mouse css
+  <script type="text/javascript" color="220,220,220" opacity='0.7' zIndex="-2" count="200"
+    src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script> -->
+
+  <!-- snow -->
+  <!-- <script type="text/javascript" src="\js\snow.js"></script> -->
+
+  <!-- fireworks -->
+  <!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+  <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+  <script type="text/javascript" src="/js/fireworks.js"></script> -->
+
+  <!-- {% if theme.fireworks %}
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+  <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  {% endif %} -->
+
+  <!-- DigitalRain -->
+  <!-- <canvas id="canvas" width="1440" height="900"></canvas> -->
+  <!-- <script type="text/javascript" src="/js/DigitalRain.js"></script> -->
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":112,"height":225},"mobile":{"show":true},"log":false});</script></body>
+
 </html>
-
-<!-- 页面点击小红心
-<!--<script type="text/javascript" src="/js/src/clicklove.js"></script>  -->
-
-<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/js/fireworks.js"></script>
-

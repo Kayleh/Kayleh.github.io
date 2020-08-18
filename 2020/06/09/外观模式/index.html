@@ -56,7 +56,7 @@
   <title>Valine - A simple comment system based on Leancloud.</title>
   <!--Leancloud 操作库:-->
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/valine.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
   <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
@@ -663,8 +663,11 @@
 	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
 	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
 </div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "2", "bdSize": "24" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src =
+		// 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+		'/static/api/js/share.js?v=89860593.js?cdnversion='
 
+		+ ~(-new Date() / 36e5)];</script>
 
 
 
@@ -686,10 +689,10 @@
   </script>
 </section> -->
 
-<div style="margin: 50px;margin-left: 75px;margin-right: 75px;">
+<div style="margin: 50px;">
   <p>评论</p>
   <div><span></span></div>
-  <div class="comment" style="color: white;"></div>
+  <div class="comment" style="color: whitesmoke;"></div>
 
   <script>
     new Valine({
@@ -812,7 +815,7 @@
                 </span>次
             </span>
 
-    
+
             <!-- <span class="post-meta-divider">|</span> -->
             <!-- <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv" </span>人</span> -->
 
@@ -820,6 +823,19 @@
         </div>
         
     </div>
+
+    <!--在线联系-->
+    <!-- {% if (theme.daovoice) %} -->
+    <script>
+        (function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/0f81ff2f.js"
+            , "daovoice")
+        daovoice('init', {
+            app_id: "38b1c911"
+        });
+        daovoice('update');
+    </script>
+    <!-- {% endif %} -->
 </footer>
     </div>
     

@@ -48,6 +48,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -59,8 +62,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -86,6 +89,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -498,22 +504,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Java-memory-model内存模型" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Java-memory-model内存模型" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/04/30/Java-memory-model%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/04/30/Java-memory-model%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" class="article-date">
       <time datetime="2020-04-30T01:40:45.000Z" itemprop="datePublished">2020-04-30</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       Java memory model内存模型
@@ -521,24 +528,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">298字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">1分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/" rel="tag">jvm</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h3><p>​    jmm规范，他规范了java虚拟机与计算机内存如何协调工作，他规定了一个线程如何及何时看到其他线程修改过的变量的值，以及在必须时，如何同步的访问共享变量。</p>
+    
+    <h3 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h3><p>​    jmm规范，他规范了java虚拟机与计算机内存如何协调工作，他规定了一个线程如何及何时看到其他线程修改过的变量的值，以及在必须时，如何同步的访问共享变量。</p>
 <a id="more"></a>
 
 <h3 id="jmm内存分配概念"><a href="#jmm内存分配概念" class="headerlink" title="jmm内存分配概念"></a>jmm内存分配概念</h3><h4 id="堆heap"><a href="#堆heap" class="headerlink" title="堆heap:"></a>堆heap:</h4><p>优点:运行时数据区,动态分配内存大小,有gc;</p>
@@ -547,12 +582,12 @@
 <p>缺点: 数据大小与生存期必须是确定的,缺乏灵活性,栈中主要存放基本类型变量(比如,int,short,byte,char,double,float,boolean和对象句柄),jmm要求,调用栈和本地变量存放在线程栈上</p>
 <p>当一个线程可以访问一个对象时,也可以访问对象的成员变量,如果有两个线程访问对象的成员变量,则每个线程都有对象的成员变量,则每个线程都有对象的成员变量的私有拷贝.</p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/04/30/Java-memory-model%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">Java memory model内存模型</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -596,7 +631,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java内存模型"><span class="toc-number">1.</span> <span class="toc-text">Java内存模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jmm内存分配概念"><span class="toc-number">2.</span> <span class="toc-text">jmm内存分配概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#堆heap"><span class="toc-number">2.1.</span> <span class="toc-text">堆heap:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栈stack"><span class="toc-number">2.2.</span> <span class="toc-text">栈stack:</span></a></li></ol></li></ol>
 </div>
@@ -656,8 +691,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -690,7 +725,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -734,12 +769,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -763,7 +799,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -790,7 +831,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -821,6 +862,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

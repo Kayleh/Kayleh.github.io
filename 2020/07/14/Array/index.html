@@ -51,6 +51,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -62,8 +65,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -89,6 +92,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -501,22 +507,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Array" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Array" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/07/14/Array/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/07/14/Array/" class="article-date">
       <time datetime="2020-07-14T05:29:08.000Z" itemprop="datePublished">2020-07-14</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       Array
@@ -524,24 +531,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">4k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">14分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><a id="more"></a>
+    
+    <h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><a id="more"></a>
 
 <h3 id="List、Map、Set三个接口存取元素时，各有什么特点？"><a href="#List、Map、Set三个接口存取元素时，各有什么特点？" class="headerlink" title="List、Map、Set三个接口存取元素时，各有什么特点？"></a>List、Map、Set三个接口存取元素时，各有什么特点？</h3><p> List以特定索引来存取元素，可以有重复元素。</p>
 <p>Set不能存放重复元素（用对象的equals()方法来区分元素是否重复）。</p>
@@ -593,12 +628,12 @@
 <h3 id="如果hashMap的key是一个自定义的类，怎么办？"><a href="#如果hashMap的key是一个自定义的类，怎么办？" class="headerlink" title="如果hashMap的key是一个自定义的类，怎么办？"></a>如果hashMap的key是一个自定义的类，怎么办？</h3><p>使用HashMap，如果key是自定义的类，就必须重写hashcode()和equals()。</p>
 <h3 id="解释一下hashMap具体如何实现的？"><a href="#解释一下hashMap具体如何实现的？" class="headerlink" title="解释一下hashMap具体如何实现的？"></a>解释一下hashMap具体如何实现的？</h3><p> Hashmap基于数组实现的，通过对key的hashcode &amp; 数组的长度得到在数组中位置，如当前数组有元素，则数组当前元素next指向要插入的元素，这样来解决hash冲突的，形成了拉链式的结构。put时在多线程情况下，会形成环从而导致死循环。数组长度一般是2n，从0开始编号，所以hashcode &amp; （2n-1），（2n-1）每一位都是1，这样会让散列均匀。需要注意的是，HashMap在JDK1.8的版本中引入了红黑树结构做优化，当链表元素个数大于等于8时，链表转换成树结构；若桶中链表元素个数小于等于6时，树结构还原成链表。因为红黑树的平均查找长度是log(n)，长度为8的时候，平均查找长度为3，如果继续使用链表，平均查找长度为8/2=4，这才有转换为树的必要。链表长度如果是小于等于6，6/2=3，虽然速度也很快的，但是转化为树结构和生成树的时间并不会太短。还有选择6和8，中间有个差值7可以有效防止链表和树频繁转换。假设一下，如果设计成链表个数超过8则链表转换成树结构，链表个数小于8则树结构转换成链表，如果一个HashMap不停的插入、删除元素，链表个数在8左右徘徊，就会频繁的发生树转链表、链表转树，效率会很低。 </p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/07/14/Array/">Array</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -642,7 +677,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Array"><span class="toc-number">1.</span> <span class="toc-text">Array</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#List、Map、Set三个接口存取元素时，各有什么特点？"><span class="toc-number">1.0.1.</span> <span class="toc-text">List、Map、Set三个接口存取元素时，各有什么特点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阐述ArrayList、Vector、LinkedList的存储性能和特性"><span class="toc-number">1.0.2.</span> <span class="toc-text">阐述ArrayList、Vector、LinkedList的存储性能和特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断List、Set、Map是否继承自Collection接口？"><span class="toc-number">1.0.3.</span> <span class="toc-text">判断List、Set、Map是否继承自Collection接口？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#你所知道的常用集合类以及主要方法？"><span class="toc-number">1.0.4.</span> <span class="toc-text">你所知道的常用集合类以及主要方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明Collection-和-Collections的区别"><span class="toc-number">1.0.5.</span> <span class="toc-text">说明Collection 和 Collections的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明ArrayList-Vector-LinkedList的存储性能和特性是什么？"><span class="toc-number">1.0.6.</span> <span class="toc-text">说明ArrayList,Vector,LinkedList的存储性能和特性是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList和LinkedList的区别？-链表和数组的优缺点"><span class="toc-number">1.0.7.</span> <span class="toc-text">ArrayList和LinkedList的区别？(链表和数组的优缺点)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明HashMap和Hashtable的区别？"><span class="toc-number">1.0.8.</span> <span class="toc-text">说明HashMap和Hashtable的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请说说快速失败-fail-fast-和安全失败-fail-safe-的区别？"><span class="toc-number">1.0.9.</span> <span class="toc-text">请说说快速失败(fail-fast)和安全失败(fail-safe)的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说说Iterator和ListIterator的区别？"><span class="toc-number">1.0.10.</span> <span class="toc-text">说说Iterator和ListIterator的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请简单说明一下什么是迭代器？"><span class="toc-number">1.0.11.</span> <span class="toc-text">请简单说明一下什么是迭代器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释为什么集合类没有实现Cloneable和Serializable接口？"><span class="toc-number">1.0.12.</span> <span class="toc-text">解释为什么集合类没有实现Cloneable和Serializable接口？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java集合类框架的基本接口有哪些？"><span class="toc-number">1.0.13.</span> <span class="toc-text">Java集合类框架的基本接口有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConcurrentHashMap的原理？"><span class="toc-number">1.0.14.</span> <span class="toc-text">ConcurrentHashMap的原理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释一下TreeMap"><span class="toc-number">1.0.15.</span> <span class="toc-text">解释一下TreeMap?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请说明ArrayList是否会越界？"><span class="toc-number">1.0.16.</span> <span class="toc-text">请说明ArrayList是否会越界？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明concurrenthashmap有什么优势以及1-7和1-8区别？"><span class="toc-number">1.0.17.</span> <span class="toc-text">说明concurrenthashmap有什么优势以及1.7和1.8区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TreeMap的底层实现？"><span class="toc-number">1.0.18.</span> <span class="toc-text">TreeMap的底层实现？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明ConcurrentHashMap锁加在了哪些地方？"><span class="toc-number">1.0.19.</span> <span class="toc-text">说明ConcurrentHashMap锁加在了哪些地方？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释HashMap的容量为什么是2的n次幂？"><span class="toc-number">1.0.20.</span> <span class="toc-text">解释HashMap的容量为什么是2的n次幂？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你简单介绍一下ArrayList和LinkedList的区别，并说明如果一直在list的尾部添加元素，用哪种方式的效率高？"><span class="toc-number">1.0.21.</span> <span class="toc-text">请你简单介绍一下ArrayList和LinkedList的区别，并说明如果一直在list的尾部添加元素，用哪种方式的效率高？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果hashMap的key是一个自定义的类，怎么办？"><span class="toc-number">1.0.22.</span> <span class="toc-text">如果hashMap的key是一个自定义的类，怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释一下hashMap具体如何实现的？"><span class="toc-number">1.0.23.</span> <span class="toc-text">解释一下hashMap具体如何实现的？</span></a></li></ol></li></ol></li></ol>
 </div>
@@ -702,8 +737,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -736,7 +771,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -780,12 +815,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -809,7 +845,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -836,7 +877,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -867,6 +908,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

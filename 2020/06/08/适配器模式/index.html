@@ -50,6 +50,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -61,8 +64,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -88,6 +91,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -500,22 +506,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-适配器模式" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-适配器模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-08T06:28:13.000Z" itemprop="datePublished">2020-06-08</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       适配器模式
@@ -523,24 +530,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">971字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">3分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><blockquote>
+    
+    <h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><blockquote>
 <p><em>将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</em> </p>
 <a id="more"></a>
 </blockquote>
@@ -581,12 +616,12 @@
 
 <p>直接使用<code>InputStreamReader</code>这个Adapter是不行的，因为它只能转换出<code>Reader</code>接口。事实上，要把<code>InputStream</code>转换为<code>FileReader</code>也不是不可能，但需要花费十倍以上的功夫。这时，<strong>面向抽象编程</strong>这一原则就体现出了威力：<strong>持有高层接口不但代码更灵活，而且把各种接口组合起来也更容易。一旦持有某个具体的子类类型，要想做一些改动就非常困难。</strong></p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">适配器模式</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -630,7 +665,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#适配器模式"><span class="toc-number">1.</span> <span class="toc-text">适配器模式</span></a></li></ol>
 </div>
@@ -690,8 +725,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -724,7 +759,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -768,12 +803,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -797,7 +833,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -824,7 +865,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -855,6 +896,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

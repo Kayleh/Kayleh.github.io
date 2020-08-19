@@ -48,6 +48,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -59,8 +62,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -86,6 +89,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -498,22 +504,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-XML" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-XML" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/07/24/XML/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/07/24/XML/" class="article-date">
       <time datetime="2020-07-24T06:24:49.000Z" itemprop="datePublished">2020-07-24</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       XML
@@ -521,36 +528,64 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">1.5k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">5分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h1><a id="more"></a>
+    
+    <h1 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h1><a id="more"></a>
 
 <h3 id="请介绍一下，XML文档定义的几种形式，它们之间有何本质区别？再说说，解析XML文档又有哪几种方式？"><a href="#请介绍一下，XML文档定义的几种形式，它们之间有何本质区别？再说说，解析XML文档又有哪几种方式？" class="headerlink" title="请介绍一下，XML文档定义的几种形式，它们之间有何本质区别？再说说，解析XML文档又有哪几种方式？"></a>请介绍一下，XML文档定义的几种形式，它们之间有何本质区别？再说说，解析XML文档又有哪几种方式？</h3><p>a: 两种形式 dtd schema<br>b: 本质区别:schema本身是xml的，可以被XML解析器解析(这也是从DTD上发展schema的根本目的)<br>c:有DOM,SAX,STAX等<br>DOM:处理大型文件时其性能下降的非常厉害。这个问题是由DOM的树结构所造成的，这种结构占用的内存较多，而且DOM必须在解析文件之前把整个文档装入内存,适合对XML的随机访问<br>SAX:不现于DOM,SAX是事件驱动型的XML解析方式。它顺序读取XML文件，不需要一次全部装载整个文件。当遇到像文件开头，文档结束，或者标签开头与标签结束时，它会触发一个事件，用户通过在其回调事件中写入处理代码来处理XML文件，适合对XML的顺序访问<br>STAX:Streaming API for XML (StAX)<br>xml文档有两种定义方法：<br>dtd：数据类型定义（data type definition），用以描述XML文档的文档结构，是早期的XML文档定义形式。<br>schema：其本身是基于XML语言编写的，在类型和语法上的限定能力比dtd强，处理也比较方便，因为此正逐渐代替dtd成为新的模式定义语言。</p>
 <h3 id="谈一谈，Java规范中和-与Web-Service相关的-规范有哪些？"><a href="#谈一谈，Java规范中和-与Web-Service相关的-规范有哪些？" class="headerlink" title="谈一谈，Java规范中和 与Web Service相关的 规范有哪些？"></a>谈一谈，Java规范中和 与Web Service相关的 规范有哪些？</h3><p>Java规范中和Web Service相关的有三个：<br>- JAX-WS(JSR 224)：这个规范是早期的基于SOAP的Web Service规范JAX-RPC的替代版本，它并不提供向下兼容性，因为RPC样式的WSDL以及相关的API已经在Java EE5中被移除了。WS-MetaData是JAX-WS的依赖规范，提供了基于注解配置Web Service和SOAP消息的相关API。<br>- JAXM(JSR 67)：定义了发送和接收消息所需的API,相当于Web Service的服务器端。<br>- JAX-RS(JSR 311 &amp; JSR 339 &amp; JSR 370)：是Java针对REST（Representation State Transfer）架构风格制定的一套Web Service规范。REST是一种软件架构模式，是一种风格，它不像SOAP那样本身承载着一种消息协议， (两种风格的Web Service均采用了HTTP做传输协议，因为HTTP协议能穿越防火墙，Java的远程方法调用（RMI）等是重量级协议，通常不能穿越防火墙），因此可以将REST视为基于HTTP协议的软件架构。REST中最重要的两个概念是资源定位和资源操作，而HTTP协议恰好完整的提供了这两个点。HTTP协议中的URI可以完成资源定位，而GET、POST、OPTION、DELETE方法可以完成资源操作。因此REST完全依赖HTTP协议就可以完成Web Service，而不像SOAP协议那样只利用了HTTP的传输特性，定位和操作都是由SOAP协议自身完成的，也正是由于SOAP消息的存在使得基于SOAP的Web Service显得笨重而逐渐被淘汰。</p>
 <h3 id="请你谈谈对SOAP、WSDL、UDDI的了解。"><a href="#请你谈谈对SOAP、WSDL、UDDI的了解。" class="headerlink" title="请你谈谈对SOAP、WSDL、UDDI的了解。"></a>请你谈谈对SOAP、WSDL、UDDI的了解。</h3><p>- SOAP：简单对象访问协议（Simple Object Access Protocol），是Web Service中交换数据的一种协议规范。<br>- WSDL：Web服务描述语言（Web Service Description Language），它描述了Web服务的公共接口。这是一个基于XML的关于如何与Web服务通讯和使用的服务描述；也就是描述与目录中列出的Web服务进行交互时需要绑定的协议和信息格式。通常采用抽象语言描述该服务支持的操作和信息，使用的时候再将实际的网络协议和信息格式绑定给该服务。<br>- UDDI：统一描述、发现和集成（Universal Description, Discovery and Integration），它是一个基于XML的跨平台的描述规范，可以使世界范围内的企业在互联网上发布自己所提供的服务。简单的说，UDDI是访问各种WSDL的一个门面（可以参考设计模式中的门面模式）。</p>
 <h3 id="WEB-SERVICE名词解释，JSWDL开发包的介绍，JAXP、JAXM的解释。SOAP、UDDI-WSDL解释。"><a href="#WEB-SERVICE名词解释，JSWDL开发包的介绍，JAXP、JAXM的解释。SOAP、UDDI-WSDL解释。" class="headerlink" title="WEB SERVICE名词解释，JSWDL开发包的介绍，JAXP、JAXM的解释。SOAP、UDDI,WSDL解释。"></a>WEB SERVICE名词解释，JSWDL开发包的介绍，JAXP、JAXM的解释。SOAP、UDDI,WSDL解释。</h3><p>Web ServiceWeb Service是基于网络的、分布式的模块化组件，它执行特定的任务，遵守具体的技术规范，这些规范使得WebService能与其他兼容的组件进行互操作。JAXP(Java API for XML Parsing) 定义了在Java中使用DOM, SAX, XSLT的通用的接口。这样在你的程序中你只要使用这些通用的接口，当你需要改变具体的实现时候也不需要修改代码。JAXM(Java API for XML Messaging) 是为SOAP通信提供访问方法和传输机制的API。WSDL是一种 XML 格式，用于将网络服务描述为一组端点，这些端点对包含面向文档信息或面向过程信息的消息进行操作。这种格式首先对操作和消息进行抽象描述，然后将其绑定到具体的网络协议和消息格式上以定义端点。相关的具体端点即组合成为抽象端点（服务）。SOAP即简单对象访问协议(Simple Object Access Protocol)，它是用于交换XML编码信息的轻量级协议。UDDI 的目的是为电子商务建立标准；UDDI是一套基于Web的、分布式的、为Web Service提供的、信息注册中心的实现标准规范，同时也包含一组使企业能将自身提供的Web Service注册，以使别的企业能够发现的访问协议的实现标准。soap是web service最关键的技术，是web service中数据和方法调传输的介质。WSDL（web service definition language）描述了web service的接口和功能。</p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/07/24/XML/">XML</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -594,7 +629,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#XML"><span class="toc-number">1.</span> <span class="toc-text">XML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#请介绍一下，XML文档定义的几种形式，它们之间有何本质区别？再说说，解析XML文档又有哪几种方式？"><span class="toc-number">1.0.1.</span> <span class="toc-text">请介绍一下，XML文档定义的几种形式，它们之间有何本质区别？再说说，解析XML文档又有哪几种方式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#谈一谈，Java规范中和-与Web-Service相关的-规范有哪些？"><span class="toc-number">1.0.2.</span> <span class="toc-text">谈一谈，Java规范中和 与Web Service相关的 规范有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你谈谈对SOAP、WSDL、UDDI的了解。"><span class="toc-number">1.0.3.</span> <span class="toc-text">请你谈谈对SOAP、WSDL、UDDI的了解。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEB-SERVICE名词解释，JSWDL开发包的介绍，JAXP、JAXM的解释。SOAP、UDDI-WSDL解释。"><span class="toc-number">1.0.4.</span> <span class="toc-text">WEB SERVICE名词解释，JSWDL开发包的介绍，JAXP、JAXM的解释。SOAP、UDDI,WSDL解释。</span></a></li></ol></li></ol></li></ol>
 </div>
@@ -654,8 +689,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -688,7 +723,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -732,12 +767,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -761,7 +797,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -788,7 +829,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -819,6 +860,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

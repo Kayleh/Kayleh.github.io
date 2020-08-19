@@ -56,6 +56,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -67,8 +70,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -94,6 +97,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -506,22 +512,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-7种排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-7种排序算法" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="article-date">
       <time datetime="2020-05-17T13:42:21.000Z" itemprop="datePublished">2020-05-17</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       7种排序算法
@@ -529,24 +536,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">2.7k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">11分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dataAlgorithm/" rel="tag">dataAlgorithm</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><ul>
+    
+    <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><ul>
 <li><code>冒泡排序（BubbleSorting)</code>的基本思想是：通过对待排序序列从前向后（从下标较小的元素开始）,依次比较相邻元素的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部。</li>
 </ul>
 <p><img src="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/1.png" alt="img"></p>
@@ -627,12 +662,12 @@
 <p>各个算法的复杂度</p>
 <p><img src="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/7.png" alt="img"></p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">7种排序算法</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -676,7 +711,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#冒泡排序"><span class="toc-number">1.</span> <span class="toc-text">冒泡排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入排序"><span class="toc-number">2.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择排序"><span class="toc-number">3.</span> <span class="toc-text">选择排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#希尔排序"><span class="toc-number">4.</span> <span class="toc-text">希尔排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速排序"><span class="toc-number">5.</span> <span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#归并排序"><span class="toc-number">6.</span> <span class="toc-text">归并排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基数排序"><span class="toc-number">7.</span> <span class="toc-text">基数排序</span></a></li></ol>
 </div>
@@ -736,8 +771,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -770,7 +805,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -814,12 +849,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -843,7 +879,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -870,7 +911,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -901,6 +942,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

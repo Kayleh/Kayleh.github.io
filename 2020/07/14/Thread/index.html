@@ -50,6 +50,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -61,8 +64,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -88,6 +91,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -500,22 +506,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Thread" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Thread" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/07/14/Thread/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/07/14/Thread/" class="article-date">
       <time datetime="2020-07-14T05:30:23.000Z" itemprop="datePublished">2020-07-14</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       Thread
@@ -523,24 +530,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">6k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">21分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="THREAD"><a href="#THREAD" class="headerlink" title="THREAD"></a>THREAD</h1><a id="more"></a>
+    
+    <h1 id="THREAD"><a href="#THREAD" class="headerlink" title="THREAD"></a>THREAD</h1><a id="more"></a>
 
 <h3 id="如何保证线程安全？"><a href="#如何保证线程安全？" class="headerlink" title="如何保证线程安全？"></a>如何保证线程安全？</h3><p>通过合理的时间调度，避开共享资源的存取冲突。另外，在并行任务设计上可以通过适当的策略，保证任务与任务之间不存在共享资源，设计一个规则来保证一个客户的计算工作和数据访问只会被一个线程或一台工作机完成，而不是把一个客户的计算工作分配给多个线程去完成。 </p>
 <h3 id="简要说明一下线程的基本状态以及状态之间的关系？"><a href="#简要说明一下线程的基本状态以及状态之间的关系？" class="headerlink" title="简要说明一下线程的基本状态以及状态之间的关系？"></a>简要说明一下线程的基本状态以及状态之间的关系？</h3><p>其中Running表示运行状态，Runnable表示就绪状态（万事俱备，只欠CPU），Blocked表示阻塞状态，阻塞状态又有多种情况，可能是因为调用wait()方法进入等待池，也可能是执行同步方法或同步代码块进入等锁池，或者是调用了sleep()方法或join()方法等待休眠或其他线程结束，或是因为发生了I/O中断。 </p>
@@ -631,12 +666,12 @@
 <h3 id="如何在线程安全的情况下实现一个计数器？"><a href="#如何在线程安全的情况下实现一个计数器？" class="headerlink" title="如何在线程安全的情况下实现一个计数器？"></a>如何在线程安全的情况下实现一个计数器？</h3><p>可以使用加锁，比如synchronized或者lock。也可以使用Concurrent包下的原子类。</p>
 <h3 id="多线程中的i-线程安全吗？请简述一下原因？"><a href="#多线程中的i-线程安全吗？请简述一下原因？" class="headerlink" title="多线程中的i++线程安全吗？请简述一下原因？"></a>多线程中的i++线程安全吗？请简述一下原因？</h3><p>不安全。i++不是原子性操作。i++分为读取i值，对i值加一，再赋值给i++，执行期中任何一步都是有可能被其他线程抢占的。</p>
 <h2 id><a href="#" class="headerlink" title></a></h2>
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/07/14/Thread/">Thread</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -680,7 +715,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#THREAD"><span class="toc-number">1.</span> <span class="toc-text">THREAD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何保证线程安全？"><span class="toc-number">1.0.1.</span> <span class="toc-text">如何保证线程安全？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简要说明一下线程的基本状态以及状态之间的关系？"><span class="toc-number">1.0.2.</span> <span class="toc-text">简要说明一下线程的基本状态以及状态之间的关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释一下什么是线程池（thread-pool）？"><span class="toc-number">1.0.3.</span> <span class="toc-text">解释一下什么是线程池（thread pool）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#举例说明同步和异步"><span class="toc-number">1.0.4.</span> <span class="toc-text">举例说明同步和异步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍一下线程同步和线程调度的相关方法。"><span class="toc-number">1.0.5.</span> <span class="toc-text">介绍一下线程同步和线程调度的相关方法。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请问当一个线程进入一个对象的synchronized方法A之后，其它线程是否可进入此对象的synchronized方法B？"><span class="toc-number">1.0.6.</span> <span class="toc-text">请问当一个线程进入一个对象的synchronized方法A之后，其它线程是否可进入此对象的synchronized方法B？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请简述一下线程的sleep-方法和yield-方法有什么区别？"><span class="toc-number">1.0.7.</span> <span class="toc-text">请简述一下线程的sleep()方法和yield()方法有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java中有几种方法可以实现一个线程？用什么关键字修饰同步方法-stop-和suspend-方法为何不推荐使用，请说明原因？"><span class="toc-number">1.0.8.</span> <span class="toc-text">Java中有几种方法可以实现一个线程？用什么关键字修饰同步方法? stop()和suspend()方法为何不推荐使用，请说明原因？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多线程和同步有几种实现方法-并且这些实现方法具体内容都是什么"><span class="toc-number">1.0.9.</span> <span class="toc-text">多线程和同步有几种实现方法,并且这些实现方法具体内容都是什么?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说出你所知道的线程同步的方法"><span class="toc-number">1.0.10.</span> <span class="toc-text">说出你所知道的线程同步的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动一个线程是用run-还是start"><span class="toc-number">1.0.11.</span> <span class="toc-text">启动一个线程是用run()还是start()?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请使用内部类实现线程设计4个线程，其中两个线程每次对j增加1，另外两个线程对j每次减少1。"><span class="toc-number">1.0.12.</span> <span class="toc-text">请使用内部类实现线程设计4个线程，其中两个线程每次对j增加1，另外两个线程对j每次减少1。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明一下线程中的同步和异步有何异同？并且请举例说明在什么情况下会使用到同步和异步？"><span class="toc-number">1.0.13.</span> <span class="toc-text">说明一下线程中的同步和异步有何异同？并且请举例说明在什么情况下会使用到同步和异步？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#明一下sleep-和-wait-有什么区别？"><span class="toc-number">1.0.14.</span> <span class="toc-text">明一下sleep() 和 wait() 有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你说明一下在监视器-Monitor-内部，是如何做到线程同步的？在程序又应该做哪种级别的同步呢？"><span class="toc-number">1.0.15.</span> <span class="toc-text">请你说明一下在监视器(Monitor)内部，是如何做到线程同步的？在程序又应该做哪种级别的同步呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析一下同步方法和同步代码块的区别是什么？"><span class="toc-number">1.0.16.</span> <span class="toc-text">分析一下同步方法和同步代码块的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请详细描述一下线程从创建到死亡的几种状态都有哪些？"><span class="toc-number">1.0.17.</span> <span class="toc-text">请详细描述一下线程从创建到死亡的几种状态都有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建线程有几种不同的方式？你喜欢哪一种？为什么？"><span class="toc-number">1.0.18.</span> <span class="toc-text">创建线程有几种不同的方式？你喜欢哪一种？为什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释一下Java多线程回调是什么意思？"><span class="toc-number">1.0.19.</span> <span class="toc-text">解释一下Java多线程回调是什么意思？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列举一下启动线程有哪几种方式，之后再说明一下线程池的种类都有哪些？"><span class="toc-number">1.0.20.</span> <span class="toc-text">列举一下启动线程有哪几种方式，之后再说明一下线程池的种类都有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简要说明一下JAVA中cyclicbarrier和countdownlatch的区别分别是什么？"><span class="toc-number">1.0.21.</span> <span class="toc-text">简要说明一下JAVA中cyclicbarrier和countdownlatch的区别分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明一下线程池有什么优势？"><span class="toc-number">1.0.22.</span> <span class="toc-text">说明一下线程池有什么优势？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请回答一下Java中有几种线程池？并且详细描述一下线程池的实现过程"><span class="toc-number">1.0.23.</span> <span class="toc-text">请回答一下Java中有几种线程池？并且详细描述一下线程池的实现过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请说明一下Java中都有哪些方式可以启动一个线程？"><span class="toc-number">1.0.24.</span> <span class="toc-text">请说明一下Java中都有哪些方式可以启动一个线程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请列举一下创建线程的方法，并简要说明一下在这些方法中哪个方法更好，原因是什么？"><span class="toc-number">1.0.25.</span> <span class="toc-text">请列举一下创建线程的方法，并简要说明一下在这些方法中哪个方法更好，原因是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简短说明一下你对AQS的理解。"><span class="toc-number">1.0.26.</span> <span class="toc-text">简短说明一下你对AQS的理解。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请简述一下线程池的运行流程，使用参数以及方法策略等"><span class="toc-number">1.0.27.</span> <span class="toc-text">请简述一下线程池的运行流程，使用参数以及方法策略等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程，进程，然后线程创建有很大开销，怎么优化？"><span class="toc-number">1.0.28.</span> <span class="toc-text">线程，进程，然后线程创建有很大开销，怎么优化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是生产者消费者模式？"><span class="toc-number">1.0.29.</span> <span class="toc-text">什么是生产者消费者模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简述一下实现多线程同步的方法？"><span class="toc-number">1.0.30.</span> <span class="toc-text">简述一下实现多线程同步的方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何在线程安全的情况下实现一个计数器？"><span class="toc-number">1.0.31.</span> <span class="toc-text">如何在线程安全的情况下实现一个计数器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多线程中的i-线程安全吗？请简述一下原因？"><span class="toc-number">1.0.32.</span> <span class="toc-text">多线程中的i++线程安全吗？请简述一下原因？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.1.</span> <span class="toc-text"></span></a></li></ol></li></ol>
 </div>
@@ -740,8 +775,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -774,7 +809,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -818,12 +853,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -847,7 +883,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -874,7 +915,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -905,6 +946,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

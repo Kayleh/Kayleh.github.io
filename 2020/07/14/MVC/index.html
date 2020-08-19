@@ -48,6 +48,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -59,8 +62,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -86,6 +89,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -498,22 +504,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-MVC" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MVC" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/07/14/MVC/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/07/14/MVC/" class="article-date">
       <time datetime="2020-07-14T05:43:03.000Z" itemprop="datePublished">2020-07-14</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       MVC
@@ -521,24 +528,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">3.6k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">13分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><a id="more"></a>
+    
+    <h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><a id="more"></a>
 
 <h3 id="请谈一下Spring-MVC的工作原理是怎样的？"><a href="#请谈一下Spring-MVC的工作原理是怎样的？" class="headerlink" title="请谈一下Spring MVC的工作原理是怎样的？"></a>请谈一下Spring MVC的工作原理是怎样的？</h3><p>①客户端的所有请求都交给前端控制器DispatcherServlet来处理，它会负责调用系统的其他模块来真正处理用户的请求。<br>② DispatcherServlet收到请求后，将根据请求的信息（包括URL、HTTP协议方法、请求头、请求参数、Cookie等）以及HandlerMapping的配置找到处理该请求的Handler（任何一个对象都可以作为请求的Handler）。<br>③在这个地方Spring会通过HandlerAdapter对该处理器进行封装。<br>④ HandlerAdapter是一个适配器，它用统一的接口对各种Handler中的方法进行调用。<br>⑤ Handler完成对用户请求的处理后，会返回一个ModelAndView对象给DispatcherServlet，ModelAndView顾名思义，包含了数据模型以及相应的视图的信息。<br>⑥ ModelAndView的视图是逻辑视图，DispatcherServlet还要借助ViewResolver完成从逻辑视图到真实视图对象的解析工作。<br>⑦ 当得到真正的视图对象后，DispatcherServlet会利用视图对象对模型数据进行渲染。<br>⑧ 客户端得到响应，可能是一个普通的HTML页面，也可以是XML或JSON字符串，还可以是一张图片或者一个PDF文件。 </p>
 <h3 id="简述一下SpringMVC的运行机制？以及运行机制的流程是什么？"><a href="#简述一下SpringMVC的运行机制？以及运行机制的流程是什么？" class="headerlink" title="简述一下SpringMVC的运行机制？以及运行机制的流程是什么？"></a>简述一下SpringMVC的运行机制？以及运行机制的流程是什么？</h3><p>1、用户发送请求时会先从DispathcherServler的doService方法开始，在该方法中会将ApplicationContext、localeResolver、themeResolver等对象添加到request中，紧接着就是调用doDispatch方法。</p>
@@ -582,12 +617,12 @@
 <h3 id="EJB与JAVA-BEAN的区别是什么？"><a href="#EJB与JAVA-BEAN的区别是什么？" class="headerlink" title="EJB与JAVA BEAN的区别是什么？"></a>EJB与JAVA BEAN的区别是什么？</h3><p> Java Bean 是可复用的组件，对Java Bean并没有严格的规范，理论上讲，任何一个Java类都可以是一个Bean。但通常情况下，由于Java Bean是被容器所创建（如Tomcat）的，所以Java Bean应具有一个无参的构造器，另外，通常Java Bean还要实现Serializable接口用于实现Bean的持久性。Java Bean实际上相当于微软COM模型中的本地进程内COM组件，它是不能被跨进程访问的。EnterpriseJava Bean 相当于DCOM，即分布式组件。它是基于Java的远程方法调用（RMI）技术的，所以EJB可以被远程访问（跨进程、跨计算机）。但EJB必须被布署在诸如Webspere、WebLogic这样的容器中，EJB客户从不直接访问真正的EJB组件，而是通过其容器访问。EJB容器是EJB组件的代理， EJB组件由容器所创建和管理。客户通过容器来访问真正的EJB组件。 </p>
 <h3 id="请问EJB是基于哪些技术实现的？并说明一下SessionBean和EntityBean的区别以及StatefulBean和StatelessBean的区别。"><a href="#请问EJB是基于哪些技术实现的？并说明一下SessionBean和EntityBean的区别以及StatefulBean和StatelessBean的区别。" class="headerlink" title="请问EJB是基于哪些技术实现的？并说明一下SessionBean和EntityBean的区别以及StatefulBean和StatelessBean的区别。"></a>请问EJB是基于哪些技术实现的？并说明一下SessionBean和EntityBean的区别以及StatefulBean和StatelessBean的区别。</h3><p>EJB包括Session Bean、Entity Bean、Message Driven Bean，基于JNDI、RMI、JAT等技术实现。<br>SessionBean在J2EE应用程序中被用来完成一些服务器端的业务操作，例如访问数据库、调用其他EJB组件。EntityBean被用来代表应用系统中用到的数据。<br>对于客户机，SessionBean是一种非持久性对象，它实现某些在服务器上运行的业务逻辑。<br>对于客户机，EntityBean是一种持久性对象，它代表一个存储在持久性存储器中的实体的对象视图，或是一个由现有企业应用程序实现的实体。<br>Session Bean 还可以再细分为 Stateful Session Bean 与 Stateless Session Bean ，这两种的 Session Bean都可以将系统逻辑放在 method之中执行，不同的是 Stateful Session Bean 可以记录呼叫者的状态，因此通常来说，一个使用者会有一个相对应的Stateful Session Bean 的实体。Stateless Session Bean 虽然也是逻辑组件，但是他却不负责记录使用者状态，也就是说当使用者呼叫 Stateless Session Bean 的时候，EJB Container 并不会找寻特定的 Stateless Session Bean 的实体来执行这个 method。换言之，很可能数个使用者在执行某个 Stateless Session Bean 的 methods 时，会是同一个 Bean 的 Instance 在执行。从内存方面来看， Stateful Session Bean 与 Stateless Session Bean 比较， Stateful Session Bean 会消耗 J2EE Server 较多的内存，然而 Stateful Session Bean 的优势却在于他可以维持使用者的状态。</p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/07/14/MVC/">MVC</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -631,7 +666,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MVC"><span class="toc-number">1.</span> <span class="toc-text">MVC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#请谈一下Spring-MVC的工作原理是怎样的？"><span class="toc-number">1.0.1.</span> <span class="toc-text">请谈一下Spring MVC的工作原理是怎样的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简述一下SpringMVC的运行机制？以及运行机制的流程是什么？"><span class="toc-number">1.0.2.</span> <span class="toc-text">简述一下SpringMVC的运行机制？以及运行机制的流程是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明一下springmvc和spring-boot区别是什么？"><span class="toc-number">1.0.3.</span> <span class="toc-text">说明一下springmvc和spring-boot区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明一下Spring-MVC注解的优点是什么？"><span class="toc-number">1.0.4.</span> <span class="toc-text">说明一下Spring MVC注解的优点是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请简单介绍一下你了解的Java领域中的Web-Service框架都有哪些？"><span class="toc-number">1.0.5.</span> <span class="toc-text">请简单介绍一下你了解的Java领域中的Web Service框架都有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简述一下Mybatis和Hibernate的区别是什么？"><span class="toc-number">1.0.6.</span> <span class="toc-text">简述一下Mybatis和Hibernate的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请问EJB需要直接实现它的业务接口或者Home接口吗？请简述一下理由。"><span class="toc-number">1.0.7.</span> <span class="toc-text">请问EJB需要直接实现它的业务接口或者Home接口吗？请简述一下理由。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明一下EJB的几种类型分别是什么？"><span class="toc-number">1.0.8.</span> <span class="toc-text">说明一下EJB的几种类型分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简述一下EJB的激活机制是什么？"><span class="toc-number">1.0.9.</span> <span class="toc-text">简述一下EJB的激活机制是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说一下EJB规范中EJB禁止的操作有哪些？"><span class="toc-number">1.0.10.</span> <span class="toc-text">说一下EJB规范中EJB禁止的操作有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请简述一下EJB的角色以及对应的三个对象分别是什么？"><span class="toc-number">1.0.11.</span> <span class="toc-text">请简述一下EJB的角色以及对应的三个对象分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EJB包括SessionBean和EntityBean，请说出他们的生命周期以及EJB是如何管理事务的？"><span class="toc-number">1.0.12.</span> <span class="toc-text">EJB包括SessionBean和EntityBean，请说出他们的生命周期以及EJB是如何管理事务的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EJB与JAVA-BEAN的区别是什么？"><span class="toc-number">1.0.13.</span> <span class="toc-text">EJB与JAVA BEAN的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请问EJB是基于哪些技术实现的？并说明一下SessionBean和EntityBean的区别以及StatefulBean和StatelessBean的区别。"><span class="toc-number">1.0.14.</span> <span class="toc-text">请问EJB是基于哪些技术实现的？并说明一下SessionBean和EntityBean的区别以及StatefulBean和StatelessBean的区别。</span></a></li></ol></li></ol></li></ol>
 </div>
@@ -691,8 +726,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -725,7 +760,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -769,12 +804,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -798,7 +834,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -825,7 +866,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -856,6 +897,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

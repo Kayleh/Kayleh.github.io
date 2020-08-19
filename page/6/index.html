@@ -51,6 +51,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -62,8 +65,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -89,6 +92,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -503,22 +509,23 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-命令模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-命令模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-12T10:12:06.000Z" itemprop="datePublished">2020-06-12</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/">命令模式</a>
@@ -526,36 +533,65 @@
   
 
 
-      </header>
-      
+
+    <!--字数统计-->
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><blockquote>
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">936字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">3分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><blockquote>
 <p><strong>命令模式（Command Pattern）</strong>是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p>
 </blockquote>
-          
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -569,24 +605,24 @@
 
 
 
-
   
-    <article id="post-责任链模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-责任链模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-11T11:48:35.000Z" itemprop="datePublished">2020-06-11</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">责任链模式</a>
@@ -594,36 +630,65 @@
   
 
 
-      </header>
-      
+
+    <!--字数统计-->
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h3><blockquote>
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">1.1k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">4分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h3><blockquote>
 <p><strong>责任链模式（Chain of Responsibility Pattern）</strong>为请求创建了一个接收者对象的链。这种模式给予请求的类型，对请求的发送者和接收者进行解耦。这种类型的设计模式属于行为型模式。 </p>
 </blockquote>
-          
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -637,24 +702,24 @@
 
 
 
-
   
-    <article id="post-RESUME" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-RESUME" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/11/RESUME/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/11/RESUME/" class="article-date">
       <time datetime="2020-06-11T01:48:15.000Z" itemprop="datePublished">2020-06-11</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/11/RESUME/">RESUME</a>
@@ -662,34 +727,63 @@
   
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="RESUME"><a href="#RESUME" class="headerlink" title="RESUME"></a>RESUME</h1>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">1字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">1分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h1 id="RESUME"><a href="#RESUME" class="headerlink" title="RESUME"></a>RESUME</h1>
+    
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/11/RESUME/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/11/RESUME/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -703,24 +797,24 @@
 
 
 
-
   
-    <article id="post-代理模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-代理模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/09/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/09/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-09T12:46:15.000Z" itemprop="datePublished">2020-06-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/09/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">代理模式</a>
@@ -728,35 +822,64 @@
   
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><blockquote>
-<p><em>为其他对象提供一种代理以控制对这个对象的访问。</em> </p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">2.9k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">11分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><blockquote>
+<p><em>为其他对象提供一种代理以控制对这个对象的访问。</em> </p></blockquote>
+    
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/09/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/09/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -770,24 +893,24 @@
 
 
 
-
   
-    <article id="n-享元模式" class="article article-type-n" itemscope itemprop="blogPost">
+    <article id="n-享元模式" class="article article-type-n" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/09/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/09/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-09T10:05:02.000Z" itemprop="datePublished">2020-06-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/09/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">享元模式</a>
@@ -795,35 +918,64 @@
   
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="享元"><a href="#享元" class="headerlink" title="享元"></a>享元</h3><blockquote>
-<p><em>运用共享技术有效地支持大量细粒度的对象。</em> </p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">631字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">2分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="享元"><a href="#享元" class="headerlink" title="享元"></a>享元</h3><blockquote>
+<p><em>运用共享技术有效地支持大量细粒度的对象。</em> </p></blockquote>
+    
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/09/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/09/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -837,24 +989,24 @@
 
 
 
-
   
-    <article id="post-外观模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-外观模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/09/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/09/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-09T07:37:54.000Z" itemprop="datePublished">2020-06-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/09/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">外观模式</a>
@@ -862,35 +1014,64 @@
   
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h3><blockquote>
-<p>为子系统中的一组接口提供一个一致的界面。Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">540字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">2分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h3><blockquote>
+<p>为子系统中的一组接口提供一个一致的界面。Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p></blockquote>
+    
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/09/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/09/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -904,24 +1085,24 @@
 
 
 
-
   
-    <article id="post-装饰器模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-装饰器模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/09/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/09/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-09T07:10:41.000Z" itemprop="datePublished">2020-06-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/09/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/">装饰器模式</a>
@@ -929,35 +1110,64 @@
   
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><blockquote>
-<p>动态地给一个对象添加一些额外的职责。就增加功能来说，相比生成子类更为灵活。</p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">1k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">4分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><blockquote>
+<p>动态地给一个对象添加一些额外的职责。就增加功能来说，相比生成子类更为灵活。</p></blockquote>
+    
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/09/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/09/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -971,24 +1181,24 @@
 
 
 
-
   
-    <article id="post-组合模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-组合模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/09/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/09/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-09T06:39:48.000Z" itemprop="datePublished">2020-06-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/09/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">组合模式</a>
@@ -996,35 +1206,64 @@
   
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h3><blockquote>
-<p>将对象组合成树形结构以表示“部分-整体”的层次结构，使得用户对单个对象和组合对象的使用具有一致性。</p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">635字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">2分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h3><blockquote>
+<p>将对象组合成树形结构以表示“部分-整体”的层次结构，使得用户对单个对象和组合对象的使用具有一致性。</p></blockquote>
+    
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/09/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/09/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -1038,24 +1277,24 @@
 
 
 
-
   
-    <article id="post-桥接模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-桥接模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-09T06:04:02.000Z" itemprop="datePublished">2020-06-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">桥接模式</a>
@@ -1063,35 +1302,64 @@
   
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h3><blockquote>
-<p> <em>将抽象部分与它的实现部分分离，使它们都可以独立地变化。</em> </p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">639字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">2分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h3><blockquote>
+<p> <em>将抽象部分与它的实现部分分离，使它们都可以独立地变化。</em> </p></blockquote>
+    
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -1105,24 +1373,24 @@
 
 
 
-
   
-    <article id="post-适配器模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-适配器模式" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="article-date">
       <time datetime="2020-06-08T06:28:13.000Z" itemprop="datePublished">2020-06-08</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a  class="article-title" href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">适配器模式</a>
@@ -1130,39 +1398,67 @@
   
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><blockquote>
-<p><em>将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</em> </p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">971字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">3分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><blockquote>
+<p><em>将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</em> </p></blockquote>
+    
+    
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DesignPatterns/" rel="tag">DesignPatterns</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <p class="article-more-link">
+      <a 
+        href="/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">Read more &gt;&gt; >></a>
+    </p>
+    
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
-
 
 
 
@@ -1176,12 +1472,14 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">Next &gt;&gt;</a>
     </nav>
   
 
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -1205,7 +1503,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -1232,7 +1535,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -1263,6 +1566,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

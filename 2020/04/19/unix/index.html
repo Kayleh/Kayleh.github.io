@@ -47,6 +47,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -58,8 +61,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -85,6 +88,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -497,22 +503,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-unix" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-unix" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/04/19/unix/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/04/19/unix/" class="article-date">
       <time datetime="2020-04-19T03:24:46.854Z" itemprop="datePublished">2020-04-19</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       unix的常用指令
@@ -520,31 +527,59 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
-        <div class="clearfix"></div>
-      </div>
-      
+    <!--字数统计-->
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="unix的常用指令"><a href="#unix的常用指令" class="headerlink" title="unix的常用指令"></a>unix的常用指令</h2><a id="more"></a>
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">163字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">1分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h2 id="unix的常用指令"><a href="#unix的常用指令" class="headerlink" title="unix的常用指令"></a>unix的常用指令</h2><a id="more"></a>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ls 显示指定目录下的文件目录清单相当于dos下的dir命令。</span><br><span class="line"><span class="built_in">pwd</span> 显示当前目录。</span><br><span class="line">mkdir 在当前目录下创建目录。</span><br><span class="line">rm 删除文件或目录。</span><br><span class="line">cp 复制文件。</span><br><span class="line">mv 移动文件。</span><br><span class="line"><span class="built_in">cd</span> 切换工作目录。</span><br><span class="line">ps 查看进程。</span><br><span class="line">ftp 传送文件。</span><br><span class="line">telnet 远程登录命令。</span><br><span class="line">ping 用来测试本机与目标主机是否联通。</span><br><span class="line">env 查看当前系统中的环境变量。</span><br><span class="line">more 分屏显示指定文件的内容。</span><br><span class="line"><span class="built_in">echo</span>在终端上显示你要显示的内容，向C语言中的<span class="built_in">printf</span>函数。</span><br></pre></td></tr></table></figure>
 
 <p>微信公众号:每日学习干货</p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/04/19/unix/">unix的常用指令</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -588,7 +623,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#unix的常用指令"><span class="toc-number">1.</span> <span class="toc-text">unix的常用指令</span></a></li></ol>
 </div>
@@ -648,8 +683,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -682,7 +717,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -726,12 +761,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -755,7 +791,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -782,7 +823,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -813,6 +854,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

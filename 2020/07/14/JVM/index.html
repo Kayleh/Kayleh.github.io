@@ -54,6 +54,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -65,8 +68,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -92,6 +95,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -504,22 +510,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-JVM" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JVM" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/07/14/JVM/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/07/14/JVM/" class="article-date">
       <time datetime="2020-07-14T05:35:08.000Z" itemprop="datePublished">2020-07-14</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       JVM
@@ -527,24 +534,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">6.8k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">23分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><a id="more"></a>
+    
+    <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><a id="more"></a>
 
 <h3 id="简单描述一下JVM加载class文件的原理是什么"><a href="#简单描述一下JVM加载class文件的原理是什么" class="headerlink" title="简单描述一下JVM加载class文件的原理是什么?"></a>简单描述一下JVM加载class文件的原理是什么?</h3><p>JVM中类的装载是由ClassLoader和它的子类来实现的,Java ClassLoader 是一个重要的Java运行时系统组件。它负责在运行时查找和装入类文件的类。</p>
 <p>Java中的所有类，都需要由类加载器装载到JVM中才能运行。类加载器本身也是一个类，而它的工作就是把class文件从硬盘读取到内存中。在写程序的时候，我们几乎不需要关心类的加载，因为这些都是隐式装载的，除非我们有特殊的用法，像是反射，就需要显式的加载所需要的类。</p>
@@ -678,12 +713,12 @@
 <p>-XX:UseCMSCompactAtFullCollection -XX:CMSFullGCBeforeCompaction=5</p>
 <p>也就是CMS在进行5次Full GC（标记清除）之后进行一次标记整理算法，从而可以控制老年带的碎片在一定的数量以内，甚至可以配置CMS在每次Full GC的时候都进行内存的整理。</p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/07/14/JVM/">JVM</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -727,7 +762,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM"><span class="toc-number">1.</span> <span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单描述一下JVM加载class文件的原理是什么"><span class="toc-number">1.0.1.</span> <span class="toc-text">简单描述一下JVM加载class文件的原理是什么?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"><span class="toc-number">1.0.2.</span> <span class="toc-text">什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jvm最大内存限制多少？"><span class="toc-number">1.0.3.</span> <span class="toc-text">jvm最大内存限制多少？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jvm是如何实现线程的？"><span class="toc-number">1.0.4.</span> <span class="toc-text">jvm是如何实现线程的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是JVM内存模型？"><span class="toc-number">1.0.5.</span> <span class="toc-text">什么是JVM内存模型？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在JAVA虚拟机中，哪些对象可作为ROOT对象？"><span class="toc-number">1.0.6.</span> <span class="toc-text">在JAVA虚拟机中，哪些对象可作为ROOT对象？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GC中如何判断对象是否需要被回收？"><span class="toc-number">1.0.7.</span> <span class="toc-text">GC中如何判断对象是否需要被回收？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明一下JAVA虚拟机的作用是什么"><span class="toc-number">1.0.8.</span> <span class="toc-text">说明一下JAVA虚拟机的作用是什么?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明一下eden区和survial区的含义以及工作原理？"><span class="toc-number">1.0.9.</span> <span class="toc-text">说明一下eden区和survial区的含义以及工作原理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单描述一下JVM分区都有哪些？"><span class="toc-number">1.0.10.</span> <span class="toc-text">简单描述一下JVM分区都有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单描述一下类的加载过程"><span class="toc-number">1.0.11.</span> <span class="toc-text">简单描述一下类的加载过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单说明一下JVM的回收算法以及它的回收器是什么？还有CMS采用哪种回收算法？使用CMS怎样解决内存碎片的问题呢？"><span class="toc-number">1.0.12.</span> <span class="toc-text">简单说明一下JVM的回收算法以及它的回收器是什么？还有CMS采用哪种回收算法？使用CMS怎样解决内存碎片的问题呢？</span></a></li></ol></li></ol></li></ol>
 </div>
@@ -787,8 +822,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -821,7 +856,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -865,12 +900,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -894,7 +930,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -921,7 +962,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -952,6 +993,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

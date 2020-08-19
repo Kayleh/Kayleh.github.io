@@ -48,6 +48,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -59,8 +62,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -86,6 +89,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -498,22 +504,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-IO" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-IO" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/07/14/IO/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/07/14/IO/" class="article-date">
       <time datetime="2020-07-14T05:39:13.000Z" itemprop="datePublished">2020-07-14</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       IO
@@ -521,24 +528,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">1.2k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">4分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><a id="more"></a>
+    
+    <h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><a id="more"></a>
 
 <h3 id="运行时异常与受检异常有什么区别？"><a href="#运行时异常与受检异常有什么区别？" class="headerlink" title="运行时异常与受检异常有什么区别？"></a>运行时异常与受检异常有什么区别？</h3><p> 异常表示程序运行过程中可能出现的非正常状态，运行时异常表示虚拟机的通常操作中可能遇到的异常，是一种常见运行错误，只要程序设计得没有问题通常就不会发生。受检异常跟程序运行的上下文环境有关，即使程序设计无误，仍然可能因使用的问题而引发。Java编译器要求方法必须声明抛出可能发生的受检异常，但是并不要求必须声明抛出未被捕获的运行时异常。异常和继承一样，是面向对象程序设计中经常被滥用的东西，在Effective Java中对异常的使用给出了以下指导原则：</p>
 <blockquote>
@@ -556,12 +591,12 @@
 <p>还可以使用watch -d -n 1 cat /var/log/messages</p>
 <p>-d表示高亮不同的地方，-n表示多少秒刷新一次。</p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/07/14/IO/">IO</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -605,7 +640,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IO"><span class="toc-number">1.</span> <span class="toc-text">IO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#运行时异常与受检异常有什么区别？"><span class="toc-number">1.0.1.</span> <span class="toc-text">运行时异常与受检异常有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是java序列化？以及如何实现java序列化？"><span class="toc-number">1.0.2.</span> <span class="toc-text">什么是java序列化？以及如何实现java序列化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java中有几种类型的流？JDK为每种类型的流提供了一些抽象类以供继承，请说出他们分别是哪些类？"><span class="toc-number">1.0.3.</span> <span class="toc-text">java中有几种类型的流？JDK为每种类型的流提供了一些抽象类以供继承，请说出他们分别是哪些类？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明一下Java中的异常处理机制的原理以及如何应用。"><span class="toc-number">1.0.4.</span> <span class="toc-text">说明一下Java中的异常处理机制的原理以及如何应用。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请问你平时最常见到的runtime-exception是什么？"><span class="toc-number">1.0.5.</span> <span class="toc-text">请问你平时最常见到的runtime exception是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#error和exception有什么区别"><span class="toc-number">1.0.6.</span> <span class="toc-text">error和exception有什么区别?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行时的异常与一般情况下出现的异常有什么相同点和不同点？"><span class="toc-number">1.0.7.</span> <span class="toc-text">运行时的异常与一般情况下出现的异常有什么相同点和不同点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何打印日志？"><span class="toc-number">1.0.8.</span> <span class="toc-text">如何打印日志？</span></a></li></ol></li></ol></li></ol>
 </div>
@@ -665,8 +700,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -699,7 +734,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -743,12 +778,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -772,7 +808,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -799,7 +840,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -830,6 +871,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

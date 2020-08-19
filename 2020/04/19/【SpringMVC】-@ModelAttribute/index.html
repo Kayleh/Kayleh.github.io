@@ -50,6 +50,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -61,8 +64,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -88,6 +91,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -500,22 +506,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-【SpringMVC】-@ModelAttribute" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-【SpringMVC】-@ModelAttribute" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/" class="article-date">
       <time datetime="2020-04-19T13:04:07.000Z" itemprop="datePublished">2020-04-19</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       【SpringMVC】-@ModelAttribute
@@ -523,24 +530,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">447字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">1分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frame/" rel="tag">frame</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="ModelAttribute？"><a href="#ModelAttribute？" class="headerlink" title="@ModelAttribute？"></a>@ModelAttribute？</h2><p>@ModelAttribute的原理比较复杂，需要对源码有一定的理解。它可以使被</p>
+    
+    <h2 id="ModelAttribute？"><a href="#ModelAttribute？" class="headerlink" title="@ModelAttribute？"></a>@ModelAttribute？</h2><p>@ModelAttribute的原理比较复杂，需要对源码有一定的理解。它可以使被</p>
 <a id="more"></a>
 <p>@ModelAttribute修饰的方法在控制器的处理方法之前调用。<br>但如果@ModelAttribute标注在方法的入参前，它可以从隐含对象中获取隐含的模型数据中获取对象，再将请求参数绑定到对象中，再传入入参。</p>
 <hr>
@@ -552,12 +587,12 @@
 <p> @ModelAttribute(“value”)这里如果指定的”value”,value就是从map取出参数的key.如果是@ModelAttribute,没有指定key,SpringMVC会默认使用返回值类型的首字母小写作为key.如pOJO.</p>
 <h6 id="微信公众号-每日学习干货↓"><a href="#微信公众号-每日学习干货↓" class="headerlink" title="微信公众号:每日学习干货↓"></a>微信公众号:每日学习干货↓</h6><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/1.jpg" alt> </p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/">【SpringMVC】-@ModelAttribute</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -601,7 +636,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ModelAttribute？"><span class="toc-number">1.</span> <span class="toc-text">@ModelAttribute？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实际场景："><span class="toc-number">1.1.</span> <span class="toc-text">实际场景：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#可以得出：ModelAttribute标注的方法总会在目标方法-update-前执行。"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">可以得出：ModelAttribute标注的方法总会在目标方法(update)前执行。</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ModelAttribute可以取出隐含对象的值"><span class="toc-number">1.2.</span> <span class="toc-text">ModelAttribute可以取出隐含对象的值</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#微信公众号-每日学习干货↓"><span class="toc-number">1.2.0.0.1.</span> <span class="toc-text">微信公众号:每日学习干货↓</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
 </div>
@@ -661,8 +696,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -695,7 +730,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -739,12 +774,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -768,7 +804,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -795,7 +836,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -826,6 +867,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

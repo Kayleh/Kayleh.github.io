@@ -47,6 +47,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -58,8 +61,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -85,6 +88,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -497,22 +503,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-并发：原理" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-并发：原理" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/" class="article-date">
       <time datetime="2020-04-19T03:32:02.990Z" itemprop="datePublished">2020-04-19</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       并发:原理
@@ -520,20 +527,48 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
-        <div class="clearfix"></div>
-      </div>
-      
+    <!--字数统计-->
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="为什么要创建线程池"><a href="#为什么要创建线程池" class="headerlink" title="为什么要创建线程池"></a>为什么要创建线程池</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果系统要运行多个线程,大量反复的启动创建和回收线程会非常占用系统资源,导致性能下降.</span><br></pre></td></tr></table></figure>
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">1.3k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">5分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="为什么要创建线程池"><a href="#为什么要创建线程池" class="headerlink" title="为什么要创建线程池"></a>为什么要创建线程池</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果系统要运行多个线程,大量反复的启动创建和回收线程会非常占用系统资源,导致性能下降.</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>创建线程池,可以:<br>1.降低资源消耗<br>2.提升响应速度<br>3.提高</p>
 <h3 id="线程池原理"><a href="#线程池原理" class="headerlink" title="线程池原理"></a>线程池原理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">提交一个任务到线程池中,线程池的处理流程如下:</span><br><span class="line">1.判断线程池里的核心线程是否都在执行任务,如果不是(核心线程空闲或者核心线程没有被创建)则创建一个新的工作线程来执行任务.如果核心线程都在执行任务,则进入下个流程.</span><br><span class="line">2.线程池判断工作队列是否已满,如果工作路径没有满,则新提交的任务储存在这个工作队列里.如果工作队列满了,则进入下个流程.</span><br><span class="line">3.判断线程池里的线程是否都处于工作状态,如果没有,则创建一个新的工作线程来执行任务.如果已经满了,则交给饱和策略来处理这个任务.</span><br></pre></td></tr></table></figure>
@@ -556,12 +591,12 @@
 
 <p>微信公众号:每日学习干货</p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/04/19/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/">并发:原理</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -605,7 +640,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程"><span class="toc-number">1.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要创建线程池"><span class="toc-number">1.1.</span> <span class="toc-text">为什么要创建线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程池原理"><span class="toc-number">1.2.</span> <span class="toc-text">线程池原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程池的分类"><span class="toc-number">1.3.</span> <span class="toc-text">线程池的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程池的创建方法"><span class="toc-number">1.4.</span> <span class="toc-text">线程池的创建方法</span></a></li></ol></li></ol>
 </div>
@@ -665,8 +700,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -699,7 +734,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -743,12 +778,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -772,7 +808,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -799,7 +840,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -830,6 +871,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

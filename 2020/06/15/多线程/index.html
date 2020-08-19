@@ -56,6 +56,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/fancybox/jquery.fancybox.css">
   
 
+  <!--不能放在footer-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script data-ad-client="ca-pub-7457165067653912" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -67,8 +70,8 @@
   <script src='https://cdn.jsdelivr.net/gh/kayleh/cdn/js/valine.min.js'></script>
 
   <!-- 加载特效 -->
-  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/js/pace.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn@1.0/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/kayleh/cdn/js/pace.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/kayleh/cdn/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
     var yiliaConfig = {
       fancybox: true,
@@ -94,6 +97,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+  <!--不能放在footer-->
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -506,22 +512,23 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-多线程" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-多线程" class="article article-type-post" itemscope
+  itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="article-date">
+  <div class="article-meta">
+    <a  href="/2020/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="article-date">
       <time datetime="2020-06-15T01:13:04.000Z" itemprop="datePublished">2020-06-15</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <input type="hidden" class="isFancy" />
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       多线程
@@ -529,24 +536,52 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
+    <!--字数统计-->
+    
+    <!-- 字数统计 -->
+<div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <!-- <span class="post-meta-item-text"> 字数统计: </span> -->
+            <span class="post-meta-item-text"> Word_count: </span>
+            <span class="post-count">2k字</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <!-- <span class="post-meta-item-text"> 预计阅读时长: </span> -->
+            <span class="post-meta-item-text"> Read_time: </span>
+            <span class="post-count">7分</span>
+            <!-- <span class="post-count">246.2k</span> -->
+        </span>
+    </span>
+</div>
+    
+    
+    <br>
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Concurrency/" rel="tag">Concurrency</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><a id="more"></a>
+    
+    <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><a id="more"></a>
 
 <h3 id="一个线程的生命周期"><a href="#一个线程的生命周期" class="headerlink" title="一个线程的生命周期"></a>一个线程的生命周期</h3><p>线程是一个动态执行的过程，它也有一个从产生到死亡的过程。</p>
 <p>下图显示了一个线程完整的生命周期。</p>
@@ -706,12 +741,12 @@
 <p>通过对多线程的使用，可以编写出非常高效的程序。不过请注意，如果你创建太多的线程，程序执行的效率实际上是降低了，而不是提升了。</p>
 <p>请记住，上下文的切换开销也很重要，如果你创建了太多的线程，CPU 花费在上下文的切换的时间将多于执行程序的时间！</p>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Kayleh 的个人博客">Kayleh</a></p>
@@ -755,7 +790,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程"><span class="toc-number">1.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一个线程的生命周期"><span class="toc-number">1.1.</span> <span class="toc-text">一个线程的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程的优先级"><span class="toc-number">1.2.</span> <span class="toc-text">线程的优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个线程"><span class="toc-number">1.3.</span> <span class="toc-text">创建一个线程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过实现-Runnable-接口来创建线程"><span class="toc-number">2.</span> <span class="toc-text">通过实现 Runnable 接口来创建线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过继承Thread来创建线程"><span class="toc-number">3.</span> <span class="toc-text">通过继承Thread来创建线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thread-方法"><span class="toc-number">4.</span> <span class="toc-text">Thread 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-number">4.1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-Callable-和-Future-创建线程"><span class="toc-number">5.</span> <span class="toc-text">通过 Callable 和 Future 创建线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建线程的三种方式的对比"><span class="toc-number">6.</span> <span class="toc-text">创建线程的三种方式的对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程的使用"><span class="toc-number">7.</span> <span class="toc-text">多线程的使用</span></a></li></ol>
 </div>
@@ -815,8 +850,8 @@
 
 
 
-    
-        <!-- <section id="comments">
+
+<!-- <section id="comments">
   <link rel="stylesheet" href="/css/gitment.min.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
@@ -849,7 +884,7 @@
     });
   </script>
 </div>
-    
+
 
 
 
@@ -893,12 +928,13 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
+
+
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
@@ -922,7 +958,12 @@
 
         
 
+        本站总字数
+        <span class="post-count">246.2k</span>
+<br>
         <div class="visit">
+            <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
             
             <span id="busuanzi_container_site_pv" style='display:none'>
                 你是第
@@ -949,7 +990,7 @@
                 </span>
             </span>
             <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
             <span class="post-meta-divider">|</span>
 
@@ -980,6 +1021,8 @@
         daovoice('update');
     </script>
     <!-- {% endif %} -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
 </footer>
     </div>
     

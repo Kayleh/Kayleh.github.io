@@ -8,5 +8,5 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-Sitemap: http://www.kayleh.top/sitemap.xml
-Sitemap: http://www.kayleh.top/baidusitemap.xml
+Sitemap: http://kayleh.top/sitemap.xml
+Sitemap: http://kayleh.top/baidusitemap.xml

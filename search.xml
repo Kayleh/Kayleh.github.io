@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Contract</title>
+    <title>about me</title>
     <url>/2020/07/15/Contract/</url>
-    <content><![CDATA[<p> Github: <a href="https://github.com/Kayleh" target="_blank" rel="noopener">https://github.com/Kayleh</a></p>
+    <content><![CDATA[<p>一名保安。</p>
+<p> Github: <a href="https://github.com/Kayleh" target="_blank" rel="noopener">https://github.com/Kayleh</a></p>
 <p> Facebook: <a href="https://www.facebook.com/kayleh.yao.7" target="_blank" rel="noopener">https://www.facebook.com/kayleh.yao.7</a></p>
 <p> Twitter: <a href="https://twitter.com/y40jinqing" target="_blank" rel="noopener">https://twitter.com/y40jinqing</a></p>
 <p> Weibo: <a href="https://weibo.com/5737136689/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank" rel="noopener">https://weibo.com/5737136689/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo</a></p>
 <p> Zhihu: <a href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" target="_blank" rel="noopener">https://www.zhihu.com/people/ni-hui-gan-xie-wo-de</a></p>
 <p> Linkedin: <a href="https://www.linkedin.com/in/jinqing-yao-97a750186/" target="_blank" rel="noopener">https://www.linkedin.com/in/jinqing-yao-97a750186/</a></p>
 <p> Google: “&#107;&#97;&#121;&#108;&#101;&#104;&#105;&#115;&#100;&#105;&#101;&#100;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;”</p>
+<img src="/2020/07/15/Contract/wechat.jpg" alt="wechat" style="zoom: 33%;">
+
 ]]></content>
+      <tags>
+        <tag>about</tag>
+      </tags>
   </entry>
   <entry>
     <title>C prime plus</title>
@@ -2779,9 +2785,11 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
   <entry>
     <title>SpringMVC环境搭建</title>
     <url>/2020/04/17/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h2 id="什么是SpringMVC？"><a href="#什么是SpringMVC？" class="headerlink" title="什么是SpringMVC？"></a>什么是SpringMVC？</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Spring MVC是Spring Framework的一部分，是基于Java实现MVC的轻量级Web框架，实现MVC模块，简化了Web开发。</span><br><span class="line"></span><br><span class="line">MVC提倡每一层只写自己的东西，不写其他任何代码。为了解耦，为了维护方便和分工合作。</span><br><span class="line"></span><br><span class="line">SpringMVC为展现层提供的基于MVC设计理念的优秀Web框架，是目前最主流的框架之一。</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><a id="more"></a>
 
-<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Spring MVC是Spring Framework的一部分，是基于Java实现MVC的轻量级Web框架，实现MVC模块，简化了Web开发。</span><br><span class="line"></span><br><span class="line">MVC提倡每一层只写自己的东西，不写其他任何代码。为了解耦，为了维护方便和分工合作。</span><br><span class="line"></span><br><span class="line">SpringMVC为展现层提供的基于MVC设计理念的优秀Web框架，是目前最主流的框架之一。</span><br></pre></td></tr></table></figure>
+
+<!-- more -->
 
 
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="1-导包-Maven工程忽略"><a href="#1-导包-Maven工程忽略" class="headerlink" title="1.导包(Maven工程忽略)"></a>1.导包(Maven工程忽略)</h3><p>  需要导入log包，spring核心包，SpringMVC包</p>
@@ -2820,6 +2828,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <p>为什么没有拦截index.jsp??</p>
 <p>因为Tomcat的底层本来就能拦截jsp页面,配置的”/“的子类web.xml相当于覆盖了Webapp的父类web.xml中的DefaultServlet,DefaultServlet的作用是处理静态资源,覆盖了DefaultServlet,也就拦截了除jsp和servlet外的静态资源,而JspServlet的配置并没有覆盖.</p>
 <h2 id="而”-”的作用是拦截所有请求-包括jsp页面"><a href="#而”-”的作用是拦截所有请求-包括jsp页面" class="headerlink" title="而”/*”的作用是拦截所有请求,包括jsp页面."></a>而”/*”的作用是拦截所有请求,包括jsp页面.</h2>]]></content>
+      <categories>
+        <category>SpringMVC</category>
+      </categories>
       <tags>
         <tag>frame</tag>
       </tags>
@@ -3772,6 +3783,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <p><img src="/2020/06/13/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/4.png" alt="img"></p>
 <h3 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤 4"></a>步骤 4</h3><p>执行程序，输出结果：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Thu Jan <span class="number">31</span> <span class="number">16</span>:<span class="number">05</span>:<span class="number">46</span> IST <span class="number">2013</span> [Robert] : Hi! John!</span><br><span class="line">Thu Jan <span class="number">31</span> <span class="number">16</span>:<span class="number">05</span>:<span class="number">46</span> IST <span class="number">2013</span> [John] : Hello! Robert!</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -3808,6 +3822,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <p> 在实际应用中，我们经常使用成熟的缓存库，例如<code>Guava</code>的<code>Cache</code>，因为它提供了最大缓存数量限制、定时过期等实用功能。 </p>
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -3861,12 +3878,15 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <h5 id="3-通过setter方法传递"><a href="#3-通过setter方法传递" class="headerlink" title="3.通过setter方法传递"></a>3.通过setter方法传递</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IOpenAndClose</span></span>&#123;</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(ITV tv)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">name</span><span class="params">(ITV tv)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ITV</span></span>&#123;</span><br><span class="line">    <span class="comment">//ITV接口</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Htc</span> <span class="keyword">implements</span> <span class="title">ITV</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"htc电视机，打开"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OpenAndClose</span> <span class="keyword">implements</span> <span class="title">IOpenAndClose</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> ITV tv;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">setTv</span><span class="params">(ITV tv)</span></span>&#123;</span><br><span class="line">        <span class="comment">//构造器</span></span><br><span class="line">        <span class="keyword">this</span>.tv = tv;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">        tv.play();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
   </entry>
   <entry>
-    <title>DistributedMicroservices_1</title>
+    <title>SpringCloud</title>
     <url>/2020/08/03/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%841/</url>
     <content><![CDATA[<p>SpringCloud——基于分布式的微服务架构 </p>
 <a id="more"></a>
@@ -3974,6 +3994,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <p>cloud-provider-payment8001模块也是这样做.</p>
 ]]></content>
+      <categories>
+        <category>分布式</category>
+      </categories>
       <tags>
         <tag>DistributedMicroservices</tag>
       </tags>
@@ -4102,7 +4125,7 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
       </tags>
   </entry>
   <entry>
-    <title>DistributedMicroservices_3</title>
+    <title>Ribbon负载均衡服务调用、服务降级</title>
     <url>/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%843/</url>
     <content><![CDATA[<p>Ribbon负载均衡服务调用、服务降级 </p>
 <a id="more"></a>
@@ -4419,6 +4442,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <p>流程图：</p>
 <p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%843/1.jpg" alt="1596981916733"></p>
 ]]></content>
+      <categories>
+        <category>分布式</category>
+      </categories>
       <tags>
         <tag>DistributedMicroservices</tag>
       </tags>
@@ -4454,7 +4480,7 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
       </tags>
   </entry>
   <entry>
-    <title>DistributedMicroservices_4</title>
+    <title>GateWay服务限流</title>
     <url>/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%844/</url>
     <content><![CDATA[<p>GateWay服务限流 </p>
 <a id="more"></a>
@@ -4589,12 +4615,15 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">正确：http:&#x2F;&#x2F;localhost:9527&#x2F;payment&#x2F;lb?uname&#x3D;z3</span><br><span class="line">错误 http:&#x2F;&#x2F;localhost:9527&#x2F;payment&#x2F;lb</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>分布式</category>
+      </categories>
       <tags>
         <tag>DistributedMicroservices</tag>
       </tags>
   </entry>
   <entry>
-    <title>DistributedMicroservices_7</title>
+    <title>SpringCloud Stream消息驱动</title>
     <url>/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/</url>
     <content><![CDATA[<p>SpringCloud Stream消息驱动 </p>
 <a id="more"></a>
@@ -4766,12 +4795,15 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <p>先启动8802，无分组属性配置，后台没有打出来消息</p>
 <p>先启动8803，有分组属性配置，后台打出来了MQ上的消息</p>
 ]]></content>
+      <categories>
+        <category>分布式</category>
+      </categories>
       <tags>
         <tag>DistributedMicroservices</tag>
       </tags>
   </entry>
   <entry>
-    <title>DistributedMicroservices_5</title>
+    <title>SpringCloud config分布式配置中心</title>
     <url>/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%845/</url>
     <content><![CDATA[<p>SpringCloud config分布式配置中心 </p>
 <a id="more"></a>
@@ -4906,12 +4938,15 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <p>可否广播，一次通知，处处生效？</p>
 <p>我们想大范围的自动刷新，求方法</p>
 ]]></content>
+      <categories>
+        <category>分布式</category>
+      </categories>
       <tags>
         <tag>DistributedMicroservices</tag>
       </tags>
   </entry>
   <entry>
-    <title>DistributedMicroservices_6</title>
+    <title>SpringCloud Bus消息总线</title>
     <url>/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/</url>
     <content><![CDATA[<p>SpringCloud Bus 消息总线 </p>
 <a id="more"></a>
@@ -5018,6 +5053,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <h4 id="通知总结All"><a href="#通知总结All" class="headerlink" title="通知总结All"></a>通知总结All</h4><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597387025181.png" alt="1597387025181"></p>
 ]]></content>
+      <categories>
+        <category>分布式</category>
+      </categories>
       <tags>
         <tag>DistributedMicroservices</tag>
       </tags>
@@ -5384,6 +5422,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <h4 id="步骤-6"><a href="#步骤-6" class="headerlink" title="步骤 6"></a>步骤 6</h4><p>执行程序，输出结果：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Stock [ Name: ABC, Quantity: 10 ] bought</span><br><span class="line">Stock [ Name: ABC, Quantity: 10 ] sold</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -5411,6 +5452,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <p>原型模式应用不是很广泛，因为很多实例会持有类似文件、Socket这样的资源，而这些资源是无法复制给另一个对象共享的，只有存储简单类型的“值”对象可以复制。</p>
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -5509,12 +5553,15 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <p>很多Web程序，内部有多个子系统提供服务，经常使用一个统一的Facade入口，例如一个<code>RestApiController</code>，使得外部用户调用的时候，只关心Facade提供的接口，不用管内部到底是哪个子系统处理的。</p>
 <p>更复杂的Web程序，会有多个Web服务，这个时候，经常会使用一个统一的网关入口来自动转发到不同的Web服务，这种提供统一入口的网关就是Gateway，它本质上也是一个Facade，但可以附加一些用户认证、限流限速的额外服务。</p>
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
   </entry>
   <entry>
-    <title>DistributedMicroservices_2</title>
+    <title>Eureka服务注册与发现</title>
     <url>/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%842/</url>
     <content><![CDATA[<p>Eureka服务注册与发现 </p>
 <a id="more"></a>
@@ -5743,6 +5790,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <p>结论：违背了可用性A的要求，只满足一致性和分区容错，即CP</p>
 <p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%842/1596714860983.png" alt="1596714860983"></p>
 ]]></content>
+      <categories>
+        <category>分布式</category>
+      </categories>
       <tags>
         <tag>DistributedMicroservices</tag>
       </tags>
@@ -6539,6 +6589,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <h3 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤 4"></a>步骤 4</h3><p>执行程序，输出结果：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cricket Game Initialized! Start playing.</span><br><span class="line">Cricket Game Started. Enjoy the game!</span><br><span class="line">Cricket Game Finished!</span><br><span class="line"></span><br><span class="line">Football Game Initialized! Start playing.</span><br><span class="line">Football Game Started. Enjoy the game!</span><br><span class="line">Football Game Finished!</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -6582,6 +6635,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <p>试试效果：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; hello</span><br><span class="line">&lt; Hello, I<span class="string">'m Bob.</span></span><br><span class="line"><span class="string">&gt; Nice to meet you.</span></span><br><span class="line"><span class="string">&lt; Nice to meet you!</span></span><br><span class="line"><span class="string">&gt; Today is cold?</span></span><br><span class="line"><span class="string">&lt; Yes. Today is cold!</span></span><br><span class="line"><span class="string">&gt; bye</span></span><br><span class="line"><span class="string">&lt; Bye!</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -6749,6 +6805,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <h5 id="很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码："><a href="#很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码：" class="headerlink" title="很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码："></a>很多时候，我们可以简化Builder模式，以链式调用的方式来创建对象。例如，我们经常编写这样的代码：</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">StringBuilder builder &#x3D; new StringBuilder();</span><br><span class="line">builder.append(secure ? &quot;https:&#x2F;&#x2F;&quot; : &quot;http:&#x2F;&#x2F;&quot;)</span><br><span class="line">       .append(&quot;www.liaoxuefeng.com&quot;)</span><br><span class="line">       .append(&quot;&#x2F;&quot;)</span><br><span class="line">       .append(&quot;?t&#x3D;0&quot;);</span><br><span class="line">String url &#x3D; builder.toString();</span><br></pre></td></tr></table></figure>
 
 <h5 id="由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下："><a href="#由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下：" class="headerlink" title="由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下："></a>由于我们经常需要构造URL字符串，可以使用Builder模式编写一个URLBuilder，调用方式如下：</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String url &#x3D; URLBuilder.builder() &#x2F;&#x2F; 创建Builder</span><br><span class="line">        .setDomain(&quot;www.liaoxuefeng.com&quot;) &#x2F;&#x2F; 设置domain</span><br><span class="line">        .setScheme(&quot;https&quot;) &#x2F;&#x2F; 设置scheme</span><br><span class="line">        .setPath(&quot;&#x2F;&quot;) &#x2F;&#x2F; 设置路径</span><br><span class="line">        .setQuery(Map.of(&quot;a&quot;, &quot;123&quot;, &quot;q&quot;, &quot;K&amp;R&quot;)) &#x2F;&#x2F; 设置query</span><br><span class="line">        .build(); &#x2F;&#x2F; 完成build</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -6962,6 +7021,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <p>类似的，可以继续加<code>ItalicDecorator</code>、<code>UnderlineDecorator</code>等。客户端可以自由组合这些Decorator：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TextNode n1 = <span class="keyword">new</span> SpanNode();</span><br><span class="line">TextNode n2 = <span class="keyword">new</span> BoldDecorator(<span class="keyword">new</span> UnderlineDecorator(<span class="keyword">new</span> SpanNode()));</span><br><span class="line">TextNode n3 = <span class="keyword">new</span> ItalicDecorator(<span class="keyword">new</span> BoldDecorator(<span class="keyword">new</span> SpanNode()));</span><br><span class="line">n1.setText(<span class="string">"Hello"</span>);</span><br><span class="line">n2.setText(<span class="string">"Decorated"</span>);</span><br><span class="line">n3.setText(<span class="string">"World"</span>);</span><br><span class="line">System.out.println(n1.getText());</span><br><span class="line"><span class="comment">// 输出&lt;span&gt;Hello&lt;/span&gt;</span></span><br><span class="line"></span><br><span class="line">System.out.println(n2.getText());</span><br><span class="line"><span class="comment">// 输出&lt;b&gt;&lt;u&gt;&lt;span&gt;Decorated&lt;/span&gt;&lt;/u&gt;&lt;/b&gt;</span></span><br><span class="line"></span><br><span class="line">System.out.println(n3.getText());</span><br><span class="line"><span class="comment">// 输出&lt;i&gt;&lt;b&gt;&lt;span&gt;World&lt;/span&gt;&lt;/b&gt;&lt;/i&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -6999,6 +7061,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 <p>作为容器节点的<code>ElementNode</code>又可以添加任意个<code>Node</code>，这样就可以构成层级结构。</p>
 <p>类似的，像文件夹和文件、GUI窗口的各种组件，都符合Composite模式的定义，因为它们的结构天生就是层级结构。</p>
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -7040,6 +7105,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <p>桥接模式实现比较复杂，实际应用也非常少，但它提供的设计思想值得借鉴，即不要过度使用继承，而是优先拆分某些部件，使用组合的方式来扩展功能。</p>
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -7350,6 +7418,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <h3 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤 4"></a>步骤 4</h3><p>执行程序，输出结果：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Standard Console::Logger: This is an information.</span><br><span class="line">File::Logger: This is a debug level information.</span><br><span class="line">Standard Console::Logger: This is a debug level information.</span><br><span class="line">Error Console::Logger: This is an error information.</span><br><span class="line">File::Logger: This is an error information.</span><br><span class="line">Standard Console::Logger: This is an error information.</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -7458,6 +7529,9 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 
 <p>直接使用<code>InputStreamReader</code>这个Adapter是不行的，因为它只能转换出<code>Reader</code>接口。事实上，要把<code>InputStream</code>转换为<code>FileReader</code>也不是不可能，但需要花费十倍以上的功夫。这时，<strong>面向抽象编程</strong>这一原则就体现出了威力：<strong>持有高层接口不但代码更灵活，而且把各种接口组合起来也更容易。一旦持有某个具体的子类类型，要想做一些改动就非常困难。</strong></p>
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
       <tags>
         <tag>DesignPatterns</tag>
       </tags>
@@ -8910,7 +8984,7 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
 ]]></content>
   </entry>
   <entry>
-    <title>DistributedMicroservices_8</title>
+    <title>SpringCloud Sleuth分布式请求链路追踪</title>
     <url>/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/</url>
     <content><![CDATA[<p>SpringCloud Sleuth分布式请求链路追踪</p>
 <a id="more"></a>
@@ -9018,16 +9092,62 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
       </tags>
   </entry>
   <entry>
-    <title>分布式的微服务架构9</title>
+    <title>SpringCloud Alibaba</title>
     <url>/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/</url>
     <content><![CDATA[<p>SpringCloud Alibaba</p>
-<p> 把链接中的 <a href="https://link.zhihu.com/?target=https%3A//cdn.jsdelivr.net">https://cdn.jsdelivr.net</a> 替换成 <a href="https://link.zhihu.com/?target=https%3A//purge.jsdelivr.net">https://purge.jsdelivr.net</a> 访问即可实时刷新  把链接中的 <a href="https://link.zhihu.com/?target=https%3A//cdn.jsdelivr.net">https://cdn.jsdelivr.net</a> 替换成 <a href="https://link.zhihu.com/?target=https%3A//purge.jsdelivr.net">https://purge.jsdelivr.net</a> 访问即可实时刷新 </p>
+<a id="more"></a>
+
+<p>Spring Cloud Netflix项目进入维护模式</p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C1.png" alt="1597850443212"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C2.png" alt="1597850459371"></p>
+<p>SpringCloud NetFlix Projects Entering Maintenance Mode</p>
+<p>什么是维护模式</p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C3.png" alt="1597850522418"></p>
+<p>进入维护模式意味着什么呢？</p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C1597850556832.png" alt="1597850556832"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C1597850565496.png" alt="1597850565496"></p>
+<p>SpringCloud alibaba带来了什么？</p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C4.png" alt="1597850587083"></p>
+<p>能干吗</p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C5.png" alt="1597850612486"></p>
+<p>去哪下？</p>
+<p><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></p>
+<p>怎么用？</p>
+<blockquote>
+<p>Sentinel：把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性。</p>
+<p>Nacos：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。</p>
+<p>RocketMQ：一款开源的分布式消息系统，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。</p>
+<p>Dubbo：Apache Dubbo™ 是一款高性能 Java RPC 框架。</p>
+<p>Seata：阿里巴巴开源产品，一个易于使用的高性能微服务分布式事务解决方案。</p>
+<p>Alibaba Cloud ACM：一款在分布式架构环境中对应用配置进行集中管理和推送的应用配置中心产品。</p>
+<p>Alibaba Cloud OSS: 阿里云对象存储服务（Object Storage Service，简称 OSS），是阿里云提供的海量、安全、低成本、高可靠的云存储服务。您可以在任何应用、任何时间、任何地点存储和访问任意类型的数据。</p>
+<p>Alibaba Cloud SchedulerX: 阿里中间件团队开发的一款分布式任务调度产品，提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。</p>
+<p>Alibaba Cloud SMS: 覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道。</p>
+</blockquote>
+<h5 id="资料获取"><a href="#资料获取" class="headerlink" title="资料获取"></a>资料获取</h5><p>官网</p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C6.png" alt="1597850747004"></p>
+<p>中文：</p>
+<p><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></p>
 ]]></content>
       <categories>
         <category>分布式</category>
       </categories>
       <tags>
         <tag>DistributedMicroservices</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jsdelivr的CDN加速缓存不刷新问题</title>
+    <url>/2020/08/20/%E5%85%B3%E4%BA%8ECDN%E5%8A%A0%E9%80%9F%E7%BC%93%E5%AD%98%E4%B8%8D%E5%88%B7%E6%96%B0%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<hr>
+<a id="more"></a>
+
+<h3 id="The-CDN-acceleration-cache-of-jsdelivr-does-not-refresh"><a href="#The-CDN-acceleration-cache-of-jsdelivr-does-not-refresh" class="headerlink" title="The CDN acceleration cache of jsdelivr does not refresh"></a>The CDN acceleration cache of jsdelivr does not refresh</h3><p>访问链接即可解决</p>
+<p>具体：</p>
+<p>把链接中的 <a href="https://cdn.jsdelivr.net替换成" target="_blank" rel="noopener">https://cdn.jsdelivr.net替换成</a> <a href="https://purge.jsdelivr.net访问即可实时刷新" target="_blank" rel="noopener">https://purge.jsdelivr.net访问即可实时刷新</a></p>
+]]></content>
+      <tags>
+        <tag>maintain</tag>
       </tags>
   </entry>
 </search>

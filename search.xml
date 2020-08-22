@@ -2537,7 +2537,6 @@ org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
     <title>Nacos服务注册和配置中心</title>
     <url>/2020/08/21/Nacos%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%92%8C%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/</url>
     <content><![CDATA[<p>Nacos</p>
-<hr>
 <a id="more"></a>
 
 <p>一个更易于构建云原生应用的动态服务发现，配置管理和服务管理中心</p>

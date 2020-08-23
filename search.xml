@@ -5138,24 +5138,24 @@ location /{
 <li><p>Spring Cloud Bus配合Spring Cloud Config使用可以实现配置的动态刷新</p>
 </li>
 </ul>
-<h5 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326106343.png" alt="1597326106343"></p>
+<h5 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1.png" alt="1597326106343"></p>
 <p>Bus支持两种消息代理：RabbitMQ和Kafka</p>
-<h5 id="能干嘛？"><a href="#能干嘛？" class="headerlink" title="能干嘛？"></a>能干嘛？</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326181455.png" alt="1597326181455"></p>
-<h5 id="为何被称为总线"><a href="#为何被称为总线" class="headerlink" title="为何被称为总线"></a>为何被称为总线</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326216800.png" alt="1597326216800"></p>
+<h5 id="能干嘛？"><a href="#能干嘛？" class="headerlink" title="能干嘛？"></a>能干嘛？</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/2.png" alt="1597326181455"></p>
+<h5 id="为何被称为总线"><a href="#为何被称为总线" class="headerlink" title="为何被称为总线"></a>为何被称为总线</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/3.png" alt="1597326216800"></p>
 <h2 id="RabbitMQ环境配置"><a href="#RabbitMQ环境配置" class="headerlink" title="RabbitMQ环境配置"></a>RabbitMQ环境配置</h2><p>安装Erlang，下载地址：<a href="http://erlang.org/download/otp_win64_21.3.exe" target="_blank" rel="noopener">http://erlang.org/download/otp_win64_21.3.exe</a></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326251762.png" alt="1597326251762"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326263813.png" alt="1597326263813"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/4.png" alt="1597326251762"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/5.png" alt="1597326263813"></p>
 <p>安装RabbitMQ，下载地址</p>
 <p><a href="https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.14/rabbitmq-server-3.7.14.exe" target="_blank" rel="noopener">https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.14/rabbitmq-server-3.7.14.exe</a></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326363871.png" alt="1597326363871"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/6.png" alt="1597326363871"></p>
 <p>进入RabbitMQ安装目录下的sbin目录</p>
 <p>如例我自己本机D:\scmq\rabbitmq_server-3.7.14\sbin</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326403266.png" alt="1597326403266"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/7.png" alt="1597326403266"></p>
 <p>输入以下命令启动管理功能</p>
 <p>rabbitmq-plugins enable rabbitmq_management</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326436344.png" alt="1597326436344"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/8.png" alt="1597326436344"></p>
 <p>可视化插件</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597326454063.png" alt="1597326454063"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/9.png" alt="1597326454063"></p>
 <p>访问地址查看是否安装成功</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:15672&#x2F;</span><br></pre></td></tr></table></figure>
 
@@ -5176,11 +5176,11 @@ location /{
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kayleh.springcloud.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.context.config.annotation.RefreshScope;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RefreshScope</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigClientController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;server.port&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String serverPort;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;config.info&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String configInfo;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/configInfo"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getConfigInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"serverPort:"</span>+serverPort+<span class="string">"\t\n\n configInfo: "</span>+configInfo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h4><p>1) 利用消息总线触发一个客户端/bus/refresh,而刷新所有客户端的配置</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597386232917.png" alt="1597386232917"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597386240399.png" alt="1597386240399"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/10.png" alt="1597386232917"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/11.png" alt="1597386240399"></p>
 <p>2) 利用消息总线触发一个服务端ConfigServer的/bus/refresh端点,而刷新所有客户端的配置（更加推荐）</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597386285571.png" alt="1597386285571"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597386240399.png" alt="1597386240399"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/13.png" alt="1597386285571"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/11.png" alt="1597386240399"></p>
 <blockquote>
 <h4 id="图二的架构显然更加合适，图一不适合的原因如下"><a href="#图二的架构显然更加合适，图一不适合的原因如下" class="headerlink" title="图二的架构显然更加合适，图一不适合的原因如下"></a>图二的架构显然更加合适，图一不适合的原因如下</h4><p>打破了微服务的职责单一性，因为微服务本身是业务模块，它本不应该承担配置刷新职责</p>
 <p>破坏了微服务各节点的对等性</p>
@@ -5209,7 +5209,7 @@ location /{
 <blockquote>
 <p>修改Github上配置文件增加版本号</p>
 <p>发送Post请求</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/6.png" alt="图像"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/12.png" alt="图像"></p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">curl -X POST "http://localhost:<span class="number">3344</span>/actuator/bus-refresh"</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>配置中心</p>
@@ -5228,10 +5228,10 @@ location /{
 <p>公式：<a href="http://localhost:配置中心的端口号/actuator/bus-refresh/{destination}">http://localhost:配置中心的端口号/actuator/bus-refresh/{destination}</a></p>
 <p>/bus/refresh请求不再发送到具体的服务实例上，而是发给config server并通过destination参数类指定需要更新配置的服务或实例</p>
 <p>我们这里以刷新运行在3355端口上的config-client为例.  只通知3355, 不通知3366</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597386973424.png" alt="1597386973424"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/15.png" alt="1597386973424"></p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">curl -X POST "http://localhost:<span class="number">3344</span>/actuator/bus-refresh/config-client:<span class="number">3355</span>"</span><br></pre></td></tr></table></figure>
 
-<h4 id="通知总结All"><a href="#通知总结All" class="headerlink" title="通知总结All"></a>通知总结All</h4><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/1597387025181.png" alt="1597387025181"></p>
+<h4 id="通知总结All"><a href="#通知总结All" class="headerlink" title="通知总结All"></a>通知总结All</h4><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/14.png" alt="1597387025181"></p>
 ]]></content>
       <categories>
         <category>分布式</category>
@@ -5533,11 +5533,11 @@ location /{
 <a id="more"></a>
 
 <h1 id="消息驱动概述"><a href="#消息驱动概述" class="headerlink" title="消息驱动概述"></a>消息驱动概述</h1><p>屏蔽底层消息中间件的差异，降低切换版本，统一消息的编程模型</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597388512890.png" alt="1597388512890"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597388531508.png" alt="1597388531508"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1.png" alt="1597388512890"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/2.png" alt="1597388531508"></p>
 <p>Spring Cloud Stream中文指导手册</p>
 <p><a href="https://m.wang1314.com/doc/webapp/topic/20971999.html" target="_blank" rel="noopener">https://m.wang1314.com/doc/webapp/topic/20971999.html</a></p>
-<h3 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h3><h5 id="标准MQ"><a href="#标准MQ" class="headerlink" title="标准MQ"></a>标准MQ</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597828873174.png" alt="1597828873174"></p>
+<h3 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h3><h5 id="标准MQ"><a href="#标准MQ" class="headerlink" title="标准MQ"></a>标准MQ</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/3.png" alt="1597828873174"></p>
 <blockquote>
 <p>生产者/消费者之间靠消息媒介传递信息内容:\</p>
 <p><code>Message</code></p>
@@ -5546,16 +5546,16 @@ location /{
 <p>消息通道里的消息如何被消费呢，谁负责收发处理:    </p>
 <p><code>消息通道MessageChannel的子接口SubscribableChannel,由MessageHandler消息处理器订阅</code></p>
 </blockquote>
-<h5 id="为什么用Cloud-Stream"><a href="#为什么用Cloud-Stream" class="headerlink" title="为什么用Cloud Stream"></a>为什么用Cloud Stream</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847%5C1598076856767.png" alt="1598076856767"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847%5C1598076876160.png" alt="1598076876160"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847%5C1598076887339.png" alt="1598076887339"></p>
+<h5 id="为什么用Cloud-Stream"><a href="#为什么用Cloud-Stream" class="headerlink" title="为什么用Cloud Stream"></a>为什么用Cloud Stream</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1598076856767.png" alt="1598076856767"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/4.png" alt="1598076876160"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1598076887339.png" alt="1598076887339"></p>
 <p>stream凭什么可以统一底层差异</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597828959376.png" alt="1597828959376"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597828966885.png" alt="1597828966885"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/5.png" alt="1597828959376"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/6.png" alt="1597828966885"></p>
 <p>Binder</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597828986684.png" alt="1597828986684"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597828994579.png" alt="1597828994579"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597829004031.png" alt="1597829004031"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/8.png" alt="1597828986684"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/7.png" alt="1597828994579"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/9.png" alt="1597829004031"></p>
 <blockquote>
 <p>INPUT对应于消费者</p>
 <p>OUTPUT对应于生产者</p>
@@ -5565,8 +5565,8 @@ location /{
 <p>在RabbitMQ就是Exchange</p>
 <p>在kafka中就是Topic</p>
 </blockquote>
-<h5 id="Spring-Cloud-Stream标准流程套路"><a href="#Spring-Cloud-Stream标准流程套路" class="headerlink" title="Spring Cloud Stream标准流程套路"></a>Spring Cloud Stream标准流程套路</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597829077773.png" alt="1597829077773"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597829087752.png" alt="1597829087752"></p>
+<h5 id="Spring-Cloud-Stream标准流程套路"><a href="#Spring-Cloud-Stream标准流程套路" class="headerlink" title="Spring Cloud Stream标准流程套路"></a>Spring Cloud Stream标准流程套路</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/10.png" alt="1597829077773"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/11.png" alt="1597829087752"></p>
 <blockquote>
 <p><strong>Binder</strong></p>
 <p>很方便的连接中间件，屏蔽差异</p>
@@ -5575,7 +5575,7 @@ location /{
 <p><strong>Source和Sink</strong></p>
 <p>简单的可理解为参照对象是Spring Cloud Stream自身，从Stream发布消息就是输出，接受消息就是输入</p>
 </blockquote>
-<h5 id="编码API和常用注解"><a href="#编码API和常用注解" class="headerlink" title="编码API和常用注解"></a>编码API和常用注解</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597829175675.png" alt="1597829175675"></p>
+<h5 id="编码API和常用注解"><a href="#编码API和常用注解" class="headerlink" title="编码API和常用注解"></a>编码API和常用注解</h5><p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/12.png" alt="1597829175675"></p>
 <h1 id="案例说明"><a href="#案例说明" class="headerlink" title="案例说明"></a>案例说明</h1><p>RabbitMQ环境已经OK</p>
 <p>工程中新建三个子模块</p>
 <blockquote>
@@ -5663,8 +5663,8 @@ location /{
 <p>分组和持久化属性group</p>
 <p>重要</p>
 <p>生产实际案例</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597830160806.png" alt="1597830160806"></p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597830172304.png" alt="1597830172304"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/13.png" alt="1597830160806"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/14.png" alt="1597830172304"></p>
 </blockquote>
 <h5 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h5><ul>
 <li><p>原理</p>
@@ -5685,7 +5685,7 @@ location /{
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">group:</span>  <span class="string">kaylehB</span></span><br></pre></td></tr></table></figure>
 
 <p>我们自己配置</p>
-<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/1597830340659.png" alt="1597830340659"></p>
+<p><img src="/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/15.png" alt="1597830340659"></p>
 <p>结论</p>
 <p>还是重复消费</p>
 </blockquote>
@@ -5727,18 +5727,18 @@ location /{
 <a id="more"></a>
 
 <p>Spring Cloud Netflix项目进入维护模式</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C1.png" alt="1597850443212"></p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C2.png" alt="1597850459371"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/1.png" alt="1597850443212"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/2.png" alt="1597850459371"></p>
 <p>SpringCloud NetFlix Projects Entering Maintenance Mode</p>
 <p>什么是维护模式</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C3.png" alt="1597850522418"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/3.png" alt="1597850522418"></p>
 <p>进入维护模式意味着什么呢？</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C1597850556832.png" alt="1597850556832"></p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C1597850565496.png" alt="1597850565496"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/7.png" alt="1597850556832"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/8.png" alt="1597850565496"></p>
 <p>SpringCloud alibaba带来了什么？</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C4.png" alt="1597850587083"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/4.png" alt="1597850587083"></p>
 <p>能干吗</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C5.png" alt="1597850612486"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/5.png" alt="1597850612486"></p>
 <p>去哪下？</p>
 <p><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></p>
 <p>怎么用？</p>
@@ -5754,7 +5754,7 @@ location /{
 <p>Alibaba Cloud SMS: 覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道。</p>
 </blockquote>
 <h5 id="资料获取"><a href="#资料获取" class="headerlink" title="资料获取"></a>资料获取</h5><p>官网</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/D:%5CBlog%5Csource_posts%5C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849%5C6.png" alt="1597850747004"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/6.png" alt="1597850747004"></p>
 <p>中文：</p>
 <p><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></p>
 ]]></content>
@@ -6081,27 +6081,27 @@ location /{
 <a id="more"></a>
 
 <p>为什么会出现这个技术？需要解决哪些问题？</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597832055850.png" alt="1597832055850"></p>
-<img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597832064671.png" alt="1597832064671" style="zoom: 50%;">
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/0.png" alt="1597832055850"></p>
+<img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1.png" alt="1597832064671" style="zoom: 50%;">
 
 <p>Spring Cloud Sleuth提供了一套完整的服务跟踪的解决方案</p>
 <p>在分布式系统中提供追踪解决方案并且兼容支持了zipkin</p>
 <p>解决</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597832119213.png" alt="1597832119213"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/2.png" alt="1597832119213"></p>
 <h2 id="zipkin"><a href="#zipkin" class="headerlink" title="zipkin"></a>zipkin</h2><p>下载</p>
 <p>SpringCloud从F版起已不需要自己构建Zipkin server了，只需要调用jar包即可</p>
 <p><a href="https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/" target="_blank" rel="noopener">https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/</a></p>
 <p>zipkin-server-2.12.9.exec.jar</p>
 <p><strong>运行jar</strong></p>
 <p>java -jar zipkin-server-2.12.9-exec.jar</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597832503297.png" alt="1597832503297"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/3.png" alt="1597832503297"></p>
 <p>运行控制台</p>
 <blockquote>
 <p><a href="http://localhost:9411/zipkin/" target="_blank" rel="noopener">http://localhost:9411/zipkin/</a></p>
 </blockquote>
 <p>完整的调用链路</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597835169702.png" alt="1597835169702"></p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597835215535.png" alt="1597835215535"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/4.png" alt="1597835169702"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/5.png" alt="1597835215535"></p>
 <p>Trace:类似于树结构的Span集合，表示一条调用链路，存在唯一标识</p>
 <p>span:表示调用链路来源，通俗的理解span就是一次请求信息</p>
 <h2 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h2><p>cloud-provider-payment8001</p>
@@ -6109,7 +6109,7 @@ location /{
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--包含了sleuth+zipkin--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-zipkin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>yaml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8001</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">cloud-payment-service</span></span><br><span class="line">  <span class="attr">zipkin:</span></span><br><span class="line">    <span class="attr">base-url:</span> <span class="string">http://localhost:9411</span></span><br><span class="line">  <span class="attr">sleuth:</span></span><br><span class="line">    <span class="attr">sampler:</span></span><br><span class="line">    <span class="attr">probability:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">org.gjt.mm.mysql.Driver</span></span><br><span class="line">    <span class="attr">url:</span> </span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> </span><br><span class="line"></span><br><span class="line"><span class="attr">mybatis:</span></span><br><span class="line">  <span class="attr">mapperLocations:</span> <span class="string">classpath:mapper/*.xml</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.kayleh.springcloud.entities</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">fetchRegistry:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka</span>  <span class="comment">#集群版</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">instance-id:</span> <span class="string">payment8001</span></span><br><span class="line">    <span class="attr">prefer-ip-address:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8001</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">cloud-payment-service</span></span><br><span class="line">  <span class="attr">zipkin:</span></span><br><span class="line">    <span class="attr">base-url:</span> <span class="string">http://localhost:9411</span></span><br><span class="line">  <span class="attr">sleuth:</span></span><br><span class="line">    <span class="attr">sampler:</span></span><br><span class="line">   	<span class="comment">#采样率值介于0到1之间，1则表示全部采集</span></span><br><span class="line">    <span class="attr">probability:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">org.gjt.mm.mysql.Driver</span></span><br><span class="line">    <span class="attr">url:</span> </span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> </span><br><span class="line"></span><br><span class="line"><span class="attr">mybatis:</span></span><br><span class="line">  <span class="attr">mapperLocations:</span> <span class="string">classpath:mapper/*.xml</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.kayleh.springcloud.entities</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">fetchRegistry:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka</span>  <span class="comment">#集群版</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">instance-id:</span> <span class="string">payment8001</span></span><br><span class="line">    <span class="attr">prefer-ip-address:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>业务类OrderController</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kayleh.springcloud.controller;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> com.kayleh.springcloud.entities.CommonResult;</span><br><span class="line"><span class="keyword">import</span> com.kayleh.springcloud.entities.Payment;</span><br><span class="line"><span class="keyword">import</span> com.kayleh.springcloud.service.PaymentService;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.client.ServiceInstance;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.client.discovery.DiscoveryClient;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PaymentController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> PaymentService paymentService;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;server.port&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String serverPort;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> DiscoveryClient discoveryClient;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@PostMapping</span>(value = <span class="string">"/payment/create"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonResult <span class="title">create</span><span class="params">(@RequestBody Payment payment)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> result = paymentService.create(payment);</span><br><span class="line">        log.info(<span class="string">"*****插入结果："</span>+result);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(result &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> CommonResult(<span class="number">200</span>,<span class="string">"插入数据库成功,serverPort: "</span>+serverPort,result);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> CommonResult(<span class="number">444</span>,<span class="string">"插入数据库失败"</span>,<span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/payment/get/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonResult&lt;Payment&gt; <span class="title">getPaymentById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Long id)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Payment payment = paymentService.getPaymentById(id);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(payment != <span class="keyword">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> CommonResult(<span class="number">200</span>,<span class="string">"查询成功,serverPort:  "</span>+serverPort,payment);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> CommonResult(<span class="number">444</span>,<span class="string">"没有对应记录,查询ID: "</span>+id,<span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/payment/discovery"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">discovery</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        List&lt;String&gt; services = discoveryClient.getServices();</span><br><span class="line">        <span class="keyword">for</span> (String element : services) &#123;</span><br><span class="line">            log.info(<span class="string">"*****element: "</span>+element);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        List&lt;ServiceInstance&gt; instances = discoveryClient.getInstances(<span class="string">"CLOUD-PAYMENT-SERVICE"</span>);</span><br><span class="line">        <span class="keyword">for</span> (ServiceInstance instance : instances) &#123;</span><br><span class="line">            log.info(instance.getServiceId()+<span class="string">"\t"</span>+instance.getHost()+<span class="string">"\t"</span>+instance.getPort()+<span class="string">"\t"</span>+instance.getUri());</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.discoveryClient;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/payment/lb"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPaymentLB</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> serverPort;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/payment/feign/timeout"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">paymentFeignTimeout</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 业务逻辑处理正确，但是需要耗费3秒钟</span></span><br><span class="line">        <span class="keyword">try</span> &#123; TimeUnit.SECONDS.sleep(<span class="number">3</span>); &#125; <span class="keyword">catch</span> (InterruptedException e) &#123; e.printStackTrace(); &#125;</span><br><span class="line">        <span class="keyword">return</span> serverPort;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/payment/zipkin"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">paymentZipkin</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hi ,i'am paymentzipkin server fall back，welcome to kayleh，O(∩_∩)O哈哈~"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -6125,13 +6125,17 @@ location /{
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ====================&gt; zipkin+sleuth</span></span><br><span class="line">   <span class="meta">@GetMapping</span>(<span class="string">"/consumer/payment/zipkin"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">paymentZipkin</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       String result = restTemplate.getForObject(<span class="string">"http://localhost:8001"</span>+<span class="string">"/payment/zipkin/"</span>, String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="依次启动eureka7001-8001-80"><a href="#依次启动eureka7001-8001-80" class="headerlink" title="依次启动eureka7001/8001/80"></a>依次启动eureka7001/8001/80</h2><p>80调用8001几次测试下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost&#x2F;consumer&#x2F;payment&#x2F;zipkin</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="打开浏览器访问-http-localhost-9411"><a href="#打开浏览器访问-http-localhost-9411" class="headerlink" title="打开浏览器访问:http:localhost:9411"></a>打开浏览器访问:http:localhost:9411</h2><p>会出现以下界面</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597835524811.png" alt="1597835524811"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/6.png" alt="1597835524811"></p>
 <p>查看</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597835538196.png" alt="1597835538196"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/7.png" alt="1597835538196"></p>
 <p>查看依赖关系</p>
 <p>原理</p>
-<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/1597835568713.png" alt="1597835568713"></p>
+<p><img src="/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/8.png" alt="1597835568713"></p>
 ]]></content>
       <categories>
         <category>分布式</category>

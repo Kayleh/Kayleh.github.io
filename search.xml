@@ -2999,7 +2999,7 @@ location /{
 </li>
 <li><p>在seata库里建表</p>
 <ul>
-<li><p>建表db_store.sql在\seata-server-0.9.0\seata\conf目录里面</p>
+<li><p>建表db_store.sql在\seata-server-0.9.0\seata\conf目录里面(1.0版本在readme.md里面)</p>
 <blockquote>
 <p>db_store.sql</p>
 </blockquote>
@@ -3443,7 +3443,10 @@ location /{
 <h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h5><p><img src= "/img/loading.gif" data-lazy-src="/2020/08/24/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/16.png" alt="1598277148535"></p>
 <h4 id="排队等待"><a href="#排队等待" class="headerlink" title="排队等待"></a>排队等待</h4><p><img src= "/img/loading.gif" data-lazy-src="/2020/08/24/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/13.png" alt="1598276768339"></p>
 <h5 id="匀速排队，阈值必须设置为QPS"><a href="#匀速排队，阈值必须设置为QPS" class="headerlink" title="匀速排队，阈值必须设置为QPS"></a>匀速排队，阈值必须设置为QPS</h5><h5 id="官网-1"><a href="#官网-1" class="headerlink" title="官网"></a>官网</h5><h5 id="源码-1"><a href="#源码-1" class="headerlink" title="源码"></a>源码</h5><p>com.alibaba.csp.sentinel.slots.block.flow.controller.RateLimiterController</p>
-<h5 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h5><p><img src= "/img/loading.gif" data-lazy-src="/2020/08/24/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/17.png" alt="1598277222170"></p>
+<h5 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h5><p>testB在控制台输出日志sl4j</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">log.info(thread.currentThread.getName()+<span class="string">"\t"</span>+<span class="string">"...testB"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-lazy-src="/2020/08/24/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/17.png" alt="1598277222170"></p>
 <h3 id="降级规则"><a href="#降级规则" class="headerlink" title="降级规则"></a>降级规则</h3><h4 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h4><p><img src= "/img/loading.gif" data-lazy-src="/2020/08/24/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/18.png" alt="1598277395163"></p>
 <p><img src= "/img/loading.gif" data-lazy-src="/2020/08/24/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/19.png" alt="1598277412123"></p>
 <p>进一步说明</p>

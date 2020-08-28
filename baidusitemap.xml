@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kayleh.top/2020/08/28/docker%E8%99%9A%E6%8B%9F%E5%8C%96%E5%AE%B9%E5%99%A8(ing)/</loc>
+    <lastmod>2020-08-28</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/2020/08/28/SnowFlake%E5%88%86%E5%B8%83%E5%BC%8FID%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95(ing)/</loc>
+    <lastmod>2020-08-28</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/2020/08/23/hexo-next%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E5%92%8C%E5%88%86%E7%B1%BB%E9%A1%B5/</loc>
+    <lastmod>2020-08-28</lastmod>
+  </url>  <url>
     <loc>https://kayleh.top/2020/08/26/Seata%E5%A4%84%E7%90%86%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</loc>
-    <lastmod>2020-08-27</lastmod>
+    <lastmod>2020-08-28</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/2020/08/24/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/</loc>
     <lastmod>2020-08-26</lastmod>
@@ -194,9 +203,6 @@
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/2020/05/13/Inversion-of-Control%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/</loc>
-    <lastmod>2020-08-25</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/2020/08/23/hexo-next%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E5%92%8C%E5%88%86%E7%B1%BB%E9%A1%B5/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/2020/07/14/J2SE/</loc>

@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kayleh.top/infinitesimal-and-infinite/</loc>
+    <loc>https://kayleh.top/limit/</loc>
     
-    <lastmod>2020-09-13T02:33:53.646Z</lastmod>
+    <lastmod>2020-09-13T10:51:55.494Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kayleh.top/limit/</loc>
+    <loc>https://kayleh.top/infinitesimal-and-infinite/</loc>
     
-    <lastmod>2020-09-12T17:30:12.016Z</lastmod>
+    <lastmod>2020-09-13T10:51:11.028Z</lastmod>
     
   </url>
   
@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
+    <loc>https://kayleh.top/seata-handles-distributed-transactions/</loc>
     
     <lastmod>2020-09-12T08:50:16.729Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kayleh.top/seata-handles-distributed-transactions/</loc>
+    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
     
     <lastmod>2020-09-12T08:50:16.729Z</lastmod>
     

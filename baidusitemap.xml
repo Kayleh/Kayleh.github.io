@@ -1,337 +1,337 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kayleh.top/2020/08/21/Nacos%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%92%8C%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/</loc>
+    <loc>https://kayleh.top/infinitesimal-and-infinite/</loc>
+    <lastmod>2020-09-13</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/limit/</loc>
     <lastmod>2020-09-12</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/09/12/%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%B8%8E%E6%97%A0%E7%A9%B7%E5%A4%A7/</loc>
+    <loc>https://kayleh.top/nacos-service-registration-and-configuration-center/</loc>
     <lastmod>2020-09-12</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/09/12/%E6%9E%81%E9%99%90/</loc>
+    <loc>https://kayleh.top/pass-by-value/</loc>
     <lastmod>2020-09-12</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/09/10/%E5%87%BD%E6%95%B0%E5%92%8C%E6%8C%87%E9%92%88/</loc>
+    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
     <lastmod>2020-09-12</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/28/SnowFlake%E5%88%86%E5%B8%83%E5%BC%8FID%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95(ing)/</loc>
+    <loc>https://kayleh.top/seata-handles-distributed-transactions/</loc>
     <lastmod>2020-09-12</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/26/Seata%E5%A4%84%E7%90%86%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</loc>
+    <loc>https://kayleh.top/docker-virtualized-container/</loc>
     <lastmod>2020-09-12</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/28/docker%E8%99%9A%E6%8B%9F%E5%8C%96%E5%AE%B9%E5%99%A8(ing)/</loc>
-    <lastmod>2020-09-12</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/2020/06/28/C-prime-plus/</loc>
+    <loc>https://kayleh.top/c-pointer/</loc>
     <lastmod>2020-09-10</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/15/contract/</loc>
+    <loc>https://kayleh.top/about-me/</loc>
     <lastmod>2020-09-07</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/23/hexo-next%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E5%92%8C%E5%88%86%E7%B1%BB%E9%A1%B5/</loc>
+    <loc>https://kayleh.top/hexo-next-add-tags-and-category-pages/</loc>
     <lastmod>2020-08-28</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/24/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/</loc>
+    <loc>https://kayleh.top/sentinel-realizes-fusing-and-current-limiting/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/03/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%841/</loc>
+    <loc>https://kayleh.top/springcloud/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%842/</loc>
+    <loc>https://kayleh.top/eureka-service-registration-and-discovery/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%843/</loc>
+    <loc>https://kayleh.top/ribbon-load-balancing-service-call-degradation/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%844/</loc>
+    <loc>https://kayleh.top/gateway-service-current-limit/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%845/</loc>
+    <loc>https://kayleh.top/springcloud-config-distributed-configuration-center/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/</loc>
+    <loc>https://kayleh.top/springcloud-sleuth-distributed-request-link-tracking/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/</loc>
+    <loc>https://kayleh.top/springcloud-stream-message-driver/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/19/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/</loc>
+    <loc>https://kayleh.top/springcloud-alibaba/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/20/%E5%85%B3%E4%BA%8ECDN%E5%8A%A0%E9%80%9F%E7%BC%93%E5%AD%98%E4%B8%8D%E5%88%B7%E6%96%B0%E7%9A%84%E8%A7%A3%E5%86%B3/</loc>
+    <loc>https://kayleh.top/the-cdn-acceleration-cache-of-jsdelivr-does-not-refresh/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/21/%E6%8E%A5%E5%85%A5%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9FAdsense/</loc>
+    <loc>https://kayleh.top/traffic-monetizationaccess-to-google-adsense/</loc>
     <lastmod>2020-08-26</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/12/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/interpreter-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/12/%E9%93%BE%E8%A1%A8/</loc>
+    <loc>https://kayleh.top/linked-list/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/17/%E6%8F%92%E5%80%BC%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://kayleh.top/interpolation-search-algorithm/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/13/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/visitor-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/18/%E5%A0%86%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://kayleh.top/heap-sort/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/09/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/combination-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/17/%E7%BA%BF%E6%80%A7%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://kayleh.top/linear-search-algorithm/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/04/19/%E5%9B%9E%E6%96%87%E6%95%B0/</loc>
+    <loc>https://kayleh.top/palindrome/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/</loc>
+    <loc>https://kayleh.top/introduction-to-computer-network/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/13/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/observer-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/17/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://kayleh.top/binary-search-algorithm/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/09/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/bridge-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/04/19/Spring%E6%9E%B6%E6%9E%84/</loc>
+    <loc>https://kayleh.top/spring-architecture/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/Mybatis/</loc>
+    <loc>https://kayleh.top/mybatis/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/Spring/</loc>
+    <loc>https://kayleh.top/spring/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/14/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/</loc>
+    <loc>https://kayleh.top/springcloud-bus-message/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/31/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/</loc>
+    <loc>https://kayleh.top/xss-crosssite-scripting-attack/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/04/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://kayleh.top/liskov-substitution-principle/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/13/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/intermediary-model/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/03/%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://kayleh.top/single-responsibility-principle/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/05/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/</loc>
+    <loc>https://kayleh.top/dimits-law/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/13/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/strategy-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/09/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/flyweight-model/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/08/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/adapter-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/21/%E7%BB%B4%E6%8A%A42/</loc>
+    <loc>https://kayleh.top/maintenance-2/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/19/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://kayleh.top/encoding-algorithm/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/04/29/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81/</loc>
+    <loc>https://kayleh.top/objectoriented/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/13/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/iterator-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/03/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://kayleh.top/dependence-reversal-principle/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/24/gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</loc>
+    <loc>https://kayleh.top/gulp-compresses-static-resources/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/13/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/state-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/13/%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/memo-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/06/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/factory-design-pattern/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/09/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/decorator-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/09/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/agency-model/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/11/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/chain-of-responsibility-model/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</loc>
+    <loc>https://kayleh.top/principles-of-computer-organization/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/singleton-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/27/TCP-IP/</loc>
+    <loc>https://kayleh.top/tcpip/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/09/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/appearance-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/04/18/Rest%E6%9E%B6%E6%9E%84/Rest%E6%9E%B6%E6%9E%84/</loc>
+    <loc>https://kayleh.top/rest-architecture-style/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/04/30/Java-memory-model%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://kayleh.top/jmm-memory-model/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/02/Linux/</loc>
+    <loc>https://kayleh.top/linux/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/Thread/</loc>
+    <loc>https://kayleh.top/thread/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/30/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/</loc>
+    <loc>https://kayleh.top/sql-injection-attacks/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/27/HTTP/</loc>
+    <loc>https://kayleh.top/http/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/MVC/</loc>
+    <loc>https://kayleh.top/mvc/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/01/%E7%BB%B4%E6%8A%A41/</loc>
+    <loc>https://kayleh.top/maintenance-1/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/04/20/Spring%E3%80%81SpringMVC%E3%80%81Mybatis%E6%95%B4%E5%90%88/</loc>
+    <loc>https://kayleh.top/spring-springmvc-mybatis-integration/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/J2EE/</loc>
+    <loc>https://kayleh.top/j2ee/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/Array/</loc>
+    <loc>https://kayleh.top/array/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/13/Inversion-of-Control%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/</loc>
+    <loc>https://kayleh.top/inversion-of-control/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/J2SE/</loc>
+    <loc>https://kayleh.top/j2se/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/04/19/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/</loc>
+    <loc>https://kayleh.top/use-of-springmvcmodelattribute/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/14/%E9%98%9F%E5%88%97/</loc>
+    <loc>https://kayleh.top/queue/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/JDK/</loc>
+    <loc>https://kayleh.top/jdk/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/</loc>
+    <loc>https://kayleh.top/introduction-to-operating-system/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/20/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/</loc>
+    <loc>https://kayleh.top/binary-sort-tree/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/03/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://kayleh.top/interface-isolation-principle/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/19/maintain3/</loc>
+    <loc>https://kayleh.top/maintenance-3/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/17/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://kayleh.top/hash-algorithm/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/design-patterns/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/02/MYSQL/</loc>
+    <loc>https://kayleh.top/mysql/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/IO/</loc>
+    <loc>https://kayleh.top/io/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/13/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://kayleh.top/template-method/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/16/JDBC/</loc>
+    <loc>https://kayleh.top/jdbc/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/07/SparseArray%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/</loc>
+    <loc>https://kayleh.top/sparsearray-sparse-array/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/05/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://kayleh.top/synthetic-reuse-principle/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/JVM/</loc>
+    <loc>https://kayleh.top/jvm/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/04/26/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/</loc>
+    <loc>https://kayleh.top/dynamic-array/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/27/Redis/</loc>
+    <loc>https://kayleh.top/redis/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/11/%E6%A0%88Stack/</loc>
+    <loc>https://kayleh.top/stack/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/05/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://kayleh.top/principle-of-opening-and-closing/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/Reflection/</loc>
+    <loc>https://kayleh.top/reflection/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://kayleh.top/data-structures-and-algorithms/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/12/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://kayleh.top/command-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://kayleh.top/computer-network/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/24/XML/</loc>
+    <loc>https://kayleh.top/xml/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/08/%E7%94%9F%E6%88%90%E5%99%A8/</loc>
+    <loc>https://kayleh.top/builder/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://kayleh.top/operating-system/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/11/RESUME/</loc>
+    <loc>https://kayleh.top/resume/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/05/17/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://kayleh.top/7-sorting-algorithms/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>https://kayleh.top/multithreading/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/Lock/</loc>
+    <loc>https://kayleh.top/lock/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/06/08/%E5%8E%9F%E5%9E%8B/</loc>
+    <loc>https://kayleh.top/prototype/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/07/14/GC/</loc>
+    <loc>https://kayleh.top/gc/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2020/08/21/%E4%B8%AD%E8%8B%B1%E6%96%87%E5%88%87%E6%8D%A2/</loc>
+    <loc>https://kayleh.top/chinese-and-english-switching/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2019/01/01/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/</loc>
+    <loc>https://kayleh.top/concurrency-principle/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2019/07/14/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://kayleh.top/springmvc-environment-construction/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/2019/12/14/unix/</loc>
+    <loc>https://kayleh.top/common-commands-of-unix/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>
 </urlset>

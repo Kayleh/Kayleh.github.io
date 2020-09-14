@@ -4540,8 +4540,8 @@ location /{
       </tags>
   </entry>
   <entry>
-    <title>about me</title>
-    <url>/about-me/</url>
+    <title>contract</title>
+    <url>/contract/</url>
     <content><![CDATA[<p>一名保安。</p>
 <a id="more"></a>
 <hr>
@@ -4556,7 +4556,7 @@ location /{
 <p> Zhihu: <a href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" target="_blank" rel="noopener">https://www.zhihu.com/people/ni-hui-gan-xie-wo-de</a></p>
 <p> Linkedin: <a href="https://www.linkedin.com/in/jinqing-yao-97a750186/" target="_blank" rel="noopener">https://www.linkedin.com/in/jinqing-yao-97a750186/</a></p>
 <hr>
-<p><img src= "/img/loading.gif" data-lazy-src="/about-me/wechat.jpg" alt="wechat" style="zoom: 33%;"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/contract/wechat.jpg" alt="wechat" style="zoom: 33%;"></p>
 ]]></content>
       <tags>
         <tag>about</tag>
@@ -7929,6 +7929,24 @@ categories: /categories/ || th
 <p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/1599993150129.png" alt="1599993150129"></p>
 <p>=1</p>
 <p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/1599993401288.png" alt="1599993401288"></p>
+<h1 id="极限存在准则-两个重要极限"><a href="#极限存在准则-两个重要极限" class="headerlink" title="极限存在准则 两个重要极限"></a>极限存在准则 两个重要极限</h1><p>一、夹逼定理：存在三个函数f(x).g(x).h(x)</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600002658181.png" alt="1600002658181"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600003472051.png" alt="1600003472051"></p>
+<p>中间的一堆乘起来小于1，当n趋于无穷时，左边趋于0，右边趋于0</p>
+<p>二、单调有界数列必有极限</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600005635112.png" alt="1600005635112"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600009971627.png" alt="1600009971627"></p>
+<p>∴单调递增</p>
+<h2 id="两个重要极限"><a href="#两个重要极限" class="headerlink" title="两个重要极限"></a>两个重要极限</h2><script type="math/tex; mode=display">\lim_{x\to0} \frac{sinx}{x}=1</script><p>例题1</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600011716508.png" alt="1600011716508"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600011741245.png" alt="1600011741245" style="zoom:67%;"></p>
+<p>例题2</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600011828835.png" alt="1600011828835"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600012281358.png" alt="1600012281358" style="zoom:80%;"></p>
+<p>例题3</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600012406004.png" alt="1600012406004"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/infinitesimal-and-infinite/Blog\source\_posts\无穷小与无穷大\1600013433140.png" alt="1600013433140"></p>
+<p>10:43</p>
 ]]></content>
       <categories>
         <category>高数</category>

@@ -5290,7 +5290,26 @@ categories: /categories/ || th
   <entry>
     <title>函数的单调性和凸凹性</title>
     <url>/monotonicity-and-convexity-of-functions/</url>
-    <content><![CDATA[<p>1</p>
+    <content><![CDATA[<h2 id="单调性"><a href="#单调性" class="headerlink" title="单调性"></a>单调性</h2><p> 增f’(x)&gt;0减f’(x)&lt;0</p>
+<p>f’(x)≥0，等号在个别点上成立，仍然也是增函数</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600590092595.png" alt="1600590092595"></p>
+<p>f’(0)不存在,左右导数</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600590517124.png" alt="1600590517124"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600590714485.png" alt="1600590714485"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600591157427.png" alt="1600591157427"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600591335926.png" alt="1600591335926"></p>
+<h2 id="凸凹性"><a href="#凸凹性" class="headerlink" title="凸凹性"></a>凸凹性</h2><p>定义：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600591695747.png" alt="1600591695747"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600592034891.png" alt="1600592034891"></p>
+<p>利用拉格朗日中值定理：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600593230688.png" alt="1600593230688"></p>
+<p>例题：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600593545557.png" alt="1600593545557"></p>
+<p>求凸凹区间和拐点：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600593697583.png" alt="1600593697583"></p>
+<p>f‘’不存在：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600593903938.png" alt="1600593903938"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="/monotonicity-and-convexity-of-functions/1600594115945.png" alt="1600594115945"></p>
 ]]></content>
       <categories>
         <category>高数</category>

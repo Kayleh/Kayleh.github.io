@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kayleh.top/"/>
-  <updated>2020-09-20T09:30:23.778Z</updated>
+  <updated>2020-09-20T15:08:14.253Z</updated>
   <id>https://kayleh.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>极值和最值</title>
+    <link href="https://kayleh.top/extreme-value-and-maximum-value/"/>
+    <id>https://kayleh.top/extreme-value-and-maximum-value/</id>
+    <published>2020-09-20T15:04:06.000Z</published>
+    <updated>2020-09-20T15:08:14.253Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="高数" scheme="https://kayleh.top/categories/%E9%AB%98%E6%95%B0/"/>
+    
+    
+      <category term="math" scheme="https://kayleh.top/tags/math/"/>
+    
+  </entry>
   
   <entry>
     <title>函数的单调性和凸凹性</title>
@@ -463,27 +482,6 @@
     
     
       <category term="DistributedMicroservices" scheme="https://kayleh.top/tags/DistributedMicroservices/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>维护3</title>
-    <link href="https://kayleh.top/maintenance-3/"/>
-    <id>https://kayleh.top/maintenance-3/</id>
-    <published>2020-08-19T11:24:00.000Z</published>
-    <updated>2020-08-25T09:51:25.479Z</updated>
-    
-    <content type="html"><![CDATA[<p>优化网站，DNS均衡负载</p><a id="more"></a><hr><p> ①<code>kayleh.top</code></p><p>Coding + Netlify + Github + Gitee 四线部署</p><p>国内： kayleh.gitee.io </p><p>国际： dqlcr5.coding-pages.com(香港服务器) </p><p>​             kayleh.netlify.app</p><p>​             kayleh.github.io </p><hr><p>② 添加右下角<code>看板娘</code>功能，为程序员鼓励师。</p><p>③ 网站实现 HTTP —-&gt; <code>HTTPS</code></p><p>由<code>Netlify</code> 实现的SSL证书，由 Let’s Encrypt 颁发。</p><p>也可以使用阿里云的Apache的SSL证书。</p><p>④ 解决了<code>HTTPS跨域</code>问题</p><p> 百度的分享功能失效，并且样式消失，导致加载资源时控制台报错</p><blockquote><p>报错内容为：<strong>no-referrer-when-downgrade</strong> ，指的是升级https后调用低级http的API接口的问题，</p><p>解决方法为 百度分享资源 保存到网站的source目录下，调用本地资源</p></blockquote><p>⑤修改了<code>爬虫规则robot.txt</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;kayleh.top&#x2F;robots.txt</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># hexo robots.txt</span><br><span class="line">User-agent: *</span><br><span class="line">Allow: &#x2F;</span><br><span class="line">Allow: &#x2F;archives&#x2F;</span><br><span class="line">Disallow: &#x2F;vendors&#x2F;</span><br><span class="line">Disallow: &#x2F;js&#x2F;</span><br><span class="line">Disallow: &#x2F;css&#x2F;</span><br><span class="line">Disallow: &#x2F;fonts&#x2F;</span><br><span class="line">Disallow: &#x2F;vendors&#x2F;</span><br><span class="line">Disallow: &#x2F;fancybox&#x2F;</span><br><span class="line">Sitemap: http:&#x2F;&#x2F;www.kayleh.top&#x2F;sitemap.xml</span><br><span class="line">Sitemap: http:&#x2F;&#x2F;www.kayleh.top&#x2F;baidusitemap.xml</span><br></pre></td></tr></table></figure><p>⑥<code>评论框架</code>更换为，Valine+leancloud实现，免去登录才能评论的麻烦</p><p>⑦添加daovoice<code>实时通讯</code>功能</p><p>⑧CDN静态资源优化</p><p>网站加载静态资源过慢，采用CDN加速。</p><p>由jsdelivr实现，CDN访问Github仓库资源，</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;kayleh&#x2F;cdn@1.0&#x2F;</span><br></pre></td></tr></table></figure><p>⑨提交Bing收录</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;优化网站，DNS均衡负载&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="maintain" scheme="https://kayleh.top/tags/maintain/"/>
     
   </entry>
   

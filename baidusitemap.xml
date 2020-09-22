@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kayleh.top/contract/</loc>
+    <lastmod>2020-09-22</lastmod>
+  </url>  <url>
     <loc>https://kayleh.top/extreme-value-and-maximum-value/</loc>
     <lastmod>2020-09-20</lastmod>
   </url>  <url>
@@ -32,9 +35,6 @@
     <lastmod>2020-09-19</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/hexo-next-add-tags-and-category-pages/</loc>
-    <lastmod>2020-09-19</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/contract/</loc>
     <lastmod>2020-09-19</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/springcloud-stream-message-driver/</loc>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kayleh.top/"/>
-  <updated>2020-09-20T15:08:14.253Z</updated>
+  <updated>2020-09-23T17:04:13.708Z</updated>
   <id>https://kayleh.top/</id>
   
   <author>
@@ -17,13 +17,78 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>不定积分</title>
+    <link href="https://kayleh.top/indefinite-integral/"/>
+    <id>https://kayleh.top/indefinite-integral/</id>
+    <published>2020-09-23T09:06:12.000Z</published>
+    <updated>2020-09-23T17:04:13.708Z</updated>
+    
+    <content type="html"><![CDATA[<p>$F’(x)=f(x)$</p><p>$F(x)$是$f(x)$的<strong>一个</strong>原函数.</p><blockquote><p>F(x)是f(x)的一个原函数，F(x)+c也是f(x)的原函数</p></blockquote><p>$f(x)$是$F’(x)$的导函数.</p><p>知道$F’(x)$,$f(x)$只有唯一一个</p><p>知道$f(x)$,$F’(x)$可以有无穷多个</p><h1 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a>不定积分</h1><p>$f(x)$的原函数的全体</p><p><strong>$\int_{}{}f(x) \text{d}x$</strong> </p><blockquote><p>$\int_{}{}$:    sum,积分符号</p><p>$x$:    积分变量</p><p>$f(x)$:    被积函数</p></blockquote><p>$\int_{}{}f(x) \text{d}x = F(x)+c$</p><h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><p>1) $\int_{}{}x^2 \text{d}x = \frac{1}{3}x^3+c$</p><p><img src= "/img/loading.gif" data-lazy-src="/indefinite-integral/Blog\source\_posts\不定积分\1600870737910.png" alt="1600870737910"></p><h2 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h2><p><img src= "/img/loading.gif" data-lazy-src="/indefinite-integral/Blog\source\_posts\不定积分\1600871376478.png" alt="1600871376478"></p><h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p><img src= "/img/loading.gif" data-lazy-src="/indefinite-integral/Blog\source\_posts\不定积分\1600871618223.png" alt="1600871618223"></p><script type="math/tex; mode=display">\int_{}{}kf(x)\text{d}x=k\int_{}{}f(x)\text{d}x</script><p>k可以朝外拿：</p><p>①k是常数</p><p>②k是与x无关的另变量</p><p><img src= "/img/loading.gif" data-lazy-src="/indefinite-integral/Blog\source\_posts\不定积分\1600874436855.png" alt="1600874436855"></p><blockquote><p>有限个可以，但无限个不能</p></blockquote><h2 id="基本积分公式"><a href="#基本积分公式" class="headerlink" title="基本积分公式"></a>基本积分公式</h2><p><img src= "/img/loading.gif" data-lazy-src="/indefinite-integral/Blog\source\_posts\不定积分\1600875099212.png" alt="1600875099212"></p><p>例题：</p><p><img src= "/img/loading.gif" data-lazy-src="/indefinite-integral/Blog\source\_posts\不定积分\1600880107488.png" alt="1600880107488"></p><p><img src= "/img/loading.gif" data-lazy-src="/indefinite-integral/Blog\source\_posts\不定积分\1600880350925.png" alt="1600880378496"></p><p><img src= "/img/loading.gif" data-lazy-src="/indefinite-integral/Blog\source\_posts\不定积分\1600880532801.png" alt="1600880532801"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;$F’(x)=f(x)$&lt;/p&gt;
+&lt;p&gt;$F(x)$是$f(x)$的&lt;strong&gt;一个&lt;/strong&gt;原函数.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;F(x)是f(x)的一个原函数，F(x)+c也是f(x)的原函数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$f(x)
+      
+    
+    </summary>
+    
+    
+    
+      <category term="math" scheme="https://kayleh.top/tags/math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数作图</title>
+    <link href="https://kayleh.top/function-graphing/"/>
+    <id>https://kayleh.top/function-graphing/</id>
+    <published>2020-09-23T05:41:02.000Z</published>
+    <updated>2020-09-23T09:07:46.708Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="渐近线"><a href="#渐近线" class="headerlink" title="渐近线"></a>渐近线</h2><blockquote><p>水平、垂直、斜</p></blockquote><h3 id="水平渐近线"><a href="#水平渐近线" class="headerlink" title="水平渐近线"></a>水平渐近线</h3><p><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600844913776.png" alt="1600844913776"></p><p>例题：</p><p><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600845192751.png" alt="1600845192751"></p><h3 id="垂直渐近线"><a href="#垂直渐近线" class="headerlink" title="垂直渐近线"></a>垂直渐近线</h3><p><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600845395147.png" alt="1600845395147"></p><p><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600845415524.png" alt="1600845415524"></p><h3 id="斜渐近线"><a href="#斜渐近线" class="headerlink" title="斜渐近线"></a>斜渐近线</h3><p><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600845708818.png" alt="1600845708818"></p><p>例题：</p><p><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600846462394.png" alt="1600846462394"></p><p>分子次数比分母高，取无穷</p><p>分子与分母次数一样，极限等于最高次的系数之比</p><h2 id="微分法作图-“导数”"><a href="#微分法作图-“导数”" class="headerlink" title="微分法作图 “导数”"></a>微分法作图 “导数”</h2><p><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600847435593.png" alt="1600847435593"></p><p>例如：</p><p><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600850081188.png" alt="1600850081188"><img src= "/img/loading.gif" data-lazy-src="/function-graphing/1600851679622.png" alt="1600851679622"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;渐近线&quot;&gt;&lt;a href=&quot;#渐近线&quot; class=&quot;headerlink&quot; title=&quot;渐近线&quot;&gt;&lt;/a&gt;渐近线&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;水平、垂直、斜&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;水平渐近线&quot;&gt;&lt;a href=&quot;#水平
+      
+    
+    </summary>
+    
+    
+      <category term="高数" scheme="https://kayleh.top/categories/%E9%AB%98%E6%95%B0/"/>
+    
+    
+      <category term="math" scheme="https://kayleh.top/tags/math/"/>
+    
+  </entry>
+  
+  <entry>
     <title>极值和最值</title>
     <link href="https://kayleh.top/extreme-value-and-maximum-value/"/>
     <id>https://kayleh.top/extreme-value-and-maximum-value/</id>
     <published>2020-09-20T15:04:06.000Z</published>
-    <updated>2020-09-20T15:08:14.253Z</updated>
+    <updated>2020-09-22T17:19:36.230Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="极值和最值"><a href="#极值和最值" class="headerlink" title="极值和最值"></a>极值和最值</h2><h4 id="定理："><a href="#定理：" class="headerlink" title="定理："></a>定理：</h4><p>f(x)在$x_0$可导，且在$x_0$取极值。$f’(x_0)=0$</p><p>证明：</p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600782477572.png" alt="1600782477572"></p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600782713732.png" alt="1600782713732"></p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600782897701.png" alt="1600782897701"></p><h2 id="求极值"><a href="#求极值" class="headerlink" title="求极值"></a>求极值</h2><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600783007899.png" alt="1600783007899"></p><p>例题：</p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600783465855.png" alt="1600783465855"></p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600783793596.png" alt="1600783793596"></p><h4 id="定理：-1"><a href="#定理：-1" class="headerlink" title="定理："></a>定理：</h4><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600784625648.png" alt="1600784625648"></p><p>f(x)的二阶导数也等于0的时候，不能判断：</p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600784848861.png" alt="1600784848861"></p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600785712089.png" alt="1600785712089"></p><h2 id="最值"><a href="#最值" class="headerlink" title="最值"></a>最值</h2><p>极值是局部区域的，最值是全部区域</p><h3 id="求最值"><a href="#求最值" class="headerlink" title="求最值"></a>求最值</h3><p>找到这几个点：</p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600794952240.png" alt="1600794952240"></p><p>连续并单调的函数，最值就是端点；</p><p>在区间内的极值就是最值。</p><p><img src= "/img/loading.gif" data-lazy-src="/extreme-value-and-maximum-value/1600795107694.png" alt="1600795107694"></p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;极值和最值&quot;&gt;&lt;a href=&quot;#极值和最值&quot; class=&quot;headerlink&quot; title=&quot;极值和最值&quot;&gt;&lt;/a&gt;极值和最值&lt;/h2&gt;&lt;h4 id=&quot;定理：&quot;&gt;&lt;a href=&quot;#定理：&quot; class=&quot;headerlink&quot; title=&quot;定理：&quot;&gt;&lt;/
+      
     
     </summary>
     
@@ -120,7 +185,7 @@
     <link href="https://kayleh.top/derivative/"/>
     <id>https://kayleh.top/derivative/</id>
     <published>2020-09-15T16:20:05.000Z</published>
-    <updated>2020-09-17T15:36:53.715Z</updated>
+    <updated>2020-09-23T13:54:41.645Z</updated>
     
     <content type="html"><![CDATA[<h4 id="变化率"><a href="#变化率" class="headerlink" title="变化率"></a>变化率</h4><p>$x_0 \to x_0+△x$.</p><p>$f(x_0) \to f(x_0+△x)$</p><p>$\frac{f(x_0+△x)-f(x_0)}{△x}$</p><p>从x_0到x_0+△x的平均变化率</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600188583801.png" alt="1600188583801"></p><p>导数的四个符号</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600188748075.png" alt="1600188748075"></p><p>导数的三种表达方式</p><h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><p>1)</p><p>$y=x^2$  </p><p>$y’$ </p><p>$y’|_{x=2}$</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600189489349.png" alt="1600189489349"></p><p>=4;</p><h3 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h3><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600189764709.png" alt="1600189764709"></p><h3 id="导数意义"><a href="#导数意义" class="headerlink" title="导数意义"></a>导数意义</h3><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600221028096.png" alt="1600221028096"></p><p>例题：</p><p>求$y=x^3$在(1,1)的切线和法线</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600250579429.png" alt="1600250579429"></p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600234017440.png" alt></p><p>左右导数，左右导数都存在并相等</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600235099441.png" alt></p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600235529621.png" alt></p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600235803697.png" alt></p><h2 id="求导法则："><a href="#求导法则：" class="headerlink" title="求导法则："></a>求导法则：</h2><p>(1)$u(x)、v(x)$可导，$(u(x)+v(x))’=u’(x)+v’(x)$</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600252000327.png" alt="1600252000327"></p><p>(2)$(uv)’=u’v+uv’$</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600252779790.png" alt="1600252779790"></p><p>(3)$\frac{u}{v}=\frac{u’v+uv’}{v^2}$</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600253704886.png" alt="1600253704886"></p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600253831993.png" alt="1600253831993"></p><h3 id="反函数求导法则："><a href="#反函数求导法则：" class="headerlink" title="反函数求导法则："></a>反函数求导法则：</h3><p>$y=f(x)$ . $x=\phi(y)$</p><p> 反函数=导数的倒数 $\phi(y)=\frac{1}{f’(x)}$</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600255372014.png" alt="1600255372014"></p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600255541697.png" alt="1600255541697" style="zoom:50%;"></p><h3 id="复合函数："><a href="#复合函数：" class="headerlink" title="复合函数："></a>复合函数：</h3><h4 id="链式法则："><a href="#链式法则：" class="headerlink" title="链式法则："></a>链式法则：</h4><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600256472549.png" alt="1600256472549"></p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600257193054.png" alt="1600257193054"></p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600257319985.png" alt="1600257319985"></p><p>剥洋葱解法，从外往里剥。</p><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600257524549.png" alt="1600257524549"></p><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600271203725.png" alt="1600271203725"></p><p>对$y$求两次导数，记作$y^{‘’}$,二阶导数</p><p>或者$\frac{d^2y}{dx^2}$</p><p>从4阶开始用数字表示:$y^{(4)}$</p><h4 id="例题：-1"><a href="#例题：-1" class="headerlink" title="例题："></a>例题：</h4><p><img src= "/img/loading.gif" data-lazy-src="/derivative/1600272928789.png" alt="1600272928789"></p>]]></content>
     
@@ -138,6 +203,8 @@
     
       <category term="高数" scheme="https://kayleh.top/categories/%E9%AB%98%E6%95%B0/"/>
     
+    
+      <category term="math" scheme="https://kayleh.top/tags/math/"/>
     
   </entry>
   
@@ -438,50 +505,6 @@
     
     
       <category term="front" scheme="https://kayleh.top/tags/front/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jsdelivr的CDN加速缓存不刷新问题</title>
-    <link href="https://kayleh.top/the-cdn-acceleration-cache-of-jsdelivr-does-not-refresh/"/>
-    <id>https://kayleh.top/the-cdn-acceleration-cache-of-jsdelivr-does-not-refresh/</id>
-    <published>2020-08-20T06:20:58.000Z</published>
-    <updated>2020-09-19T15:14:06.806Z</updated>
-    
-    <content type="html"><![CDATA[<hr><a id="more"></a><h3 id="The-CDN-acceleration-cache-of-jsdelivr-does-not-refresh"><a href="#The-CDN-acceleration-cache-of-jsdelivr-does-not-refresh" class="headerlink" title="The CDN acceleration cache of jsdelivr does not refresh"></a>The CDN acceleration cache of jsdelivr does not refresh</h3><p>访问链接即可解决</p><p>具体：</p><p>把链接中的 <a href="https://cdn.jsdelivr.net替换成" target="_blank" rel="noopener">https://cdn.jsdelivr.net替换成</a> <a href="https://purge.jsdelivr.net访问即可实时刷新" target="_blank" rel="noopener">https://purge.jsdelivr.net访问即可实时刷新</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="maintain" scheme="https://kayleh.top/tags/maintain/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringCloud Alibaba</title>
-    <link href="https://kayleh.top/springcloud-alibaba/"/>
-    <id>https://kayleh.top/springcloud-alibaba/</id>
-    <published>2020-08-19T12:25:56.000Z</published>
-    <updated>2020-09-19T15:14:16.174Z</updated>
-    
-    <content type="html"><![CDATA[<p>SpringCloud Alibaba</p><a id="more"></a><p>Spring Cloud Netflix项目进入维护模式</p><p><img src= "/img/loading.gif" data-lazy-src="/springcloud-alibaba/1.png" alt="1597850443212"></p><p><img src= "/img/loading.gif" data-lazy-src="/springcloud-alibaba/2.png" alt="1597850459371"></p><p>SpringCloud NetFlix Projects Entering Maintenance Mode</p><p>什么是维护模式</p><p><img src= "/img/loading.gif" data-lazy-src="/springcloud-alibaba/3.png" alt="1597850522418"></p><p>进入维护模式意味着什么呢？</p><p><img src= "/img/loading.gif" data-lazy-src="/springcloud-alibaba/7.png" alt="1597850556832"></p><p><img src= "/img/loading.gif" data-lazy-src="/springcloud-alibaba/8.png" alt="1597850565496"></p><p>SpringCloud alibaba带来了什么？</p><p><img src= "/img/loading.gif" data-lazy-src="/springcloud-alibaba/4.png" alt="1597850587083"></p><p>能干吗</p><p><img src= "/img/loading.gif" data-lazy-src="/springcloud-alibaba/5.png" alt="1597850612486"></p><p>去哪下？</p><p><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></p><p>怎么用？</p><p>&gt;</p><blockquote><p>Sentinel：把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性。</p><p>Nacos：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。</p><p>RocketMQ：一款开源的分布式消息系统，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。</p><p>Dubbo：Apache Dubbo™ 是一款高性能 Java RPC 框架。</p><p>Seata：阿里巴巴开源产品，一个易于使用的高性能微服务分布式事务解决方案。</p><p>Alibaba Cloud ACM：一款在分布式架构环境中对应用配置进行集中管理和推送的应用配置中心产品。</p><p>Alibaba Cloud OSS: 阿里云对象存储服务（Object Storage Service，简称 OSS），是阿里云提供的海量、安全、低成本、高可靠的云存储服务。您可以在任何应用、任何时间、任何地点存储和访问任意类型的数据。</p><p>Alibaba Cloud SchedulerX: 阿里中间件团队开发的一款分布式任务调度产品，提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。</p><p>Alibaba Cloud SMS: 覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道。</p></blockquote><h5 id="资料获取"><a href="#资料获取" class="headerlink" title="资料获取"></a>资料获取</h5><p>官网</p><p><img src= "/img/loading.gif" data-lazy-src="/springcloud-alibaba/6.png" alt="1597850747004"></p><p>中文：</p><p><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;SpringCloud Alibaba&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="分布式" scheme="https://kayleh.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
-    
-    
-      <category term="DistributedMicroservices" scheme="https://kayleh.top/tags/DistributedMicroservices/"/>
     
   </entry>
   

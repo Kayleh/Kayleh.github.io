@@ -2,9 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kayleh.top/seata-handles-distributed-transactions/</loc>
+    
+    <lastmod>2020-09-25T14:27:08.642Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/linux/</loc>
+    
+    <lastmod>2020-09-25T14:26:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/redis/</loc>
+    
+    <lastmod>2020-09-25T14:25:18.651Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/springcloud-alibaba/</loc>
+    
+    <lastmod>2020-09-25T14:23:44.169Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/springcloud-sleuth-distributed-request-link-tracking/</loc>
+    
+    <lastmod>2020-09-25T14:22:59.484Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/springcloud-stream-message-driver/</loc>
+    
+    <lastmod>2020-09-25T14:22:45.469Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/springcloud-bus-message/</loc>
+    
+    <lastmod>2020-09-25T14:22:22.492Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/springcloud-config-distributed-configuration-center/</loc>
+    
+    <lastmod>2020-09-25T14:22:02.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/gateway-service-current-limit/</loc>
+    
+    <lastmod>2020-09-25T14:21:34.522Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/ribbon-load-balancing-service-call-degradation/</loc>
+    
+    <lastmod>2020-09-25T14:21:12.529Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/eureka-service-registration-and-discovery/</loc>
+    
+    <lastmod>2020-09-25T14:20:06.679Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/springcloud/</loc>
+    
+    <lastmod>2020-09-25T14:19:16.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/pictrue-bed/</loc>
+    
+    <lastmod>2020-09-25T14:10:09.924Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/definite-integral/</loc>
+    
+    <lastmod>2020-09-25T14:08:09.377Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kayleh.top/indefinite-integral/</loc>
     
-    <lastmod>2020-09-24T17:51:46.898Z</lastmod>
+    <lastmod>2020-09-25T13:35:15.935Z</lastmod>
     
   </url>
   
@@ -107,48 +205,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/springcloud-stream-message-driver/</loc>
-    
-    <lastmod>2020-09-19T15:14:43.100Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/springcloud-config-distributed-configuration-center/</loc>
-    
-    <lastmod>2020-09-19T15:14:33.931Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/gateway-service-current-limit/</loc>
-    
-    <lastmod>2020-09-19T15:14:29.366Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/ribbon-load-balancing-service-call-degradation/</loc>
-    
-    <lastmod>2020-09-19T15:14:24.830Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/eureka-service-registration-and-discovery/</loc>
-    
-    <lastmod>2020-09-19T15:14:20.719Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/springcloud-alibaba/</loc>
-    
-    <lastmod>2020-09-19T15:14:16.174Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/the-cdn-acceleration-cache-of-jsdelivr-does-not-refresh/</loc>
     
     <lastmod>2020-09-19T15:14:06.806Z</lastmod>
@@ -184,13 +240,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/seata-handles-distributed-transactions/</loc>
-    
-    <lastmod>2020-09-12T08:50:16.729Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/c-pointer/</loc>
     
     <lastmod>2020-09-10T05:02:43.806Z</lastmod>
@@ -201,20 +250,6 @@
     <loc>https://kayleh.top/sentinel-realizes-fusing-and-current-limiting/</loc>
     
     <lastmod>2020-08-26T13:01:51.066Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/springcloud/</loc>
-    
-    <lastmod>2020-08-26T11:22:12.324Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/springcloud-sleuth-distributed-request-link-tracking/</loc>
-    
-    <lastmod>2020-08-26T11:21:35.635Z</lastmod>
     
   </url>
   
@@ -334,13 +369,6 @@
     <loc>https://kayleh.top/spring/</loc>
     
     <lastmod>2020-08-25T09:51:26.770Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/springcloud-bus-message/</loc>
-    
-    <lastmod>2020-08-25T09:51:26.126Z</lastmod>
     
   </url>
   
@@ -523,13 +551,6 @@
     <loc>https://kayleh.top/jmm-memory-model/</loc>
     
     <lastmod>2020-08-25T09:51:25.549Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/linux/</loc>
-    
-    <lastmod>2020-08-25T09:51:25.547Z</lastmod>
     
   </url>
   
@@ -726,13 +747,6 @@
     <loc>https://kayleh.top/dynamic-array/</loc>
     
     <lastmod>2020-08-25T09:51:25.348Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/redis/</loc>
-    
-    <lastmod>2020-08-25T09:51:25.346Z</lastmod>
     
   </url>
   

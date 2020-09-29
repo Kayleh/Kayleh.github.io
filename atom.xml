@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kayleh.top/"/>
-  <updated>2020-09-28T17:10:02.253Z</updated>
+  <updated>2020-09-29T17:36:01.525Z</updated>
   <id>https://kayleh.top/</id>
   
   <author>
@@ -18,16 +18,25 @@
   
   <entry>
     <title>多元函数</title>
-    <link href="https://kayleh.top/undefined/"/>
-    <id>https://kayleh.top/undefined/</id>
+    <link href="https://kayleh.top/multi-function/"/>
+    <id>https://kayleh.top/multi-function/</id>
     <published>2020-09-28T17:10:02.000Z</published>
-    <updated>2020-09-28T17:10:02.253Z</updated>
+    <updated>2020-09-29T17:36:01.525Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="空间解析几何"><a href="#空间解析几何" class="headerlink" title="空间解析几何"></a>空间解析几何</h1><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601354294435.png" alt="1601354294435"></p><p>两点之间距离</p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601354442692.png" alt="1601354442692"></p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601354799490.png" alt="1601354799490"></p><h3 id="平面方程"><a href="#平面方程" class="headerlink" title="平面方程"></a><strong>平面方程</strong></h3><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601354842773.png" alt="1601354842773"></p><h3 id="球面方程"><a href="#球面方程" class="headerlink" title="球面方程"></a>球面方程</h3><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601354949365.png" alt="1601354949365"></p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601355067816.png" alt="1601355067816"></p><p>z是正的表示求的上半部分，负的表示下半部分。</p><p>旋转抛物面：</p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601355316536.png" alt="1601355316536"></p><p>双曲抛物面：</p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601355447432.png" alt="1601355447432"></p><h1 id="多元函数"><a href="#多元函数" class="headerlink" title="多元函数"></a>多元函数</h1><p>邻域</p><p>开集：所有的点都是内点</p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601398417032.png" alt="1601398417032"></p><p>闭区域：既包含内点和边界点</p><h3 id="二元函数的极限"><a href="#二元函数的极限" class="headerlink" title="二元函数的极限"></a>二元函数的极限</h3><blockquote><p>证明极限不存在</p><p>找两种不同的逼近方式</p></blockquote><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601399459395.png" alt="1601399459395"></p><p>例题：</p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601399650482.png" alt="1601399650482"></p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601399792399.png" alt="1601399792399"></p><p>求极限</p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601400065760.png" alt="1601400065760"></p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601400252209.png" alt="1601400252209"></p><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601400533096.png" alt="1601400533096"></p><h3 id="连续"><a href="#连续" class="headerlink" title="连续"></a>连续</h3><p><img src= "/img/loading.gif" data-lazy-src="/multi-function/Blog\source\_posts\多元函数\1601400850590.png" alt="1601400850590"></p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;空间解析几何&quot;&gt;&lt;a href=&quot;#空间解析几何&quot; class=&quot;headerlink&quot; title=&quot;空间解析几何&quot;&gt;&lt;/a&gt;空间解析几何&lt;/h1&gt;&lt;p&gt;&lt;img src= &quot;/img/loading.gif&quot; data-lazy-src=&quot;/multi-fun
+      
     
     </summary>
     
     
+    
+      <category term="math" scheme="https://kayleh.top/tags/math/"/>
     
   </entry>
   

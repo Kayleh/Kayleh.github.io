@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kayleh.top/about/index.html</loc>
+    
+    <lastmod>2020-10-11T15:11:57.963Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/tags/index.html</loc>
+    
+    <lastmod>2020-10-11T14:29:18.894Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/categories/index.html</loc>
+    
+    <lastmod>2020-10-11T14:10:12.534Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kayleh.top/differential-equation/</loc>
     
     <lastmod>2020-10-09T11:35:25.830Z</lastmod>
@@ -457,13 +478,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/tags/index.html</loc>
-    
-    <lastmod>2020-08-25T09:51:26.800Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/interpolation-search-algorithm/</loc>
     
     <lastmod>2020-08-25T09:51:26.797Z</lastmod>
@@ -761,13 +775,6 @@
     <loc>https://kayleh.top/use-of-springmvcmodelattribute/</loc>
     
     <lastmod>2020-08-25T09:51:25.520Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/categories/index.html</loc>
-    
-    <lastmod>2020-08-25T09:51:25.491Z</lastmod>
     
   </url>
   

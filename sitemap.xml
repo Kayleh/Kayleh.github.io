@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kayleh.top/use-arrays-to-process-batch-data/</loc>
+    <loc>https://kayleh.top/file-input-and-output/</loc>
     
-    <lastmod>2020-10-25T17:47:51.546Z</lastmod>
+    <lastmod>2020-11-03T16:23:03.361Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kayleh.top/Good-use-of-pointers/</loc>
     
-    <lastmod>2020-10-25T17:25:00.598Z</lastmod>
+    <lastmod>2020-11-02T09:06:47.715Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/users-create-data-types-themselves/</loc>
+    
+    <lastmod>2020-11-02T09:06:07.542Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/use-arrays-to-process-batch-data/</loc>
+    
+    <lastmod>2020-10-25T17:47:51.546Z</lastmod>
     
   </url>
   

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kayleh.top/null/</loc>
+    <lastmod>2020-11-13</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/linux/</loc>
+    <lastmod>2020-11-13</lastmod>
+  </url>  <url>
     <loc>https://kayleh.top/file-input-and-output/</loc>
     <lastmod>2020-11-03</lastmod>
   </url>  <url>
@@ -30,9 +36,6 @@
   </url>  <url>
     <loc>https://kayleh.top/C-programming/</loc>
     <lastmod>2020-10-25</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/linux/</loc>
-    <lastmod>2020-10-14</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/differential-equation/</loc>
     <lastmod>2020-10-09</lastmod>

@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kayleh.top/BIO-blocking-model/</loc>
+    <loc>https://kayleh.top/IO-model/</loc>
     
-    <lastmod>2020-12-03T17:51:06.401Z</lastmod>
+    <lastmod>2020-12-05T04:12:07.648Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kayleh.top/Java-network-programming/</loc>
     
-    <lastmod>2020-12-03T17:50:27.785Z</lastmod>
+    <lastmod>2020-12-05T04:11:23.162Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kayleh.top/IO-model/</loc>
+    <loc>https://kayleh.top/NIO-blocking-model/</loc>
     
-    <lastmod>2020-12-03T17:46:16.951Z</lastmod>
+    <lastmod>2020-12-05T04:10:49.685Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/BIO-blocking-model/</loc>
+    
+    <lastmod>2020-12-05T04:10:24.947Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/AIO-blocking-model/</loc>
+    
+    <lastmod>2020-12-05T04:09:17.597Z</lastmod>
     
   </url>
   

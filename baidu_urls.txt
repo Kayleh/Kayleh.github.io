@@ -1,1 +1,1 @@
-https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-10/
+https://kayleh.top/JVM-classloader-and-parent-delegation-mechanism/

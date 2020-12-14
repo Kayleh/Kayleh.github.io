@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kayleh.top/JVM-classloader-and-parent-delegation-mechanism/</loc>
+    
+    <lastmod>2020-12-14T16:24:17.862Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-10/</loc>
     
     <lastmod>2020-12-13T15:01:57.991Z</lastmod>

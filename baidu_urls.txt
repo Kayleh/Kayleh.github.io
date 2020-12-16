@@ -1,1 +1,1 @@
-https://kayleh.top/JVM-classloader-and-parent-delegation-mechanism/
+https://kayleh.top/Native-method/

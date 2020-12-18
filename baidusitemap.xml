@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kayleh.top/concurrency-principle/</loc>
+    <lastmod>2020-12-17</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/singleton-login/</loc>
+    <lastmod>2020-12-17</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/null/</loc>
+    <lastmod>2020-12-17</lastmod>
+  </url>  <url>
     <loc>https://kayleh.top/jmm-memory-model/</loc>
+    <lastmod>2020-12-17</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/springmvc-work-stream/</loc>
+    <lastmod>2020-12-16</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/spring-relate/</loc>
     <lastmod>2020-12-16</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/jvm/</loc>
     <lastmod>2020-12-16</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/null/</loc>
-    <lastmod>2020-12-16</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/springmvc-/</loc>
-    <lastmod>2020-12-16</lastmod>
-  </url>  <url>
     <loc>https://kayleh.top/spring/</loc>
-    <lastmod>2020-12-16</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/null/</loc>
     <lastmod>2020-12-16</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/null/</loc>
@@ -470,9 +476,6 @@
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/gc/</loc>
-    <lastmod>2020-08-25</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/concurrency-principle/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/springmvc-environment-construction/</loc>

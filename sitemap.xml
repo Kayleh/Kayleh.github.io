@@ -2,16 +2,121 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kayleh.top/concurrency-principle/</loc>
+    <loc>https://kayleh.top/single-point-login/</loc>
     
-    <lastmod>2020-12-17T13:44:57.060Z</lastmod>
+    <lastmod>2020-12-19T13:33:48.203Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kayleh.top/singleton-login/</loc>
+    <loc>https://kayleh.top/jvm-gc/</loc>
     
-    <lastmod>2020-12-17T08:24:33.435Z</lastmod>
+    <lastmod>2020-12-19T13:30:09.681Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Sandbox-security-mechanism/</loc>
+    
+    <lastmod>2020-12-19T13:28:27.596Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/spring-relate/</loc>
+    
+    <lastmod>2020-12-19T13:27:36.826Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/springmvc-work-stream/</loc>
+    
+    <lastmod>2020-12-19T13:26:38.168Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/jmm-memory-model/</loc>
+    
+    <lastmod>2020-12-19T13:25:28.530Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/JVM-classloader-and-parent-delegation-mechanism/</loc>
+    
+    <lastmod>2020-12-19T13:22:47.621Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-6/</loc>
+    
+    <lastmod>2020-12-19T13:21:31.958Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-4/</loc>
+    
+    <lastmod>2020-12-19T13:21:11.030Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-3/</loc>
+    
+    <lastmod>2020-12-19T13:21:02.266Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-2/</loc>
+    
+    <lastmod>2020-12-19T13:20:32.003Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-9/</loc>
+    
+    <lastmod>2020-12-19T13:19:51.841Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-8/</loc>
+    
+    <lastmod>2020-12-19T13:19:37.147Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-7/</loc>
+    
+    <lastmod>2020-12-19T13:19:26.638Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-5/</loc>
+    
+    <lastmod>2020-12-19T13:18:42.553Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system/</loc>
+    
+    <lastmod>2020-12-19T13:12:42.718Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/concurrency-principle/</loc>
+    
+    <lastmod>2020-12-19T13:11:54.087Z</lastmod>
     
   </url>
   
@@ -19,34 +124,6 @@
     <loc>https://kayleh.top/friends/index.html</loc>
     
     <lastmod>2020-12-17T06:22:45.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/null/</loc>
-    
-    <lastmod>2020-12-17T06:09:55.950Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/jmm-memory-model/</loc>
-    
-    <lastmod>2020-12-17T05:03:19.391Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/springmvc-work-stream/</loc>
-    
-    <lastmod>2020-12-16T18:03:19.744Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/spring-relate/</loc>
-    
-    <lastmod>2020-12-16T18:02:55.119Z</lastmod>
     
   </url>
   
@@ -79,86 +156,9 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/Sandbox-security-mechanism/</loc>
-    
-    <lastmod>2020-12-15T17:16:47.144Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/JVM-classloader-and-parent-delegation-mechanism/</loc>
-    
-    <lastmod>2020-12-14T16:24:17.862Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-10/</loc>
     
     <lastmod>2020-12-13T15:01:57.991Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-9/</loc>
-    
-    <lastmod>2020-12-13T15:01:49.118Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-7/</loc>
-    
-    <lastmod>2020-12-13T15:01:37.425Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-6/</loc>
-    
-    <lastmod>2020-12-13T15:01:32.146Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-4/</loc>
-    
-    <lastmod>2020-12-13T15:01:23.567Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-2/</loc>
-    
-    <lastmod>2020-12-13T15:01:17.147Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-8/</loc>
-    
-    <lastmod>2020-12-13T14:43:40.699Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-5/</loc>
-    
-    <lastmod>2020-12-13T14:43:26.331Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-3/</loc>
-    
-    <lastmod>2020-12-13T14:43:15.373Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system/</loc>
-    
-    <lastmod>2020-12-13T14:43:01.788Z</lastmod>
     
   </url>
   

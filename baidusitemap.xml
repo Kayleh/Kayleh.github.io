@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kayleh.top/IO/</loc>
+    <lastmod>2020-12-20</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/bionioaio/</loc>
+    <lastmod>2020-12-20</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/AIO-blocking-model/</loc>
+    <lastmod>2020-12-20</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/io-Interview/</loc>
+    <lastmod>2020-12-20</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/jmm-memory-model/</loc>
+    <lastmod>2020-12-20</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/off-heap/</loc>
+    <lastmod>2020-12-20</lastmod>
+  </url>  <url>
     <loc>https://kayleh.top/single-point-login/</loc>
     <lastmod>2020-12-19</lastmod>
   </url>  <url>
@@ -14,9 +32,6 @@
     <lastmod>2020-12-19</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/springmvc-work-stream/</loc>
-    <lastmod>2020-12-19</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/jmm-memory-model/</loc>
     <lastmod>2020-12-19</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/JVM-classloader-and-parent-delegation-mechanism/</loc>
@@ -77,9 +92,6 @@
     <lastmod>2020-12-05</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/BIO-blocking-model/</loc>
-    <lastmod>2020-12-05</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/AIO-blocking-model/</loc>
     <lastmod>2020-12-05</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/ubuntu-set-ip/</loc>
@@ -440,9 +452,6 @@
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/design-patterns/</loc>
-    <lastmod>2020-08-25</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/io/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/jdbc/</loc>

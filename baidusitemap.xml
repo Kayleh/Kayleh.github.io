@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kayleh.top/program-test/</loc>
+    <lastmod>2021-01-27</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/test-case/</loc>
+    <lastmod>2021-01-27</lastmod>
+  </url>  <url>
     <loc>https://kayleh.top/ubuntu-set-ip/</loc>
     <lastmod>2021-01-17</lastmod>
   </url>  <url>
@@ -8,9 +14,6 @@
     <lastmod>2021-01-17</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/IO-model/</loc>
-    <lastmod>2021-01-17</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/program-test/</loc>
     <lastmod>2021-01-17</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/Java-high-performance-and-high-concurrency-spike-system-10/</loc>

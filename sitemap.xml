@@ -2,16 +2,135 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kayleh.top/automated%20test/</loc>
+    <loc>https://kayleh.top/automated-test-selenium/</loc>
     
-    <lastmod>2021-01-31T18:54:05.200Z</lastmod>
+    <lastmod>2021-02-02T18:47:53.877Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kayleh.top/null/</loc>
+    <loc>https://kayleh.top/automated-test-katalon/</loc>
     
-    <lastmod>2021-01-31T18:54:04.767Z</lastmod>
+    <lastmod>2021-02-01T18:50:15.292Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/Transaction-isolation-level/</loc>
+    
+    <lastmod>2021-02-01T17:19:45.229Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/dynamic-programming/</loc>
+    
+    <lastmod>2021-01-31T19:17:10.266Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/heap-sort/</loc>
+    
+    <lastmod>2021-01-31T19:09:00.026Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/palindrome/</loc>
+    
+    <lastmod>2021-01-31T19:08:44.193Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/stack/</loc>
+    
+    <lastmod>2021-01-31T19:08:26.460Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/linked-list/</loc>
+    
+    <lastmod>2021-01-31T19:08:09.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/dynamic-array/</loc>
+    
+    <lastmod>2021-01-31T19:07:29.555Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/queue/</loc>
+    
+    <lastmod>2021-01-31T19:07:06.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
+    
+    <lastmod>2021-01-31T19:06:46.296Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/sparsearray/</loc>
+    
+    <lastmod>2021-01-31T19:06:35.923Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/binary-sort-tree/</loc>
+    
+    <lastmod>2021-01-31T19:05:39.582Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/linear-search-algorithm/</loc>
+    
+    <lastmod>2021-01-31T19:05:14.053Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/binary-search-algorithm/</loc>
+    
+    <lastmod>2021-01-31T19:03:53.578Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/interpolation-search-algorithm/</loc>
+    
+    <lastmod>2021-01-31T19:03:17.378Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/hash-algorithm/</loc>
+    
+    <lastmod>2021-01-31T19:02:59.388Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/encoding-algorithm/</loc>
+    
+    <lastmod>2021-01-31T19:01:54.196Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/7-sorting-algorithms/</loc>
+    
+    <lastmod>2021-01-31T19:01:49.038Z</lastmod>
     
   </url>
   
@@ -268,23 +387,9 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/encoding-algorithm/</loc>
-    
-    <lastmod>2021-01-17T13:02:20.866Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/memo-mode/</loc>
     
     <lastmod>2021-01-17T13:02:10.422Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/7-sorting-algorithms/</loc>
-    
-    <lastmod>2021-01-17T13:01:53.638Z</lastmod>
     
   </url>
   
@@ -327,13 +432,6 @@
     <loc>https://kayleh.top/spring/</loc>
     
     <lastmod>2020-12-16T14:58:10.598Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/null/</loc>
-    
-    <lastmod>2020-12-16T14:41:50.533Z</lastmod>
     
   </url>
   
@@ -478,13 +576,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/dynamic-array/</loc>
-    
-    <lastmod>2020-09-26T02:24:19.257Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/derivative/</loc>
     
     <lastmod>2020-09-26T02:24:10.509Z</lastmod>
@@ -499,30 +590,9 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/heap-sort/</loc>
-    
-    <lastmod>2020-09-26T02:21:08.251Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/queue/</loc>
-    
-    <lastmod>2020-09-26T02:20:47.803Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/multithreading/</loc>
     
     <lastmod>2020-09-26T02:20:30.793Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/binary-sort-tree/</loc>
-    
-    <lastmod>2020-09-26T02:20:10.180Z</lastmod>
     
   </url>
   
@@ -793,13 +863,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
-    
-    <lastmod>2020-09-20T05:18:37.302Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/pass-by-value/</loc>
     
     <lastmod>2020-09-20T05:18:16.473Z</lastmod>
@@ -842,20 +905,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/linked-list/</loc>
-    
-    <lastmod>2020-08-25T09:51:26.802Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/interpolation-search-algorithm/</loc>
-    
-    <lastmod>2020-08-25T09:51:26.797Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/visitor-mode/</loc>
     
     <lastmod>2020-08-25T09:51:26.795Z</lastmod>
@@ -870,20 +919,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/linear-search-algorithm/</loc>
-    
-    <lastmod>2020-08-25T09:51:26.791Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/palindrome/</loc>
-    
-    <lastmod>2020-08-25T09:51:26.789Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/introduction-to-computer-network/</loc>
     
     <lastmod>2020-08-25T09:51:26.787Z</lastmod>
@@ -894,13 +929,6 @@
     <loc>https://kayleh.top/observer-mode/</loc>
     
     <lastmod>2020-08-25T09:51:26.781Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/binary-search-algorithm/</loc>
-    
-    <lastmod>2020-08-25T09:51:26.779Z</lastmod>
     
   </url>
   
@@ -1143,13 +1171,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/hash-algorithm/</loc>
-    
-    <lastmod>2020-08-25T09:51:25.476Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/design-patterns/</loc>
     
     <lastmod>2020-08-25T09:51:25.474Z</lastmod>
@@ -1160,20 +1181,6 @@
     <loc>https://kayleh.top/jdbc/</loc>
     
     <lastmod>2020-08-25T09:51:25.466Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/sparsearray-sparse-array/</loc>
-    
-    <lastmod>2020-08-25T09:51:25.354Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/stack/</loc>
-    
-    <lastmod>2020-08-25T09:51:25.343Z</lastmod>
     
   </url>
   

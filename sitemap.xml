@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kayleh.top/app-test/</loc>
+    
+    <lastmod>2021-03-13T19:34:10.697Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kayleh.top/automated-test-selenium/</loc>
     
     <lastmod>2021-03-13T18:22:25.744Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://kayleh.top/Unitest-framework/</loc>
     
     <lastmod>2021-03-13T18:17:48.953Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/app-test/</loc>
-    
-    <lastmod>2021-03-13T18:09:36.252Z</lastmod>
     
   </url>
   

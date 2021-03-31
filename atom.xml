@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kayleh.top/"/>
-  <updated>2021-03-14T12:38:47.371Z</updated>
+  <updated>2021-03-30T17:55:22.962Z</updated>
   <id>https://kayleh.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>What happened from entering the URL to displaying the page?</title>
+    <link href="https://kayleh.top/What-happened-from-entering-the-URL-to-displaying-the-page?/"/>
+    <id>https://kayleh.top/What-happened-from-entering-the-URL-to-displaying-the-page?/</id>
+    <published>2021-03-30T17:22:51.000Z</published>
+    <updated>2021-03-30T17:55:22.962Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="从输入URL到显示页面经历了什么"><a href="#从输入URL到显示页面经历了什么" class="headerlink" title="从输入URL到显示页面经历了什么?"></a>从输入URL到显示页面经历了什么?</h1><blockquote><ul><li><p>这个过程可以大致分为两个部分：网络通信和页面渲染。</p><h3 id="一、网络通信"><a href="#一、网络通信" class="headerlink" title="一、网络通信"></a>一、网络通信</h3><p>  互联网内各网络设备间的通信都遵循TCP/IP协议，利用TCP/IP协议族进行网络通信时，会通过分层顺序与对方进行通信。分层由高到低分别为：应用层、传输层、网络层、数据链路层。发送端从应用层往下走，接收端从数据链路层网上走。如图所示：</p><p><a href="http://images0.cnblogs.com/blog/622045/201507/020946547655321.png" target="_blank" rel="noopener"><img src="/What-happened-from-entering-the-URL-to-displaying-the-page?/Blog\source\_posts\从输入URL到显示页面经历了什么\020946553127518.png" alt="TCPIP"></a></p><h4 id="1-在浏览器中输入url"><a href="#1-在浏览器中输入url" class="headerlink" title="1. 在浏览器中输入url"></a>1. 在浏览器中输入url</h4><p>  用户输入url，例如<a href="http://[www.baidu.com](http://www.baidu.com/)。其中http为协议，[www.baidu.com](http://www.baidu.com/)为网络地址，及指出需要的资源在那台计算机上。一般网络地址可以为域名或IP地址，此处为域名。使用域名是为了方便记忆，但是为了让计算机理解这个地址还需要把它解析为IP地址。">http://[www.baidu.com](http://www.baidu.com/)。其中http为协议，[www.baidu.com](http://www.baidu.com/)为网络地址，及指出需要的资源在那台计算机上。一般网络地址可以为域名或IP地址，此处为域名。使用域名是为了方便记忆，但是为了让计算机理解这个地址还需要把它解析为IP地址。</a></p><h4 id="2-应用层DNS解析域名"><a href="#2-应用层DNS解析域名" class="headerlink" title="2.应用层DNS解析域名"></a>2.应用层DNS解析域名</h4><p>  客户端先检查本地是否有对应的IP地址，若找到则返回响应的IP地址。若没找到则请求上级DNS服务器，直至找到或到根节点。</p></li></ul><ul><li>DNS中递归查询和迭代查询的区别</li></ul><p>  1、 递归查询： 一般客户机和服务器之间属递归查询，即当客户机向DNS服务器发出请求后，若DNS服务器本身不能解析，则会向另外的DNS服务器发出查询请求，得到结果后转交客户机。</p><p>  2、 迭代查询（反复查询）： 一般DNS服务器之间属迭代查询，如：若DNS2不能响应DNS1的请求，则它会将DNS3的IP给DNS2，以便其再向DNS3发出请求。</p><p>  以一个DNS请求解析为例：</p><p>  1）用户发起域名请求到dnsA，这时dnsA有这个记录，将结果返回给用户，这个过程是递归查询。</p><p>  2）用户发起域名请求到dnsA，这时dns没有这个记录，它去向dnsB问有没有这个记录，以此类推，直到把结果返回给用户，这个过程是递归查询。</p><p>  3）用户发起域名请求到dnsA，这时dnsA没有这个记录，它告诉用户，我没有这个记录，你去问dnsB吧，这个过程是迭代查询。</p><h4 id="3-应用层客户端发送HTTP请求"><a href="#3-应用层客户端发送HTTP请求" class="headerlink" title="3.应用层客户端发送HTTP请求"></a>3.应用层客户端发送HTTP请求</h4><p>  HTTP请求包括请求报头和请求主体两个部分，其中请求报头包含了至关重要的信息，包括请求的方法（GET / POST）、目标url、遵循的协议（http / https / ftp…），返回的信息是否需要缓存，以及客户端是否发送cookie等。</p><h4 id="4-传输层TCP传输报文"><a href="#4-传输层TCP传输报文" class="headerlink" title="4.传输层TCP传输报文"></a>4.传输层TCP传输报文</h4><pre><code>位于传输层的TCP协议为传输报文提供可靠的字节流服务。它为了方便传输，将大块的数据分割成以报文段为单位的数据包进行管理，并为它们编号，方便服务器接收时能准确地还原报文信息。TCP协议通过“三次握手”等方法保证传输的安全可靠。</code></pre><p>   “三次握手”的过程是，发送端先发送一个带有SYN（synchronize）标志的数据包给接收端，在一定的延迟时间内等待接收的回复。接收端收到数据包后，传回一个带有SYN/ACK标志的数据包以示传达确认信息。接收方收到后再发送一个带有ACK标志的数据包给接收端以示握手成功。在这个过程中，如果发送端在规定延迟时间内没有收到回复则默认接收方没有收到请求，而再次发送，直到收到回复为止。</p><p>  <a href="http://images0.cnblogs.com/blog/622045/201507/020946557039933.png" target="_blank" rel="noopener"><img src="/What-happened-from-entering-the-URL-to-displaying-the-page?/Blog\source\_posts\从输入URL到显示页面经历了什么\020946560314133.png" alt="TCP"></a> </p><h4 id="5-网络层IP协议查询MAC地址"><a href="#5-网络层IP协议查询MAC地址" class="headerlink" title="5.网络层IP协议查询MAC地址"></a>5.网络层IP协议查询MAC地址</h4><pre><code>IP协议的作用是把TCP分割好的各种数据包传送给接收方。而要保证确实能传到接收方还需要接收方的MAC地址，也就是物理地址。IP地址和MAC地址是一一对应的关系，一个网络设备的IP地址可以更换，但是MAC地址一般是固定不变的。ARP协议可以将IP地址解析成对应的MAC地址。当通信的双方不在同一个局域网时，需要多次中转才能到达最终的目标，在中转的过程中需要通过下一个中转站的MAC地址来搜索下一个中转目标。</code></pre><h4 id="6-数据到达数据链路层"><a href="#6-数据到达数据链路层" class="headerlink" title="6.数据到达数据链路层"></a>6.数据到达数据链路层</h4><pre><code>在找到对方的MAC地址后，就将数据发送到数据链路层传输。这时，客户端发送请求的阶段结束</code></pre><h4 id="7-服务器接收数据"><a href="#7-服务器接收数据" class="headerlink" title="7.服务器接收数据"></a>7.服务器接收数据</h4><pre><code>接收端的服务器在链路层接收到数据包，再层层向上直到应用层。这过程中包括在运输层通过TCP协议讲分段的数据包重新组成原来的HTTP请求报文。</code></pre><h4 id="8-服务器响应请求"><a href="#8-服务器响应请求" class="headerlink" title="8.服务器响应请求"></a>8.服务器响应请求</h4><pre><code>服务接收到客户端发送的HTTP请求后，查找客户端请求的资源，并返回响应报文，响应报文中包括一个重要的信息——状态码。状态码由三位数字组成，其中比较常见的是200 OK表示请求成功。301表示永久重定向，即请求的资源已经永久转移到新的位置。在返回301状态码的同时，响应报文也会附带重定向的url，客户端接收到后将http请求的url做相应的改变再重新发送。404 not found 表示客户端请求的资源找不到。</code></pre><h4 id="9-服务器返回相应文件"><a href="#9-服务器返回相应文件" class="headerlink" title="9. 服务器返回相应文件"></a>9. 服务器返回相应文件</h4><pre><code>请求成功后，服务器会返回相应的HTML文件。接下来就到了页面的渲染阶段了。</code></pre><h3 id="二、页面渲染"><a href="#二、页面渲染" class="headerlink" title="二、页面渲染"></a>二、页面渲染</h3><pre><code>现代浏览器渲染页面的过程是这样的：解析HTML以构建DOM树 –&gt; 构建渲染树 –&gt; 布局渲染树 –&gt; 绘制渲染树。DOM树是由HTML文件中的标签排列组成，渲染树是在DOM树中加入CSS或HTML中的style样式而形成。渲染树只包含需要显示在页面中的DOM元素，像&lt;head&gt;元素或display属性值为none的元素都不在渲染树中。在浏览器还没接收到完整的HTML文件时，它就开始渲染页面了，在遇到外部链入的脚本标签或样式标签或图片时，会再次发送HTTP请求重复上述的步骤。在收到CSS文件后会对已经渲染的页面重新渲染，加入它们应有的样式，图片文件加载完立刻显示在相应位置。在这一过程中可能会触发页面的重绘或重排。</code></pre></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;从输入URL到显示页面经历了什么&quot;&gt;&lt;a href=&quot;#从输入URL到显示页面经历了什么&quot; class=&quot;headerlink&quot; title=&quot;从输入URL到显示页面经历了什么?&quot;&gt;&lt;/a&gt;从输入URL到显示页面经历了什么?&lt;/h1&gt;&lt;blockquote&gt;
+&lt;u
+      
+    
+    </summary>
+    
+    
+    
+      <category term="network" scheme="https://kayleh.top/tags/network/"/>
+    
+  </entry>
   
   <entry>
     <title>Download</title>
@@ -480,31 +505,6 @@
     
     
       <category term="frame" scheme="https://kayleh.top/tags/frame/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Native method?</title>
-    <link href="https://kayleh.top/Native-method/"/>
-    <id>https://kayleh.top/Native-method/</id>
-    <published>2020-12-15T16:58:42.000Z</published>
-    <updated>2021-01-17T14:32:14.675Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Native-方法"><a href="#Native-方法" class="headerlink" title="Native 方法?"></a>Native 方法?</h4><p>翻看Thread.start()源码,竟然出现了无方法体的方法??</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">start0</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure><p>这里其实用到了关键字native</p><h4 id="native关键字"><a href="#native关键字" class="headerlink" title="native关键字"></a>native关键字</h4><blockquote><p>说明java的作用范围达不到了,回去调用底层C语言的库.</p></blockquote><p>使用native关键字会进入本地方法栈,调用本地方法接口JNI(Java Native Interface)</p><p>JNI的作用: 扩展Java的使用,融合不同的编程语言为Java所用</p><p>它在内存区域中专门开辟了一块标记区域: Native Method Stack,登记Native方法.</p><p>在最终执行的时候,加载本地方法库中的方法通过JNI</p><h4 id="本地方法的使用"><a href="#本地方法的使用" class="headerlink" title="本地方法的使用"></a>本地方法的使用</h4><p>少见.</p><blockquote><p>Java使用打印机,currentTimeMills( ),做外挂的Robot( )…</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;Native-方法&quot;&gt;&lt;a href=&quot;#Native-方法&quot; class=&quot;headerlink&quot; title=&quot;Native 方法?&quot;&gt;&lt;/a&gt;Native 方法?&lt;/h4&gt;&lt;p&gt;翻看Thread.start()源码,竟然出现了无方法体的方法??&lt;/p&gt;
-&lt;f
-      
-    
-    </summary>
-    
-    
-    
-      <category term="JVM" scheme="https://kayleh.top/tags/JVM/"/>
     
   </entry>
   

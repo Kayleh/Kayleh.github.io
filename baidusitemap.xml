@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kayleh.top/hexo-next-add-tags-and-category-pages/</loc>
+    <lastmod>2021-04-11</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/http/</loc>
+    <lastmod>2021-04-11</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/objectoriented/</loc>
+    <lastmod>2021-04-11</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
+    <lastmod>2021-04-11</lastmod>
+  </url>  <url>
+    <loc>https://kayleh.top/principles-of-computer-organization/</loc>
+    <lastmod>2021-04-11</lastmod>
+  </url>  <url>
     <loc>https://kayleh.top/Reflected-XSS-Vulnerability-inFont-Download-Website/</loc>
     <lastmod>2021-04-10</lastmod>
   </url>  <url>
@@ -53,9 +68,6 @@
     <lastmod>2021-01-31</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/queue/</loc>
-    <lastmod>2021-01-31</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
     <lastmod>2021-01-31</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/sparsearray/</loc>
@@ -376,9 +388,6 @@
     <loc>https://kayleh.top/pass-by-value/</loc>
     <lastmod>2020-09-20</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/hexo-next-add-tags-and-category-pages/</loc>
-    <lastmod>2020-09-19</lastmod>
-  </url>  <url>
     <loc>https://kayleh.top/the-cdn-acceleration-cache-of-jsdelivr-does-not-refresh/</loc>
     <lastmod>2020-09-19</lastmod>
   </url>  <url>
@@ -424,9 +433,6 @@
     <loc>https://kayleh.top/maintenance-2/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/objectoriented/</loc>
-    <lastmod>2020-08-25</lastmod>
-  </url>  <url>
     <loc>https://kayleh.top/iterator-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
@@ -451,9 +457,6 @@
     <loc>https://kayleh.top/chain-of-responsibility-model/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
-    <loc>https://kayleh.top/principles-of-computer-organization/</loc>
-    <lastmod>2020-08-25</lastmod>
-  </url>  <url>
     <loc>https://kayleh.top/singleton-mode/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
@@ -464,9 +467,6 @@
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/thread/</loc>
-    <lastmod>2020-08-25</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/http/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/mvc/</loc>

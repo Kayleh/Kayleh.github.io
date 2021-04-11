@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kayleh.top/hexo-next-add-tags-and-category-pages/</loc>
+    
+    <lastmod>2021-04-11T17:08:08.649Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/http/</loc>
+    
+    <lastmod>2021-04-11T17:07:32.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/objectoriented/</loc>
+    
+    <lastmod>2021-04-11T17:06:45.070Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
+    
+    <lastmod>2021-04-11T17:05:47.761Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kayleh.top/principles-of-computer-organization/</loc>
+    
+    <lastmod>2021-04-11T17:05:31.145Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kayleh.top/Reflected-XSS-Vulnerability-inFont-Download-Website/</loc>
     
     <lastmod>2021-04-10T18:34:50.086Z</lastmod>
@@ -131,13 +166,6 @@
     <loc>https://kayleh.top/queue/</loc>
     
     <lastmod>2021-01-31T19:07:06.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/snowflake-distributed-id-algorithm/</loc>
-    
-    <lastmod>2021-01-31T19:06:46.296Z</lastmod>
     
   </url>
   
@@ -933,13 +961,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/hexo-next-add-tags-and-category-pages/</loc>
-    
-    <lastmod>2020-09-19T15:23:59.121Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/the-cdn-acceleration-cache-of-jsdelivr-does-not-refresh/</loc>
     
     <lastmod>2020-09-19T15:14:06.806Z</lastmod>
@@ -1059,13 +1080,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/objectoriented/</loc>
-    
-    <lastmod>2020-08-25T09:51:26.108Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/iterator-mode/</loc>
     
     <lastmod>2020-08-25T09:51:26.107Z</lastmod>
@@ -1122,13 +1136,6 @@
   </url>
   
   <url>
-    <loc>https://kayleh.top/principles-of-computer-organization/</loc>
-    
-    <lastmod>2020-08-25T09:51:26.090Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kayleh.top/singleton-mode/</loc>
     
     <lastmod>2020-08-25T09:51:26.089Z</lastmod>
@@ -1153,13 +1160,6 @@
     <loc>https://kayleh.top/thread/</loc>
     
     <lastmod>2020-08-25T09:51:25.543Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/http/</loc>
-    
-    <lastmod>2020-08-25T09:51:25.539Z</lastmod>
     
   </url>
   

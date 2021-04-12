@@ -1,39 +1,575 @@
-<!DOCTYPE html><!--[if IEMobile 7 ]><html class="no-js iem7" lang="zh-CN"><![endif]--><!--[if lt IE 9]><html class="no-js lte-ie8" lang="zh-CN"><![endif]--><!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="zh-CN"><!--<![endif]--><head><meta charset="UTF-8"><title>中介者模式</title><meta name="author" content="Kayleh"><link rel="shortcut icon" href="/images/favicon.png"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1"><link rel="canonical" href="https://kayleh.top/intermediary-model/"><link rel="alternate" href="/atom.xml" type="application/atom+xml"><script src="/js/modernizr-2.0.js"></script><script src="/js/jquery-1.9.1.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><link rel="me" href="https://twitter.com/y40jinqing"><script src="/js/octo.js"></script><link rel="stylesheet" href="/css/octo.css"><link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><meta name="generator" content="Hexo 4.2.0"></head><body><header role="banner"><hgroup><h1><a href="/">Kayleh</a></h1></hgroup></header><nav role="navigation"><ul class="subscription" data-subscription="rss"><li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li></ul><form action="https://google.com/search" method="get"><fieldset role="search"><input type="hidden" name="q" value="site:https://kayleh.top/"> <input class="search" type="text" name="q" results="0" placeholder="Search"></fieldset></form><ul class="main-navigation"><li><a href="/">Blog</a></li><li><a href="/archives">Archives</a></li><li><a href="/about/">about me</a></li><li><a href="/tags/">tag</a></li><li><a href="/link/">friends</a></li></ul></nav><div id="main"><div id="content"><div><article class="hentry" role="article"><header><h1 class="entry-title">中介者模式</h1><p class="meta"><time datetime="2020-06-13T06:46:55.000Z" data-updated="true">Sat Jun 13 2020</time></p></header><div class="entry-content"><h1 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h1><blockquote><p>中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。</p><a id="more"></a></blockquote><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>意图：</strong>用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</p><p><strong>主要解决：</strong>对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。</p><p><strong>何时使用：</strong>多个类相互耦合，形成了网状结构。</p><p><strong>如何解决：</strong>将上述网状结构分离为星型结构。</p><p><strong>关键代码：</strong>对象 Colleague 之间的通信封装到一个类中单独处理。</p><p><strong>应用实例：</strong> 1、中国加入 WTO 之前是各个国家相互贸易，结构复杂，现在是各个国家通过 WTO 来互相贸易。 2、机场调度系统。 3、MVC 框架，其中C（控制器）就是 M（模型）和 V（视图）的中介者。</p><p><strong>优点：</strong> 1、降低了类的复杂度，将一对多转化成了一对一。 2、各个类之间的解耦。 3、符合迪米特原则。</p><p><strong>缺点：</strong>中介者会庞大，变得复杂难以维护。</p><p><strong>使用场景：</strong> 1、系统中对象之间存在比较复杂的引用关系，导致它们之间的依赖关系结构混乱而且难以复用该对象。 2、想通过一个中间类来封装多个类中的行为，而又不想生成太多的子类。</p><p><strong>注意事项：</strong>不应当在职责混乱的时候使用。</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们通过聊天室实例来演示中介者模式。实例中，多个用户可以向聊天室发送消息，聊天室向所有的用户显示消息。我们将创建两个类 <em>ChatRoom</em> 和 <em>User</em>。<em>User</em> 对象使用 <em>ChatRoom</em> 方法来分享他们的消息。</p><p><em>MediatorPatternDemo</em>，我们的演示类使用 <em>User</em> 对象来显示他们之间的通信。</p><p><img src="/intermediary-model/1.jpg" alt="中介者模式的 UML 图"></p><h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>创建中介类。</p><p>ChatRoom.java</p><p><img src="/intermediary-model/2.png" alt="img"></p><h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h3><p>创建 user 类。</p><p>User.java</p><p><img src="/intermediary-model/3.png" alt="img"></p><h3 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤 3"></a>步骤 3</h3><p>使用 <em>User</em> 对象来显示他们之间的通信。</p><p>MediatorPatternDemo.java</p><p><img src="/intermediary-model/4.png" alt="img"></p><h3 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤 4"></a>步骤 4</h3><p>执行程序，输出结果：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Thu Jan <span class="number">31</span> <span class="number">16</span>:<span class="number">05</span>:<span class="number">46</span> IST <span class="number">2013</span> [Robert] : Hi! John!</span><br><span class="line">Thu Jan <span class="number">31</span> <span class="number">16</span>:<span class="number">05</span>:<span class="number">46</span> IST <span class="number">2013</span> [John] : Hello! Robert!</span><br></pre></td></tr></table></figure></div><footer><p class="meta"><span class="byline author vcard">Posted by <span class="fn">Kayleh</span></span> <time datetime="2020-06-13T06:46:55.000Z" data-updated="true">Sat Jun 13 2020</time> <span class="categories"><a class="category" href="/tags/DesignPatterns/">DesignPatterns</a></span></p><div class="sharing"><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">Tweet</a></div><p class="meta"><a class="basic-alignment left" href="/memo-mode/index.html" title="Previous Post: memo-mode">« memo-mode</a> <a class="basic-alignment right" href="/iterator-mode/index.html" title="Previous Post: 迭代器模式">迭代器模式 »</a></p></footer></article><section><h1>Comments</h1><div id="disqus_thread"></div><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript><script>var canonicalUrl="https://kayleh.top/intermediary-model/",disqus_config=function(){this.page.url=canonicalUrl,this.page.identifier=canonicalUrl};!function(){var e=document,t=e.createElement("script");t.src="https://kayleh.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}()</script></section></div><aside class="sidebar"><section class="odd"><h1>Recent Posts</h1><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Reflected-XSS-Vulnerability-inFont-Download-Website/">Reflected XSS Vulnerability in Font Download Website</a></li><li class="post-list-item"><a class="post-list-link" href="/SQL-injection-vulnerability/">SQL injection</a></li><li class="post-list-item"><a class="post-list-link" href="/Front-end-security/">Front end security</a></li><li class="post-list-item"><a class="post-list-link" href="/What-happened-from-entering-the-URL-to-displaying-the-page/">What happened from entering the URL to displaying the page?</a></li><li class="post-list-item"><a class="post-list-link" href="/Download/">Download</a></li><li class="post-list-item"><a class="post-list-link" href="/app-test/">app test</a></li><li class="post-list-item"><a class="post-list-link" href="/interface-test/">interface test</a></li><li class="post-list-item"><a class="post-list-link" href="/Unitest-framework/">Unitest framework</a></li><li class="post-list-item"><a class="post-list-link" href="/automated-test-katalon/">Katalon Recorder (Selenium tests generator)</a></li><li class="post-list-item"><a class="post-list-link" href="/dynamic-programming/">Dynamic programming动态规划</a></li></ul></section><section class="even"><h1>GitHub Repos</h1><ul id="gh_repos"><li class="loading">Status updating&#8230;</li></ul><a href="https://github.com/kayleh" target="_blank" rel="noopener">@kayleh</a> on GitHub<script>$(document).ready(function(){
-            const options = {
-                user: 'kayleh',
-                count: 0,
-                skip_forks: true,
-                target: '#gh_repos'
+<!DOCTYPE html><html lang="zh-CN"><head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.3"><meta charset="utf-8"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>中介者模式 - Kayleh</title><meta name="keywords" content="DesignPatterns"><meta name="description" content="中介者模式
+ 中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。"><link rel="alternate" href="/atom.xml" title="Kayleh"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml"><meta name="theme-color" content="#ffffff"><meta name="google-site-verification" content="LQn0xwjfEU_V6CXCA0qAdwM4qRXtblIbfy5KuzEKaRg"><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png"><link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico"><link rel="stylesheet" href="/css/first.css"><link rel="stylesheet" href="/css/style.css" media="print" onload='this.media="all",this.onload=null'><noscript><link rel="stylesheet" href="/css/style.css"></noscript><script id="loadcss"></script><script>!function(e,t,o,c,i,a,n){e.DaoVoiceObject=i,e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=+new Date,a=t.createElement(o),n=t.getElementsByTagName(o)[0],a.async=1,a.src=c,a.charset="utf-8",n.parentNode.insertBefore(a,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/38b1c911.js","daovoice"),daovoice("init",{app_id:"38b1c911"}),daovoice("update")</script></head><body><header id="l_header" class="l_header auto shadow blur" style="opacity:0"><div class="container"><div id="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list"><li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"><a class="title flat-box" target="_self" href="/"><img no-lazy class="logo" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png"> <i class="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></i></a><div class="menu navigation"><ul class="nav-list-h m-pc"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fas fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h m-phone"><li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li></ul></div></div></div></header><div id="l_body"><div id="l_cover"><div id="half" class="cover-wrapper post dock"><div id="cover-backstretch"></div><div class="cover-body"><div class="top"><p class="title">Kayleh</p><p class="subtitle">"Dreamaker"</p></div><div class="bottom"><div class="menu navigation"><div class="list-h"><a href="/" id="home"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg"><p>Home</p></a><a href="https://kayleh.top/" id="https:kaylehtop"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg"><p>More</p></a><a href="/archives/" id="archives"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg"><p>所有</p></a><a href="/about" id="about"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg"><p>我?</p></a><a href="/friends/" id="friends"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg"><p>友人帐</p></a><a href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg"><p>Email</p></a></div></div></div></div><div id="scroll-down" style="display:none"><i class="fa fa-chevron-down scroll-down-effects"></i></div></div></div><div id="safearea"><div class="body-wrapper" id="pjax-container"><div class="l_main"><article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost"><div class="article-meta" id="top"><h1 class="title">中介者模式</h1><div class="new-meta-box"><div class="new-meta-item author"><a class="author" href="/" rel="nofollow"><img no-lazy src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"><p>Kayleh</p></a></div><div class="new-meta-item category"><a class="notlink"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i> <a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></a></div><div class="new-meta-item date"><a class="notlink"><i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i><p>发布于：2020年6月13日</p></a></div><div class="new-meta-item browse leancloud"><a class="notlink"><div id="lc-pv" data-title="中介者模式" data-path="/intermediary-model/"><i class="fas fa-eye fa-fw" aria-hidden="true"></i> <span id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次浏览</div></a></div></div></div><h1 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h1><blockquote><p>中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。</p><a id="more"></a></blockquote><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>意图：</strong>用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</p><p><strong>主要解决：</strong>对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。</p><p><strong>何时使用：</strong>多个类相互耦合，形成了网状结构。</p><p><strong>如何解决：</strong>将上述网状结构分离为星型结构。</p><p><strong>关键代码：</strong>对象 Colleague 之间的通信封装到一个类中单独处理。</p><p><strong>应用实例：</strong> 1、中国加入 WTO 之前是各个国家相互贸易，结构复杂，现在是各个国家通过 WTO 来互相贸易。 2、机场调度系统。 3、MVC 框架，其中C（控制器）就是 M（模型）和 V（视图）的中介者。</p><p><strong>优点：</strong> 1、降低了类的复杂度，将一对多转化成了一对一。 2、各个类之间的解耦。 3、符合迪米特原则。</p><p><strong>缺点：</strong>中介者会庞大，变得复杂难以维护。</p><p><strong>使用场景：</strong> 1、系统中对象之间存在比较复杂的引用关系，导致它们之间的依赖关系结构混乱而且难以复用该对象。 2、想通过一个中间类来封装多个类中的行为，而又不想生成太多的子类。</p><p><strong>注意事项：</strong>不应当在职责混乱的时候使用。</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们通过聊天室实例来演示中介者模式。实例中，多个用户可以向聊天室发送消息，聊天室向所有的用户显示消息。我们将创建两个类 <em>ChatRoom</em> 和 <em>User</em>。<em>User</em> 对象使用 <em>ChatRoom</em> 方法来分享他们的消息。</p><p><em>MediatorPatternDemo</em>，我们的演示类使用 <em>User</em> 对象来显示他们之间的通信。</p><div class="img-wrap"><div class="img-bg"><img class="img" src="/intermediary-model/1.jpg" alt="中介者模式的 UML 图"></div><span class="image-caption">中介者模式的 UML 图</span></div><h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>创建中介类。</p><p>ChatRoom.java</p><div class="img-wrap"><div class="img-bg"><img class="img" src="/intermediary-model/2.png" alt="img"></div><span class="image-caption">img</span></div><h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h3><p>创建 user 类。</p><p>User.java</p><div class="img-wrap"><div class="img-bg"><img class="img" src="/intermediary-model/3.png" alt="img"></div><span class="image-caption">img</span></div><h3 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤 3"></a>步骤 3</h3><p>使用 <em>User</em> 对象来显示他们之间的通信。</p><p>MediatorPatternDemo.java</p><div class="img-wrap"><div class="img-bg"><img class="img" src="/intermediary-model/4.png" alt="img"></div><span class="image-caption">img</span></div><h3 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤 4"></a>步骤 4</h3><p>执行程序，输出结果：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Thu Jan <span class="number">31</span> <span class="number">16</span>:<span class="number">05</span>:<span class="number">46</span> IST <span class="number">2013</span> [Robert] : Hi! John!</span><br><span class="line">Thu Jan <span class="number">31</span> <span class="number">16</span>:<span class="number">05</span>:<span class="number">46</span> IST <span class="number">2013</span> [John] : Hello! Robert!</span><br></pre></td></tr></table></figure><div class="footer"><div class="copyright"><blockquote><p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p><p>本文永久链接是：<a href="https://kayleh.top/intermediary-model/">https://kayleh.top/intermediary-model/</a></p></blockquote></div><div class="donate"><div class="imgs"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/wechatpay.jpg"> <img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/alipay.jpg"></div></div></div><div class="article-meta" id="bottom"><div class="new-meta-box"><div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-25T17:51:26+08:00"><a class="notlink"><i class="fas fa-edit fa-fw" aria-hidden="true"></i><p>更新于：2020年8月25日</p></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/DesignPatterns/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>DesignPatterns</p></a></div><div class="new-meta-item share -mob-share-list"><div class="-mob-share-list share-body"><a class="-mob-share-qq" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kayleh.top/intermediary-model/&title=中介者模式 - Kayleh&summary=中介者模式
+ 中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png"> </a><a class="-mob-share-qzone" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kayleh.top/intermediary-model/&title=中介者模式 - Kayleh&summary=中介者模式
+ 中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png"> </a><a class="-mob-share-weibo" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://kayleh.top/intermediary-model/&title=中介者模式 - Kayleh&summary=中介者模式
+ 中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png"></a><div class="hoverbox"><a class="share"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png"></a><div class="target"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC+klEQVR42u3aS3LjMAwFQN3/0pN9alzCTw5hN3eWlZBsb14BuP5Z/10XAjBgwIABA2YNzFVcT/393fPf3796Xj4PGDBgwIABA2YdTDgAJS8QvUj0cxS0fB8wYMCAAQMGzFqYaCC72ygLNgXXvQ8YMGDAgAED5ntgnoKb2h8MGDBgwIABAyZbcOoWrKZ/KDBgwIABAwbM58NULza1pgplf96JBAMGDBgwYMC8DaY7wHza5/J9wIABAwYMGDBrYKYC2bufPxU4wYABAwYMGDB7YO4C0lTjqxrIovt39wUDBgwYMGDA7IPJNryyDbPoAatQ0f3Tg0NgwIABAwYMmONhqg2rauEoeuAqfDaQggEDBgwYMGA+B2Yq6HULXNWAmH0v3HADAwYMGDBgwBwLUz14taDULXR1G3ThgAcGDBgwYMCAOR6mWxCavmh2n+wA0cvvwYABAwYMGDDrYKpBrtsAqxaesj9E+JxgwIABAwYMmHUw2YZVF3Kq4dctWIEBAwYMGDBg9sNUG1TRQlEXJAsEBgwYMGDAgPl8mO7FqgeKwlcLaeX/CwYMGDBgwIBZCzNdoKruM1WwygZVMGDAgAEDBswemOyFsoM7WaAsVDaohgMeGDBgwIABA+Z4mOzG0WA23aibagDeBlYwYMCAAQMGzBqYbMDqFramnncHiMCAAQMGDBgw+2GyjatqASl6sOlCWDo4ggEDBgwYMGDWwVQhso2up4NeOMhFJ6rAgAEDBgwYMMfCZA9QfR4dTO4Gte4gFBgwYMCAAQNmD0x3VQd6olBTQTMMDwYMGDBgwIBZA3MVVxWiCl5t4KULYWDAgAEDBgyYdTDdQFc98PTgT7uRCAYMGDBgwIBZC1NtjHWDYPX5dGMPDBgwYMCAAfM9MN0Bo6mCWTaIvnwPDBgwYMCAAfN1MNELdxtuT/0wYMCAAQMGDJj9MN2BnmyjLN0QezoIggEDBgwYMGDWwXQbWO96v12IygY8MGDAgAEDBsyxMBYYMGDAgAEDZtn6AX5s4jsoK04UAAAAAElFTkSuQmCC"></div></div><a class="-mob-share-telegram" rel="external nofollow noopener noreferrer noopener" href="https://t.me/share/url?url=https://kayleh.top/intermediary-model/&text=中介者模式 - Kayleh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png"></a></div></div></div></div><div class="prev-next"><a class="prev" href="/memo-mode/"><p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>memo-mode</p><p class="content">备忘录模式 在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。 备忘录模式（Memento），主要用于捕获一个对象的内部状态，以便在将来的某个时候恢复此状态。 其...</p></a><a class="next" href="/iterator-mode/"><p class="title">迭代器模式<i class="fas fa-chevron-right" aria-hidden="true"></i></p><p class="content">迭代器 提供一种方法顺序访问一个聚合对象中的各个元素，而又不需要暴露该对象的内部表示。 迭代器模式（Iterator）实际上在Java的集合类中已经广泛使用了。我们以List为例，要遍历A...</p></a></div></article><article class="post white-box reveal shadow" id="comments"><p ct><i class="fas fa-comments"></i> 评论</p><div id="valine_container" class="valine_thread"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div></article></div><aside class="l_side"><section class="widget toc-wrapper shadow desktop mobile" id="toc-div"><header><i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span></header><div class="content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤-1"><span class="toc-text">步骤 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤-2"><span class="toc-text">步骤 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤-3"><span class="toc-text">步骤 3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤-4"><span class="toc-text">步骤 4</span></a></li></ol></li></ol></div></section></aside><script>window.pdata={},pdata.ispage=!0,pdata.postTitle="中介者模式",pdata.commentPath="",pdata.commentPlaceholder="";var l_header=document.getElementById("l_header");l_header.classList.remove("show")</script></div><footer class="footer clearfix"><br><br><div class="aplayer-container"></div><br><div class="social-wrapper"><a href="https://github.com/Kayleh" class="social fas fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div></div><div class="copyright"><p><a href="/">Copyright © 2019-2021 Kayleh</a></p></div><div style="text-align:center"><a href="https://info.flagcounter.com/cDh1" target="_blank" rel="noopener"><img src="https://s11.flagcounter.com/count/cDh1/bg_49B1F5/txt_000000/border_49B1F5/columns_4/maxflags_16/viewers_0/labels_1/pageviews_0/flags_0/percent_1/" alt="Flag Counter" border="0"></a></div></footer><a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a></div></div><div><script>function loadScript(e,t){var n=document.getElementsByTagName("head")[0]||document.documentElement,o=document.createElement("script");o.setAttribute("type","text/javascript"),t&&(o.onload=t),o.setAttribute("src",e),n.appendChild(o)}window.volantis={},window.volantis.loadcss=document.getElementById("loadcss");var loadCSS=function(e,t,n,o){var d,i=window.document,r=i.createElement("link"),a=t||(d=(i.body||i.getElementsByTagName("head")[0]).childNodes)[d.length-1],s=i.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&r.setAttribute(l,o[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){return i.body?t():void setTimeout(function(){e(t)})}(function(){a.parentNode.insertBefore(r,t?a:a.nextSibling)});var c=function(e){for(var t=r.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};function u(){r.addEventListener&&r.removeEventListener("load",u),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",u),(r.onloadcssdefined=c)(u),r}</script><script>loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css",window.volantis.loadcss)</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script>function pjax_fancybox(){$(".md .gallery").find("img").each(function(){var a=document.createElement("a");$(a).attr("class","fancybox"),$(a).attr("pjax-fancybox",""),$(a).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(a).attr("href",$(this).attr("data-original")),$(a).attr("data-fancybox","images");var t="";$(this).attr("alt")&&($(a).attr("data-caption",$(this).attr("alt")),t=$(this).attr("alt"));var n=document.createElement("div");$(n).addClass("fancybox"),$(this).wrap(n);var e=document.createElement("span");$(e).addClass("image-caption"),$(e).text(t),$(this).after(e),$(this).wrap(a)}),$(".md .gallery").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}function SCload_fancybox(){0!=$(".md .gallery").find("img").length&&(loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),setTimeout(function(){loadScript("https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js",pjax_fancybox)},1))}$(function(){SCload_fancybox()})</script><script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript">var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];function shuffle(t){for(var n=t.length;n--;){var i=Math.floor(Math.random()*n),l=t[i];t[i]=t[n],t[n]=l}}function Pjax_backstretch(){$.backstretch(imgs,{duration:"5000",fade:"1500"})}shuffle(imgs),loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)</script><div id="rightmenu-wrapper"><ul class="list-v rightmenu" id="rightmenu-content"><li class="option"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-text" onclick='document.execCommand("copy")'><i class="fa fa-copy fa-fw"></i>复制文本</a><hr id="hr-text"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-href"><i class="fa fa-link fa-fw"></i>复制链接</a> <a class="vlts-menu opt fix-cursor-default" id="menu-open-href"><i class="fa fa-external-link-square-alt fa-fw"></i>在新标签页打开</a><hr id="hr-href"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-src"><i class="fa fa-image fa-fw"></i>复制图片地址</a><hr id="hr-src"></li><li class="navigation"><a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa fa-arrow-left fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa fa-arrow-right fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa fa-redo fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" href="/"><i class="fa fa-home fa-fw"></i></a></li><hr><li><a class="vlts-menu fix-cursor-default" href="/about" id="about"><i class="fa fa-question fa-fw"></i> 我</a></li><hr><li><a class="vlts-menu fix-cursor-default" onclick='document.execCommand("print")'><i class="fa fa-print fa-fw"></i> 打印页面</a></li><hr><li><a class="vlts-menu fix-cursor-default" href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><i class="fa fa-fan fa-spin fa-fw"></i> 联系</a></li></ul></div><script>window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if ('' == true && ('help,hr,print,hr,contributors'||[]).includes('music')) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');</script><script>window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:5,hoverDelay:25}</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script src="/js/valine.js"></script><script>var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz",
+      appKey: "OBHyEdMVsi8FSFA0aqJNh4HE",
+      pageSize: '5',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });</script><script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script><script src="/js/app.js"></script><script src="/js/search.js"></script><script>const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);</script><script defer>const LCCounter = {
+    app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz',
+    app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
             }
-
-            function escapeHtml(str) {
-                return $('<div/>').text(str).html();
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
             }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
 
-            function render(target, repos){
-                let i, fragment = '', t = $(target)[0];
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
 
-                for(i = 0; i < repos.length; i++) {
-                    fragment += '<li><a href="'+repos[i].html_url+'">'+repos[i].name+'</a><p>'+escapeHtml(repos[i].description||'')+'</p></li>';
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://kayleh.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://kayleh.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://kayleh.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
                 }
-                t.innerHTML = fragment;
-            }
-
-            $.ajax({
-                url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
-                dataType: 'jsonp',
-                error: function (err) {
-                    $(options.target + ' li.loading').addClass('error').text("Error loading feed");
-                },
-                success: function(data) {
-                    var repos = [];
-                    if (!data || !data.data) { return; }
-                    for (var i = 0; i < data.data.length; i++) {
-                        if (options.skip_forks && data.data[i].fork) { continue; }
-                        repos.push(data.data[i]);
-                    }
-                    if (options.count) { repos.splice(options.count); }
-                    render(options.target, repos);
-                }
+              }
             });
-        });</script></section></aside></div></div><footer role="contentinfo"><p>Copyright © 2021 - Kayleh -</p></footer><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7457165067653912" data-ad-slot="7430854225" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></body></html>
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });</script><script>function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);</script><!-- more --><script async src="https://widget.daovoice.io/widget/38b1c911.js" charset="utf-8"></script><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7457165067653912" data-ad-slot="9837525717"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        
+        
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });</script></div></body></html>

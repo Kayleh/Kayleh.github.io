@@ -1,39 +1,575 @@
-<!DOCTYPE html><!--[if IEMobile 7 ]><html class="no-js iem7" lang="zh-CN"><![endif]--><!--[if lt IE 9]><html class="no-js lte-ie8" lang="zh-CN"><![endif]--><!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="zh-CN"><!--<![endif]--><head><meta charset="UTF-8"><title>代理模式</title><meta name="author" content="Kayleh"><link rel="shortcut icon" href="/images/favicon.png"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1"><link rel="canonical" href="https://kayleh.top/agency-model/"><link rel="alternate" href="/atom.xml" type="application/atom+xml"><script src="/js/modernizr-2.0.js"></script><script src="/js/jquery-1.9.1.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><link rel="me" href="https://twitter.com/y40jinqing"><script src="/js/octo.js"></script><link rel="stylesheet" href="/css/octo.css"><link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><meta name="generator" content="Hexo 4.2.0"></head><body><header role="banner"><hgroup><h1><a href="/">Kayleh</a></h1></hgroup></header><nav role="navigation"><ul class="subscription" data-subscription="rss"><li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li></ul><form action="https://google.com/search" method="get"><fieldset role="search"><input type="hidden" name="q" value="site:https://kayleh.top/"> <input class="search" type="text" name="q" results="0" placeholder="Search"></fieldset></form><ul class="main-navigation"><li><a href="/">Blog</a></li><li><a href="/archives">Archives</a></li><li><a href="/about/">about me</a></li><li><a href="/tags/">tag</a></li><li><a href="/link/">friends</a></li></ul></nav><div id="main"><div id="content"><div><article class="hentry" role="article"><header><h1 class="entry-title">代理模式</h1><p class="meta"><time datetime="2020-06-09T12:46:15.000Z" data-updated="true">Tue Jun 09 2020</time></p></header><div class="entry-content"><h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><blockquote><p><em>为其他对象提供一种代理以控制对这个对象的访问。</em></p><a id="more"></a></blockquote><p>在<strong>代理模式（Proxy Pattern）</strong>中，一个类代表另一个类的功能。这种类型的设计模式属于结构型模式。</p><p>在代理模式中，我们创建具有现有对象的对象，以便向外界提供功能接口。</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>意图：</strong>为其他对象提供一种代理以控制对这个对象的访问。</p><p><strong>主要解决：</strong>在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。</p><p><strong>何时使用：</strong>想在访问一个类时做一些控制。</p><p><strong>如何解决：</strong>增加中间层。</p><p><strong>关键代码：</strong>实现与被代理类组合。</p><p><strong>应用实例：</strong> 1、Windows 里面的快捷方式。 2、猪八戒去找高翠兰结果是孙悟空变的，可以这样理解：把高翠兰的外貌抽象出来，高翠兰本人和孙悟空都实现了这个接口，猪八戒访问高翠兰的时候看不出来这个是孙悟空，所以说孙悟空是高翠兰代理类。 3、买火车票不一定在火车站买，也可以去代售点。 4、一张支票或银行存单是账户中资金的代理。支票在市场交易中用来代替现金，并提供对签发人账号上资金的控制。 5、spring aop。</p><p><strong>优点：</strong> 1、职责清晰。 2、高扩展性。 3、智能化。</p><p><strong>缺点：</strong> 1、由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。 2、实现代理模式需要额外的工作，有些代理模式的实现非常复杂。</p><p><strong>使用场景：</strong>按职责来划分，通常有以下使用场景： 1、远程代理。 2、虚拟代理。 3、Copy-on-Write 代理。 4、保护（Protect or Access）代理。 5、Cache代理。 6、防火墙（Firewall）代理。 7、同步化（Synchronization）代理。 8、智能引用（Smart Reference）代理。</p><p><strong>注意事项：</strong> 1、和适配器模式的区别：适配器模式主要改变所考虑对象的接口，而代理模式不能改变所代理类的接口。 2、和装饰器模式的区别：装饰器模式为了增强功能，而代理模式是为了加以控制。</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们将创建一个 <em>Image</em> 接口和实现了 <em>Image</em> 接口的实体类。<em>ProxyImage</em> 是一个代理类，减少 <em>RealImage</em> 对象加载的内存占用。</p><p><em>ProxyPatternDemo</em>，我们的演示类使用 <em>ProxyImage</em> 来获取要加载的 <em>Image</em> 对象，并按照需求进行显示。</p><p><img src="/agency-model/代理模式.jpg" alt="代理模式的 UML 图"></p><ul><li><p>代理模式，即Proxy，它和Adapter模式很类似。我们先回顾Adapter模式，它用于把A接口转换为B接口：</p></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> BAdapter implements B &#123;</span><br><span class="line">    <span class="keyword">private</span> A a;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BAdapter</span><span class="params">(A a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">b</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        a.a();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>而Proxy模式不是把A接口转换成B接口，它还是转换成A接口：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> AProxy implements A &#123;</span><br><span class="line">    <span class="keyword">private</span> A a;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AProxy</span><span class="params">(A a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a.a();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>合着Proxy就是为了给A接口再包一层，这不是脱了裤子放屁吗？</p><p>当然不是。我们观察Proxy的实现A接口的方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a.a();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这样写当然没啥卵用。但是，如果我们在调用<code>a.a()</code>的前后，加一些额外的代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (getCurrentUser().isRoot()) &#123;</span><br><span class="line">        <span class="keyword">this</span>.a.a();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SecurityException(<span class="string">"Forbidden"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这样一来，我们就实现了权限检查，只有符合要求的用户，才会真正调用目标方法，否则，会直接抛出异常。</p><p>有的童鞋会问，为啥不把权限检查的功能直接写到目标实例A的内部？</p><p>因为我们编写代码的原则有：</p><ul><li>职责清晰：一个类只负责一件事；</li><li>易于测试：一次只测一个功能。</li></ul><p>用Proxy实现这个权限检查，我们可以获得更清晰、更简洁的代码：</p><ul><li>A接口：只定义接口；</li><li>ABusiness类：只实现A接口的业务逻辑；</li><li>APermissionProxy类：只实现A接口的权限检查代理。</li></ul><p>如果我们希望编写其他类型的代理，可以继续增加类似ALogProxy，而不必对现有的A接口、ABusiness类进行修改。</p><p>实际上权限检查只是代理模式的一种应用。Proxy还广泛应用在：</p><h3 id="远程代理"><a href="#远程代理" class="headerlink" title="远程代理"></a>远程代理</h3><p>远程代理即Remote Proxy，本地的调用者持有的接口实际上是一个代理，这个代理负责把对接口的方法访问转换成远程调用，然后返回结果。Java内置的RMI机制就是一个完整的远程代理模式。</p><h3 id="虚代理"><a href="#虚代理" class="headerlink" title="虚代理"></a>虚代理</h3><p>虚代理即Virtual Proxy，它让调用者先持有一个代理对象，但真正的对象尚未创建。如果没有必要，这个真正的对象是不会被创建的，直到客户端需要真的必须调用时，才创建真正的对象。JDBC的连接池返回的JDBC连接（Connection对象）就可以是一个虚代理，即获取连接时根本没有任何实际的数据库连接，直到第一次执行JDBC查询或更新操作时，才真正创建实际的JDBC连接。</p><h3 id="保护代理"><a href="#保护代理" class="headerlink" title="保护代理"></a>保护代理</h3><p>保护代理即Protection Proxy，它用代理对象控制对原始对象的访问，常用于鉴权。</p><h3 id="智能引用"><a href="#智能引用" class="headerlink" title="智能引用"></a>智能引用</h3><p>智能引用即Smart Reference，它也是一种代理对象，如果有很多客户端对它进行访问，通过内部的计数器可以在外部调用者都不使用后自动释放它。</p><p>我们来看一下如何应用代理模式编写一个JDBC连接池（<code>DataSource</code>）。我们首先来编写一个虚代理，即如果调用者获取到<code>Connection</code>后，并没有执行任何SQL操作，那么这个Connection Proxy实际上并不会真正打开JDBC连接。调用者代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">DataSource lazyDataSource = <span class="keyword">new</span> LazyDataSource(jdbcUrl, jdbcUsername, jdbcPassword);</span><br><span class="line">System.out.println(<span class="string">"get lazy connection..."</span>);</span><br><span class="line"><span class="keyword">try</span> (Connection conn1 = lazyDataSource.getConnection()) &#123;</span><br><span class="line">    <span class="comment">// 并没有实际打开真正的Connection</span></span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"get lazy connection..."</span>);</span><br><span class="line"><span class="keyword">try</span> (Connection conn2 = lazyDataSource.getConnection()) &#123;</span><br><span class="line">    <span class="keyword">try</span> (PreparedStatement ps = conn2.prepareStatement(<span class="string">"SELECT * FROM students"</span>)) &#123; <span class="comment">// 打开了真正的Connection</span></span><br><span class="line">        <span class="keyword">try</span> (ResultSet rs = ps.executeQuery()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                System.out.println(rs.getString(<span class="string">"name"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>现在我们来思考如何实现这个<code>LazyConnectionProxy</code>。为了简化代码，我们首先针对<code>Connection</code>接口做一个抽象的代理类：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractConnectionProxy</span> <span class="keyword">implements</span> <span class="title">Connection</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 抽象方法获取实际的Connection:</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> Connection <span class="title">getRealConnection</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实现Connection接口的每一个方法:</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Statement <span class="title">createStatement</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getRealConnection().createStatement();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> PreparedStatement <span class="title">prepareStatement</span><span class="params">(String sql)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getRealConnection().prepareStatement(sql);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ...其他代理方法...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个<code>AbstractConnectionProxy</code>代理类的作用是把<code>Connection</code>接口定义的方法全部实现一遍，因为<code>Connection</code>接口定义的方法太多了，后面我们要编写的<code>LazyConnectionProxy</code>只需要继承<code>AbstractConnectionProxy</code>，就不必再把<code>Connection</code>接口方法挨个实现一遍。</p><p><code>LazyConnectionProxy</code>实现如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LazyConnectionProxy</span> <span class="keyword">extends</span> <span class="title">AbstractConnectionProxy</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Supplier&lt;Connection&gt; supplier;</span><br><span class="line">    <span class="keyword">private</span> Connection target = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LazyConnectionProxy</span><span class="params">(Supplier&lt;Connection&gt; supplier)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.supplier = supplier;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 覆写close方法：只有target不为null时才需要关闭:</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (target != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Close connection: "</span> + target);</span><br><span class="line">            <span class="keyword">super</span>.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Connection <span class="title">getRealConnection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (target == <span class="keyword">null</span>) &#123;</span><br><span class="line">            target = supplier.get();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果调用者没有执行任何SQL语句，那么<code>target</code>字段始终为<code>null</code>。只有第一次执行SQL语句时（即调用任何类似<code>prepareStatement()</code>方法时，触发<code>getRealConnection()</code>调用），才会真正打开实际的JDBC Connection。</p><p>最后，我们还需要编写一个<code>LazyDataSource</code>来支持这个<code>LazyConnecitonProxy</code>：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LazyDataSource</span> <span class="keyword">implements</span> <span class="title">DataSource</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LazyDataSource</span><span class="params">(String url, String username, String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.url = url;</span><br><span class="line">        <span class="keyword">this</span>.username = username;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">(String username, String password)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> LazyConnectionProxy(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Connection conn = DriverManager.getConnection(url, username, password);</span><br><span class="line">                System.out.println(<span class="string">"Open connection: "</span> + conn);</span><br><span class="line">                <span class="keyword">return</span> conn;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>我们执行代码，输出如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">get lazy connection...</span><br><span class="line">get lazy connection...</span><br><span class="line">Open connection: com.mysql.jdbc.JDBC4Connection@<span class="number">7</span>a36aefa</span><br><span class="line">小明</span><br><span class="line">小红</span><br><span class="line">小军</span><br><span class="line">小白</span><br><span class="line">...</span><br><span class="line">Close connection: com.mysql.jdbc.JDBC4Connection@<span class="number">7</span>a36aefa</span><br></pre></td></tr></table></figure><p>可见第一个<code>getConnection()</code>调用获取到的<code>LazyConnectionProxy</code>并没有实际打开真正的JDBC Connection。</p><p>使用连接池的时候，我们更希望能重复使用连接。如果调用方编写这样的代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DataSource pooledDataSource = <span class="keyword">new</span> PooledDataSource(jdbcUrl, jdbcUsername, jdbcPassword);</span><br><span class="line"><span class="keyword">try</span> (Connection conn = pooledDataSource.getConnection()) &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> (Connection conn = pooledDataSource.getConnection()) &#123;</span><br><span class="line">    <span class="comment">// 获取到的是同一个Connection</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> (Connection conn = pooledDataSource.getConnection()) &#123;</span><br><span class="line">    <span class="comment">// 获取到的是同一个Connection</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>调用方并不关心是否复用了<code>Connection</code>，但从<code>PooledDataSource</code>获取的<code>Connection</code>确实自带这个优化功能。如何实现可复用<code>Connection</code>的连接池？答案仍然是使用代理模式。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PooledConnectionProxy</span> <span class="keyword">extends</span> <span class="title">AbstractConnectionProxy</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 实际的Connection:</span></span><br><span class="line">    Connection target;</span><br><span class="line">    <span class="comment">// 空闲队列:</span></span><br><span class="line">    Queue&lt;PooledConnectionProxy&gt; idleQueue;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PooledConnectionProxy</span><span class="params">(Queue&lt;PooledConnectionProxy&gt; idleQueue, Connection target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.idleQueue = idleQueue;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Fake close and released to idle queue for future reuse: "</span> + target);</span><br><span class="line">        <span class="comment">// 并没有调用实际Connection的close()方法,</span></span><br><span class="line">        <span class="comment">// 而是把自己放入空闲队列:</span></span><br><span class="line">        idleQueue.offer(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Connection <span class="title">getRealConnection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>复用连接的关键在于覆写<code>close()</code>方法，它并没有真正关闭底层JDBC连接，而是把自己放回一个空闲队列，以便下次使用。</p><p>空闲队列由<code>PooledDataSource</code>负责维护：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PooledDataSource</span> <span class="keyword">implements</span> <span class="title">DataSource</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 维护一个空闲队列:</span></span><br><span class="line">    <span class="keyword">private</span> Queue&lt;PooledConnectionProxy&gt; idleQueue = <span class="keyword">new</span> ArrayBlockingQueue&lt;&gt;(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PooledDataSource</span><span class="params">(String url, String username, String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.url = url;</span><br><span class="line">        <span class="keyword">this</span>.username = username;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">(String username, String password)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="comment">// 首先试图获取一个空闲连接:</span></span><br><span class="line">        PooledConnectionProxy conn = idleQueue.poll();</span><br><span class="line">        <span class="keyword">if</span> (conn == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 没有空闲连接时，打开一个新连接:</span></span><br><span class="line">            conn = openNewConnection();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"Return pooled connection: "</span> + conn.target);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> conn;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> PooledConnectionProxy <span class="title">openNewConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Connection conn = DriverManager.getConnection(url, username, password);</span><br><span class="line">        System.out.println(<span class="string">"Open new connection: "</span> + conn);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> PooledConnectionProxy(idleQueue, conn);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>我们执行调用方代码，输出如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Open new connection: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Fake close and released to idle queue for future reuse: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Return pooled connection: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Fake close and released to idle queue for future reuse: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Return pooled connection: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Fake close and released to idle queue for future reuse: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br></pre></td></tr></table></figure><p>除了第一次打开了一个真正的JDBC Connection，后续获取的<code>Connection</code>实际上是同一个JDBC Connection。但是，对于调用方来说，完全不需要知道底层做了哪些优化。</p><p>我们实际使用的DataSource，例如HikariCP，都是基于代理模式实现的，原理同上，但增加了更多的如动态伸缩的功能（一个连接空闲一段时间后自动关闭）。</p><p>有的童鞋会发现Proxy模式和Decorator模式有些类似。确实，这两者看起来很像，但区别在于：Decorator模式让调用者自己创建核心类，然后组合各种功能，而Proxy模式决不能让调用者自己创建再组合，否则就失去了代理的功能。Proxy模式让调用者认为获取到的是核心类接口，但实际上是代理类。</p></div><footer><p class="meta"><span class="byline author vcard">Posted by <span class="fn">Kayleh</span></span> <time datetime="2020-06-09T12:46:15.000Z" data-updated="true">Tue Jun 09 2020</time> <span class="categories"><a class="category" href="/tags/DesignPatterns/">DesignPatterns</a></span></p><div class="sharing"><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">Tweet</a></div><p class="meta"><a class="basic-alignment left" href="/resume/index.html" title="Previous Post: RESUME">« RESUME</a> <a class="basic-alignment right" href="/flyweight-model/index.html" title="Previous Post: 享元模式">享元模式 »</a></p></footer></article><section><h1>Comments</h1><div id="disqus_thread"></div><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript><script>var canonicalUrl="https://kayleh.top/agency-model/",disqus_config=function(){this.page.url=canonicalUrl,this.page.identifier=canonicalUrl};!function(){var e=document,t=e.createElement("script");t.src="https://kayleh.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}()</script></section></div><aside class="sidebar"><section class="odd"><h1>Recent Posts</h1><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Reflected-XSS-Vulnerability-inFont-Download-Website/">Reflected XSS Vulnerability in Font Download Website</a></li><li class="post-list-item"><a class="post-list-link" href="/SQL-injection-vulnerability/">SQL injection</a></li><li class="post-list-item"><a class="post-list-link" href="/Front-end-security/">Front end security</a></li><li class="post-list-item"><a class="post-list-link" href="/What-happened-from-entering-the-URL-to-displaying-the-page/">What happened from entering the URL to displaying the page?</a></li><li class="post-list-item"><a class="post-list-link" href="/Download/">Download</a></li><li class="post-list-item"><a class="post-list-link" href="/app-test/">app test</a></li><li class="post-list-item"><a class="post-list-link" href="/interface-test/">interface test</a></li><li class="post-list-item"><a class="post-list-link" href="/Unitest-framework/">Unitest framework</a></li><li class="post-list-item"><a class="post-list-link" href="/automated-test-katalon/">Katalon Recorder (Selenium tests generator)</a></li><li class="post-list-item"><a class="post-list-link" href="/dynamic-programming/">Dynamic programming动态规划</a></li></ul></section><section class="even"><h1>GitHub Repos</h1><ul id="gh_repos"><li class="loading">Status updating&#8230;</li></ul><a href="https://github.com/kayleh" target="_blank" rel="noopener">@kayleh</a> on GitHub<script>$(document).ready(function(){
-            const options = {
-                user: 'kayleh',
-                count: 0,
-                skip_forks: true,
-                target: '#gh_repos'
+<!DOCTYPE html><html lang="zh-CN"><head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.3"><meta charset="utf-8"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>代理模式 - Kayleh</title><meta name="keywords" content="DesignPatterns"><meta name="description" content="代理模式
+为其他对象提供一种代理以控制对这个对象的访问。 "><link rel="alternate" href="/atom.xml" title="Kayleh"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml"><meta name="theme-color" content="#ffffff"><meta name="google-site-verification" content="LQn0xwjfEU_V6CXCA0qAdwM4qRXtblIbfy5KuzEKaRg"><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png"><link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico"><link rel="stylesheet" href="/css/first.css"><link rel="stylesheet" href="/css/style.css" media="print" onload='this.media="all",this.onload=null'><noscript><link rel="stylesheet" href="/css/style.css"></noscript><script id="loadcss"></script><script>!function(e,t,o,c,i,a,n){e.DaoVoiceObject=i,e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=+new Date,a=t.createElement(o),n=t.getElementsByTagName(o)[0],a.async=1,a.src=c,a.charset="utf-8",n.parentNode.insertBefore(a,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/38b1c911.js","daovoice"),daovoice("init",{app_id:"38b1c911"}),daovoice("update")</script></head><body><header id="l_header" class="l_header auto shadow blur" style="opacity:0"><div class="container"><div id="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list"><li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"><a class="title flat-box" target="_self" href="/"><img no-lazy class="logo" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png"> <i class="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></i></a><div class="menu navigation"><ul class="nav-list-h m-pc"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fas fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h m-phone"><li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li></ul></div></div></div></header><div id="l_body"><div id="l_cover"><div id="half" class="cover-wrapper post dock"><div id="cover-backstretch"></div><div class="cover-body"><div class="top"><p class="title">Kayleh</p><p class="subtitle">"Dreamaker"</p></div><div class="bottom"><div class="menu navigation"><div class="list-h"><a href="/" id="home"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg"><p>Home</p></a><a href="https://kayleh.top/" id="https:kaylehtop"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg"><p>More</p></a><a href="/archives/" id="archives"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg"><p>所有</p></a><a href="/about" id="about"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg"><p>我?</p></a><a href="/friends/" id="friends"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg"><p>友人帐</p></a><a href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg"><p>Email</p></a></div></div></div></div><div id="scroll-down" style="display:none"><i class="fa fa-chevron-down scroll-down-effects"></i></div></div></div><div id="safearea"><div class="body-wrapper" id="pjax-container"><div class="l_main"><article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost"><div class="article-meta" id="top"><h1 class="title">代理模式</h1><div class="new-meta-box"><div class="new-meta-item author"><a class="author" href="/" rel="nofollow"><img no-lazy src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"><p>Kayleh</p></a></div><div class="new-meta-item date"><a class="notlink"><i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i><p>发布于：2020年6月9日</p></a></div><div class="new-meta-item browse leancloud"><a class="notlink"><div id="lc-pv" data-title="代理模式" data-path="/agency-model/"><i class="fas fa-eye fa-fw" aria-hidden="true"></i> <span id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次浏览</div></a></div></div></div><h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><blockquote><p><em>为其他对象提供一种代理以控制对这个对象的访问。</em></p><a id="more"></a></blockquote><p>在<strong>代理模式（Proxy Pattern）</strong>中，一个类代表另一个类的功能。这种类型的设计模式属于结构型模式。</p><p>在代理模式中，我们创建具有现有对象的对象，以便向外界提供功能接口。</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>意图：</strong>为其他对象提供一种代理以控制对这个对象的访问。</p><p><strong>主要解决：</strong>在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。</p><p><strong>何时使用：</strong>想在访问一个类时做一些控制。</p><p><strong>如何解决：</strong>增加中间层。</p><p><strong>关键代码：</strong>实现与被代理类组合。</p><p><strong>应用实例：</strong> 1、Windows 里面的快捷方式。 2、猪八戒去找高翠兰结果是孙悟空变的，可以这样理解：把高翠兰的外貌抽象出来，高翠兰本人和孙悟空都实现了这个接口，猪八戒访问高翠兰的时候看不出来这个是孙悟空，所以说孙悟空是高翠兰代理类。 3、买火车票不一定在火车站买，也可以去代售点。 4、一张支票或银行存单是账户中资金的代理。支票在市场交易中用来代替现金，并提供对签发人账号上资金的控制。 5、spring aop。</p><p><strong>优点：</strong> 1、职责清晰。 2、高扩展性。 3、智能化。</p><p><strong>缺点：</strong> 1、由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。 2、实现代理模式需要额外的工作，有些代理模式的实现非常复杂。</p><p><strong>使用场景：</strong>按职责来划分，通常有以下使用场景： 1、远程代理。 2、虚拟代理。 3、Copy-on-Write 代理。 4、保护（Protect or Access）代理。 5、Cache代理。 6、防火墙（Firewall）代理。 7、同步化（Synchronization）代理。 8、智能引用（Smart Reference）代理。</p><p><strong>注意事项：</strong> 1、和适配器模式的区别：适配器模式主要改变所考虑对象的接口，而代理模式不能改变所代理类的接口。 2、和装饰器模式的区别：装饰器模式为了增强功能，而代理模式是为了加以控制。</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们将创建一个 <em>Image</em> 接口和实现了 <em>Image</em> 接口的实体类。<em>ProxyImage</em> 是一个代理类，减少 <em>RealImage</em> 对象加载的内存占用。</p><p><em>ProxyPatternDemo</em>，我们的演示类使用 <em>ProxyImage</em> 来获取要加载的 <em>Image</em> 对象，并按照需求进行显示。</p><div class="img-wrap"><div class="img-bg"><img class="img" src="/agency-model/代理模式.jpg" alt="代理模式的 UML 图"></div><span class="image-caption">代理模式的 UML 图</span></div><ul><li><p>代理模式，即Proxy，它和Adapter模式很类似。我们先回顾Adapter模式，它用于把A接口转换为B接口：</p></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> BAdapter implements B &#123;</span><br><span class="line">    <span class="keyword">private</span> A a;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BAdapter</span><span class="params">(A a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">b</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        a.a();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>而Proxy模式不是把A接口转换成B接口，它还是转换成A接口：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> AProxy implements A &#123;</span><br><span class="line">    <span class="keyword">private</span> A a;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AProxy</span><span class="params">(A a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a.a();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>合着Proxy就是为了给A接口再包一层，这不是脱了裤子放屁吗？</p><p>当然不是。我们观察Proxy的实现A接口的方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a.a();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这样写当然没啥卵用。但是，如果我们在调用<code>a.a()</code>的前后，加一些额外的代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (getCurrentUser().isRoot()) &#123;</span><br><span class="line">        <span class="keyword">this</span>.a.a();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SecurityException(<span class="string">"Forbidden"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这样一来，我们就实现了权限检查，只有符合要求的用户，才会真正调用目标方法，否则，会直接抛出异常。</p><p>有的童鞋会问，为啥不把权限检查的功能直接写到目标实例A的内部？</p><p>因为我们编写代码的原则有：</p><ul><li>职责清晰：一个类只负责一件事；</li><li>易于测试：一次只测一个功能。</li></ul><p>用Proxy实现这个权限检查，我们可以获得更清晰、更简洁的代码：</p><ul><li>A接口：只定义接口；</li><li>ABusiness类：只实现A接口的业务逻辑；</li><li>APermissionProxy类：只实现A接口的权限检查代理。</li></ul><p>如果我们希望编写其他类型的代理，可以继续增加类似ALogProxy，而不必对现有的A接口、ABusiness类进行修改。</p><p>实际上权限检查只是代理模式的一种应用。Proxy还广泛应用在：</p><h3 id="远程代理"><a href="#远程代理" class="headerlink" title="远程代理"></a>远程代理</h3><p>远程代理即Remote Proxy，本地的调用者持有的接口实际上是一个代理，这个代理负责把对接口的方法访问转换成远程调用，然后返回结果。Java内置的RMI机制就是一个完整的远程代理模式。</p><h3 id="虚代理"><a href="#虚代理" class="headerlink" title="虚代理"></a>虚代理</h3><p>虚代理即Virtual Proxy，它让调用者先持有一个代理对象，但真正的对象尚未创建。如果没有必要，这个真正的对象是不会被创建的，直到客户端需要真的必须调用时，才创建真正的对象。JDBC的连接池返回的JDBC连接（Connection对象）就可以是一个虚代理，即获取连接时根本没有任何实际的数据库连接，直到第一次执行JDBC查询或更新操作时，才真正创建实际的JDBC连接。</p><h3 id="保护代理"><a href="#保护代理" class="headerlink" title="保护代理"></a>保护代理</h3><p>保护代理即Protection Proxy，它用代理对象控制对原始对象的访问，常用于鉴权。</p><h3 id="智能引用"><a href="#智能引用" class="headerlink" title="智能引用"></a>智能引用</h3><p>智能引用即Smart Reference，它也是一种代理对象，如果有很多客户端对它进行访问，通过内部的计数器可以在外部调用者都不使用后自动释放它。</p><p>我们来看一下如何应用代理模式编写一个JDBC连接池（<code>DataSource</code>）。我们首先来编写一个虚代理，即如果调用者获取到<code>Connection</code>后，并没有执行任何SQL操作，那么这个Connection Proxy实际上并不会真正打开JDBC连接。调用者代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">DataSource lazyDataSource = <span class="keyword">new</span> LazyDataSource(jdbcUrl, jdbcUsername, jdbcPassword);</span><br><span class="line">System.out.println(<span class="string">"get lazy connection..."</span>);</span><br><span class="line"><span class="keyword">try</span> (Connection conn1 = lazyDataSource.getConnection()) &#123;</span><br><span class="line">    <span class="comment">// 并没有实际打开真正的Connection</span></span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"get lazy connection..."</span>);</span><br><span class="line"><span class="keyword">try</span> (Connection conn2 = lazyDataSource.getConnection()) &#123;</span><br><span class="line">    <span class="keyword">try</span> (PreparedStatement ps = conn2.prepareStatement(<span class="string">"SELECT * FROM students"</span>)) &#123; <span class="comment">// 打开了真正的Connection</span></span><br><span class="line">        <span class="keyword">try</span> (ResultSet rs = ps.executeQuery()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                System.out.println(rs.getString(<span class="string">"name"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>现在我们来思考如何实现这个<code>LazyConnectionProxy</code>。为了简化代码，我们首先针对<code>Connection</code>接口做一个抽象的代理类：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractConnectionProxy</span> <span class="keyword">implements</span> <span class="title">Connection</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 抽象方法获取实际的Connection:</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> Connection <span class="title">getRealConnection</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实现Connection接口的每一个方法:</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Statement <span class="title">createStatement</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getRealConnection().createStatement();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> PreparedStatement <span class="title">prepareStatement</span><span class="params">(String sql)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getRealConnection().prepareStatement(sql);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ...其他代理方法...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个<code>AbstractConnectionProxy</code>代理类的作用是把<code>Connection</code>接口定义的方法全部实现一遍，因为<code>Connection</code>接口定义的方法太多了，后面我们要编写的<code>LazyConnectionProxy</code>只需要继承<code>AbstractConnectionProxy</code>，就不必再把<code>Connection</code>接口方法挨个实现一遍。</p><p><code>LazyConnectionProxy</code>实现如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LazyConnectionProxy</span> <span class="keyword">extends</span> <span class="title">AbstractConnectionProxy</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Supplier&lt;Connection&gt; supplier;</span><br><span class="line">    <span class="keyword">private</span> Connection target = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LazyConnectionProxy</span><span class="params">(Supplier&lt;Connection&gt; supplier)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.supplier = supplier;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 覆写close方法：只有target不为null时才需要关闭:</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (target != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Close connection: "</span> + target);</span><br><span class="line">            <span class="keyword">super</span>.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Connection <span class="title">getRealConnection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (target == <span class="keyword">null</span>) &#123;</span><br><span class="line">            target = supplier.get();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果调用者没有执行任何SQL语句，那么<code>target</code>字段始终为<code>null</code>。只有第一次执行SQL语句时（即调用任何类似<code>prepareStatement()</code>方法时，触发<code>getRealConnection()</code>调用），才会真正打开实际的JDBC Connection。</p><p>最后，我们还需要编写一个<code>LazyDataSource</code>来支持这个<code>LazyConnecitonProxy</code>：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LazyDataSource</span> <span class="keyword">implements</span> <span class="title">DataSource</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LazyDataSource</span><span class="params">(String url, String username, String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.url = url;</span><br><span class="line">        <span class="keyword">this</span>.username = username;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">(String username, String password)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> LazyConnectionProxy(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Connection conn = DriverManager.getConnection(url, username, password);</span><br><span class="line">                System.out.println(<span class="string">"Open connection: "</span> + conn);</span><br><span class="line">                <span class="keyword">return</span> conn;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>我们执行代码，输出如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">get lazy connection...</span><br><span class="line">get lazy connection...</span><br><span class="line">Open connection: com.mysql.jdbc.JDBC4Connection@<span class="number">7</span>a36aefa</span><br><span class="line">小明</span><br><span class="line">小红</span><br><span class="line">小军</span><br><span class="line">小白</span><br><span class="line">...</span><br><span class="line">Close connection: com.mysql.jdbc.JDBC4Connection@<span class="number">7</span>a36aefa</span><br></pre></td></tr></table></figure><p>可见第一个<code>getConnection()</code>调用获取到的<code>LazyConnectionProxy</code>并没有实际打开真正的JDBC Connection。</p><p>使用连接池的时候，我们更希望能重复使用连接。如果调用方编写这样的代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DataSource pooledDataSource = <span class="keyword">new</span> PooledDataSource(jdbcUrl, jdbcUsername, jdbcPassword);</span><br><span class="line"><span class="keyword">try</span> (Connection conn = pooledDataSource.getConnection()) &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> (Connection conn = pooledDataSource.getConnection()) &#123;</span><br><span class="line">    <span class="comment">// 获取到的是同一个Connection</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> (Connection conn = pooledDataSource.getConnection()) &#123;</span><br><span class="line">    <span class="comment">// 获取到的是同一个Connection</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>调用方并不关心是否复用了<code>Connection</code>，但从<code>PooledDataSource</code>获取的<code>Connection</code>确实自带这个优化功能。如何实现可复用<code>Connection</code>的连接池？答案仍然是使用代理模式。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PooledConnectionProxy</span> <span class="keyword">extends</span> <span class="title">AbstractConnectionProxy</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 实际的Connection:</span></span><br><span class="line">    Connection target;</span><br><span class="line">    <span class="comment">// 空闲队列:</span></span><br><span class="line">    Queue&lt;PooledConnectionProxy&gt; idleQueue;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PooledConnectionProxy</span><span class="params">(Queue&lt;PooledConnectionProxy&gt; idleQueue, Connection target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.idleQueue = idleQueue;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Fake close and released to idle queue for future reuse: "</span> + target);</span><br><span class="line">        <span class="comment">// 并没有调用实际Connection的close()方法,</span></span><br><span class="line">        <span class="comment">// 而是把自己放入空闲队列:</span></span><br><span class="line">        idleQueue.offer(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Connection <span class="title">getRealConnection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>复用连接的关键在于覆写<code>close()</code>方法，它并没有真正关闭底层JDBC连接，而是把自己放回一个空闲队列，以便下次使用。</p><p>空闲队列由<code>PooledDataSource</code>负责维护：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PooledDataSource</span> <span class="keyword">implements</span> <span class="title">DataSource</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 维护一个空闲队列:</span></span><br><span class="line">    <span class="keyword">private</span> Queue&lt;PooledConnectionProxy&gt; idleQueue = <span class="keyword">new</span> ArrayBlockingQueue&lt;&gt;(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PooledDataSource</span><span class="params">(String url, String username, String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.url = url;</span><br><span class="line">        <span class="keyword">this</span>.username = username;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">(String username, String password)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="comment">// 首先试图获取一个空闲连接:</span></span><br><span class="line">        PooledConnectionProxy conn = idleQueue.poll();</span><br><span class="line">        <span class="keyword">if</span> (conn == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 没有空闲连接时，打开一个新连接:</span></span><br><span class="line">            conn = openNewConnection();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"Return pooled connection: "</span> + conn.target);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> conn;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> PooledConnectionProxy <span class="title">openNewConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Connection conn = DriverManager.getConnection(url, username, password);</span><br><span class="line">        System.out.println(<span class="string">"Open new connection: "</span> + conn);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> PooledConnectionProxy(idleQueue, conn);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>我们执行调用方代码，输出如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Open new connection: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Fake close and released to idle queue for future reuse: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Return pooled connection: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Fake close and released to idle queue for future reuse: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Return pooled connection: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br><span class="line">Fake close and released to idle queue for future reuse: com.mysql.jdbc.JDBC4Connection@61ca2dfa</span><br></pre></td></tr></table></figure><p>除了第一次打开了一个真正的JDBC Connection，后续获取的<code>Connection</code>实际上是同一个JDBC Connection。但是，对于调用方来说，完全不需要知道底层做了哪些优化。</p><p>我们实际使用的DataSource，例如HikariCP，都是基于代理模式实现的，原理同上，但增加了更多的如动态伸缩的功能（一个连接空闲一段时间后自动关闭）。</p><p>有的童鞋会发现Proxy模式和Decorator模式有些类似。确实，这两者看起来很像，但区别在于：Decorator模式让调用者自己创建核心类，然后组合各种功能，而Proxy模式决不能让调用者自己创建再组合，否则就失去了代理的功能。Proxy模式让调用者认为获取到的是核心类接口，但实际上是代理类。</p><div class="footer"><div class="copyright"><blockquote><p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p><p>本文永久链接是：<a href="https://kayleh.top/agency-model/">https://kayleh.top/agency-model/</a></p></blockquote></div><div class="donate"><div class="imgs"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/wechatpay.jpg"> <img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/alipay.jpg"></div></div></div><div class="article-meta" id="bottom"><div class="new-meta-box"><div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-25T17:51:26+08:00"><a class="notlink"><i class="fas fa-edit fa-fw" aria-hidden="true"></i><p>更新于：2020年8月25日</p></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/DesignPatterns/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>DesignPatterns</p></a></div><div class="new-meta-item share -mob-share-list"><div class="-mob-share-list share-body"><a class="-mob-share-qq" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kayleh.top/agency-model/&title=代理模式 - Kayleh&summary=代理模式
+为其他对象提供一种代理以控制对这个对象的访问。"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png"> </a><a class="-mob-share-qzone" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kayleh.top/agency-model/&title=代理模式 - Kayleh&summary=代理模式
+为其他对象提供一种代理以控制对这个对象的访问。"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png"> </a><a class="-mob-share-weibo" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://kayleh.top/agency-model/&title=代理模式 - Kayleh&summary=代理模式
+为其他对象提供一种代理以控制对这个对象的访问。"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png"></a><div class="hoverbox"><a class="share"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png"></a><div class="target"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACVElEQVR42u3aQW7DMAwEQP//0+29QCFxRSMxPboliBWNcmGWvH5eui5wcHBwcPBB8Ctcyy/487nd16vvOT0vODg4ODj4RPh2AVCErwCnF1b+AcDBwcHBwQfDlwXAZmHRdVGnhQ84ODg4ODj4PqQaKJwWPuDg4ODg4OD98PRiqvuDg4ODg4ODHwT0YQOg67mPdVLAwcHBwcG/CB4PzH3o9ccnG8HBwcHBwb8A3r1OC5jdhkR8PnBwcHBw8EHw9GDVYKDr+TSQAAcHBwcHnwhfFRBVUHWfNHjYbTQsgwhwcHBwcPAHw1eFxe77uweoDgBW912eDxwcHBwcfBD8NEBIG/ddBUv5hwEHBwcHBx8E7yoY7hoESIOI8mQjODg4ODj4g+HV4KA7qOhqcLRNRICDg4ODgz8A3t0Q2AWdvh8HH+Dg4ODg4IPgp0FC9YDl4CAMKLYbCuDg4ODg4A+GpwFBtZCoXkRXYQMODg4ODv5GeFpwVC+u2rg4HkgABwcHBwcfBE8H+9JCJ21AnF4YODg4ODj4RHj6xaefqz6fNjDAwcHBwcEnw08DiPRiup4rXwg4ODg4OPgg+F1BQff+aYMirtzAwcHBwcEfAL/CVQ0KTgOKtAGyrNzAwcHBwcEHwNOC4u4goX1/cHBwcHDwwfA0sN8dwEsLo7QhUe6kgIODg4ODvwheDSjSxkAanICDg4ODg4P3NQbSAqha4Py7Lzg4ODg4+GB4tdBIG/m7B+4aKAAHBwcHB58MT//gpwHCKSAdWAAHBwcHB58Ef9sCBwcHBwcfsH4B2hw9V8NY96wAAAAASUVORK5CYII="></div></div><a class="-mob-share-telegram" rel="external nofollow noopener noreferrer noopener" href="https://t.me/share/url?url=https://kayleh.top/agency-model/&text=代理模式 - Kayleh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png"></a></div></div></div></div><div class="prev-next"><a class="prev" href="/resume/"><p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>RESUME</p><p class="content">RESUME img</p></a><a class="next" href="/flyweight-model/"><p class="title">享元模式<i class="fas fa-chevron-right" aria-hidden="true"></i></p><p class="content">享元 运用共享技术有效地支持大量细粒度的对象。 享元（Flyweight）的核心思想很简单：如果一个对象实例一经创建就不可变，那么反复创建相同的实例就没有必要，直接向调用方返回一个共享的实...</p></a></div></article><article class="post white-box reveal shadow" id="comments"><p ct><i class="fas fa-comments"></i> 评论</p><div id="valine_container" class="valine_thread"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div></article></div><aside class="l_side"><section class="widget toc-wrapper shadow desktop mobile" id="toc-div"><header><i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span></header><div class="content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#代理模式"><span class="toc-text">代理模式</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#远程代理"><span class="toc-text">远程代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚代理"><span class="toc-text">虚代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保护代理"><span class="toc-text">保护代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#智能引用"><span class="toc-text">智能引用</span></a></li></ol></li></div></section></aside><script>window.pdata={},pdata.ispage=!0,pdata.postTitle="代理模式",pdata.commentPath="",pdata.commentPlaceholder="";var l_header=document.getElementById("l_header");l_header.classList.remove("show")</script></div><footer class="footer clearfix"><br><br><div class="aplayer-container"></div><br><div class="social-wrapper"><a href="https://github.com/Kayleh" class="social fas fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div></div><div class="copyright"><p><a href="/">Copyright © 2019-2021 Kayleh</a></p></div><div style="text-align:center"><a href="https://info.flagcounter.com/cDh1" target="_blank" rel="noopener"><img src="https://s11.flagcounter.com/count/cDh1/bg_49B1F5/txt_000000/border_49B1F5/columns_4/maxflags_16/viewers_0/labels_1/pageviews_0/flags_0/percent_1/" alt="Flag Counter" border="0"></a></div></footer><a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a></div></div><div><script>function loadScript(e,t){var n=document.getElementsByTagName("head")[0]||document.documentElement,o=document.createElement("script");o.setAttribute("type","text/javascript"),t&&(o.onload=t),o.setAttribute("src",e),n.appendChild(o)}window.volantis={},window.volantis.loadcss=document.getElementById("loadcss");var loadCSS=function(e,t,n,o){var d,i=window.document,r=i.createElement("link"),a=t||(d=(i.body||i.getElementsByTagName("head")[0]).childNodes)[d.length-1],s=i.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&r.setAttribute(l,o[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){return i.body?t():void setTimeout(function(){e(t)})}(function(){a.parentNode.insertBefore(r,t?a:a.nextSibling)});var c=function(e){for(var t=r.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};function u(){r.addEventListener&&r.removeEventListener("load",u),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",u),(r.onloadcssdefined=c)(u),r}</script><script>loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css",window.volantis.loadcss)</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script>function pjax_fancybox(){$(".md .gallery").find("img").each(function(){var a=document.createElement("a");$(a).attr("class","fancybox"),$(a).attr("pjax-fancybox",""),$(a).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(a).attr("href",$(this).attr("data-original")),$(a).attr("data-fancybox","images");var t="";$(this).attr("alt")&&($(a).attr("data-caption",$(this).attr("alt")),t=$(this).attr("alt"));var n=document.createElement("div");$(n).addClass("fancybox"),$(this).wrap(n);var e=document.createElement("span");$(e).addClass("image-caption"),$(e).text(t),$(this).after(e),$(this).wrap(a)}),$(".md .gallery").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}function SCload_fancybox(){0!=$(".md .gallery").find("img").length&&(loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),setTimeout(function(){loadScript("https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js",pjax_fancybox)},1))}$(function(){SCload_fancybox()})</script><script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript">var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];function shuffle(t){for(var n=t.length;n--;){var i=Math.floor(Math.random()*n),l=t[i];t[i]=t[n],t[n]=l}}function Pjax_backstretch(){$.backstretch(imgs,{duration:"5000",fade:"1500"})}shuffle(imgs),loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)</script><div id="rightmenu-wrapper"><ul class="list-v rightmenu" id="rightmenu-content"><li class="option"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-text" onclick='document.execCommand("copy")'><i class="fa fa-copy fa-fw"></i>复制文本</a><hr id="hr-text"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-href"><i class="fa fa-link fa-fw"></i>复制链接</a> <a class="vlts-menu opt fix-cursor-default" id="menu-open-href"><i class="fa fa-external-link-square-alt fa-fw"></i>在新标签页打开</a><hr id="hr-href"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-src"><i class="fa fa-image fa-fw"></i>复制图片地址</a><hr id="hr-src"></li><li class="navigation"><a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa fa-arrow-left fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa fa-arrow-right fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa fa-redo fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" href="/"><i class="fa fa-home fa-fw"></i></a></li><hr><li><a class="vlts-menu fix-cursor-default" href="/about" id="about"><i class="fa fa-question fa-fw"></i> 我</a></li><hr><li><a class="vlts-menu fix-cursor-default" onclick='document.execCommand("print")'><i class="fa fa-print fa-fw"></i> 打印页面</a></li><hr><li><a class="vlts-menu fix-cursor-default" href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><i class="fa fa-fan fa-spin fa-fw"></i> 联系</a></li></ul></div><script>window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if ('' == true && ('help,hr,print,hr,contributors'||[]).includes('music')) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');</script><script>window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:5,hoverDelay:25}</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script src="/js/valine.js"></script><script>var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz",
+      appKey: "OBHyEdMVsi8FSFA0aqJNh4HE",
+      pageSize: '5',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });</script><script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script><script src="/js/app.js"></script><script src="/js/search.js"></script><script>const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);</script><script defer>const LCCounter = {
+    app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz',
+    app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
             }
-
-            function escapeHtml(str) {
-                return $('<div/>').text(str).html();
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
             }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
 
-            function render(target, repos){
-                let i, fragment = '', t = $(target)[0];
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
 
-                for(i = 0; i < repos.length; i++) {
-                    fragment += '<li><a href="'+repos[i].html_url+'">'+repos[i].name+'</a><p>'+escapeHtml(repos[i].description||'')+'</p></li>';
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://kayleh.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://kayleh.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://kayleh.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
                 }
-                t.innerHTML = fragment;
-            }
-
-            $.ajax({
-                url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
-                dataType: 'jsonp',
-                error: function (err) {
-                    $(options.target + ' li.loading').addClass('error').text("Error loading feed");
-                },
-                success: function(data) {
-                    var repos = [];
-                    if (!data || !data.data) { return; }
-                    for (var i = 0; i < data.data.length; i++) {
-                        if (options.skip_forks && data.data[i].fork) { continue; }
-                        repos.push(data.data[i]);
-                    }
-                    if (options.count) { repos.splice(options.count); }
-                    render(options.target, repos);
-                }
+              }
             });
-        });</script></section></aside></div></div><footer role="contentinfo"><p>Copyright © 2021 - Kayleh -</p></footer><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7457165067653912" data-ad-slot="7430854225" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></body></html>
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });</script><script>function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);</script><!-- more --><script async src="https://widget.daovoice.io/widget/38b1c911.js" charset="utf-8"></script><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7457165067653912" data-ad-slot="9837525717"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        
+        
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });</script></div></body></html>

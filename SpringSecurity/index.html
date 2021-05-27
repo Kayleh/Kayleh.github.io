@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Kayleh"><title>SpringSecurity · Kayleh</title><meta name="description" content="SpringBoot整合SpringSecurity
+https://www.kuangstudy.com/bbs/1369251751735095298
+
+Spring Security课程介绍1. 框架概述📕 Spring Security是基于Spring框架,提供了一套Web应用安全性的完"><meta name="keywords" content=""><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style-dark.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Kayleh</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">活版印字</a></h1></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">대문</a></li><li><a href="/archives">아카이브</a></li><li><a href="/categories">카테고리</a></li><li><a href="/tags">태그</a></li><li><a href="/google8102e2f35ce9e391.html"></a></li><li><a href="/mainfest.json"></a></li><li><a href="/ToDoList/index.html">ToDoList</a></li><li><a href="/about/index.html">about</a></li><li><a href="/categories/index.html">分类</a></li><li><a href="/friends/index.html">友人帐</a></li><li><a href="/link/index.html">友情链接</a></li><li class="soc"><a href="https://github.com/kayleh" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/kayleh" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter">&nbsp;</i></a><a href="https://www.instagram.com/kayleh" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram">&nbsp;</i></a><a href="https://kayleh.top/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2021&nbsp;<a target="_blank" href="https://kayleh.top" rel="noopener noreferrer">Kayleh</a></p><span>visitors:<span id="busuanzi_value_site_pv"></span></span></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>SpringSecurity</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-21</span><span class="meta-item"><i class="fa fa-comment-o"></i><span>&nbsp;</span><a href="/SpringSecurity/#comments">덧글</a></span></p><p class="post-abstract"></p><h1 id="SpringBoot整合SpringSecurity"><a href="#SpringBoot整合SpringSecurity" class="headerlink" title="SpringBoot整合SpringSecurity"></a>SpringBoot整合SpringSecurity</h1><blockquote><p><a href="https://www.kuangstudy.com/bbs/1369251751735095298" target="_blank" rel="noopener">https://www.kuangstudy.com/bbs/1369251751735095298</a></p></blockquote><h2 id="Spring-Security课程介绍"><a href="#Spring-Security课程介绍" class="headerlink" title="Spring Security课程介绍"></a>Spring Security课程介绍</h2><h3 id="1-框架概述"><a href="#1-框架概述" class="headerlink" title="1. 框架概述"></a>1. 框架概述</h3><p>📕 Spring Security是基于Spring框架,提供了一套Web应用安全性的完整解决方案。正如你可能知道的关于安全方面的两个主要区域是”认证”和”授权”(或者访问控制),一般来说，Web应用的安全性主要包括用户认证和用户授权两个部分,这两点也是Spring Security的重要核心功能。</p><ol><li>用户认证指的是 : 验证某个用户是否为系统中的合法主体,也就是说用户能否访问该系统。用户认证一般要求用户提供用户名和密码。系统通过校验用户名和密码来完成认证过程。<strong>==通俗点说就是系统认为用户是否能登录。==</strong></li><li>用户授权指的是 : 验证某个用户是否有权限执行某个操作。在同一系统中，不同用户所具有的权限是不同的。比如对一个文件来说，有的用户只能进行读取，而有的用户可以修改。一般来说，系统会为不同的用户分配不同的角色，而每个角色对应一系列的权限。<strong>==通俗点就是系统判断用户是否有权限去做某些事情。==</strong></li></ol><p>📕 Spring Security 特点 :</p><ul><li>和Spring无缝整合。</li><li>全面的权限控制</li><li>专门为Web开发而设计<ul><li>旧版本不能脱离Web环境使用</li><li>新版本对整个框架进行了分层抽取，分成了核心模块和Web模块,单独引入核心模块就可以脱离Web环境。</li></ul></li><li>重量级。</li></ul><h3 id="2-入门案例"><a href="#2-入门案例" class="headerlink" title="2. 入门案例"></a>2. 入门案例</h3><ol><li><p>创建SpringBoot工程,引入相关依赖</p><pre class="line-numbers language-lang-xml"><code class="language-lang-xml"><parent>
+        <groupid>org.springframework.boot</groupid>
+        <artifactid>spring-boot-starter-parent</artifactid>
+        <version>2.2.1.RELEASE</version>
+        <relativepath>
+    </parent>
+    <dependencies>
+        
+        <dependency>
+            <groupid>org.springframework.boot</groupid>
+            <artifactid>spring-boot-starter-web</artifactid>
+        </dependency>
+        
+        <dependency>
+            <groupid>org.springframework.boot</groupid>
+            <artifactid>spring-boot-starter-security</artifactid>
+        </dependency>
+    </dependencies>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>编写Controller进行测试</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@RestController
+public class TestController {
+    @GetMapping("/add")
+    public String add() {
+        return "hello Security";
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ol><h3 id="3-SpringSecurity基本原理"><a href="#3-SpringSecurity基本原理" class="headerlink" title="3. SpringSecurity基本原理"></a>3. SpringSecurity基本原理</h3><p>🌳 <strong>Spring Security 本质上是一个过滤器链</strong></p><ul><li>FilterSecurityInterceptor : 是一个方法级的权限过滤器,基本位于过滤链的最底部</li><li>ExceptionTranslationFilter : 是一个异常过滤器,用来处理在认证授权过程中抛出的异常</li><li>UsernamePassowrdAuthenticationFilter : 对/login的post请求做拦截,校验表单中用户名和密码。</li></ul><p>🌳 过滤器是如何进行加载的？</p><p><img src="/SpringSecurity/Hugo\hugo_0.75.1_Windows-64bit\blog\content\posts\SpringSecurity\rikcLoverikcLoveimage-20210206021008467.png" alt="image-20210206021008467"></p><p>🌳 两个重要的接口</p><p>⚪ UserDetailsService接口详解</p><p>当什么也没有配置的时候,账号和密码是由SpringSecurity定义生成的。而在实际项目中账号和密码都是从数据库中查出来的,所以我们要通过自定义逻辑控制认证逻辑。<strong>==通俗点来说就是查询用户名和密码的过程==</strong> 如需要自定义逻辑时,只需要实现UserDetailsService接口即可，接口定义如下 :</p><p><img src="/SpringSecurity/Hugo\hugo_0.75.1_Windows-64bit\blog\content\posts\SpringSecurity\rikcLoveimage-20210206022109352.png" alt="image-20210206022109352"></p><p>返回值 UserDetails</p><p>这个类是系统默认的用户主体</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">// 表示获取登录用户的所有权限
+Collection<? extends GrantedAuthority> getAuthorities();
+// 表示获取密码
+String getPassword();
+// 表示获取用户名
+String getUsername();
+// 表示判断用户是否被锁定
+boolean isAccountNonLocked();
+// 表示凭证{密码}是否过期
+boolean isCredentialsNonExpired();
+// 表示当前用户名是否可用
+boolean isEnabled();
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="/SpringSecurity/Hugo\hugo_0.75.1_Windows-64bit\blog\content\posts\SpringSecurity\rikcLoverikcLoveimage-20210206023136065.png" alt="image-20210206023135919"></p><p>⚪ PasswordEncoder 接口讲解</p><p>数据加密的接口,用于返回User对象里面密码加密</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">// 表示把参数按照特定的解析规则进行解析
+String encode(CharSequence rawPassword);
+// 表示验证从存储中获取的编码密码与编码后提交的原始密码是否匹配。如果密码匹配,则返回true;如果不匹配,则返回false。第一个参数表示需要被解析的密码。第二个参数表示存储的密码。
+boolean matches(CharSequence rawPassowrd,String encodePassword);
+// 表示如果解析的密码能够再次进行解析且达到更安全的结果则返回true,否则返回false。默认返回false
+default boolean upgradeEncoding(String encodePassowrd);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>⚪ BCryptPasswordEncoder</p><p>BCryptPasswordEncoder是Spring Security官方推荐的密码解析器,平时多使用这个解析器</p><p>BCryptPasswordEncoder是对bcrypt强散列方法的具体实现。是基于Hash算法实现的单向加密。可以通过strength控制加密强度,默认为10。</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@Test
+public void test01(){
+    //创建密码解析器
+    BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswrodEncoder();
+    //对密码进行加密
+    String password=bCryptPasswordEncoder.encode("123456");
+    //打印加密后的数据
+    System.out.println("加密之后的数据:"+password);
+    //判断原字符加密后和加密之前是否匹配
+    boolean result=bCryptPasswordEncoder.matches("123456",password);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="4-用户认证"><a href="#4-用户认证" class="headerlink" title="4. 用户认证"></a>4. 用户认证</h3><ol><li><p>设置登录的用户名和密码</p><ul><li><p>第一种方式 : 通过配置文件配置</p><pre class="line-numbers language-lang-properties"><code class="language-lang-properties">spring.security.user.name=rikc
+spring.security.user.password=123456
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>第二种方式 :通过配置类</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.wisedu.securitydemo1.config;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
+        String password=bCryptPasswordEncoder.encode("123456");
+        auth.inMemoryAuthentication().withUser("rikc").password(password).roles("admin");
+    }
+    @Bean
+    public PasswordEncoder password(){
+        return new BCryptPasswordEncoder();
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>第三种方式 : 自定义编写实现类</p><p>· 第一步 创建配置类,设置使用哪个userDetailsService实现类</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@Configuration
+public class SecurityConfig1 extends WebSecurityConfigurerAdapter {
+  @Autowired
+    private UserDetailsService userDetailsService;
+  @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(password());
+    }
+    @Bean
+    public PasswordEncoder password(){
+        return new BCryptPasswordEncoder();
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>· 第二步 编写实现类,返回User对象,User对象有用户名密码和操作权限</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@Service("userDetailsService")
+public class MyUserDetailsServie implements UserDetailsService {
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        List<grantedauthority> auths= AuthorityUtils.commaSeparatedStringToAuthorityList("role");
+        return new User("rikc",new BCryptPasswordEncoder().encode("123"),auths);
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></grantedauthority></code></pre></li></ul></li><li><p>查询数据库完成认证</p><p>这是基于(1)里面的第三种自定义编写实现类通过查询数据库完成认证操作</p><p>📕 导入相关依赖</p><pre class="line-numbers language-lang-xml"><code class="language-lang-xml"><dependency>
+    <groupid>com.baomidou</groupid>
+ <artifactid>mybatis-plus-boot-starter</artifactid>
+    <version>3.0.5</version>
+</dependency>
+<dependency>
+    <groupid>mysql</groupid>
+    <artifactid>mysql-connection-java</artifactid>
+</dependency>
+<dependecy>
+    <groupid>org.projectlombok</groupid>
+    <artifactid>lombok</artifactid>
+</dependecy>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>📕 制作实体类</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@Data
+public class User{
+    private Integer id;
+    private String username;
+    private String password
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>📕 整合mapper,创建接口，操作数据库查询</p></li></ol><h3 id="5-自定义用户登录界面"><a href="#5-自定义用户登录界面" class="headerlink" title="5. 自定义用户登录界面"></a>5. 自定义用户登录界面</h3><ol><li><p>配置类中实现相关的配置</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@Configuration
+public class SecurityConfig1 extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private UserDetailsService userDetailsService;
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(password());
+    }
+    @Bean
+    public PasswordEncoder password(){
+        return new BCryptPasswordEncoder();
+    }
+    /**
+    *自定义登录页面    
+    */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.formLogin()    //自定义编写登录页面
+            .loginPage("/login.html")   //登录页面设置
+            .loginProcessingUrl("/user/login")     //登录访问Controller路径
+            .defaultSuccessUrl("/test/index").permitAll()   //登陆成功以后,跳转路径
+            .and().authorizeRequests()
+                .antMatchers("/","/test/hello","/user/login").permitAll()//设置哪些路径可以直接访问不需要登录认证
+            .anyRequest().authenticated()
+                .and().csrf().disable();//关闭csrf防护
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ol><h3 id="6-用户授权-基于角色或权限进行访问控制"><a href="#6-用户授权-基于角色或权限进行访问控制" class="headerlink" title="6. 用户授权(基于角色或权限进行访问控制)"></a>6. 用户授权(基于角色或权限进行访问控制)</h3><h4 id="6-1-hasAuthority-方法"><a href="#6-1-hasAuthority-方法" class="headerlink" title="6.1 hasAuthority 方法"></a>6.1 hasAuthority 方法</h4><p>如果当前的主体具有指定的权限,则返回true,否则返回false</p><ul><li><p>在配置类中设置当前访问地址有哪些权限</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">//当前登录用户只有具有admins权限才可以访问这个路径
+.antMatchers("/test/index").hasAuthority("admin")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>在UserDetailsService,把返回的User对象设置权限</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">Users users=userMapper.selectOne("");
+//设置用户权限为管理员权限
+List<grantedauthority> auths=AuthorityUtils.commaSeparatedStringToAuthorityList("admin");
+UserDetailsSerivce userDetail=new User(users.getUserName,new BCryptPasswordEncoder().encode(users.getPassword()),auths);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></grantedauthority></code></pre></li></ul><h4 id="6-2-hasAnyAuthority-方法"><a href="#6-2-hasAnyAuthority-方法" class="headerlink" title="6.2 hasAnyAuthority 方法"></a>6.2 hasAnyAuthority 方法</h4><p>如果当前的主体有任何提供的角色(给定的作为一个逗号分隔的字符串列表)的话,返回true</p><pre><code>.anyMatchers(&quot;/test/index&quot;).hasAnyAuthority(&quot;admin,manager&quot;)
+</code></pre><h4 id="6-3-hasRole-方法"><a href="#6-3-hasRole-方法" class="headerlink" title="6.3 hasRole 方法"></a>6.3 hasRole 方法</h4><p>如果用户具备给定角色就允许访问,否则出现403</p><p>如果当前主体具有指定的角色,则返回true</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">.antMatchers("/test/index").hasRole("role")
+//源码中进行了封装, 需要添加ROLE_。
+//源码    
+return "hasRole('ROLE_"+role+"')";
+List<grantedauthority> auths=AuthorityUtils.commaSeparatedStringToAuthorityList("admin,ROLE_role");
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></grantedauthority></code></pre><p>注意 : 配置文件中不需要添加”ROLE_”,因为上述的底层源码会自动添加与之进行匹配。</p><h4 id="6-4-hasAnyRole-方法"><a href="#6-4-hasAnyRole-方法" class="headerlink" title="6.4 hasAnyRole 方法"></a>6.4 hasAnyRole 方法</h4><p>表示用户具备任何一个条件都可以访问。</p><p>给用户添加角色:</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">//用户对象不为空返回当前用户
+return new User(username,user.getPassword(),AuthorityUtils.commaSeparatedStringToAuthorityList("admin,role,ROLE_admin,ROLE_role"));
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>修改配置文件 :</p><pre><code>.antMatchers(&quot;/test/admin&quot;).hasAnyRole(&quot;role&quot;)
+</code></pre><h3 id="7-用户授权-自定义403页面"><a href="#7-用户授权-自定义403页面" class="headerlink" title="7. 用户授权(自定义403页面)"></a>7. 用户授权(自定义403页面)</h3><p>在配置类里面进行配置即可。</p><pre><code>http.execptionHandling().accessDeniedPage(&quot;/unauth&quot;);
+</code></pre><h3 id="8-用户授权-注解使用"><a href="#8-用户授权-注解使用" class="headerlink" title="8. 用户授权(注解使用)"></a>8. 用户授权(注解使用)</h3><h4 id="8-1-Secured"><a href="#8-1-Secured" class="headerlink" title="8.1 @Secured"></a>8.1 <a href="https://github.com/Secured" target="_blank" rel="noopener">@Secured</a></h4><p>判断是否具有角色,另外需要注意的是这里匹配的字符串需要添加前缀”ROLE_”。</p><p>使用注解要提前开启注解功能。</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@SpringBootApplication
+@EnableGlobalMethodSecurity(securedEnabled=true)
+public class DemosecurityApplication{
+    public static void main(String[] args){
+        SpringApplication.run(DemosecurityApplication.class,args);
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在控制器方法上添加Controller</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@RequestMapping("testSecured")
+@ResponseBody
+@Secured({"ROLE_normal","ROLE_admin"})
+public String helloUser(){
+    return "hello,user";
+}
+@Secured({"ROLE_normal","Role_管理员"})
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="8-2-PreAuthorize"><a href="#8-2-PreAuthorize" class="headerlink" title="8.2 @PreAuthorize"></a>8.2 <a href="https://github.com/PreAuthorize" target="_blank" rel="noopener">@PreAuthorize</a></h4><p>先开启注解功能</p><p><a href="https://github.com/EnableGlobalMethodSecurity" target="_blank" rel="noopener">@EnableGlobalMethodSecurity</a>(prePostEnabled=true)</p><p><a href="https://github.com/PreAuthorize" target="_blank" rel="noopener">@PreAuthorize</a> : 注解适合进入方法前的权限验证,<a href="https://github.com/PreAuthorize" target="_blank" rel="noopener">@PreAuthorize</a> 可以将登录用户的roles/permissions参数传入到方法中。</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@RequestMapping("/preAuthorize")
+@ResponseBody
+@PreAuthorize("hasAnyAuthority('menu:system')")
+public String preAuthorize(){
+    System.out.println("preAuthorize");
+    return "preAuthorize";
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="8-3-PostAuthorize"><a href="#8-3-PostAuthorize" class="headerlink" title="8.3 @PostAuthorize"></a>8.3 <a href="https://github.com/PostAuthorize" target="_blank" rel="noopener">@PostAuthorize</a></h4><p>先开启注解功能:</p><p><a href="https://github.com/EnableGlobalMethodSecurity" target="_blank" rel="noopener">@EnableGlobalMethodSecurity</a>(prePostEnabled=true)</p><p><a href="https://github.com/PostAuthorize" target="_blank" rel="noopener">@PostAuthorize</a> 注解使用并不多,在方法执行后再进行权限验证，适合验证带有返回值的权限</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@RequestMapping("/testPostAuthorize")
+@ResponseBody
+@PostAuthorzie("hasAnyAuthorize('menu:system')")
+public String preAuthorize(){
+    System.out.println("test-PostAuthorize");
+    return "PostAuthorize";
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="8-4-PostFilter"><a href="#8-4-PostFilter" class="headerlink" title="8.4 @PostFilter"></a>8.4 <a href="https://github.com/PostFilter" target="_blank" rel="noopener">@PostFilter</a></h4><p><a href="https://github.com/PostFilter" target="_blank" rel="noopener">@PostFilter</a> : 权限验证之后对数据进行过滤,留下用户名是admin1的数据</p><p>表达式中的filterObject引用的是方法返回值List中的某一个元素</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@RequestMapping("getAll")
+@PreAuthorize("hasRole('ROLE_管理员')")
+@PostFilter("filterObject.username=='admin1'")
+@ResponseBody
+public List<userinfo> getAllUser(){
+    ArrayList<userinfo> list=new ArrayList<>();
+    list.add(new UserInfo(1l,"admin1","6666"));
+    list.add(new UserInfo(2l,"admin2","6666"));
+    return list;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></userinfo></userinfo></code></pre><h4 id="8-5-PreFilter"><a href="#8-5-PreFilter" class="headerlink" title="8.5 @PreFilter"></a>8.5 <a href="https://github.com/PreFilter" target="_blank" rel="noopener">@PreFilter</a></h4><p><a href="https://github.com/PreFilter" target="_blank" rel="noopener">@PreFilter</a> : 进入控制器之前对数据进行过滤</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@RequestMapping("getTestPreFilter")
+@PreAuthorize("hasRole('ROLE_管理员')")
+@PreFilter(value="filterObject.id%2==0")
+@ResonseBody
+public List<userinfo> getTestPreFilter(@RequestBody List<userinfo> list){
+    list.forEach(t->{
+        System.out.println(t.getId()+"\t"+t.getUsername());
+    });
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></userinfo></userinfo></code></pre><h3 id="9-用户注销"><a href="#9-用户注销" class="headerlink" title="9. 用户注销"></a>9. 用户注销</h3><p>在配置类中添加退出映射地址</p><pre><code>http.logout().logoutUrl(&quot;/logout&quot;).logoutSuccessUrl(&quot;/index&quot;).permitAll();
+</code></pre><h3 id="10-自动登录"><a href="#10-自动登录" class="headerlink" title="10. 自动登录"></a>10. 自动登录</h3><p><img src="/SpringSecurity/Hugo\hugo_0.75.1_Windows-64bit\blog\content\posts\SpringSecurity\rikcLoverikcLoveimage-20210210005345863.png" alt="image-20210210005345863"></p><p><img src="/SpringSecurity/Hugo\hugo_0.75.1_Windows-64bit\blog\content\posts\SpringSecurity\rikcLoverikcLoveimage-20210210005636400.png" alt="image-20210210005636400"></p><p>第一步 : 创建数据库表</p><pre class="line-numbers language-lang-sql"><code class="language-lang-sql">CREATE TABLE `persisent_logins`(
+    `username` varchar(64) NOT NULL,
+    `series` varchar(64) NOT NULL,
+    `token` varchar(64) NOT NULL,
+    `last_used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY(`series`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>第二步 : 配置类,注入数据源,配置操作数据库对象</p><pre class="line-numbers language-lang-java"><code class="language-lang-java">@Autowired
+private DataSource dataSource;
+@Bean
+public PersistentTokenRepository persistentTokenRespository(){
+    JdbcTokenRepositoryImpl jdbcTokenRepositoryImpl = new JdbcTokenRepositoryImpl();
+    jdbcTokenRepositoryImpl.setDataSource(dataSource);
+    //自动生成数据库表
+    //jdbcTokenRepositoryImpl.setCreateTableOnStartup(true);
+    return jdbcTokenRepositoryImpl;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-lang-java"><code class="language-lang-java">.and().rememberMe().tokenRespository(persistentTokenRepository())
+    .tokenValiditySeconds(60)//设置有效时长单位是秒
+    .userDetailsService(userDetailsService)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>第三步 : 页面添加记住我复选框</p><pre><code>记住我 :&lt;input type=&quot;checkbox&quot; name=&quot;remember-me&quot; title=&quot;记住密码&quot;/&gt;&lt;br/&gt;
+此处 : name 属性必须为 remember-me,不能改为其他值
+</code></pre><h3 id="11-CSRF功能"><a href="#11-CSRF功能" class="headerlink" title="11. CSRF功能"></a>11. CSRF功能</h3><p>跨域请求伪造(英语 : Cross-site request forgery),也被称为one-clickattack或者session riding,通常缩写为CSRF或者XSRF,是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。跟跨网站脚本(XSS)相比,XSS利用的是用户对指定网站的信任，CSRF利用的是网站对用户网页浏览器的信任。</p><p>跨域请求攻击，简单的说，是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作(如发邮件，发消息，甚至财产操作如转账和购买商品)。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去运行。这利用了Web中用户身份验证的一个漏洞 : <strong>==简单的身份验证只能保证请求发自某个用户的浏览器,却不能保证请求本身是用户自愿发出的。==</strong></p><p>从Spring Security 4.0 开始，默认情况下会开启CSRF保护，以防止CSRF攻击应用程序，Spring Security CSRF 会针对PATCH,POST,PUT和DELETE方法进行防护。</p><p>Spring Security 实现CSRF的原理 :</p><ul><li>生成csrfToken保存到HttpSession或者Cookie中.</li></ul><p>案例 :</p><p>在登录页面添加一个隐藏域 :</p><pre><code>&lt;input type=&quot;hidden&quot; th:if=&quot;${_csrf}!=null&quot; th:value=&quot;${_csrf.token}&quot; name=&quot;_csrf&quot;/&gt;
+</code></pre><p>关闭安全配置的类中的csrf :</p><pre><code>//http.csrf().disable();
+</code></pre><p>添加依赖</p><pre class="line-numbers language-lang-xml"><code class="language-lang-xml">
+<dependency>
+    <groupid>org.thymeleaf.extras</groupid>
+    <artifactid>thymeleaf-extras-springsecurity5</artifactid>
+</dependency>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p></p></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a href="http://twitter.com/home?status=https://kayleh.top/SpringSecurity/%20Kayleh%20SpringSecurity" target="_blank" rel="noopener" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/spring-and-jwt/" title="Spring and Jwt"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: Spring and Jwt</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/improve-robustness-(2)/" title="Improve Robustness (2)">다음 포스트: Improve Robustness (2)&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname="kayleh",disqus_identifier="SpringSecurity/",disqus_title="SpringSecurity",disqus_url="https://kayleh.top/SpringSecurity/";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}()</script><script id="dsq-count-scr" src="//kayleh.disqus.com/count.js" async></script></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2021&nbsp;<a target="_blank" href="https://kayleh.top" rel="noopener noreferrer">Kayleh</a></p><span>visitors:<span id="busuanzi_value_site_pv"></span></span></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script><script src="/js/dao.js"></script><script src="https://cdn.jsdelivr.net/gh/kayleh/cdn2/busuanzi/busuanzi.pure.mini.js"></script><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></body></html>

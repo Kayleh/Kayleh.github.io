@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kayleh.top/note/</loc>
+    <lastmod>2021-05-31</lastmod>
+  </url>  <url>
     <loc>https://kayleh.top/mybatis-%E7%BC%93%E5%AD%98/</loc>
     <lastmod>2021-05-29</lastmod>
   </url>  <url>
@@ -12,9 +15,6 @@
   </url>  <url>
     <loc>https://kayleh.top/spring-and-jwt/</loc>
     <lastmod>2021-05-27</lastmod>
-  </url>  <url>
-    <loc>https://kayleh.top/note/</loc>
-    <lastmod>2021-05-25</lastmod>
   </url>  <url>
     <loc>https://kayleh.top/SpringSecurity/</loc>
     <lastmod>2021-05-24</lastmod>

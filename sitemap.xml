@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kayleh.top/note/</loc>
+    
+    <lastmod>2021-05-31T16:33:14.922Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kayleh.top/mybatis-%E7%BC%93%E5%AD%98/</loc>
     
     <lastmod>2021-05-29T17:02:08.102Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://kayleh.top/spring-and-jwt/</loc>
     
     <lastmod>2021-05-27T07:14:10.581Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kayleh.top/note/</loc>
-    
-    <lastmod>2021-05-25T07:13:19.807Z</lastmod>
     
   </url>
   

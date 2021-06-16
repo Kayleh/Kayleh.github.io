@@ -1,90 +1,571 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>标签: math | Kayleh</title><meta name="description" content="Dreamaker"><meta name="author" content="Kayleh"><meta name="copyright" content="Kayleh"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/favicon.png"><link rel="canonical" href="https://kayleh.top/tags/math/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//hm.baidu.com"><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="preconnect" href="//zz.bdstatic.com"><meta name="google-site-verification" content="LQn0xwjfEU_V6CXCA0qAdwM4qRXtblIbfy5KuzEKaRg"><meta property="og:type" content="website"><meta property="og:title" content="标签: math"><meta property="og:url" content="https://kayleh.top/tags/math/"><meta property="og:site_name" content="Kayleh"><meta property="og:description" content="Dreamaker"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"><meta property="article:published_time" content="2021-06-13T10:33:00.971Z"><meta property="article:modified_time" content="2021-06-13T10:33:00.971Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null) {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
-  }
-}
-var activateLightMode = function () {
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null) {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
-  }
-}
-
-var getCookies = function (name) {
-  const value = `; ${document.cookie}`
-  const parts = value.split(`; ${name}=`)
-  if (parts.length === 2) return parts.pop().split(';').shift()
-}
-
-var autoChangeMode = '1'
-var t = getCookies('theme')
-if (autoChangeMode === '1') {
-  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-  if (t === undefined) {
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport) {
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour <= 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
-    }
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-      if (Cookies.get('theme') === undefined) {
-        e.matches ? activateDarkMode() : activateLightMode()
+<!DOCTYPE html><html lang="zh-CN"><head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.3"><meta charset="utf-8"><meta name="robots" content="noindex,follow"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>标签：math - Kayleh</title><link rel="alternate" href="/atom.xml" title="Kayleh"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml"><meta name="theme-color" content="#ffffff"><meta name="google-site-verification" content="LQn0xwjfEU_V6CXCA0qAdwM4qRXtblIbfy5KuzEKaRg"><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png"><link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico"><link rel="stylesheet" href="/css/first.css"><link rel="stylesheet" href="/css/style.css" media="print" onload='this.media="all",this.onload=null'><noscript><link rel="stylesheet" href="/css/style.css"></noscript><script id="loadcss"></script><script>!function(e,t,o,c,i,a,n){e.DaoVoiceObject=i,e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=+new Date,a=t.createElement(o),n=t.getElementsByTagName(o)[0],a.async=1,a.src=c,a.charset="utf-8",n.parentNode.insertBefore(a,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/38b1c911.js","daovoice"),daovoice("init",{app_id:"38b1c911"}),daovoice("update")</script></head><body><header id="l_header" class="l_header auto shadow blur" style="opacity:0"><div class="container"><div id="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list"><li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"><a class="title flat-box" target="_self" href="/"><img no-lazy class="logo" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png"> <i class="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></i></a><div class="menu navigation"><ul class="nav-list-h m-pc"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fas fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h m-phone"><li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li></ul></div></div></div></header><div id="l_body"><div id="l_cover"><div id="half" class="cover-wrapper dock"><div id="cover-backstretch"></div><div class="cover-body"><div class="top"><p class="title">Kayleh</p><p class="subtitle">"Dreamaker"</p></div><div class="bottom"><div class="menu navigation"><div class="list-h"><a href="/" id="home"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg"><p>Home</p></a><a href="https://kayleh.top/" target="_blank" rel="noopener" id="https:kaylehtop"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg"><p>More</p></a><a href="/archives/" id="archives"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg"><p>所有</p></a><a href="/about" id="about"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg"><p>我?</p></a><a href="/friends/" id="friends"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg"><p>友人帐</p></a><a href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg"><p>Email</p></a></div></div></div></div><div id="scroll-down" style="display:none"><i class="fa fa-chevron-down scroll-down-effects"></i></div></div></div><div id="safearea"><div class="body-wrapper" id="pjax-container"><div class="l_main"><section class="post-list"><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">微分方程</a></h2><div class="md">微分方程1601913199716 定义：1601913450223 微分方程的阶：导数的最高阶数 二阶： 1601913485819" style="zoom:50%; 通解独立常数的个数=阶数，比如二阶的最终的解里有c1，c2两个独立的常数 特解如果常数都确定的解叫特解 初始条件解题过程一般把初始条件代入到通解里，确定常数的值，得到的就是特解 一阶微分方程可分离变量 分离变量，同时积分 ...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-10-05</time></div><div><a class="readmore" href="/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E7%BA%A7%E6%95%B0/">级数</a></h2><div class="md">无穷级数等比数列 1601790764370 1601790914893 例题 1601791340789 1601791680034 1601792414977 1601793241870 调和级数 调和级数是发散的 1601793542661 性质1601793732086 1601793936645 相反则未必 1601794096106 敛散性不变 如果级数收敛，通项是趋于0的...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-10-04</time></div><div><a class="readmore" href="/%E7%BA%A7%E6%95%B0/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/">二重积分</a></h2><div class="md">概念体积 几何含义1601621561773 性质1601621872570 1601622019111 1601622207780 1601622538512 1601622624030 直角坐标系的计算1601628194665 1601628177270 1601628338192 1601628391367 例题： x型是从左到右走 上边的函数写成上限，下边的函数写成下限 1601...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-10-02</time></div><div><a class="readmore" href="/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E5%81%8F%E5%AF%BC%E6%95%B0/">偏导数</a></h2><div class="md">在某点偏导的定义1601445508700 1601445566320 对y求导时，是把x看作常数，对y求导 对x求导时，是把y看作常数，对x求导 1601445908951 1601483632915 1601484198275 多元函数可导不连续1601484542681 例题： 1601485323277 几何意义1601486051149 二阶偏导数和混合偏导1601486294...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-09-30</time></div><div><a class="readmore" href="/%E5%81%8F%E5%AF%BC%E6%95%B0/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0/">多元函数</a></h2><div class="md">空间解析几何1601354294435 两点之间距离 1601354442692 1601354799490 平面方程1601354842773 球面方程1601354949365 1601355067816 z是正的表示求的上半部分，负的表示下半部分。 旋转抛物面： 1601355316536 双曲抛物面： 1601355447432 多元函数邻域 开集：所有的点都是内点 16013984...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-09-28</time></div><div><a class="readmore" href="/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86/">广义积分和瑕积分</a></h2><div class="md">广义积分1601302982305 无穷限积分①上限是无穷的，就对b求导 1601303240702 如果极限存在，就是收敛的，如果不存在，就是发散的。 ②下限是无穷的，就对a求导 1601303277989 ③上下限都是无穷 1601303420141 结合①和②来求。 例题：1601303693780 广义的牛顿-莱布尼茨公式 1601303809560 总结：1601303899003...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-09-28</time></div><div><a class="readmore" href="/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E5%AE%9A%E7%A7%AF%E5%88%86/">定积分</a></h2><div class="md">定积分性质 插入分点，区间内取任意值，求任意值的函数值，$△x_n$小区间的长度 拉姆达是最大的区间 1601053742391 定义$f(x)$在$[a,b]$有界，在$[a,b]$任意插入分点 分成n个区间，△x_1,△x_2….△x_n,任取一点 $\xi_i$ \int_a^b{f(x)dx}=\lim_{\lambda \to 0} \sum_{i=1}^n{f(\xi_i)△...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-09-26</time></div><div><a class="readmore" href="/%E5%AE%9A%E7%A7%AF%E5%88%86/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/">不定积分</a></h2><div class="md">$F’(x)=f(x)$ $F(x)$是$f(x)$的一个原函数. F(x)是f(x)的一个原函数，F(x)+c也是f(x)的原函数 $f(x)$是$F’(x)$的导函数. 知道$F’(x)$,$f(x)$只有唯一一个 知道$f(x)$,$F’(x)$可以有无穷多个 不定积分$f(x)$的原函数的全体 $\int_{}{}f(x) \text{d}x$ $\int_{}{}$: ...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-09-23</time></div><div><a class="readmore" href="/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E5%87%BD%E6%95%B0%E4%BD%9C%E5%9B%BE/">函数作图</a></h2><div class="md">渐近线 水平、垂直、斜 水平渐近线1600844913776 例题： 1600845192751 垂直渐近线1600845395147 1600845415524 斜渐近线1600845708818 例题： 1600846462394 分子次数比分母高，取无穷 分子与分母次数一样，极限等于最高次的系数之比 微分法作图 “导数”1600847435593 例如： 1600850081188"></div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-09-23</time> <span class="dot"></span> <a class="category-link" href="/categories/%E9%AB%98%E6%95%B0/">高数</a></div><div><a class="readmore" href="/%E5%87%BD%E6%95%B0%E4%BD%9C%E5%9B%BE/">阅读全文</a></div></div></div></div><div class="post-wrapper"><div class="post post-v3 white-box reveal shadow"><h2 class="article-title"><a href="/%E6%9E%81%E5%80%BC%E5%92%8C%E6%9C%80%E5%80%BC/">极值和最值</a></h2><div class="md">极值和最值定理：f(x)在$x_0$可导，且在$x_0$取极值。$f’(x_0)=0$ 证明： 1600782477572 1600782713732 1600782897701 求极值1600783007899 例题： 1600783465855 1600783793596 定理：1600784625648 f(x)的二阶导数也等于0的时候，不能判断： 1600784848861 1600...</div><div class="meta-v3" line_style="solid"><div><a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><time>2020-09-20</time></div><div><a class="readmore" href="/%E6%9E%81%E5%80%BC%E5%92%8C%E6%9C%80%E5%80%BC/">阅读全文</a></div></div></div></div></section><br><div class="prev-next"><p class="current">1 / 2</p><a class="next" rel="next" href="/tags/math/page/2/"><section class="post next white-box shadow">&nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></section></a></div></div><aside class="l_side"><section class="widget blogger shadow desktop mobile"><div class="content"><a class="avatar flat-box rectangle" href="/about/"><img no-lazy src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></a><div class="text"><p>“没人比我更懂暴力算法”</p><p><span id="jinrishici-sentence">Kayleh</span></p><script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script></div><div class="social-wrapper"><a href="https://github.com/Kayleh" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://stackoverflow.com/users/14150803/kayleh" class="social fab fa-stack-overflow flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://www.linkedin.com/in/jinqing-yao-97a750186/" class="social fab fa-linkedin flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://instagram.com/kayleh" class="social fab fa-instagram flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://weibo.com/5737136689/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" class="social fab fa-weibo flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://twitter.com/y40jinqing" class="social fab fa-twitter flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://www.youtube.com/channel/UC60fbKqc9kjOom-o76OID_A?view_as=subscriber" class="social fab fa-youtube flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://www.facebook.com/kayleh.yao.7" class="social fab fa-facebook flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" class="social fab fa-zhihu flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="mailto:kaylehisdied@gmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div></div></section><section class="widget tagcloud shadow desktop mobile"><header><a href="/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a></header><div class="content"><a href="/tags/C/" style="font-size:21.27px;color:#686868">C</a> <a href="/tags/Concurrency/" style="font-size:16.73px;color:#868686">Concurrency</a> <a href="/tags/DesignPatterns/" style="font-size:24px;color:#555">DesignPatterns</a> <a href="/tags/DistributedMicroservices/" style="font-size:21.27px;color:#686868">DistributedMicroservices</a> <a href="/tags/Interview/" style="font-size:23.09px;color:#5b5b5b">Interview</a> <a href="/tags/JVM/" style="font-size:17.64px;color:grey">JVM</a> <a href="/tags/Operating-Systems/" style="font-size:14px;color:#999">Operating Systems</a> <a href="/tags/about/" style="font-size:14px;color:#999">about</a> <a href="/tags/ad/" style="font-size:14px;color:#999">ad</a> <a href="/tags/algorithm/" style="font-size:22.18px;color:#616161">algorithm</a> <a href="/tags/computer/" style="font-size:14px;color:#999">computer</a> <a href="/tags/docker/" style="font-size:14px;color:#999">docker</a> <a href="/tags/frame/" style="font-size:20.36px;color:#6e6e6e">frame</a> <a href="/tags/front/" style="font-size:15.82px;color:#8d8d8d">front</a> <a href="/tags/interview/" style="font-size:14px;color:#999">interview</a> <a href="/tags/io/" style="font-size:14px;color:#999">io</a> <a href="/tags/java/" style="font-size:14px;color:#999">java</a> <a href="/tags/jvm/" style="font-size:14px;color:#999">jvm</a> <a href="/tags/linux/" style="font-size:15.82px;color:#8d8d8d">linux</a> <a href="/tags/maintain/" style="font-size:14px;color:#999">maintain</a> <a href="/tags/math/" style="font-size:22.18px;color:#616161">math</a> <a href="/tags/middleware/" style="font-size:14.91px;color:#939393">middleware</a> <a href="/tags/network/" style="font-size:19.45px;color:#747474">network</a> <a href="/tags/project/" style="font-size:20.36px;color:#6e6e6e">project</a> <a href="/tags/resume/" style="font-size:14px;color:#999">resume</a> <a href="/tags/security/" style="font-size:17.64px;color:grey">security</a> <a href="/tags/sql/" style="font-size:14.91px;color:#939393">sql</a> <a href="/tags/test/" style="font-size:18.55px;color:#7a7a7a">test</a></div></section><section class="widget shadow desktop mobile"><header><i class="fas fa-award fa-fw" aria-hidden="true"></i><span class="name">站点信息</span></header><div class="content"><div class="webinfo"><div class="webinfo-item"><div>文章数目：</div><div>190 篇</div></div><div class="webinfo-item"><div>已运行时间：</div><div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div></div><script>var BirthDay=new Date(new Date("2020/01/01")),today=new Date,timeold=today.getTime()-BirthDay.getTime(),daysold=Math.floor(timeold/864e5);document.getElementById("webinfo-runtime-count").innerHTML=daysold+" 天"</script><div class="webinfo-item"><div>本站总字数：</div><div>347.7k 字</div></div><div class="webinfo-item"><div>本站访客数：</div><div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div></div><div class="webinfo-item"><div>本站总访问量：</div><div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div></div><div class="webinfo-item"><div>最后活动时间：</div><div id="last-update" style="display:none">Wed Jun 16 2021 13:05:29 GMT+0800 (GMT+08:00)</div><div id="last-update-show">2021-06-16 日</div></div><script>function timeago(e){var t=(new Date).getTime()-e;if(!(t<0)){var n,a,s,g,r=t/6e4,o=t/36e5,u=t/864e5,l=t/6048e5,d=t/2592e6;return result=1<=d&&d<=3?" "+parseInt(d)+" 月前":1<=l&&l<=3?" "+parseInt(l)+" 周前":1<=u&&u<=6?" "+parseInt(u)+" 天前":1<=o&&o<=23?" "+parseInt(o)+" 小时前":1<=r&&r<=59?" "+parseInt(r)+" 分钟前":0<=t&&t<=6e4?"刚刚":((n=new Date).setTime(e),a=n.getFullYear(),s=n.getMonth()+1<10?"0"+(n.getMonth()+1):n.getMonth()+1,g=n.getDate()<10?"0"+n.getDate():n.getDate(),n.getHours(),n.getHours(),n.getMinutes(),n.getMinutes(),n.getSeconds(),n.getSeconds(),a+"-"+s+"-"+g),result}}var lastUpDate=document.getElementById("last-update").innerHTML;try{document.getElementById("last-update-show").innerHTML=timeago(new Date(lastUpDate))}catch(e){document.getElementById("last-update-show").innerHTML="2021-06-16 日"}</script></div></div></section><section class="widget grid shadow desktop mobile"><header><a href="https://github.com/kayleh" target="_blank" rel="noopener"><i class="fas fa-headset fa-fw" aria-hidden="true"></i><span class="name">联系开发者</span></a></header><div class="content"><div class="grid navigation fixed"><a class="flat-box" title="/null" href="/null" id="null"><i class="fas fa-bug fa-fw" aria-hidden="true"></i> 反馈BUG </a><a class="flat-box" title="/null" href="/null" id="null"><i class="fas fa-question-circle fa-fw" aria-hidden="true"></i> 疑问求助 </a><a class="flat-box" title="/null" href="/null" id="null"><i class="fas fa-lightbulb fa-fw" aria-hidden="true"></i> 提个建议</a></div></div></section><section class="widget qrcode shadow desktop mobile"><div class="content article-entry"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/wechatpay.jpg" height="180px"> <img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/alipay.jpg" height="180px"></div></section></aside><script>window.pdata={},pdata.ispage=!1,pdata.postTitle="",pdata.commentPath="",pdata.commentPlaceholder="";var l_header=document.getElementById("l_header");l_header.classList.remove("show")</script></div><script src="/live2d-widget/autoload.js"></script><footer class="footer clearfix"><br><br><div class="aplayer-container"></div><br><div class="social-wrapper"><a href="https://github.com/Kayleh" class="social fas fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div></div><div class="copyright"><p><a href="/">Copyright © 2019-2021 Kayleh</a></p></div><div style="text-align:center"><a href="https://info.flagcounter.com/cDh1" target="_blank" rel="noopener"><img src="https://s11.flagcounter.com/count/cDh1/bg_49B1F5/txt_000000/border_49B1F5/columns_4/maxflags_16/viewers_0/labels_1/pageviews_0/flags_0/percent_1/" alt="Flag Counter" border="0"></a></div></footer><a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a></div></div><div><script>function loadScript(e,t){var n=document.getElementsByTagName("head")[0]||document.documentElement,o=document.createElement("script");o.setAttribute("type","text/javascript"),t&&(o.onload=t),o.setAttribute("src",e),n.appendChild(o)}window.volantis={},window.volantis.loadcss=document.getElementById("loadcss");var loadCSS=function(e,t,n,o){var d,i=window.document,r=i.createElement("link"),a=t||(d=(i.body||i.getElementsByTagName("head")[0]).childNodes)[d.length-1],s=i.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&r.setAttribute(l,o[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){return i.body?t():void setTimeout(function(){e(t)})}(function(){a.parentNode.insertBefore(r,t?a:a.nextSibling)});var c=function(e){for(var t=r.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};function u(){r.addEventListener&&r.removeEventListener("load",u),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",u),(r.onloadcssdefined=c)(u),r}</script><script>loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css",window.volantis.loadcss)</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script>function pjax_fancybox(){$(".md .gallery").find("img").each(function(){var a=document.createElement("a");$(a).attr("class","fancybox"),$(a).attr("pjax-fancybox",""),$(a).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(a).attr("href",$(this).attr("data-original")),$(a).attr("data-fancybox","images");var t="";$(this).attr("alt")&&($(a).attr("data-caption",$(this).attr("alt")),t=$(this).attr("alt"));var n=document.createElement("div");$(n).addClass("fancybox"),$(this).wrap(n);var e=document.createElement("span");$(e).addClass("image-caption"),$(e).text(t),$(this).after(e),$(this).wrap(a)}),$(".md .gallery").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}function SCload_fancybox(){0!=$(".md .gallery").find("img").length&&(loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),setTimeout(function(){loadScript("https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js",pjax_fancybox)},1))}$(function(){SCload_fancybox()})</script><script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript">var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];function shuffle(t){for(var n=t.length;n--;){var i=Math.floor(Math.random()*n),l=t[i];t[i]=t[n],t[n]=l}}function Pjax_backstretch(){$.backstretch(imgs,{duration:"5000",fade:"1500"})}shuffle(imgs),loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)</script><div id="rightmenu-wrapper"><ul class="list-v rightmenu" id="rightmenu-content"><li class="option"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-text" onclick='document.execCommand("copy")'><i class="fa fa-copy fa-fw"></i>复制文本</a><hr id="hr-text"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-href"><i class="fa fa-link fa-fw"></i>复制链接</a> <a class="vlts-menu opt fix-cursor-default" id="menu-open-href"><i class="fa fa-external-link-square-alt fa-fw"></i>在新标签页打开</a><hr id="hr-href"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-src"><i class="fa fa-image fa-fw"></i>复制图片地址</a><hr id="hr-src"></li><li class="navigation"><a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa fa-arrow-left fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa fa-arrow-right fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa fa-redo fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" href="/"><i class="fa fa-home fa-fw"></i></a></li><hr><li><a class="vlts-menu fix-cursor-default" href="/about" id="about"><i class="fa fa-question fa-fw"></i> 我</a></li><hr><li><a class="vlts-menu fix-cursor-default" onclick='document.execCommand("print")'><i class="fa fa-print fa-fw"></i> 打印页面</a></li><hr><li><a class="vlts-menu fix-cursor-default" href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><i class="fa fa-fan fa-spin fa-fw"></i> 联系</a></li></ul></div><script>window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
       }
-    })
-  } else if (t === 'light') activateLightMode()
-  else activateDarkMode()
-} else if (autoChangeMode === '2') {
-  now = new Date()
-  hour = now.getHours()
-  isNight = hour <= 6 || hour >= 18
-  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode()
-} else {
-  if (t === 'dark') activateDarkMode()
-  else if (t === 'light') activateLightMode()
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7457165067653912",enable_page_level_ads:"true"})</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?24f5d46da7ff42ae73ccea4ea7114e1b";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG={root:"/",hexoversion:"4.2.0",algolia:void 0,localSearch:void 0,translate:void 0,noticeOutdate:{limitDay:10,position:"top",messagePrev:"It has been",messageNext:"days since the last update, the content of the article may be outdated."},copy:{success:"复制成功",error:"复制错误",noSupport:"浏览器不支持"},bookmark:{message_prev:"按",message_next:"键将本页加入书签"},runtime_unit:"天",runtime:!1,copyright:void 0,ClickShowText:void 0,medium_zoom:!0,fancybox:!1,Snackbar:void 0,justifiedGallery:{js:"https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js",css:"https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css"},baiduPush:!0,highlightCopy:!0,highlightLang:!0,isPhotoFigcaption:!1,islazyload:!0,isanchor:!0}</script><script id="config_change">var GLOBAL_CONFIG_SITE={isPost:!1,isHome:!1,isHighlightShrink:!1,isSidebar:!1,postUpdate:"2021-06-13 18:33:00"}</script><noscript><style>#nav{opacity:1}.justified-gallery img{opacity:1}</style></noscript><meta http-equiv="Content-Type" content="text/html;charset=gb2312"><meta name="sogou_site_verification" content="7uatD8cGg5"><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Kayleh" type="application/atom+xml"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg" onerror='onerror=null,src="/img/friend_404.gif"' alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">190</div></a></div></div><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">28</div></a></div></div><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://home.kayleh.top/" target="_blank" rel="noopener"><i class="fa-fw fa fa-reply"></i><span> return</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="https://shell.kayleh.top/" target="_blank" rel="noopener"><i class="fa-fw fa fa-bolt"></i><span> shell</span></a></div><div class="menus_item"><a class="site-page" href="/en"><i class="fa-fw fa fa-info-circle"></i><span> English</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about"><i class="fa-fw fa fa-id-card"></i><span> 我?</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="mailto:kaylehisdied@gmail.com"><i class="fa-fw fa fa-envelope"></i><span> mail</span></a></li><li><a class="site-page" href="/2020/06/11/RESUME/"><i class="fa-fw fa fa-envelope-open"></i><span> resume</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="not-index-bg" id="page-header" style="background-image:url(https://cdn.jsdelivr.net/gh/kayleh/cdn/img/indexbg.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Kayleh</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://home.kayleh.top/" target="_blank" rel="noopener"><i class="fa-fw fa fa-reply"></i><span> return</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="https://shell.kayleh.top/" target="_blank" rel="noopener"><i class="fa-fw fa fa-bolt"></i><span> shell</span></a></div><div class="menus_item"><a class="site-page" href="/en"><i class="fa-fw fa fa-info-circle"></i><span> English</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about"><i class="fa-fw fa fa-id-card"></i><span> 我?</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="mailto:kaylehisdied@gmail.com"><i class="fa-fw fa fa-envelope"></i><span> mail</span></a></li><li><a class="site-page" href="/2020/06/11/RESUME/"><i class="fa-fw fa fa-envelope-open"></i><span> resume</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="page_site-info"><h1 id="site_title">math</h1></div></header><main class="layout_page" id="content-inner"><div id="tag"><div class="article-sort-title">标签 - math</div><div class="article-sort"><div class="article-sort-item year">2020</div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="微分方程"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/index3.jpg" alt="微分方程" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-10-05T06:55:36.000Z" title="发表于 2020-10-05 14:55:36">2020-10-05</time></div><a class="article-sort-item-title" href="/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="微分方程">微分方程</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E7%BA%A7%E6%95%B0/" title="级数"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn2/yasina.jpg" alt="级数" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-10-03T21:24:36.000Z" title="发表于 2020-10-04 05:24:36">2020-10-04</time></div><a class="article-sort-item-title" href="/%E7%BA%A7%E6%95%B0/" title="级数">级数</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/" title="二重积分"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/index3.jpg" alt="二重积分" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-10-01T22:43:15.000Z" title="发表于 2020-10-02 06:43:15">2020-10-02</time></div><a class="article-sort-item-title" href="/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/" title="二重积分">二重积分</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E5%81%8F%E5%AF%BC%E6%95%B0/" title="偏导数"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn2/yasina.jpg" alt="偏导数" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-29T21:38:35.000Z" title="发表于 2020-09-30 05:38:35">2020-09-30</time></div><a class="article-sort-item-title" href="/%E5%81%8F%E5%AF%BC%E6%95%B0/" title="偏导数">偏导数</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0/" title="多元函数"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/index5.jpg" alt="多元函数" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-28T09:10:02.000Z" title="发表于 2020-09-28 17:10:02">2020-09-28</time></div><a class="article-sort-item-title" href="/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0/" title="多元函数">多元函数</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86/" title="广义积分和瑕积分"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/index5.jpg" alt="广义积分和瑕积分" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-28T05:58:19.000Z" title="发表于 2020-09-28 13:58:19">2020-09-28</time></div><a class="article-sort-item-title" href="/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86/" title="广义积分和瑕积分">广义积分和瑕积分</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E5%AE%9A%E7%A7%AF%E5%88%86/" title="定积分"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn2/yasina.jpg" alt="定积分" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-26T04:38:49.000Z" title="发表于 2020-09-26 12:38:49">2020-09-26</time></div><a class="article-sort-item-title" href="/%E5%AE%9A%E7%A7%AF%E5%88%86/" title="定积分">定积分</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/" title="不定积分"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/index5.jpg" alt="不定积分" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-23T01:06:12.000Z" title="发表于 2020-09-23 09:06:12">2020-09-23</time></div><a class="article-sort-item-title" href="/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/" title="不定积分">不定积分</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E5%87%BD%E6%95%B0%E4%BD%9C%E5%9B%BE/" title="函数作图"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn2/index10.jpg" alt="函数作图" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-22T21:41:02.000Z" title="发表于 2020-09-23 05:41:02">2020-09-23</time></div><a class="article-sort-item-title" href="/%E5%87%BD%E6%95%B0%E4%BD%9C%E5%9B%BE/" title="函数作图">函数作图</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/%E6%9E%81%E5%80%BC%E5%92%8C%E6%9C%80%E5%80%BC/" title="极值和最值"><img data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/index5.jpg" alt="极值和最值" onerror='this.onerror=null,this.src="/img/404.jpg"'></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-20T07:04:06.000Z" title="发表于 2020-09-20 15:04:06">2020-09-20</time></div><a class="article-sort-item-title" href="/%E6%9E%81%E5%80%BC%E5%92%8C%E6%9C%80%E5%80%BC/" title="极值和最值">极值和最值</a></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/tags/math/page/2/">2</a><a class="extend next" rel="next" href="/tags/math/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg" onerror='this.onerror=null,this.src="/img/friend_404.gif"' alt="avatar"><div class="author-info__name">Kayleh</div><div class="author-info__description">Dreamaker</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">190</div></a></div><div class="card-info-data-item is-center"><a href="/tags"><div class="headline">标签</div><div class="length_num">28</div></a></div><div class="card-info-data-item is-center"><a href="/categories"><div class="headline">分类</div><div class="length_num">6</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://github.com/kayleh" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Kayleh" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:kaylehisdied@gmail.com" target="_blank" title="google"><i class="fab fa-google"></i></a><a class="social-icon" href="https://stackoverflow.com/users/14150803/kayleh" target="_blank" title="stackoverflow"><i class="fab fa-stack-overflow"></i></a><a class="social-icon" href="https://www.linkedin.com/in/jinqing-yao-97a750186/" target="_blank" title="linkedin"><i class="fab fa-linkedin"></i></a><a class="social-icon" href="https://instagram.com/kayleh" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="https://weibo.com/5737136689/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank" title="weibo"><i class="fab fa-weibo"></i></a><a class="social-icon" href="https://twitter.com/y40jinqing" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://www.youtube.com/channel/UC60fbKqc9kjOom-o76OID_A?view_as=subscriber" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a><a class="social-icon" href="https://www.facebook.com/kayleh.yao.7" target="_blank" title="facebook"><i class="fab fa-facebook"></i></a><a class="social-icon" href="https://www.zhihu.com/people/ni-hui-gan-xie-wo-de" target="_blank" title="zhihu"><i class="fab fa-zhihu"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">找工作ing...</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a class="aside-post-cover" href="/Java%E5%88%A9%E7%94%A8Sping%E6%A1%86%E6%9E%B6%E7%BC%96%E5%86%99RPC%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/" title="Sping框架编写RPC远程过程调用服务"><img class="aside-post-bg" data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/index2.jpg" onerror='this.onerror=null,this.src="/img/404.jpg"' alt="Sping框架编写RPC远程过程调用服务"></a><div class="aside-post-info"><a class="aside-post-title" href="/Java%E5%88%A9%E7%94%A8Sping%E6%A1%86%E6%9E%B6%E7%BC%96%E5%86%99RPC%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/" title="Sping框架编写RPC远程过程调用服务">Sping框架编写RPC远程过程调用服务</a><time class="aside-post_meta post-meta-updated" datetime="2021-06-09T16:08:24.999Z" title="更新于 2021-06-10 00:08:24">2021-06-10</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/note/" title="todoList"><img class="aside-post-bg" data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/index2.jpg" onerror='this.onerror=null,this.src="/img/404.jpg"' alt="todoList"></a><div class="aside-post-info"><a class="aside-post-title" href="/note/" title="todoList">todoList</a><time class="aside-post_meta post-meta-updated" datetime="2021-06-06T06:20:27.225Z" title="更新于 2021-06-06 14:20:27">2021-06-06</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/mybatis-%E7%BC%93%E5%AD%98/" title="mybatis-cache"><img class="aside-post-bg" data-lazy-src="https://cdn.jsdelivr.net/gh/kayleh/cdn2/index10.jpg" onerror='this.onerror=null,this.src="/img/404.jpg"' alt="mybatis-cache"></a><div class="aside-post-info"><a class="aside-post-title" href="/mybatis-%E7%BC%93%E5%AD%98/" title="mybatis-cache">mybatis-cache</a><time class="aside-post_meta post-meta-updated" datetime="2021-05-29T17:02:08.102Z" title="更新于 2021-05-30 01:02:08">2021-05-30</time></div></div></div></div></div><div class="card-widget card-ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7457165067653912" data-ad-slot="7430854225" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size:21px;color:#a1c5bc">C</a><a href="/tags/Concurrency/" style="font-size:19px;color:#261585">Concurrency</a><a href="/tags/DesignPatterns/" style="font-size:19px;color:#2f3101">DesignPatterns</a><a href="/tags/DistributedMicroservices/" style="font-size:17px;color:#951f34">DistributedMicroservices</a><a href="/tags/Interview/" style="font-size:21px;color:#7b2a1a">Interview</a><a href="/tags/JVM/" style="font-size:19px;color:#12c31d">JVM</a><a href="/tags/Operating-Systems/" style="font-size:19px;color:#82aca7">Operating Systems</a><a href="/tags/about/" style="font-size:20px;color:#0618a3">about</a><a href="/tags/ad/" style="font-size:21px;color:#7fa524">ad</a><a href="/tags/algorithm/" style="font-size:21px;color:#61169d">algorithm</a><a href="/tags/computer/" style="font-size:16px;color:#3b483d">computer</a><a href="/tags/docker/" style="font-size:20px;color:#45408d">docker</a><a href="/tags/frame/" style="font-size:18px;color:#bd2854">frame</a><a href="/tags/front/" style="font-size:19px;color:#5eb98b">front</a><a href="/tags/interview/" style="font-size:19px;color:#9ab0a4">interview</a><a href="/tags/io/" style="font-size:19px;color:#b7a9be">io</a><a href="/tags/java/" style="font-size:17px;color:#8e5467">java</a><a href="/tags/jvm/" style="font-size:19px;color:#bb1285">jvm</a><a href="/tags/linux/" style="font-size:16px;color:#a56655">linux</a><a href="/tags/maintain/" style="font-size:21px;color:#b9006c">maintain</a><a href="/tags/math/" style="font-size:21px;color:#b07a86">math</a><a href="/tags/middleware/" style="font-size:18px;color:#c82d84">middleware</a><a href="/tags/network/" style="font-size:20px;color:#298a8f">network</a><a href="/tags/project/" style="font-size:17px;color:#b24f6d">project</a><a href="/tags/resume/" style="font-size:21px;color:#6a7c4a">resume</a><a href="/tags/security/" style="font-size:16px;color:#888430">security</a><a href="/tags/sql/" style="font-size:19px;color:#1f59b6">sql</a><a href="/tags/test/" style="font-size:19px;color:#63c5bd">test</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">12</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives"><span>查看更多</span><i class="fas fa-angle-right"></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">190</div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">304.3k</div></div><div class="webinfo-item"><div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image:url(https://cdn.jsdelivr.net/gh/kayleh/cdn/img/indexbg.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Kayleh</div><div class="footer_custom_text">all rights reserved.</div></div><div style="text-align:center"><a href="https://info.flagcounter.com/cDh1" target="_blank" rel="noopener"><img src="https://s11.flagcounter.com/count/cDh1/bg_49B1F5/txt_000000/border_49B1F5/columns_4/maxflags_16/viewers_0/labels_1/pageviews_0/flags_0/percent_1/" alt="Flag Counter" border="0"></a></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful=!0,POWERMODE.shake=!0,document.body.addEventListener("input",POWERMODE)</script><script src="/js/third-party/click_heart.js" async></script><script>!function(t,e,o,c,n,i,a){t.DaoVoiceObject=n,t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},t[n].l=+new Date,i=e.createElement(o),a=e.getElementsByTagName(o)[0],i.async=1,i.src=c,i.charset="utf-8",a.parentNode.insertBefore(i,a)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/38b1c911.js","daovoice")</script><script>var isChatBtn = false
-daovoice('init', {
-  app_id: '38b1c911',},{
-  launcher: { 
-     disableLauncherIcon: isChatBtn // 悬浮 ICON 是否显示
-  },
-});
-daovoice('update');
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
 
-if (isChatBtn) {
-  var chatBtnFn = () => {
-    var chatBtn = document.getElementById("chat_btn")
-    chatBtn.addEventListener("click", function(){
-      daovoice('show')
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if ('' == true && ('help,hr,print,hr,contributors'||[]).includes('music')) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');</script><script>window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:5,hoverDelay:25}</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script src="/js/valine.js"></script><script>var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz",
+      appKey: "OBHyEdMVsi8FSFA0aqJNh4HE",
+      pageSize: '5',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });</script><script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script><script src="/js/app.js"></script><script src="/js/search.js"></script><script>const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);</script><script defer>const LCCounter = {
+    app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz',
+    app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://blog.kayleh.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://blog.kayleh.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://blog.kayleh.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });</script><script>function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
     });
   }
-  chatBtnFn()
-} else {
-  if (false) {
-    function chatBtnHide () {
-      daovoice('update', {},{
-        launcher: { 
-        disableLauncherIcon: true // 悬浮 ICON 是否显示
-        },
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);</script><!-- more --><script async src="https://widget.daovoice.io/widget/38b1c911.js" charset="utf-8"></script><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7457165067653912" data-ad-slot="9837525717"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
       });
-    }
-    function chatBtnShow () {
-      daovoice('update', {},{
-        launcher: { 
-        disableLauncherIcon: false // 悬浮 ICON 是否显示
-        },
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
       });
-    }
-  }
-}</script></div><script src="/live2d-widget/autoload.js"></script></body></html>
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        
+        
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });</script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({log:!1,pluginJsPath:"lib/",pluginModelPath:"assets/",pluginRootPath:"live2dw/",tagMode:!1})</script></body></html>

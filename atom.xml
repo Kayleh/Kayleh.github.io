@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://kayleh.top/"/>
+  <link href="https://blog.kayleh.top/"/>
   <updated>2021-06-09T16:08:24.999Z</updated>
-  <id>https://kayleh.top/</id>
+  <id>https://blog.kayleh.top/</id>
   
   <author>
     <name>Kayleh</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Sping框架编写RPC远程过程调用服务</title>
-    <link href="https://kayleh.top/Java%E5%88%A9%E7%94%A8Sping%E6%A1%86%E6%9E%B6%E7%BC%96%E5%86%99RPC%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/"/>
-    <id>https://kayleh.top/Java%E5%88%A9%E7%94%A8Sping%E6%A1%86%E6%9E%B6%E7%BC%96%E5%86%99RPC%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/</id>
+    <link href="https://blog.kayleh.top/Java%E5%88%A9%E7%94%A8Sping%E6%A1%86%E6%9E%B6%E7%BC%96%E5%86%99RPC%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://blog.kayleh.top/Java%E5%88%A9%E7%94%A8Sping%E6%A1%86%E6%9E%B6%E7%BC%96%E5%86%99RPC%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/</id>
     <published>2021-06-06T16:20:50.000Z</published>
     <updated>2021-06-09T16:08:24.999Z</updated>
     
@@ -42,8 +42,8 @@
   
   <entry>
     <title>mybatis-cache</title>
-    <link href="https://kayleh.top/mybatis-%E7%BC%93%E5%AD%98/"/>
-    <id>https://kayleh.top/mybatis-%E7%BC%93%E5%AD%98/</id>
+    <link href="https://blog.kayleh.top/mybatis-%E7%BC%93%E5%AD%98/"/>
+    <id>https://blog.kayleh.top/mybatis-%E7%BC%93%E5%AD%98/</id>
     <published>2021-05-29T15:49:32.000Z</published>
     <updated>2021-05-29T17:02:08.102Z</updated>
     
@@ -61,14 +61,14 @@
     
     
     
-      <category term="frame" scheme="https://kayleh.top/tags/frame/"/>
+      <category term="frame" scheme="https://blog.kayleh.top/tags/frame/"/>
     
   </entry>
   
   <entry>
     <title>Head First Netty</title>
-    <link href="https://kayleh.top/head-first-netty/"/>
-    <id>https://kayleh.top/head-first-netty/</id>
+    <link href="https://blog.kayleh.top/head-first-netty/"/>
+    <id>https://blog.kayleh.top/head-first-netty/</id>
     <published>2021-05-25T22:26:52.000Z</published>
     <updated>2021-05-27T07:14:13.493Z</updated>
     
@@ -78,7 +78,7 @@
       
         
         
-          &lt;h1 id=&quot;思维导图&quot;&gt;&lt;a href=&quot;#思维导图&quot; class=&quot;headerlink&quot; title=&quot;思维导图&quot;&gt;&lt;/a&gt;思维导图&lt;/h1&gt;&lt;p&gt;&lt;img src= &quot;/img/loading.gif&quot;
+          &lt;h1 id=&quot;思维导图&quot;&gt;&lt;a href=&quot;#思维导图&quot; class=&quot;headerlink&quot; title=&quot;思维导图&quot;&gt;&lt;/a&gt;思维导图&lt;/h1&gt;&lt;div class=&quot;img-wrap&quot;&gt;&lt;div class=&quot;img-bg&quot;&gt;&lt;img class=&quot;img&quot;
         
       
     
@@ -90,8 +90,8 @@
   
   <entry>
     <title>Spring and Jwt</title>
-    <link href="https://kayleh.top/spring-and-jwt/"/>
-    <id>https://kayleh.top/spring-and-jwt/</id>
+    <link href="https://blog.kayleh.top/spring-and-jwt/"/>
+    <id>https://blog.kayleh.top/spring-and-jwt/</id>
     <published>2021-05-23T19:04:21.000Z</published>
     <updated>2021-05-27T07:14:10.581Z</updated>
     
@@ -113,8 +113,8 @@
   
   <entry>
     <title>SpringSecurity</title>
-    <link href="https://kayleh.top/SpringSecurity/"/>
-    <id>https://kayleh.top/SpringSecurity/</id>
+    <link href="https://blog.kayleh.top/SpringSecurity/"/>
+    <id>https://blog.kayleh.top/SpringSecurity/</id>
     <published>2021-05-20T19:56:08.000Z</published>
     <updated>2021-05-24T03:01:04.772Z</updated>
     
@@ -136,8 +136,8 @@
   
   <entry>
     <title>Improve Robustness (2)</title>
-    <link href="https://kayleh.top/improve-robustness-(2)/"/>
-    <id>https://kayleh.top/improve-robustness-(2)/</id>
+    <link href="https://blog.kayleh.top/improve-robustness-(2)/"/>
+    <id>https://blog.kayleh.top/improve-robustness-(2)/</id>
     <published>2021-05-12T18:49:03.000Z</published>
     <updated>2021-05-27T07:14:21.286Z</updated>
     
@@ -159,8 +159,8 @@
   
   <entry>
     <title>Improve Robustness (1)</title>
-    <link href="https://kayleh.top/improve-robustness-(1)/"/>
-    <id>https://kayleh.top/improve-robustness-(1)/</id>
+    <link href="https://blog.kayleh.top/improve-robustness-(1)/"/>
+    <id>https://blog.kayleh.top/improve-robustness-(1)/</id>
     <published>2021-05-12T07:44:09.000Z</published>
     <updated>2021-05-12T15:51:22.995Z</updated>
     
@@ -183,8 +183,8 @@
   
   <entry>
     <title>Proxy</title>
-    <link href="https://kayleh.top/proxy/"/>
-    <id>https://kayleh.top/proxy/</id>
+    <link href="https://blog.kayleh.top/proxy/"/>
+    <id>https://blog.kayleh.top/proxy/</id>
     <published>2021-04-25T05:37:43.000Z</published>
     <updated>2021-04-25T13:44:45.051Z</updated>
     
@@ -204,14 +204,14 @@
     
     
     
-      <category term="java" scheme="https://kayleh.top/tags/java/"/>
+      <category term="java" scheme="https://blog.kayleh.top/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>todoList</title>
-    <link href="https://kayleh.top/note/"/>
-    <id>https://kayleh.top/note/</id>
+    <link href="https://blog.kayleh.top/note/"/>
+    <id>https://blog.kayleh.top/note/</id>
     <published>2021-04-23T07:53:25.000Z</published>
     <updated>2021-06-06T06:20:27.225Z</updated>
     
@@ -233,8 +233,8 @@
   
   <entry>
     <title>Thread Pool</title>
-    <link href="https://kayleh.top/Thread-pool/"/>
-    <id>https://kayleh.top/Thread-pool/</id>
+    <link href="https://blog.kayleh.top/Thread-pool/"/>
+    <id>https://blog.kayleh.top/Thread-pool/</id>
     <published>2021-04-20T08:37:35.000Z</published>
     <updated>2021-04-20T16:51:26.692Z</updated>
     
@@ -245,8 +245,10 @@
         
         
           &lt;p&gt;异步执行的代码&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-lang-java&quot;&gt;&lt;code class=&quot;language-lang-java&quot;&gt;new Thread(r).start();
-&lt;span
+&lt;pre&gt;&lt;code class=&quot;lang-java&quot;&gt;new Thread(r).start();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;统一的工具类，定一个接口来实现。&lt;/p&gt;
+&lt;pre&gt;&lt;code
         
       
     
@@ -254,14 +256,14 @@
     
     
     
-      <category term="Concurrency" scheme="https://kayleh.top/tags/Concurrency/"/>
+      <category term="Concurrency" scheme="https://blog.kayleh.top/tags/Concurrency/"/>
     
   </entry>
   
   <entry>
     <title>a Lock Based on ReentrantLock</title>
-    <link href="https://kayleh.top/Implement-a-lock-based-on-ReentrantLock/"/>
-    <id>https://kayleh.top/Implement-a-lock-based-on-ReentrantLock/</id>
+    <link href="https://blog.kayleh.top/Implement-a-lock-based-on-ReentrantLock/"/>
+    <id>https://blog.kayleh.top/Implement-a-lock-based-on-ReentrantLock/</id>
     <published>2021-04-19T08:59:25.000Z</published>
     <updated>2021-04-19T17:26:04.313Z</updated>
     
@@ -279,14 +281,14 @@
     
     
     
-      <category term="Concurrency" scheme="https://kayleh.top/tags/Concurrency/"/>
+      <category term="Concurrency" scheme="https://blog.kayleh.top/tags/Concurrency/"/>
     
   </entry>
   
   <entry>
     <title>CAS &amp; AQS</title>
-    <link href="https://kayleh.top/CAS-and-AQS/"/>
-    <id>https://kayleh.top/CAS-and-AQS/</id>
+    <link href="https://blog.kayleh.top/CAS-and-AQS/"/>
+    <id>https://blog.kayleh.top/CAS-and-AQS/</id>
     <published>2021-04-18T09:43:22.000Z</published>
     <updated>2021-04-19T17:00:07.119Z</updated>
     
@@ -304,14 +306,14 @@
     
     
     
-      <category term="Concurrency" scheme="https://kayleh.top/tags/Concurrency/"/>
+      <category term="Concurrency" scheme="https://blog.kayleh.top/tags/Concurrency/"/>
     
   </entry>
   
   <entry>
     <title>Head First Map</title>
-    <link href="https://kayleh.top/head-first-hashmap/"/>
-    <id>https://kayleh.top/head-first-hashmap/</id>
+    <link href="https://blog.kayleh.top/head-first-hashmap/"/>
+    <id>https://blog.kayleh.top/head-first-hashmap/</id>
     <published>2021-04-17T09:31:12.000Z</published>
     <updated>2021-04-17T18:29:25.128Z</updated>
     
@@ -329,14 +331,14 @@
     
     
     
-      <category term="algorithm" scheme="https://kayleh.top/tags/algorithm/"/>
+      <category term="algorithm" scheme="https://blog.kayleh.top/tags/algorithm/"/>
     
   </entry>
   
   <entry>
     <title>Spring Cyclic Ependencies</title>
-    <link href="https://kayleh.top/Spring-cyclic-ependencies/"/>
-    <id>https://kayleh.top/Spring-cyclic-ependencies/</id>
+    <link href="https://blog.kayleh.top/Spring-cyclic-ependencies/"/>
+    <id>https://blog.kayleh.top/Spring-cyclic-ependencies/</id>
     <published>2021-04-16T07:36:37.000Z</published>
     <updated>2021-04-16T16:00:21.003Z</updated>
     
@@ -354,14 +356,14 @@
     
     
     
-      <category term="frame" scheme="https://kayleh.top/tags/frame/"/>
+      <category term="frame" scheme="https://blog.kayleh.top/tags/frame/"/>
     
   </entry>
   
   <entry>
     <title>Head First Nginx</title>
-    <link href="https://kayleh.top/Head-First-nginx/"/>
-    <id>https://kayleh.top/Head-First-nginx/</id>
+    <link href="https://blog.kayleh.top/Head-First-nginx/"/>
+    <id>https://blog.kayleh.top/Head-First-nginx/</id>
     <published>2021-04-14T21:55:17.000Z</published>
     <updated>2021-04-15T15:12:41.680Z</updated>
     
@@ -379,14 +381,14 @@
     
     
     
-      <category term="middleware" scheme="https://kayleh.top/tags/middleware/"/>
+      <category term="middleware" scheme="https://blog.kayleh.top/tags/middleware/"/>
     
   </entry>
   
   <entry>
     <title>Web Test Combat</title>
-    <link href="https://kayleh.top/web-test-combat/"/>
-    <id>https://kayleh.top/web-test-combat/</id>
+    <link href="https://blog.kayleh.top/web-test-combat/"/>
+    <id>https://blog.kayleh.top/web-test-combat/</id>
     <published>2021-04-13T08:50:01.000Z</published>
     <updated>2021-04-14T11:05:35.806Z</updated>
     
@@ -405,14 +407,14 @@
     
     
     
-      <category term="test" scheme="https://kayleh.top/tags/test/"/>
+      <category term="test" scheme="https://blog.kayleh.top/tags/test/"/>
     
   </entry>
   
   <entry>
     <title>Reflected XSS Vulnerability in Font Download Website</title>
-    <link href="https://kayleh.top/Reflected-XSS-Vulnerability-in-Font-Download-Website/"/>
-    <id>https://kayleh.top/Reflected-XSS-Vulnerability-in-Font-Download-Website/</id>
+    <link href="https://blog.kayleh.top/Reflected-XSS-Vulnerability-in-Font-Download-Website/"/>
+    <id>https://blog.kayleh.top/Reflected-XSS-Vulnerability-in-Font-Download-Website/</id>
     <published>2021-04-10T10:26:29.000Z</published>
     <updated>2021-04-15T15:11:27.382Z</updated>
     
@@ -431,14 +433,14 @@
     
     
     
-      <category term="security" scheme="https://kayleh.top/tags/security/"/>
+      <category term="security" scheme="https://blog.kayleh.top/tags/security/"/>
     
   </entry>
   
   <entry>
     <title>SQL injection</title>
-    <link href="https://kayleh.top/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/"/>
-    <id>https://kayleh.top/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</id>
+    <link href="https://blog.kayleh.top/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/"/>
+    <id>https://blog.kayleh.top/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</id>
     <published>2021-04-05T17:48:59.000Z</published>
     <updated>2021-04-15T15:08:14.772Z</updated>
     
@@ -457,14 +459,14 @@
     
     
     
-      <category term="security" scheme="https://kayleh.top/tags/security/"/>
+      <category term="security" scheme="https://blog.kayleh.top/tags/security/"/>
     
   </entry>
   
   <entry>
     <title>Front end security</title>
-    <link href="https://kayleh.top/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/"/>
-    <id>https://kayleh.top/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</id>
+    <link href="https://blog.kayleh.top/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/"/>
+    <id>https://blog.kayleh.top/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</id>
     <published>2021-04-04T07:56:49.000Z</published>
     <updated>2021-04-11T17:11:28.754Z</updated>
     
@@ -485,14 +487,14 @@
     
     
     
-      <category term="security" scheme="https://kayleh.top/tags/security/"/>
+      <category term="security" scheme="https://blog.kayleh.top/tags/security/"/>
     
   </entry>
   
   <entry>
     <title>What happened from entering the URL to displaying the page?</title>
-    <link href="https://kayleh.top/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88/"/>
-    <id>https://kayleh.top/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88/</id>
+    <link href="https://blog.kayleh.top/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88/"/>
+    <id>https://blog.kayleh.top/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88/</id>
     <published>2021-03-30T09:22:51.000Z</published>
     <updated>2021-04-15T15:10:07.693Z</updated>
     
@@ -510,7 +512,7 @@
     
     
     
-      <category term="network" scheme="https://kayleh.top/tags/network/"/>
+      <category term="network" scheme="https://blog.kayleh.top/tags/network/"/>
     
   </entry>
   

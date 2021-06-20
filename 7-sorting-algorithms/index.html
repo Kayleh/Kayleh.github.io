@@ -1,0 +1,901 @@
+<!DOCTYPE html><html lang="zh-CN"><head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.3"><meta charset="utf-8"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>7 sorting algorithms - Kayleh</title><meta name="keywords" content="algorithm"><meta name="description" content="7种排序算法冒泡排序"><link rel="alternate" href="/atom.xml" title="Kayleh"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml"><meta name="theme-color" content="#ffffff"><meta name="google-site-verification" content="LQn0xwjfEU_V6CXCA0qAdwM4qRXtblIbfy5KuzEKaRg"><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png"><link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico"><link rel="stylesheet" href="/css/first.css"><link rel="stylesheet" href="/css/style.css" media="print" onload='this.media="all",this.onload=null'><noscript><link rel="stylesheet" href="/css/style.css"></noscript><script id="loadcss"></script><script>!function(e,t,o,c,i,a,n){e.DaoVoiceObject=i,e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=+new Date,a=t.createElement(o),n=t.getElementsByTagName(o)[0],a.async=1,a.src=c,a.charset="utf-8",n.parentNode.insertBefore(a,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/38b1c911.js","daovoice"),daovoice("init",{app_id:"38b1c911"}),daovoice("update")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script></head><body><header id="l_header" class="l_header auto shadow blur" style="opacity:0"><div class="container"><div id="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list"><li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"><a class="title flat-box" target="_self" href="/"><img no-lazy class="logo" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png"> <i class="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></i></a><div class="menu navigation"><ul class="nav-list-h m-pc"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fas fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h m-phone"><li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li></ul></div></div></div></header><div id="l_body"><div id="l_cover"><div id="half" class="cover-wrapper post dock"><div id="cover-backstretch"></div><div class="cover-body"><div class="top"><p class="title">Kayleh</p><p class="subtitle">"最怕一生碌碌无为,还安慰自己平凡可贵"</p></div><div class="bottom"><div class="menu navigation"><div class="list-h"><a href="/" id="home"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg"><p>Home</p></a><a href="https://kayleh.top/" target="_blank" rel="noopener" id="https:kaylehtop"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg"><p>More</p></a><a href="/archives/" id="archives"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg"><p>所有</p></a><a href="/about" id="about"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg"><p>我?</p></a><a href="/friends/" id="friends"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg"><p>友人帐</p></a><a href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg"><p>Email</p></a></div></div></div></div><div id="scroll-down" style="display:none"><i class="fa fa-chevron-down scroll-down-effects"></i></div></div></div><div id="safearea"><div class="body-wrapper" id="pjax-container"><div class="l_main"><article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost"><div class="article-meta" id="top"><h1 class="title">7 sorting algorithms</h1><div class="new-meta-box"><div class="new-meta-item author"><a class="author" href="/" rel="nofollow"><img no-lazy src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"><p>Kayleh</p></a></div><div class="new-meta-item date"><a class="notlink"><i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i><p>发布于：2020年5月17日</p></a></div><div class="new-meta-item browse leancloud"><a class="notlink"><div id="lc-pv" data-title="7 sorting algorithms" data-path="/7-sorting-algorithms/"><i class="fas fa-eye fa-fw" aria-hidden="true"></i> <span id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次浏览</div></a></div></div></div><h1 id="7种排序算法"><a href="#7种排序算法" class="headerlink" title="7种排序算法"></a>7种排序算法</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><a id="more"></a><ul><li><code>冒泡排序（BubbleSorting)</code>的基本思想是：通过对待排序序列从前向后（从下标较小的元素开始）,依次比较相邻元素的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部。</li></ul><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/7种排序算法/1.png" alt="img"></div><span class="image-caption">img</span></div><p>代码实现</p><pre><code class="lang-java">// 将前面的冒泡排序算法，封装成一个方法
+    public static void bubbleSort(int[] arr) {
+        // 冒泡排序 的时间复杂度 O(n^2), 自己写出
+        int temp = 0; // 临时变量
+        boolean flag = false; // 标识变量，表示是否进行过交换
+        for (int i = 0; i &lt; arr.length - 1; i++) {
+            for (int j = 0; j &lt; arr.length - 1 - i; j++) {
+                // 如果前面的数比后面的数大，则交换
+                if (arr[j] &gt; arr[j + 1]) {
+                    flag = true;
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+            //System.out.println(&quot;第&quot; + (i + 1) + &quot;趟排序后的数组&quot;);
+            //System.out.println(Arrays.toString(arr));
+
+            if (!flag) {
+                // 在一趟排序中，一次交换都没有发生过
+                break;
+            } else {
+                flag = false;
+                // 重置flag!!!, 进行下次判断
+            }
+        }
+</code></pre><hr><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><ul><li><code>插入排序（insertSorting)</code></li><li>基本思想是：把n个待排序的元素看成为一个有序表和一个无序表，开始时有序表中只包含一个元素，无序表中包含有n-1个元素，排序过程中每次从无序表中取出第一个元素，把它的排序码依次与有序表元素的排序码进行比较，将它插入到有序表中的适当位置，使之成为新的有序表。</li><li></li></ul><p>代码实现</p><pre><code class="lang-java"> public static void insertSort(int attr[]) {
+        //从第2个数开始遍历 【1】
+        for (int i = 1; i &lt; attr.length - 1; i++) {
+            // 等待插入的数的前一个数下标
+            int insertIndex = i - 1;
+            //等待插入的数的值
+            int insertValue = attr[i];
+            // insertIndex不能越界
+            // insertValue待插入到前面有序列表的数
+            // insertValue待插入的数 小于 前1个数
+            while (insertIndex &gt;= 0 &amp;&amp; attr[insertIndex] &gt; insertValue) {
+                // 交换
+                //  attr[insertIndex]后移
+                attr[insertIndex + 1] = attr[insertIndex];
+                insertIndex--;
+            }
+            //当退出while循环时，说明插入的位置找到, insertIndex + 1
+            if (insertIndex + 1 != i) {
+                attr[insertIndex + 1] = insertValue;
+            }
+        }
+
+    }
+</code></pre><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><ul><li><p><code>选择排序（selectSorting)</code>的基本思想是：</p></li><li><p>第一次从arr[0]~arr[n-1]中选取最小值，与arr[0]交换，第二次从arr[1]~arr[n-1]中选取最小值，与arr[1]交换，第三次从arr[2]~arr[n-1]中选取最小值，与arr[2]交换，…，第i次从arr[i-1]~arr[n-1]中选取最小值，与arr[i-1]交换，…,第n-1次从arr[n-2]~arr[n-1]中选取最小值，与arr[n-2]交换，总共通过n-1次，得到一个按排序码从小到大排列的有序序列。</p></li></ul><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/7种排序算法/2.png" alt="img"></div><span class="image-caption">img</span></div><p>代码实现</p><pre><code class="lang-java">public class selectSort {
+    public static void selectSort(int attr[]) {
+        for (int i = 0; i &lt; attr.length - 1; i++) {
+            //假设第一个数就是最小值
+            int minindex = 0;
+            int min = attr[0];
+            //从1开始遍历
+            for (int j = 1; j &lt; attr.length - 1; j++) {
+                //如果第0个数（最小值）比第1个数 大
+                //说明假设的第0个并不是最小值
+                if (min &gt; attr[j]) {
+                    min = attr[j];//重置最小值
+                    minindex = j;//重置最小值索引
+                }
+            }
+            //如果最小值的索引不是0，就发生交换
+            if (minindex != i) {
+                //把第0个数（不是最小值）赋值到 第1个数（较小值）的位置
+                attr[minindex] = attr[i];
+                //把较小值赋值给第1个数
+                attr[i] = min;
+            }
+        }
+    }
+</code></pre><h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><ul><li><p><code>冒泡排序（BubbleSorting)</code>的基本思想是：</p><p>把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止</p></li></ul><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/7种排序算法/3.png" alt="img"></div><span class="image-caption">img</span></div><p>代码实现</p><pre><code class="lang-java">        //移动法
+        //增量gap，并逐步的缩小增量
+        for (int gap = attr.length/2;gap&gt;0;gap/=2){
+            //从第gap个元素开始，逐个对其所在的组进行直接插入排序
+            for (int i =gap;i&lt;attr.length;i++){
+                // 当前位置
+                int j = i;
+
+                //当前位置的值赋值给temp
+                int temp = attr[j];
+                // 如果 当前组的gap个步长前面的数大于当前位置的数
+                if(attr[j]&lt;attr[j-gap]){
+                    while (j-gap &gt;= 0 &amp;&amp; temp &lt; attr[j-gap]){
+                        //移动
+                        attr[j] = attr[j-gap];
+                        j -= gap;
+                    }
+                    //当退出while循环后，就给temp找到插入的位置
+                    attr[j] = temp;
+                }
+            }
+        }
+</code></pre><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><ul><li><p><code>快速排序（QuickSorting)</code></p><p>是对冒泡排序的一种改进。基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列</p></li></ul><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/7种排序算法/4.png" alt="img"></div><span class="image-caption">img</span></div><p>代码实现</p><pre><code class="lang-java">public static void quickSort(int[] arr,int left, int right) {
+        int l = left; //左下标
+        int r = right; //右下标
+        //pivot 中轴值
+        int pivot = arr[(left + right) / 2];
+        int temp = 0; //临时变量，作为交换时使用
+        //while循环的目的是让比pivot 值小放到左边
+        //比pivot 值大放到右边
+        while( l &lt; r) {
+            //在pivot的左边一直找,找到大于等于pivot值,才退出
+            while( arr[l] &lt; pivot) {
+                l += 1;
+            }
+            //在pivot的右边一直找,找到小于等于pivot值,才退出
+            while(arr[r] &gt; pivot) {
+                r -= 1;
+            }
+            //如果l &gt;= r说明pivot 的左右两的值，已经按照左边全部是
+            //小于等于pivot值，右边全部是大于等于pivot值
+            if( l &gt;= r) {
+                break;
+            }
+            //交换
+            temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+
+            //如果交换完后，发现这个arr[l] == pivot值 相等 r--， 前移
+            if(arr[l] == pivot) {
+                r -= 1;
+            }
+            //如果交换完后，发现这个arr[r] == pivot值 相等 l++， 后移
+            if(arr[r] == pivot) {
+                l += 1;
+            }
+        }
+
+        // 如果 l == r, 必须l++, r--, 否则为出现栈溢出
+        if (l == r) {
+            l += 1;
+            r -= 1;
+        }
+        //向左递归
+        if(left &lt; r) {
+            quickSort(arr, left, r);
+        }
+        //向右递归
+        if(right &gt; l) {
+            quickSort(arr, l, right);
+        }
+    }
+</code></pre><h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><ul><li><p><code>归并排序（mergeSorting)</code>的基本思想是：</p><p>是利用归并的思想实现的排序方法，该算法采用经典的分治（divide-and-conquer）策略（分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶段则将分的阶段得到的各答案”修补”在一起，即分而治之)。</p></li></ul><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/7种排序算法/5.png" alt="img"></div><span class="image-caption">img</span></div><p>代码实现</p><pre><code class="lang-java"> //分+合方法
+    public static void mergeSort(int[] arr, int left, int right, int[] temp) {
+        if(left &lt; right) {
+            int mid = (left + right) / 2; //中间索引
+            //向左递归进行分解
+            mergeSort(arr, left, mid, temp);
+            //向右递归进行分解
+            mergeSort(arr, mid + 1, right, temp);
+            //合并
+            merge(arr, left, mid, right, temp);
+        }
+    }
+
+    //合并的方法
+    /**
+     *
+     * @param arr 排序的原始数组
+     * @param left 左边有序序列的初始索引
+     * @param mid 中间索引
+     * @param right 右边索引
+     * @param temp 做中转的数组
+     */
+    public static void merge(int[] arr, int left, int mid, int right, int[] temp) {
+        int i = left; // 初始化i, 左边有序序列的初始索引
+        int j = mid + 1; //初始化j, 右边有序序列的初始索引
+        int t = 0; // 指向temp数组的当前索引
+        //(一)
+        //先把左右两边(有序)的数据按照规则填充到temp数组
+        //直到左右两边的有序序列，有一边处理完毕为止
+        while (i &lt;= mid &amp;&amp; j &lt;= right) {//继续
+            //如果左边的有序序列的当前元素，小于等于右边有序序列的当前元素
+            //即将左边的当前元素，填充到 temp数组
+            //然后 t++, i++
+            if(arr[i] &lt;= arr[j]) {
+                temp[t] = arr[i];
+                t += 1;
+                i += 1;
+            } else { //反之,将右边有序序列的当前元素，填充到temp数组
+                temp[t] = arr[j];
+                t += 1;
+                j += 1;
+            }
+        }
+        //(二)
+        //把有剩余数据的一边的数据依次全部填充到temp
+        while( i &lt;= mid) { //左边的有序序列还有剩余的元素，就全部填充到temp
+            temp[t] = arr[i];
+            t += 1;
+            i += 1;
+        }
+        while( j &lt;= right) { //右边的有序序列还有剩余的元素，就全部填充到temp
+            temp[t] = arr[j];
+            t += 1;
+            j += 1;
+        }
+        //(三)
+        //将temp数组的元素拷贝到arr
+        //注意，并不是每次都拷贝所有
+        t = 0;
+        int tempLeft = left; //
+        //第一次合并 tempLeft = 0 , right = 1 //  tempLeft = 2  right = 3 // tL=0 ri=3
+        //最后一次 tempLeft = 0  right = 7
+        while(tempLeft &lt;= right) {
+            arr[tempLeft] = temp[t];
+            t += 1;
+            tempLeft += 1;
+        }
+
+    }
+</code></pre><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><ul><li><p><code>基数排序（mergeSorting)</code>的基本思想是：</p><p>将所有待比较数值统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。</p></li></ul><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/7种排序算法/6.png" alt="img"></div><span class="image-caption">img</span></div><p>代码实现</p><pre><code class="lang-java">
+    //基数排序方法
+    public static void radixSort(int[] arr) {
+
+        //根据前面的推导过程，我们可以得到最终的基数排序代码
+
+        //1. 得到数组中最大的数的位数
+        int max = arr[0]; //假设第一数就是最大数
+        for(int i = 1; i &lt; arr.length; i++) {
+            if (arr[i] &gt; max) {
+                max = arr[i];
+            }
+        }
+        //得到最大数是几位数
+        int maxLength = (max + &quot;&quot;).length();
+
+        //定义一个二维数组，表示10个桶, 每个桶就是一个一维数组
+        //说明
+        //1. 二维数组包含10个一维数组
+        //2. 为了防止在放入数的时候，数据溢出，则每个一维数组(桶)，大小定为arr.length
+        //3. 名明确，基数排序是使用空间换时间的经典算法
+        int[][] bucket = new int[10][arr.length];
+
+        //为了记录每个桶中，实际存放了多少个数据,我们定义一个一维数组来记录各个桶的每次放入的数据个数
+        //可以这里理解
+        //比如：bucketElementCounts[0] , 记录的就是  bucket[0] 桶的放入数据个数
+        int[] bucketElementCounts = new int[10];
+
+        //这里使用循环将代码处理
+
+        for(int i = 0 , n = 1; i &lt; maxLength; i++, n *= 10) {
+            //(针对每个元素的对应位进行排序处理)， 第一次是个位，第二次是十位，第三次是百位..
+            for(int j = 0; j &lt; arr.length; j++) {
+                //取出每个元素的对应位的值
+                int digitOfElement = arr[j] / n % 10;
+                //放入到对应的桶中
+                bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];
+                bucketElementCounts[digitOfElement]++;
+            }
+            //按照这个桶的顺序(一维数组的下标依次取出数据，放入原来数组)
+            int index = 0;
+            //遍历每一桶，并将桶中是数据，放入到原数组
+            for(int k = 0; k &lt; bucketElementCounts.length; k++) {
+                //如果桶中，有数据，我们才放入到原数组
+                if(bucketElementCounts[k] != 0) {
+                    //循环该桶即第k个桶(即第k个一维数组), 放入
+                    for(int l = 0; l &lt; bucketElementCounts[k]; l++) {
+                        //取出元素放入到arr
+                        arr[index++] = bucket[k][l];
+                    }
+                }
+                //第i+1轮处理后，需要将每个 bucketElementCounts[k] = 0 ！！！！
+                bucketElementCounts[k] = 0;
+            }
+
+        }
+
+    }
+</code></pre><p>各个算法的复杂度</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/7种排序算法/7.png" alt="img"></div><span class="image-caption">img</span></div><div class="footer"><div class="copyright"><blockquote><p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p><p>本文永久链接是：<a href="https://blog.kayleh.top/7-sorting-algorithms/">https://blog.kayleh.top/7-sorting-algorithms/</a></p></blockquote></div><div class="donate"><div class="imgs"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/wechatpay.jpg"> <img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/alipay.jpg"></div></div></div><div class="article-meta" id="bottom"><div class="new-meta-box"><div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-12T01:11:28+08:00"><a class="notlink"><i class="fas fa-edit fa-fw" aria-hidden="true"></i><p>更新于：2021年4月12日</p></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/algorithm/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>algorithm</p></a></div><div class="new-meta-item share -mob-share-list"><div class="-mob-share-list share-body"><a class="-mob-share-qq" rel="external nofollow noopener noreferrer noopener" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.kayleh.top/7-sorting-algorithms/&title=7 sorting algorithms - Kayleh&summary=7种排序算法冒泡排序" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png"> </a><a class="-mob-share-qzone" rel="external nofollow noopener noreferrer noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.kayleh.top/7-sorting-algorithms/&title=7 sorting algorithms - Kayleh&summary=7种排序算法冒泡排序" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png"> </a><a class="-mob-share-weibo" rel="external nofollow noopener noreferrer noopener" href="http://service.weibo.com/share/share.php?url=https://blog.kayleh.top/7-sorting-algorithms/&title=7 sorting algorithms - Kayleh&summary=7种排序算法冒泡排序" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png"></a><div class="hoverbox"><a class="share"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png"></a><div class="target"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC/UlEQVR42u3awXHDMAwEQPffdNJAMuIBUCLYy5/HNkWuPpgDXl/Wj+uFAAwYMGDAgFkD8yqu3/7/6wMPv5/eJ74PGDBgwIABA2YdzHEBdAGTfl+94NV5yvcBAwYMGDBgwKyFmT5Idb/0f2P3AQMGDBgwYMB8DEwKNhV0daHBgAEDBgwYMGCqwVS3gTd1HjBgwIABAwbM+8CkB0kHgaYbcNXzgQEDBgwYMGDeByZdaYH115/L9wEDBgwYMGDArIGZWmlBNxVkpQXd5T3AgAEDBgwYMGtgTg9WLfyqA0WnwVMaXMWVLxgwYMCAAQPmsTDpRtMF3lQA1W3UgQEDBgwYMGD2waQQ3YNVB4GqhWL8QsCAAQMGDBgw62C6G6YXSQu6buOvnOCBAQMGDBgwYNbATAVI3Qve1aC7LAjBgAEDBgwYMGtgpjeeCrbiC4Wf251IMGDAgAEDBsy/w3SDqDSw6gZdVdjy4BAYMGDAgAED5rEw1YKoOjh0d6Mt3fcyqAIDBgwYMGDAPB5mqsDqBlZdyKvVTvDAgAEDBgwYMI+BSQeBqo20qaDq7kYcGDBgwIABA2YPTLVQiwOg4cCqCgAGDBgwYMCAeT+Y7iBPOtAzNZiUvrjLfcGAAQMGDBgwa2C6D6gCTwVS1QIwTvDAgAEDBgwYMI+HmbpAXFgVVzeYOi7wwIABAwYMGDDrYLoX+Gqu06Cs2ngrF3hgwIABAwYMmMfBnAZPU4NEaUDVbQSCAQMGDBgwYN4PplrYdS9SbZRNFZxgwIABAwYMmL0w00FSCtANtqYKUDBgwIABAwbMPpipgZ3TwnCsMXZTIAYGDBgwYMCA2QdTLaimBonuKgzjFw0GDBgwYMCAWQtzWlilQVW1QOw22OIXDwYMGDBgwID5OJhuwTi1qgNHYMCAAQMGDJjPgyk3tsLvq7//t6AKDBgwYMCAAfPnMGnDrToIVH3O3UEWGDBgwIABA2YfzN2BUHegJx0gGmu4gQEDBgwYMGAeC2OBAQMGDBgwYJatby1eY6xtKHI5AAAAAElFTkSuQmCC"></div></div><a class="-mob-share-telegram" rel="external nofollow noopener noreferrer noopener" href="https://t.me/share/url?url=https://blog.kayleh.top/7-sorting-algorithms/&text=7 sorting algorithms - Kayleh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png"></a></div></div></div></div><div class="prev-next"><a class="prev" href="/heap-sort/"><p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>heap-sort</p><p class="content">堆排序 1.堆排序是利用堆这种数据结构而设计的一种算法，堆排序是一种选择排序，它的最坏，最好，平均复杂度均为O(nlogn)，它也是不稳定的排序。 2.堆是具有以下性质的完全二叉树：每个结点的值...</p></a><a class="next" href="/principles-of-computer-organization/"><p class="title">计算机组成原理<i class="fas fa-chevron-right" aria-hidden="true"></i></p><p class="content">计算机组成原理1.第一台电子计算机何时何地诞生？英文全称？1946年2月14日 美国宾夕法尼亚大学 ENIAC：电子数字积分计算机 Electronic(电子的) Numerical(数字的) ...</p></a></div></article><article class="post white-box reveal shadow" id="comments"><p ct><i class="fas fa-comments"></i> 评论</p><div id="valine_container" class="valine_thread"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div></article></div><aside class="l_side"><section class="widget toc-wrapper shadow desktop mobile" id="toc-div"><header><i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span></header><div class="content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#冒泡排序"><span class="toc-text">冒泡排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入排序"><span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择排序"><span class="toc-text">选择排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#希尔排序"><span class="toc-text">希尔排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速排序"><span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#归并排序"><span class="toc-text">归并排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基数排序"><span class="toc-text">基数排序</span></a></li></ol></div></section></aside><script>window.pdata={},pdata.ispage=!0,pdata.postTitle="7 sorting algorithms",pdata.commentPath="",pdata.commentPlaceholder="";var l_header=document.getElementById("l_header");l_header.classList.remove("show")</script></div><script src="/live2d-widget/autoload.js"></script><footer class="footer clearfix"><br><br><div class="aplayer-container"></div><br><div class="social-wrapper"><a href="https://github.com/Kayleh" class="social fas fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div></div><div class="copyright"><p><a href="/">Copyright © 2019-2021 Kayleh</a></p></div><div style="text-align:center"><a href="https://info.flagcounter.com/cDh1" target="_blank" rel="noopener"><img src="https://s11.flagcounter.com/count/cDh1/bg_49B1F5/txt_000000/border_49B1F5/columns_4/maxflags_16/viewers_0/labels_1/pageviews_0/flags_0/percent_1/" alt="Flag Counter" border="0"></a></div></footer><a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a></div></div><div><script>function loadScript(e,t){var n=document.getElementsByTagName("head")[0]||document.documentElement,o=document.createElement("script");o.setAttribute("type","text/javascript"),t&&(o.onload=t),o.setAttribute("src",e),n.appendChild(o)}window.volantis={},window.volantis.loadcss=document.getElementById("loadcss");var loadCSS=function(e,t,n,o){var d,i=window.document,r=i.createElement("link"),a=t||(d=(i.body||i.getElementsByTagName("head")[0]).childNodes)[d.length-1],s=i.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&r.setAttribute(l,o[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){return i.body?t():void setTimeout(function(){e(t)})}(function(){a.parentNode.insertBefore(r,t?a:a.nextSibling)});var c=function(e){for(var t=r.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};function u(){r.addEventListener&&r.removeEventListener("load",u),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",u),(r.onloadcssdefined=c)(u),r}</script><script>loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css",window.volantis.loadcss)</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script>function pjax_fancybox(){$(".md .gallery").find("img").each(function(){var a=document.createElement("a");$(a).attr("class","fancybox"),$(a).attr("pjax-fancybox",""),$(a).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(a).attr("href",$(this).attr("data-original")),$(a).attr("data-fancybox","images");var t="";$(this).attr("alt")&&($(a).attr("data-caption",$(this).attr("alt")),t=$(this).attr("alt"));var n=document.createElement("div");$(n).addClass("fancybox"),$(this).wrap(n);var e=document.createElement("span");$(e).addClass("image-caption"),$(e).text(t),$(this).after(e),$(this).wrap(a)}),$(".md .gallery").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}function SCload_fancybox(){0!=$(".md .gallery").find("img").length&&(loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),setTimeout(function(){loadScript("https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js",pjax_fancybox)},1))}$(function(){SCload_fancybox()})</script><script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript">var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];function shuffle(t){for(var n=t.length;n--;){var i=Math.floor(Math.random()*n),l=t[i];t[i]=t[n],t[n]=l}}function Pjax_backstretch(){$.backstretch(imgs,{duration:"5000",fade:"1500"})}shuffle(imgs),loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)</script><div id="rightmenu-wrapper"><ul class="list-v rightmenu" id="rightmenu-content"><li class="option"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-text" onclick='document.execCommand("copy")'><i class="fa fa-copy fa-fw"></i>复制文本</a><hr id="hr-text"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-href"><i class="fa fa-link fa-fw"></i>复制链接</a> <a class="vlts-menu opt fix-cursor-default" id="menu-open-href"><i class="fa fa-external-link-square-alt fa-fw"></i>在新标签页打开</a><hr id="hr-href"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-src"><i class="fa fa-image fa-fw"></i>复制图片地址</a><hr id="hr-src"></li><li class="navigation"><a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa fa-arrow-left fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa fa-arrow-right fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa fa-redo fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" href="/"><i class="fa fa-home fa-fw"></i></a></li><hr><li><a class="vlts-menu fix-cursor-default" href="/about" id="about"><i class="fa fa-question fa-fw"></i> 我</a></li><hr><li><a class="vlts-menu fix-cursor-default" onclick='document.execCommand("print")'><i class="fa fa-print fa-fw"></i> 打印页面</a></li><hr><li><a class="vlts-menu fix-cursor-default" href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><i class="fa fa-fan fa-spin fa-fw"></i> 联系</a></li></ul></div><script>window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('true' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if ('' == true && ('help,hr,print,hr,contributors'||[]).includes('music')) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');</script><script>window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:5,hoverDelay:25}</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script><script>var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });</script><script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script><script type="text/javascript">function pjax_scrollrebeal(){ScrollReveal().reveal(".l_main .reveal",{distance:"32px",duration:"800",interval:"20",scale:"1",easing:"ease-out"})}$(function(){pjax_scrollrebeal()})</script><script src="/js/valine.js"></script><script>var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz",
+      appKey: "OBHyEdMVsi8FSFA0aqJNh4HE",
+      pageSize: '5',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });</script><script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script><script src="/js/app.js"></script><script src="/js/search.js"></script><script>const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);</script><script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script><script type="text/javascript">$(function(){Waves.attach(".flat-btn",["waves-button"]),Waves.attach(".float-btn",["waves-button","waves-float"]),Waves.attach(".float-btn-light",["waves-button","waves-float","waves-light"]),Waves.attach(".flat-box",["waves-block"]),Waves.attach(".float-box",["waves-block","waves-float"]),Waves.attach(".waves-image"),Waves.init()})</script><script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad()</script><script defer>const LCCounter = {
+    app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz',
+    app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://blog.kayleh.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://blog.kayleh.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://blog.kayleh.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });</script><script>function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);</script><!-- more --><script async src="https://widget.daovoice.io/widget/38b1c911.js" charset="utf-8"></script><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7457165067653912" data-ad-slot="9837525717"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+          pjax_scrollrebeal();
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });</script></div></body></html>

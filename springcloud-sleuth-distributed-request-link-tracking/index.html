@@ -1,0 +1,795 @@
+<!DOCTYPE html><html lang="zh-CN"><head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.3"><meta charset="utf-8"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>SpringCloud Sleuth分布式请求链路追踪 - Kayleh</title><meta name="keywords" content="DistributedMicroservices"><meta name="description" content="SpringCloud Sleuth分布式请求链路追踪"><link rel="alternate" href="/atom.xml" title="Kayleh"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml"><meta name="theme-color" content="#ffffff"><meta name="google-site-verification" content="LQn0xwjfEU_V6CXCA0qAdwM4qRXtblIbfy5KuzEKaRg"><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png"><link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico"><link rel="stylesheet" href="/css/first.css"><link rel="stylesheet" href="/css/style.css" media="print" onload='this.media="all",this.onload=null'><noscript><link rel="stylesheet" href="/css/style.css"></noscript><script id="loadcss"></script><script>!function(e,t,o,c,i,a,n){e.DaoVoiceObject=i,e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=+new Date,a=t.createElement(o),n=t.getElementsByTagName(o)[0],a.async=1,a.src=c,a.charset="utf-8",n.parentNode.insertBefore(a,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/38b1c911.js","daovoice"),daovoice("init",{app_id:"38b1c911"}),daovoice("update")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script></head><body><header id="l_header" class="l_header auto shadow blur" style="opacity:0"><div class="container"><div id="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list"><li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"><a class="title flat-box" target="_self" href="/"><img no-lazy class="logo" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png"> <i class="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></i></a><div class="menu navigation"><ul class="nav-list-h m-pc"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fas fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h m-phone"><li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li></ul></div></div></div></header><div id="l_body"><div id="l_cover"><div id="half" class="cover-wrapper post dock"><div id="cover-backstretch"></div><div class="cover-body"><div class="top"><p class="title">Kayleh</p><p class="subtitle">"最怕一生碌碌无为,还安慰自己平凡可贵"</p></div><div class="bottom"><div class="menu navigation"><div class="list-h"><a href="/" id="home"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg"><p>Home</p></a><a href="https://kayleh.top/" target="_blank" rel="noopener" id="https:kaylehtop"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg"><p>More</p></a><a href="/archives/" id="archives"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg"><p>所有</p></a><a href="/about" id="about"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg"><p>我?</p></a><a href="/friends/" id="friends"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg"><p>友人帐</p></a><a href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg"><p>Email</p></a></div></div></div></div><div id="scroll-down" style="display:none"><i class="fa fa-chevron-down scroll-down-effects"></i></div></div></div><div id="safearea"><div class="body-wrapper" id="pjax-container"><div class="l_main"><article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost"><div class="article-meta" id="top"><h1 class="title">SpringCloud Sleuth分布式请求链路追踪</h1><div class="new-meta-box"><div class="new-meta-item author"><a class="author" href="/" rel="nofollow"><img no-lazy src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"><p>Kayleh</p></a></div><div class="new-meta-item category"><a class="notlink"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i> <a class="category-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></a></div><div class="new-meta-item date"><a class="notlink"><i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i><p>发布于：2020年8月19日</p></a></div><div class="new-meta-item browse leancloud"><a class="notlink"><div id="lc-pv" data-title="SpringCloud Sleuth分布式请求链路追踪" data-path="/springcloud-sleuth-distributed-request-link-tracking/"><i class="fas fa-eye fa-fw" aria-hidden="true"></i> <span id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次浏览</div></a></div></div></div><p>SpringCloud Sleuth分布式请求链路追踪</p><a id="more"></a><p>为什么会出现这个技术？需要解决哪些问题？</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构8/0.png" alt="1597832055850"></div><span class="image-caption">1597832055850</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="/springcloud-sleuth-distributed-request-link-tracking/1.png" alt="1597832064671" style="zoom:50%"></div><span class="image-caption">1597832064671" style="zoom: 50%;</span></div><p>Spring Cloud Sleuth提供了一套完整的服务跟踪的解决方案</p><p>在分布式系统中提供追踪解决方案并且兼容支持了zipkin</p><p>解决</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构8/2.png" alt="1597832119213"></div><span class="image-caption">1597832119213</span></div><h2 id="zipkin"><a href="#zipkin" class="headerlink" title="zipkin"></a>zipkin</h2><p>下载</p><p>SpringCloud从F版起已不需要自己构建Zipkin server了，只需要调用jar包即可</p><p><a href="https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/" target="_blank" rel="noopener">https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/</a></p><p>zipkin-server-2.12.9.exec.jar</p><p><strong>运行jar</strong></p><p>java -jar zipkin-server-2.12.9-exec.jar</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构8/3.png" alt="1597832503297"></div><span class="image-caption">1597832503297</span></div><p>运行控制台</p><blockquote><p><a href="http://localhost:9411/zipkin/" target="_blank" rel="noopener">http://localhost:9411/zipkin/</a></p></blockquote><p>完整的调用链路</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构8/4.png" alt="1597835169702"></div><span class="image-caption">1597835169702</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构8/5.png" alt="1597835215535"></div><span class="image-caption">1597835215535</span></div><p>Trace:类似于树结构的Span集合，表示一条调用链路，存在唯一标识</p><p>span:表示调用链路来源，通俗的理解span就是一次请求信息</p><h2 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h2><p>cloud-provider-payment8001</p><p>pom</p><pre><code class="lang-xml"> &lt;!--包含了sleuth+zipkin--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre><p>yaml</p><pre><code class="lang-yaml">server:
+  port: 8001
+
+
+spring:
+  application:
+    name: cloud-payment-service
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+       #采样率值介于0到1之间，1则表示全部采集
+    probability: 1
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: 
+    username: root
+    password: 
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.kayleh.springcloud.entities
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+</code></pre><p>业务类OrderController</p><pre><code class="lang-java">package com.kayleh.springcloud.controller;
+
+import com.kayleh.springcloud.entities.CommonResult;
+import com.kayleh.springcloud.entities.Payment;
+import com.kayleh.springcloud.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+
+import javax.annotation.Resource;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+
+@RestController
+@Slf4j
+public class PaymentController
+{
+    @Resource
+    private PaymentService paymentService;
+
+    @Value(&quot;${server.port}&quot;)
+    private String serverPort;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
+
+    @PostMapping(value = &quot;/payment/create&quot;)
+    public CommonResult create(@RequestBody Payment payment)
+    {
+        int result = paymentService.create(payment);
+        log.info(&quot;*****插入结果：&quot;+result);
+
+        if(result &gt; 0)
+        {
+            return new CommonResult(200,&quot;插入数据库成功,serverPort: &quot;+serverPort,result);
+        }else{
+            return new CommonResult(444,&quot;插入数据库失败&quot;,null);
+        }
+    }
+
+    @GetMapping(value = &quot;/payment/get/{id}&quot;)
+    public CommonResult&lt;Payment&gt; getPaymentById(@PathVariable(&quot;id&quot;) Long id)
+    {
+        Payment payment = paymentService.getPaymentById(id);
+
+        if(payment != null)
+        {
+            return new CommonResult(200,&quot;查询成功,serverPort:  &quot;+serverPort,payment);
+        }else{
+            return new CommonResult(444,&quot;没有对应记录,查询ID: &quot;+id,null);
+        }
+    }
+
+    @GetMapping(value = &quot;/payment/discovery&quot;)
+    public Object discovery()
+    {
+        List&lt;String&gt; services = discoveryClient.getServices();
+        for (String element : services) {
+            log.info(&quot;*****element: &quot;+element);
+        }
+
+        List&lt;ServiceInstance&gt; instances = discoveryClient.getInstances(&quot;CLOUD-PAYMENT-SERVICE&quot;);
+        for (ServiceInstance instance : instances) {
+            log.info(instance.getServiceId()+&quot;\t&quot;+instance.getHost()+&quot;\t&quot;+instance.getPort()+&quot;\t&quot;+instance.getUri());
+        }
+
+        return this.discoveryClient;
+    }
+
+    @GetMapping(value = &quot;/payment/lb&quot;)
+    public String getPaymentLB()
+    {
+        return serverPort;
+    }
+
+    @GetMapping(value = &quot;/payment/feign/timeout&quot;)
+    public String paymentFeignTimeout()
+    {
+        // 业务逻辑处理正确，但是需要耗费3秒钟
+        try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+        return serverPort;
+    }
+
+    @GetMapping(&quot;/payment/zipkin&quot;)
+    public String paymentZipkin()
+    {
+        return &quot;hi ,i&#39;am paymentzipkin server fall back，welcome to kayleh，O(∩_∩)O哈哈~&quot;;
+    }
+}
+</code></pre><h2 id="服务消费者（调用方）"><a href="#服务消费者（调用方）" class="headerlink" title="服务消费者（调用方）"></a>服务消费者（调用方）</h2><p>cloud-consumer-order80</p><p>POM</p><pre><code class="lang-xml"> &lt;!--包含了sleuth+zipkin--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre><p>yml</p><pre><code class="lang-yml">server:
+  port: 80
+
+spring:
+    application:
+        name: cloud-order-service
+    zipkin:
+      base-url: http://localhost:9411
+    sleuth:
+      sampler:
+        probability: 1
+
+eureka:
+  client:
+    #表示是否将自己注册进EurekaServer默认为true。
+    register-with-eureka: false
+    #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    fetchRegistry: true
+    service-url:
+      #单机
+      #defaultZone: http://localhost:7001/eureka
+      # 集群
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  # 集群版
+</code></pre><p>业务类OrderController</p><pre><code class="lang-java"> // ====================&gt; zipkin+sleuth
+    @GetMapping(&quot;/consumer/payment/zipkin&quot;)
+    public String paymentZipkin()
+    {
+        String result = restTemplate.getForObject(&quot;http://localhost:8001&quot;+&quot;/payment/zipkin/&quot;, String.class);
+        return result;
+    }
+</code></pre><h2 id="依次启动eureka7001-8001-80"><a href="#依次启动eureka7001-8001-80" class="headerlink" title="依次启动eureka7001/8001/80"></a>依次启动eureka7001/8001/80</h2><p>80调用8001几次测试下</p><pre><code>http://localhost/consumer/payment/zipkin
+</code></pre><h2 id="打开浏览器访问-http-localhost-9411"><a href="#打开浏览器访问-http-localhost-9411" class="headerlink" title="打开浏览器访问:http:localhost:9411"></a>打开浏览器访问:http:localhost:9411</h2><p>会出现以下界面</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构8/6.png" alt="1597835524811"></div><span class="image-caption">1597835524811</span></div><p>查看</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构8/7.png" alt="1597835538196"></div><span class="image-caption">1597835538196</span></div><p>查看依赖关系</p><p>原理</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构8/8.png" alt="1597835568713"></div><span class="image-caption">1597835568713</span></div><div class="footer"><div class="copyright"><blockquote><p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p><p>本文永久链接是：<a href="https://blog.kayleh.top/springcloud-sleuth-distributed-request-link-tracking/">https://blog.kayleh.top/springcloud-sleuth-distributed-request-link-tracking/</a></p></blockquote></div><div class="donate"><div class="imgs"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/wechatpay.jpg"> <img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/alipay.jpg"></div></div></div><div class="article-meta" id="bottom"><div class="new-meta-box"><div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-12T01:11:28+08:00"><a class="notlink"><i class="fas fa-edit fa-fw" aria-hidden="true"></i><p>更新于：2021年4月12日</p></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/DistributedMicroservices/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>DistributedMicroservices</p></a></div><div class="new-meta-item share -mob-share-list"><div class="-mob-share-list share-body"><a class="-mob-share-qq" rel="external nofollow noopener noreferrer noopener" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.kayleh.top/springcloud-sleuth-distributed-request-link-tracking/&title=SpringCloud Sleuth分布式请求链路追踪 - Kayleh&summary=SpringCloud Sleuth分布式请求链路追踪" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png"> </a><a class="-mob-share-qzone" rel="external nofollow noopener noreferrer noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.kayleh.top/springcloud-sleuth-distributed-request-link-tracking/&title=SpringCloud Sleuth分布式请求链路追踪 - Kayleh&summary=SpringCloud Sleuth分布式请求链路追踪" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png"> </a><a class="-mob-share-weibo" rel="external nofollow noopener noreferrer noopener" href="http://service.weibo.com/share/share.php?url=https://blog.kayleh.top/springcloud-sleuth-distributed-request-link-tracking/&title=SpringCloud Sleuth分布式请求链路追踪 - Kayleh&summary=SpringCloud Sleuth分布式请求链路追踪" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png"></a><div class="hoverbox"><a class="share"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png"></a><div class="target"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEY0lEQVR42u3aQZYbMQgFwLn/pZMT+Bk+NPYkpd2M7W6p0AJ4/PyxHlk/CMCCtcCCBWuBPYH9Cder3799cfE51fe++rv7/jUPsGDBggULFixYsKew5QS4CFL9/rvnV4GqUNXzxB5gwYIFCxYsWLBgPwLbhUoT8SpoGoBuIbJ2ccCCBQsWLFiwYMH+Cthqop6CTgPUvRhgwYIFCxYsWLBg/w/Y7saees50gQULFixYsGDBgv3dsFcJfffA0wGL6u++ZhIGLFiwYMGCBQsWbAl2O6H+7X/HHmDBggULFixYsGBPYKerm8inB0kT+XSQJPYACxYsWLBgwYIFewI7BUgPlBYiaSN8GrCyE1iwYMGCBQsWLNgT2C5omnh3By26DeqtwZBxYx8sWLBgwYIFCxbsCWz1Ad0XV39/HdinG+dgwYIFCxYsWLBgb2CvE/lpg7wbqKvCAyxYsGDBggULFuwtbPVB3cGF7c+7Axkp/DTgYMGCBQsWLFiwYG9htxvAaWO6ClcdwOieZ3zRwIIFCxYsWLBgwZ7Cpgn4doO6CzoNXPeCgAULFixYsGDBgv0O2GniXD3wViK+FeDqftvnAgsWLFiwYMGCBfsR2OqLpsDp97Yb8t1GNliwYMGCBQsWLNjvgE0T7u0GdFogdPeRXqhyIQUWLFiwYMGCBQv2BPbtAEJzgCGFqBYkaWJfhZpeDLBgwYIFCxYsWLA3sN0Bh+kAxbTQ6A6YpIMdcWMeLFiwYMGCBQsW7AlsmjCngdkewJgOlmwHGCxYsGDBggULFuwtbJpIb4FPE/huITNtxL/8HCxYsGDBggULFuwJbDcR7r44HXzoNsy3GvLjgIMFCxYsWLBgwYI9he02mKcN8acGKbr7n14UsGDBggULFixYsJ+B7b5wKxBpQbE1aDHd78vfgQULFixYsGDBgj2B3dpYOlhRfX93MKQbkOkFAAsWLFiwYMGCBXsLO91guvH0825g0wZ5HBiwYMGCBQsWLFiwJ7DdBD4FnR6426hOE/4UHixYsGDBggULFuwtbBckbWinifd2QbH1XLBgwYIFCxYsWLDfAVttGFcT8m7hsAXWLUS2LhBYsGDBggULFizYW9huQ/pp+BRiejHSxj5YsGDBggULFizYz8BOG97b4NUEvTtoMQ1MGR4sWLBgwYIFCxbsKexTgxEpSJr4bw18dBdYsGDBggULFizYz8A+ldhvH6wbuPNBELBgwYIFCxYsWLAnsOOEuJjQTwuL7cZ4Ojjy9v9gwYIFCxYsWLBgT2GfGqzYaoBPG9/d/a8VCGDBggULFixYsGBPYLcKgmqiflUodM/bLSzAggULFixYsGDB/i7YrUGKrQIjHRDpXgiwYMGCBQsWLFiw/wZstWGdDoakhcf0udX9gwULFixYsGDBgv0sbPeFaaM7bUh3oavgWwUOWLBgwYIFCxYs2FvYNHHfOvC0Md0d8NgqTMCCBQsWLFiwYMF+BtbaXWDBgrXAggVrgX10/QUV/tEFjO1djQAAAABJRU5ErkJggg=="></div></div><a class="-mob-share-telegram" rel="external nofollow noopener noreferrer noopener" href="https://t.me/share/url?url=https://blog.kayleh.top/springcloud-sleuth-distributed-request-link-tracking/&text=SpringCloud Sleuth分布式请求链路追踪 - Kayleh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png"></a></div></div></div></div><div class="prev-next"><a class="prev" href="/springcloud-alibaba/"><p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>SpringCloud Alibaba</p><p class="content">SpringCloud Alibaba Spring Cloud Netflix项目进入维护模式 1597850443212 1597850459371 SpringCloud NetFlix...</p></a><a class="next" href="/springcloud-stream-message-driver/"><p class="title">SpringCloud Stream消息驱动<i class="fas fa-chevron-right" aria-hidden="true"></i></p><p class="content">SpringCloud Stream消息驱动 消息驱动概述屏蔽底层消息中间件的差异，降低切换版本，统一消息的编程模型 1597388512890 1597388531508 Spring C...</p></a></div></article><article class="post white-box reveal shadow" id="comments"><p ct><i class="fas fa-comments"></i> 评论</p><div id="valine_container" class="valine_thread"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div></article></div><aside class="l_side"><section class="widget toc-wrapper shadow desktop mobile" id="toc-div"><header><i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span></header><div class="content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#zipkin"><span class="toc-text">zipkin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务提供者"><span class="toc-text">服务提供者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务消费者（调用方）"><span class="toc-text">服务消费者（调用方）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依次启动eureka7001-8001-80"><span class="toc-text">依次启动eureka7001&#x2F;8001&#x2F;80</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开浏览器访问-http-localhost-9411"><span class="toc-text">打开浏览器访问:http:localhost:9411</span></a></li></ol></div></section></aside><script>window.pdata={},pdata.ispage=!0,pdata.postTitle="SpringCloud Sleuth分布式请求链路追踪",pdata.commentPath="",pdata.commentPlaceholder="";var l_header=document.getElementById("l_header");l_header.classList.remove("show")</script></div><script src="/live2d-widget/autoload.js"></script><footer class="footer clearfix"><br><br><div class="aplayer-container"></div><br><div class="social-wrapper"><a href="https://github.com/Kayleh" class="social fas fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div></div><div class="copyright"><p><a href="/">Copyright © 2019-2021 Kayleh</a></p></div><div style="text-align:center"><a href="https://info.flagcounter.com/cDh1" target="_blank" rel="noopener"><img src="https://s11.flagcounter.com/count/cDh1/bg_49B1F5/txt_000000/border_49B1F5/columns_4/maxflags_16/viewers_0/labels_1/pageviews_0/flags_0/percent_1/" alt="Flag Counter" border="0"></a></div></footer><a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a></div></div><div><script>function loadScript(e,t){var n=document.getElementsByTagName("head")[0]||document.documentElement,o=document.createElement("script");o.setAttribute("type","text/javascript"),t&&(o.onload=t),o.setAttribute("src",e),n.appendChild(o)}window.volantis={},window.volantis.loadcss=document.getElementById("loadcss");var loadCSS=function(e,t,n,o){var d,i=window.document,r=i.createElement("link"),a=t||(d=(i.body||i.getElementsByTagName("head")[0]).childNodes)[d.length-1],s=i.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&r.setAttribute(l,o[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){return i.body?t():void setTimeout(function(){e(t)})}(function(){a.parentNode.insertBefore(r,t?a:a.nextSibling)});var c=function(e){for(var t=r.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};function u(){r.addEventListener&&r.removeEventListener("load",u),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",u),(r.onloadcssdefined=c)(u),r}</script><script>loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css",window.volantis.loadcss)</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script>function pjax_fancybox(){$(".md .gallery").find("img").each(function(){var a=document.createElement("a");$(a).attr("class","fancybox"),$(a).attr("pjax-fancybox",""),$(a).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(a).attr("href",$(this).attr("data-original")),$(a).attr("data-fancybox","images");var t="";$(this).attr("alt")&&($(a).attr("data-caption",$(this).attr("alt")),t=$(this).attr("alt"));var n=document.createElement("div");$(n).addClass("fancybox"),$(this).wrap(n);var e=document.createElement("span");$(e).addClass("image-caption"),$(e).text(t),$(this).after(e),$(this).wrap(a)}),$(".md .gallery").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}function SCload_fancybox(){0!=$(".md .gallery").find("img").length&&(loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),setTimeout(function(){loadScript("https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js",pjax_fancybox)},1))}$(function(){SCload_fancybox()})</script><script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript">var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];function shuffle(t){for(var n=t.length;n--;){var i=Math.floor(Math.random()*n),l=t[i];t[i]=t[n],t[n]=l}}function Pjax_backstretch(){$.backstretch(imgs,{duration:"5000",fade:"1500"})}shuffle(imgs),loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)</script><div id="rightmenu-wrapper"><ul class="list-v rightmenu" id="rightmenu-content"><li class="option"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-text" onclick='document.execCommand("copy")'><i class="fa fa-copy fa-fw"></i>复制文本</a><hr id="hr-text"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-href"><i class="fa fa-link fa-fw"></i>复制链接</a> <a class="vlts-menu opt fix-cursor-default" id="menu-open-href"><i class="fa fa-external-link-square-alt fa-fw"></i>在新标签页打开</a><hr id="hr-href"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-src"><i class="fa fa-image fa-fw"></i>复制图片地址</a><hr id="hr-src"></li><li class="navigation"><a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa fa-arrow-left fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa fa-arrow-right fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa fa-redo fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" href="/"><i class="fa fa-home fa-fw"></i></a></li><hr><li><a class="vlts-menu fix-cursor-default" href="/about" id="about"><i class="fa fa-question fa-fw"></i> 我</a></li><hr><li><a class="vlts-menu fix-cursor-default" onclick='document.execCommand("print")'><i class="fa fa-print fa-fw"></i> 打印页面</a></li><hr><li><a class="vlts-menu fix-cursor-default" href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><i class="fa fa-fan fa-spin fa-fw"></i> 联系</a></li></ul></div><script>window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('true' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if ('' == true && ('help,hr,print,hr,contributors'||[]).includes('music')) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');</script><script>window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:5,hoverDelay:25}</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script><script>var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });</script><script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script><script type="text/javascript">function pjax_scrollrebeal(){ScrollReveal().reveal(".l_main .reveal",{distance:"32px",duration:"800",interval:"20",scale:"1",easing:"ease-out"})}$(function(){pjax_scrollrebeal()})</script><script src="/js/valine.js"></script><script>var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz",
+      appKey: "OBHyEdMVsi8FSFA0aqJNh4HE",
+      pageSize: '5',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });</script><script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script><script src="/js/app.js"></script><script src="/js/search.js"></script><script>const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);</script><script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script><script type="text/javascript">$(function(){Waves.attach(".flat-btn",["waves-button"]),Waves.attach(".float-btn",["waves-button","waves-float"]),Waves.attach(".float-btn-light",["waves-button","waves-float","waves-light"]),Waves.attach(".flat-box",["waves-block"]),Waves.attach(".float-box",["waves-block","waves-float"]),Waves.attach(".waves-image"),Waves.init()})</script><script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad()</script><script defer>const LCCounter = {
+    app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz',
+    app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://blog.kayleh.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://blog.kayleh.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://blog.kayleh.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });</script><script>function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);</script><!-- more --><script async src="https://widget.daovoice.io/widget/38b1c911.js" charset="utf-8"></script><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7457165067653912" data-ad-slot="9837525717"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+          pjax_scrollrebeal();
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });</script></div></body></html>

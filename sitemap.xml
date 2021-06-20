@@ -2,30 +2,128 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.kayleh.top/Nacos%EF%BC%9AConfigure-MySQL-data-source/</loc>
+    
+    <lastmod>2021-06-20T07:07:37.310Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Head-First-Nginx/</loc>
+    
+    <lastmod>2021-06-20T06:56:11.186Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/redis/</loc>
+    
+    <lastmod>2021-06-20T06:55:40.381Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Spring-Cyclic-Ependencies/</loc>
+    
+    <lastmod>2021-06-20T06:55:18.472Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Head-First-Map/</loc>
+    
+    <lastmod>2021-06-20T06:55:07.268Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/CAS-&-AQS/</loc>
+    
+    <lastmod>2021-06-20T06:54:32.162Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Implement-a-lock-based-on-ReentrantLock/</loc>
+    
+    <lastmod>2021-06-20T06:54:17.581Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Thread_Pool/</loc>
+    
+    <lastmod>2021-06-20T06:53:56.725Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Proxy/</loc>
+    
+    <lastmod>2021-06-20T06:53:42.730Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/io/</loc>
+    
+    <lastmod>2021-06-20T06:53:00.451Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Improve-Robustness-(1)/</loc>
+    
+    <lastmod>2021-06-20T06:52:50.090Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/SpringSecurity/</loc>
+    
+    <lastmod>2021-06-20T06:52:38.467Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/spring-and-jwt/</loc>
+    
+    <lastmod>2021-06-20T06:52:20.425Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Improve-Robustness-(2)/</loc>
+    
+    <lastmod>2021-06-20T06:51:59.073Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/Head-First-Netty/</loc>
+    
+    <lastmod>2021-06-20T06:51:50.639Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/mybatis-cache/</loc>
+    
+    <lastmod>2021-06-20T06:51:19.584Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/RPC-remoteprocedure-call-service-written-by-spinning-framework/</loc>
+    
+    <lastmod>2021-06-20T06:50:13.037Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.kayleh.top/friends/index.html</loc>
     
     <lastmod>2021-06-16T05:33:26.125Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/Java%E5%88%A9%E7%94%A8Sping%E6%A1%86%E6%9E%B6%E7%BC%96%E5%86%99RPC%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/</loc>
-    
-    <lastmod>2021-06-09T16:08:24.999Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/note/</loc>
-    
-    <lastmod>2021-06-06T06:20:27.225Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/mybatis-%E7%BC%93%E5%AD%98/</loc>
-    
-    <lastmod>2021-05-29T17:02:08.102Z</lastmod>
     
   </url>
   
@@ -44,868 +142,770 @@
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/improve-robustness-(2)/</loc>
-    
-    <lastmod>2021-05-27T07:14:21.286Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/head-first-netty/</loc>
-    
-    <lastmod>2021-05-27T07:14:13.493Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/spring-and-jwt/</loc>
-    
-    <lastmod>2021-05-27T07:14:10.581Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/SpringSecurity/</loc>
-    
-    <lastmod>2021-05-24T03:01:04.772Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/improve-robustness-(1)/</loc>
-    
-    <lastmod>2021-05-12T15:51:22.995Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/IO/</loc>
-    
-    <lastmod>2021-04-25T13:53:05.309Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/proxy/</loc>
-    
-    <lastmod>2021-04-25T13:44:45.051Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/Thread-pool/</loc>
-    
-    <lastmod>2021-04-20T16:51:26.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/Implement-a-lock-based-on-ReentrantLock/</loc>
-    
-    <lastmod>2021-04-19T17:26:04.313Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/CAS-and-AQS/</loc>
-    
-    <lastmod>2021-04-19T17:00:07.119Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/head-first-hashmap/</loc>
-    
-    <lastmod>2021-04-17T18:29:25.128Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/Spring-cyclic-ependencies/</loc>
-    
-    <lastmod>2021-04-16T16:00:21.003Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/RESUME/</loc>
+    <loc>https://blog.kayleh.top/resume/</loc>
     
     <lastmod>2021-04-15T15:45:55.334Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/DOWNLOAD/</loc>
+    <loc>https://blog.kayleh.top/Download/</loc>
     
     <lastmod>2021-04-15T15:26:11.540Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC%20(2)/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-3/</loc>
     
     <lastmod>2021-04-15T15:25:56.661Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC%20(3)/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-4/</loc>
     
     <lastmod>2021-04-15T15:25:53.522Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC%20(4)/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-5/</loc>
     
     <lastmod>2021-04-15T15:25:50.462Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC%20(5)/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-6/</loc>
     
     <lastmod>2021-04-15T15:25:46.351Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC%20(6)/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-7/</loc>
     
     <lastmod>2021-04-15T15:25:43.088Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC%20(7)/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-8/</loc>
     
     <lastmod>2021-04-15T15:25:39.718Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC%20(8)/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-9/</loc>
     
     <lastmod>2021-04-15T15:25:35.649Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-2/</loc>
     
     <lastmod>2021-04-15T15:25:31.860Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system/</loc>
     
     <lastmod>2021-04-15T15:25:25.124Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Head-First-nginx/</loc>
-    
-    <lastmod>2021-04-15T15:12:41.680Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/Redis/</loc>
-    
-    <lastmod>2021-04-15T15:12:07.281Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kayleh.top/Reflected-XSS-Vulnerability-in-Font-Download-Website/</loc>
+    <loc>https://blog.kayleh.top/Reflected-XSS-Vulnerability-inFont-Download-Website/</loc>
     
     <lastmod>2021-04-15T15:11:27.382Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/</loc>
+    <loc>https://blog.kayleh.top/xss-crosssite-scripting-attack/</loc>
     
     <lastmod>2021-04-15T15:10:59.177Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB/</loc>
+    <loc>https://blog.kayleh.top/sql-injection-attacks/</loc>
     
     <lastmod>2021-04-15T15:10:55.349Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88/</loc>
+    <loc>https://blog.kayleh.top/What-happened-from-entering-the-URL-to-displaying-the-page/</loc>
     
     <lastmod>2021-04-15T15:10:07.693Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</loc>
+    <loc>https://blog.kayleh.top/SQL-injection-vulnerability/</loc>
     
     <lastmod>2021-04-15T15:08:14.772Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/web-test-combat/</loc>
+    <loc>https://blog.kayleh.top/undefined/</loc>
     
     <lastmod>2021-04-14T11:05:35.806Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81/</loc>
+    <loc>https://blog.kayleh.top/objectoriented/</loc>
     
     <lastmod>2021-04-11T17:11:29.099Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E9%98%9F%E5%88%97/</loc>
+    <loc>https://blog.kayleh.top/queue/</loc>
     
     <lastmod>2021-04-11T17:11:29.090Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E9%93%BE%E8%A1%A8/</loc>
+    <loc>https://blog.kayleh.top/linked-list/</loc>
     
     <lastmod>2021-04-11T17:11:29.081Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://blog.kayleh.top/liskov-substitution-principle/</loc>
     
     <lastmod>2021-04-11T17:11:29.072Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/adapter-mode/</loc>
     
     <lastmod>2021-04-11T17:11:29.068Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/iterator-mode/</loc>
     
     <lastmod>2021-04-11T17:11:29.064Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/</loc>
+    <loc>https://blog.kayleh.top/dimits-law/</loc>
     
     <lastmod>2021-04-11T17:11:29.059Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%BF%9E%E7%BB%AD/</loc>
+    <loc>https://blog.kayleh.top/continuous/</loc>
     
     <lastmod>2021-04-11T17:11:29.055Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B/</loc>
+    <loc>https://blog.kayleh.top/program-test/</loc>
     
     <lastmod>2021-04-11T17:11:29.051Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/chain-of-responsibility-model/</loc>
     
     <lastmod>2021-04-11T17:11:29.048Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/visitor-mode/</loc>
     
     <lastmod>2021-04-11T17:11:29.045Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/design-patterns/</loc>
     
     <lastmod>2021-04-11T17:11:29.040Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://blog.kayleh.top/computer-network/</loc>
     
     <lastmod>2021-04-11T17:11:29.036Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-1/</loc>
+    <loc>https://blog.kayleh.top/introduction-to-computer-network/</loc>
     
     <lastmod>2021-04-11T17:11:29.032Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</loc>
+    <loc>https://blog.kayleh.top/principles-of-computer-organization/</loc>
     
     <lastmod>2021-04-11T17:11:29.021Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/interpreter-mode/</loc>
     
     <lastmod>2021-04-11T17:11:29.018Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/observer-mode/</loc>
     
     <lastmod>2021-04-11T17:11:29.014Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/decorator-mode/</loc>
     
     <lastmod>2021-04-11T17:11:29.010Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://blog.kayleh.top/automated-test-selenium/</loc>
     
     <lastmod>2021-04-11T17:11:29.007Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/encoding-algorithm/</loc>
     
     <lastmod>2021-04-11T17:11:29.001Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/combination-mode/</loc>
     
     <lastmod>2021-04-11T17:11:28.990Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E7%BA%BF%E6%80%A7%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/linear-search-algorithm/</loc>
     
     <lastmod>2021-04-11T17:11:28.986Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E7%BA%A7%E6%95%B0/</loc>
+    <loc>https://blog.kayleh.top/series/</loc>
     
     <lastmod>2021-04-11T17:11:28.982Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/strategy-mode/</loc>
     
     <lastmod>2021-04-11T17:11:28.979Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E7%94%9F%E6%88%90%E5%99%A8/</loc>
+    <loc>https://blog.kayleh.top/builder/</loc>
     
     <lastmod>2021-04-11T17:11:28.975Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/state-mode/</loc>
     
     <lastmod>2021-04-11T17:11:28.971Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</loc>
+    <loc>https://blog.kayleh.top/test-case/</loc>
     
     <lastmod>2021-04-11T17:11:28.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%B5%85%E8%B0%88IO/</loc>
+    <loc>https://blog.kayleh.top/IO/</loc>
     
     <lastmod>2021-04-11T17:11:28.964Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%B4%9B%E5%BF%85%E8%BE%BE%E6%B3%95%E5%88%99/</loc>
+    <loc>https://blog.kayleh.top/law-of-robida/</loc>
     
     <lastmod>2021-04-11T17:11:28.942Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%B2%99%E7%AE%B1%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6/</loc>
+    <loc>https://blog.kayleh.top/Sandbox-security-mechanism/</loc>
     
     <lastmod>2021-04-11T17:11:28.937Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/template-method/</loc>
     
     <lastmod>2021-04-11T17:11:28.933Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/bridge-mode/</loc>
     
     <lastmod>2021-04-11T17:11:28.931Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%A0%88Stack/</loc>
+    <loc>https://blog.kayleh.top/stack/</loc>
     
     <lastmod>2021-04-11T17:11:28.925Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%9E%81%E9%99%90/</loc>
+    <loc>https://blog.kayleh.top/limit/</loc>
     
     <lastmod>2021-04-11T17:11:28.922Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%9E%81%E5%80%BC%E5%92%8C%E6%9C%80%E5%80%BC/</loc>
+    <loc>https://blog.kayleh.top/extreme-value-and-maximum-value/</loc>
     
     <lastmod>2021-04-11T17:11:28.918Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%B8%8E%E6%97%A0%E7%A9%B7%E5%A4%A7/</loc>
+    <loc>https://blog.kayleh.top/infinitesimal-and-infinite/</loc>
     
     <lastmod>2021-04-11T17:11:28.915Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/data-structures-and-algorithms/</loc>
     
     <lastmod>2021-04-11T17:11:28.911Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/</loc>
+    <loc>https://blog.kayleh.top/introduction-to-operating-system/</loc>
     
     <lastmod>2021-04-11T17:11:28.903Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://blog.kayleh.top/operating-system/</loc>
     
     <lastmod>2021-04-11T17:11:28.898Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%8F%92%E5%80%BC%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/interpolation-search-algorithm/</loc>
     
     <lastmod>2021-04-11T17:11:28.890Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://blog.kayleh.top/interface-isolation-principle/</loc>
     
     <lastmod>2021-04-11T17:11:28.886Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E6%8E%A5%E5%85%A5%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9FAdsense/</loc>
+    <loc>https://blog.kayleh.top/traffic-monetizationaccess-to-google-adsense/</loc>
     
     <lastmod>2021-04-11T17:11:28.884Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</loc>
+    <loc>https://blog.kayleh.top/differential-equation/</loc>
     
     <lastmod>2021-04-11T17:11:28.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%BE%AE%E5%88%86/</loc>
+    <loc>https://blog.kayleh.top/differential/</loc>
     
     <lastmod>2021-04-11T17:11:28.874Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://blog.kayleh.top/principle-of-opening-and-closing/</loc>
     
     <lastmod>2021-04-11T17:11:28.870Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86/</loc>
+    <loc>https://blog.kayleh.top/generalized-integral/</loc>
     
     <lastmod>2021-04-11T17:11:28.866Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%B9%B6%E5%8F%91%EF%BC%9A%E5%8E%9F%E7%90%86/</loc>
+    <loc>https://blog.kayleh.top/concurrency-principle/</loc>
     
     <lastmod>2021-04-11T17:11:28.864Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/factory-design-pattern/</loc>
     
     <lastmod>2021-04-11T17:11:28.855Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%AF%BC%E6%95%B0/</loc>
+    <loc>https://blog.kayleh.top/derivative/</loc>
     
     <lastmod>2021-04-11T17:11:28.852Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%AE%9A%E7%A7%AF%E5%88%86/</loc>
+    <loc>https://blog.kayleh.top/definite-integral/</loc>
     
     <lastmod>2021-04-11T17:11:28.849Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>https://blog.kayleh.top/multithreading/</loc>
     
     <lastmod>2021-04-11T17:11:28.845Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://blog.kayleh.top/multi-function/</loc>
     
     <lastmod>2021-04-11T17:11:28.841Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/appearance-mode/</loc>
     
     <lastmod>2021-04-11T17:11:28.834Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/memo-mode/</loc>
     
     <lastmod>2021-04-11T17:11:28.831Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%A0%86%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://blog.kayleh.top/heap-sort/</loc>
     
     <lastmod>2021-04-11T17:11:28.827Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%A0%86%E5%A4%96%E5%86%85%E5%AD%98/</loc>
+    <loc>https://blog.kayleh.top/off-heap/</loc>
     
     <lastmod>2021-04-11T17:11:28.822Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%9B%BE%E5%BA%8A/</loc>
+    <loc>https://blog.kayleh.top/pictrue-bed/</loc>
     
     <lastmod>2021-04-11T17:11:28.818Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%9B%9E%E6%96%87%E6%95%B0/</loc>
+    <loc>https://blog.kayleh.top/palindrome/</loc>
     
     <lastmod>2021-04-11T17:11:28.808Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/hash-algorithm/</loc>
     
     <lastmod>2021-04-11T17:11:28.804Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/command-mode/</loc>
     
     <lastmod>2021-04-11T17:11:28.799Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://blog.kayleh.top/synthetic-reuse-principle/</loc>
     
     <lastmod>2021-04-11T17:11:28.792Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%8E%9F%E5%9E%8B/</loc>
+    <loc>https://blog.kayleh.top/prototype/</loc>
     
     <lastmod>2021-04-11T17:11:28.788Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E5%AE%9E%E7%8E%B0/</loc>
+    <loc>https://blog.kayleh.top/single-point-login/</loc>
     
     <lastmod>2021-04-11T17:11:28.783Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/singleton-mode/</loc>
     
     <lastmod>2021-04-11T17:11:28.778Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://blog.kayleh.top/single-responsibility-principle/</loc>
     
     <lastmod>2021-04-11T17:11:28.772Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
+    <loc>https://blog.kayleh.top/dynamic-programming/</loc>
     
     <lastmod>2021-04-11T17:11:28.769Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/</loc>
+    <loc>https://blog.kayleh.top/dynamic-array/</loc>
     
     <lastmod>2021-04-11T17:11:28.761Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://blog.kayleh.top/Front-end-security/</loc>
     
     <lastmod>2021-04-11T17:11:28.754Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%849/</loc>
+    <loc>https://blog.kayleh.top/springcloud-alibaba/</loc>
     
     <lastmod>2021-04-11T17:11:28.750Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%848/</loc>
+    <loc>https://blog.kayleh.top/springcloud-sleuth-distributed-request-link-tracking/</loc>
     
     <lastmod>2021-04-11T17:11:28.747Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%847/</loc>
+    <loc>https://blog.kayleh.top/springcloud-stream-message-driver/</loc>
     
     <lastmod>2021-04-11T17:11:28.737Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%846/</loc>
+    <loc>https://blog.kayleh.top/springcloud-bus-message/</loc>
     
     <lastmod>2021-04-11T17:11:28.726Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%845/</loc>
+    <loc>https://blog.kayleh.top/springcloud-config-distributed-configuration-center/</loc>
     
     <lastmod>2021-04-11T17:11:28.711Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%844/</loc>
+    <loc>https://blog.kayleh.top/gateway-service-current-limit/</loc>
     
     <lastmod>2021-04-11T17:11:28.706Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%843/</loc>
+    <loc>https://blog.kayleh.top/ribbon-load-balancing-service-call-degradation/</loc>
     
     <lastmod>2021-04-11T17:11:28.690Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%842/</loc>
+    <loc>https://blog.kayleh.top/eureka-service-registration-and-discovery/</loc>
     
     <lastmod>2021-04-11T17:11:28.661Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%841/</loc>
+    <loc>https://blog.kayleh.top/springcloud/</loc>
     
     <lastmod>2021-04-11T17:11:28.644Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%95%E8%B0%83%E6%80%A7%E5%92%8C%E5%87%B8%E5%87%B9%E6%80%A7/</loc>
+    <loc>https://blog.kayleh.top/monotonicity-and-convexity-of-functions/</loc>
     
     <lastmod>2021-04-11T17:11:28.633Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%87%BD%E6%95%B0%E5%92%8C%E6%8C%87%E9%92%88/</loc>
+    <loc>https://blog.kayleh.top/pass-by-value/</loc>
     
     <lastmod>2021-04-11T17:11:28.627Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%87%BD%E6%95%B0%E4%BD%9C%E5%9B%BE/</loc>
+    <loc>https://blog.kayleh.top/function-graphing/</loc>
     
     <lastmod>2021-04-11T17:11:28.623Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%85%B3%E4%BA%8ECDN%E5%8A%A0%E9%80%9F%E7%BC%93%E5%AD%98%E4%B8%8D%E5%88%B7%E6%96%B0%E7%9A%84%E8%A7%A3%E5%86%B3/</loc>
+    <loc>https://blog.kayleh.top/the-cdn-acceleration-cache-of-jsdelivr-does-not-refresh/</loc>
     
     <lastmod>2021-04-11T17:11:28.620Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E5%81%8F%E5%AF%BC%E6%95%B0/</loc>
+    <loc>https://blog.kayleh.top/partial-derivative/</loc>
     
     <lastmod>2021-04-11T17:11:28.617Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99/</loc>
+    <loc>https://blog.kayleh.top/dependence-reversal-principle/</loc>
     
     <lastmod>2021-04-11T17:11:28.608Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/agency-model/</loc>
     
     <lastmod>2021-04-11T17:11:28.604Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/flyweight-model/</loc>
     
     <lastmod>2021-04-11T17:11:28.586Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/</loc>
+    <loc>https://blog.kayleh.top/double-integral/</loc>
     
     <lastmod>2021-04-11T17:11:28.576Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/</loc>
+    <loc>https://blog.kayleh.top/binary-sort-tree/</loc>
     
     <lastmod>2021-04-11T17:11:28.572Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/binary-search-algorithm/</loc>
     
     <lastmod>2021-04-11T17:11:28.567Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</loc>
+    <loc>https://blog.kayleh.top/Transaction-isolation-level/</loc>
     
     <lastmod>2021-04-11T17:11:28.564Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%B8%AD%E8%8B%B1%E6%96%87%E5%88%87%E6%8D%A2/</loc>
+    <loc>https://blog.kayleh.top/chinese-and-english-switching/</loc>
     
     <lastmod>2021-04-11T17:11:28.559Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.kayleh.top/intermediary-model/</loc>
     
     <lastmod>2021-04-11T17:11:28.556Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</loc>
+    <loc>https://blog.kayleh.top/indefinite-integral/</loc>
     
     <lastmod>2021-04-11T17:11:28.550Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/%E3%80%90SpringMVC%E3%80%91-@ModelAttribute/</loc>
+    <loc>https://blog.kayleh.top/use-of-springmvcmodelattribute/</loc>
     
     <lastmod>2021-04-11T17:11:28.546Z</lastmod>
     
@@ -919,21 +919,21 @@
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/unix/</loc>
+    <loc>https://blog.kayleh.top/common-commands-of-unix/</loc>
     
     <lastmod>2021-04-11T17:11:28.536Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/ubuntu%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/ubuntu-set-ip/</loc>
     
     <lastmod>2021-04-11T17:11:28.533Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/ubuntu-deb%E5%AE%89%E8%A3%85%E5%8C%85/</loc>
+    <loc>https://blog.kayleh.top/deb/</loc>
     
     <lastmod>2021-04-11T17:11:28.527Z</lastmod>
     
@@ -961,21 +961,21 @@
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/katalon/</loc>
+    <loc>https://blog.kayleh.top/automated-test-katalon/</loc>
     
     <lastmod>2021-04-11T17:11:28.506Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</loc>
+    <loc>https://blog.kayleh.top/gulp-compresses-static-resources/</loc>
     
     <lastmod>2021-04-11T17:11:28.502Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/docker%E8%99%9A%E6%8B%9F%E5%8C%96%E5%AE%B9%E5%99%A8(ing)/</loc>
+    <loc>https://blog.kayleh.top/docker-virtualized-container/</loc>
     
     <lastmod>2021-04-11T17:11:28.498Z</lastmod>
     
@@ -1003,7 +1003,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/XML/</loc>
+    <loc>https://blog.kayleh.top/xml/</loc>
     
     <lastmod>2021-04-11T17:11:28.473Z</lastmod>
     
@@ -1017,252 +1017,252 @@
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Thread/</loc>
+    <loc>https://blog.kayleh.top/thread/</loc>
     
     <lastmod>2021-04-11T17:11:28.466Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/TCP-IP/</loc>
+    <loc>https://blog.kayleh.top/tcpip/</loc>
     
     <lastmod>2021-04-11T17:11:28.460Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Spring%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
+    <loc>https://blog.kayleh.top/spring-relate/</loc>
     
     <lastmod>2021-04-11T17:11:28.454Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Spring%E6%9E%B6%E6%9E%84/</loc>
+    <loc>https://blog.kayleh.top/spring-architecture/</loc>
     
     <lastmod>2021-04-11T17:11:28.451Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Spring%E3%80%81SpringMVC%E3%80%81Mybatis%E6%95%B4%E5%90%88/</loc>
+    <loc>https://blog.kayleh.top/spring-springmvc-mybatis-integration/</loc>
     
     <lastmod>2021-04-11T17:11:28.448Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/SpringMVC%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://blog.kayleh.top/springmvc-environment-construction/</loc>
     
     <lastmod>2021-04-11T17:11:28.441Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/SpringMVC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    <loc>https://blog.kayleh.top/springmvc-work-stream/</loc>
     
     <lastmod>2021-04-11T17:11:28.436Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/SpringBoot%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E6%B3%A8%E8%A7%A3/</loc>
+    <loc>https://blog.kayleh.top/SpringBoot-startup-process/</loc>
     
     <lastmod>2021-04-11T17:11:28.432Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Spring/</loc>
+    <loc>https://blog.kayleh.top/spring/</loc>
     
     <lastmod>2021-04-11T17:11:28.429Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/SparseArray%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/</loc>
+    <loc>https://blog.kayleh.top/sparsearray/</loc>
     
     <lastmod>2021-04-11T17:11:28.424Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/SnowFlake%E5%88%86%E5%B8%83%E5%BC%8FID%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95(ing)/</loc>
+    <loc>https://blog.kayleh.top/snowflake-distributed-id-algorithm/</loc>
     
     <lastmod>2021-04-11T17:11:28.420Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Sentinel%E5%AE%9E%E7%8E%B0%E7%86%94%E6%96%AD%E4%B8%8E%E9%99%90%E6%B5%81/</loc>
+    <loc>https://blog.kayleh.top/sentinel-realizes-fusing-and-current-limiting/</loc>
     
     <lastmod>2021-04-11T17:11:28.416Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Seata%E5%A4%84%E7%90%86%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</loc>
+    <loc>https://blog.kayleh.top/seata-handles-distributed-transactions/</loc>
     
     <lastmod>2021-04-11T17:11:28.398Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Reflection/</loc>
+    <loc>https://blog.kayleh.top/reflection/</loc>
     
     <lastmod>2021-04-11T17:11:28.365Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Native%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/Native-method/</loc>
     
     <lastmod>2021-04-11T17:11:28.345Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Nacos%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%92%8C%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/</loc>
+    <loc>https://blog.kayleh.top/nacos-service-registration-and-configuration-center/</loc>
     
     <lastmod>2021-04-11T17:11:28.341Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/NIO%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://blog.kayleh.top/NIO-blocking-model/</loc>
     
     <lastmod>2021-04-11T17:11:28.330Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Mybatis/</loc>
+    <loc>https://blog.kayleh.top/mybatis/</loc>
     
     <lastmod>2021-04-11T17:11:28.323Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/MYSQL/</loc>
+    <loc>https://blog.kayleh.top/mysql/</loc>
     
     <lastmod>2021-04-11T17:11:28.319Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/MVC/</loc>
+    <loc>https://blog.kayleh.top/mvc/</loc>
     
     <lastmod>2021-04-11T17:11:28.305Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Lock/</loc>
+    <loc>https://blog.kayleh.top/lock/</loc>
     
     <lastmod>2021-04-11T17:11:28.302Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Linux/</loc>
+    <loc>https://blog.kayleh.top/linux/</loc>
     
     <lastmod>2021-04-11T17:11:28.299Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E9%AB%98%E6%80%A7%E8%83%BD%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%20-%20%E5%89%AF%E6%9C%AC%20(10)/</loc>
+    <loc>https://blog.kayleh.top/Java-high-performance-and-high-concurrency-spike-system-10/</loc>
     
     <lastmod>2021-04-11T17:11:28.237Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://blog.kayleh.top/Java-network-programming/</loc>
     
     <lastmod>2021-04-11T17:11:28.234Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Java-memory-model%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://blog.kayleh.top/jmm-memory-model/</loc>
     
     <lastmod>2021-04-11T17:11:28.231Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
+    <loc>https://blog.kayleh.top/jvm-gc/</loc>
     
     <lastmod>2021-04-11T17:11:28.226Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/JVM/</loc>
+    <loc>https://blog.kayleh.top/jvm/</loc>
     
     <lastmod>2021-04-11T17:11:28.222Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E5%92%8C%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6/</loc>
+    <loc>https://blog.kayleh.top/JVM-classloader-and-parent-delegation-mechanism/</loc>
     
     <lastmod>2021-04-11T17:11:28.217Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/JDK/</loc>
+    <loc>https://blog.kayleh.top/jdk/</loc>
     
     <lastmod>2021-04-11T17:11:28.214Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/JDBC/</loc>
+    <loc>https://blog.kayleh.top/jdbc/</loc>
     
     <lastmod>2021-04-11T17:11:28.208Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/J2SE/</loc>
+    <loc>https://blog.kayleh.top/j2se/</loc>
     
     <lastmod>2021-04-11T17:11:28.203Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/J2EE/</loc>
+    <loc>https://blog.kayleh.top/j2ee/</loc>
     
     <lastmod>2021-04-11T17:11:28.197Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Inversion-of-Control%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/</loc>
+    <loc>https://blog.kayleh.top/inversion-of-control/</loc>
     
     <lastmod>2021-04-11T17:11:28.180Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Interface-test/</loc>
+    <loc>https://blog.kayleh.top/interface-test/</loc>
     
     <lastmod>2021-04-11T17:11:28.165Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/I-O%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://blog.kayleh.top/IO-model/</loc>
     
     <lastmod>2021-04-11T17:11:28.157Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/HTTP/</loc>
+    <loc>https://blog.kayleh.top/http/</loc>
     
     <lastmod>2021-04-11T17:11:28.151Z</lastmod>
     
@@ -1276,7 +1276,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/GC/</loc>
+    <loc>https://blog.kayleh.top/gc/</loc>
     
     <lastmod>2021-04-11T17:11:28.129Z</lastmod>
     
@@ -1290,7 +1290,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/C-prime-plus/</loc>
+    <loc>https://blog.kayleh.top/c-pointer/</loc>
     
     <lastmod>2021-04-11T17:11:28.115Z</lastmod>
     
@@ -1304,49 +1304,49 @@
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/BIO%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://blog.kayleh.top/BIO-blocking-model/</loc>
     
     <lastmod>2021-04-11T17:11:28.103Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/BIO%E3%80%81NIO%E3%80%81AIO%E5%8C%BA%E5%88%AB/</loc>
+    <loc>https://blog.kayleh.top/bionioaio/</loc>
     
     <lastmod>2021-04-11T17:11:28.097Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/Array/</loc>
+    <loc>https://blog.kayleh.top/array/</loc>
     
     <lastmod>2021-04-11T17:11:28.090Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/AIO%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://blog.kayleh.top/AIO-blocking-model/</loc>
     
     <lastmod>2021-04-11T17:11:28.086Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/9.users-create-data-types-themselves/</loc>
+    <loc>https://blog.kayleh.top/users-create-data-types-themselves/</loc>
     
     <lastmod>2021-04-11T17:11:28.077Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/7%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.kayleh.top/7-sorting-algorithms/</loc>
     
     <lastmod>2021-04-11T17:11:28.070Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.kayleh.top/10.file-input-and-output/</loc>
+    <loc>https://blog.kayleh.top/file-input-and-output/</loc>
     
     <lastmod>2021-04-11T17:11:28.066Z</lastmod>
     

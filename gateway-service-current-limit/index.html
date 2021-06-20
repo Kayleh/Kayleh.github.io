@@ -1,0 +1,854 @@
+<!DOCTYPE html><html lang="zh-CN"><head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.3"><meta charset="utf-8"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>GateWay服务限流 - Kayleh</title><meta name="keywords" content="DistributedMicroservices"><meta name="description" content="GateWay服务限流 "><link rel="alternate" href="/atom.xml" title="Kayleh"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml"><meta name="theme-color" content="#ffffff"><meta name="google-site-verification" content="LQn0xwjfEU_V6CXCA0qAdwM4qRXtblIbfy5KuzEKaRg"><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png"><link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico"><link rel="stylesheet" href="/css/first.css"><link rel="stylesheet" href="/css/style.css" media="print" onload='this.media="all",this.onload=null'><noscript><link rel="stylesheet" href="/css/style.css"></noscript><script id="loadcss"></script><script>!function(e,t,o,c,i,a,n){e.DaoVoiceObject=i,e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=+new Date,a=t.createElement(o),n=t.getElementsByTagName(o)[0],a.async=1,a.src=c,a.charset="utf-8",n.parentNode.insertBefore(a,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/38b1c911.js","daovoice"),daovoice("init",{app_id:"38b1c911"}),daovoice("update")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script></head><body><header id="l_header" class="l_header auto shadow blur" style="opacity:0"><div class="container"><div id="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list"><li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"><a class="title flat-box" target="_self" href="/"><img no-lazy class="logo" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png"> <i class="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"></i></a><div class="menu navigation"><ul class="nav-list-h m-pc"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fas fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h m-phone"><li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="menuitem flat-box faa-parent animated-hover" href="/" id="home"><i class="fas fa-rss fa-fw"></i>首页</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li></ul></div></div></div></header><div id="l_body"><div id="l_cover"><div id="half" class="cover-wrapper post dock"><div id="cover-backstretch"></div><div class="cover-body"><div class="top"><p class="title">Kayleh</p><p class="subtitle">"最怕一生碌碌无为,还安慰自己平凡可贵"</p></div><div class="bottom"><div class="menu navigation"><div class="list-h"><a href="/" id="home"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg"><p>Home</p></a><a href="https://kayleh.top/" target="_blank" rel="noopener" id="https:kaylehtop"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg"><p>More</p></a><a href="/archives/" id="archives"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg"><p>所有</p></a><a href="/about" id="about"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg"><p>我?</p></a><a href="/friends/" id="friends"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg"><p>友人帐</p></a><a href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg"><p>Email</p></a></div></div></div></div><div id="scroll-down" style="display:none"><i class="fa fa-chevron-down scroll-down-effects"></i></div></div></div><div id="safearea"><div class="body-wrapper" id="pjax-container"><div class="l_main"><article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost"><div class="article-meta" id="top"><h1 class="title">GateWay服务限流</h1><div class="new-meta-box"><div class="new-meta-item author"><a class="author" href="/" rel="nofollow"><img no-lazy src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/2.jpg"><p>Kayleh</p></a></div><div class="new-meta-item category"><a class="notlink"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i> <a class="category-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></a></div><div class="new-meta-item date"><a class="notlink"><i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i><p>发布于：2020年8月14日</p></a></div><div class="new-meta-item browse leancloud"><a class="notlink"><div id="lc-pv" data-title="GateWay服务限流" data-path="/gateway-service-current-limit/"><i class="fas fa-eye fa-fw" aria-hidden="true"></i> <span id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次浏览</div></a></div></div></div><p>GateWay服务限流</p><a id="more"></a><blockquote><p>秒杀高并发等操作,严禁一窝蜂的过来拥挤,大家排队,一秒钟N个,有序进行.flowlimit</p></blockquote><h1 id="Gateway"><a href="#Gateway" class="headerlink" title="Gateway"></a>Gateway</h1><p>Gateway是在Spring生态系统之上构建的API网关服务，基于Spring 5，Spring Boot 2和 Project Reactor等技术。</p><p>Gateway旨在提供一种简单而有效的方式来对API进行路由，以及提供一些强大的过滤器功能，例如：熔断、限流、重试等。</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1596980807123.png" alt="1596980807123"></div><span class="image-caption">1596980807123</span></div><p>SpringCloud Gateway 使用的是Webflux中的reactor-netty响应式编程组件，底层使用了Netty通讯框架。</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1596981084802.png" alt="1596981084802"></div><span class="image-caption">1596981084802</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1596981218641.png" alt="1596981218641"></div><span class="image-caption">1596981218641</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1596982261551.png" alt="1596982261551"></div><span class="image-caption">1596982261551</span></div><p>Gateway：</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1596982457962.png" alt="1596982457962"></div><span class="image-caption">1596982457962</span></div><h3 id="Gateway的三大核心概念"><a href="#Gateway的三大核心概念" class="headerlink" title="Gateway的三大核心概念"></a>Gateway的三大核心概念</h3><h4 id="Route-路由"><a href="#Route-路由" class="headerlink" title="Route(路由)"></a>Route(路由)</h4><p>路由是构建网关的基本模块，它由ID，目标URI，一系列的断言和过滤器组成，如果断言为true则匹配该路由。</p><h4 id="Predicate（断言）"><a href="#Predicate（断言）" class="headerlink" title="Predicate（断言）"></a>Predicate（断言）</h4><p>参考的是java8的java.util.function.Predicate开发人员可以匹配HTTP请求中的所有内容（例如请求头或请求参数），如果请求与断言相匹配则进行路由</p><h4 id="Filter-过滤"><a href="#Filter-过滤" class="headerlink" title="Filter(过滤)"></a>Filter(过滤)</h4><p>指的是Spring框架中GatewayFilter的实例，使用过滤器，可以在请求被路由前或者之后对请求进行修改。</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597041510243.png" alt="1597041510243"></div><span class="image-caption">1597041510243</span></div><h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597041530900.png" alt="1597041530900"></div><span class="image-caption">1597041530900</span></div><p>核心逻辑</p><p><strong>路由转发+执行过滤器链</strong></p><p>新建cloud-gateway-gateway9527</p><p>pom(移除了web依赖)</p><pre><code class="lang-xml">    &lt;dependencies&gt;
+        &lt;!--新增gateway--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+          &lt;dependency&gt;
+            &lt;groupId&gt;com.kayleh.springcloud&lt;/groupId&gt;
+            &lt;artifactId&gt;cloud-api-commons&lt;/artifactId&gt;
+            &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+</code></pre><p>yml</p><pre><code class="lang-yaml">server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka7001.com:7001/eureka
+</code></pre><p>无业务类</p><p>主启动类</p><pre><code class="lang-java">package com.kayleh.springcloud;
+@SpringBootApplication
+@EnableEurekaClient
+public class GateWayMain9527 {
+    public static void main(String[] args) {
+        SpringApplication.run(GateWayMain9527.class, args);
+    }
+}
+</code></pre><p>观察cloud-provider-payment8001的controller的get/lb访问路径</p><p>目前不想暴露8001端口，希望在8001外面套一层9527</p><p>修改pom.xml</p><pre><code class="lang-yaml">server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payment_routh #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: http://localhost:8001   #匹配后提供服务的路由地址
+          predicates:
+            - Path=/payment/get/**   #断言,路径相匹配的进行路由
+
+        - id: payment_routh2
+          uri: http://localhost:8001
+          predicates:
+            - Path=/payment/lb/**   #断言,路径相匹配的进行路由
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+      #服务提供者注册进eureka服务列表内
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka7001.com:7001/eureka
+</code></pre><p>测试</p><p>添加网关前</p><pre><code>http://localhost:8001/payment/get/31
+</code></pre><p>添加网关后</p><pre><code>http://localhost:9527/payment/get/31
+</code></pre><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597043412245.png" alt="1597043412245"></div><span class="image-caption">1597043412245</span></div><p>除了使用yaml的方法配置还可以使用代码配置：9527</p><pre><code class="lang-java">package com.kayleh.springcloud.config;
+
+@Configuration
+public class GateWayConfig {
+    @Bean
+    public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder) {
+        RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
+        routes.route(&quot;path_rote_kayleh&quot;,
+                r -&gt; r.path(&quot;/guonei&quot;)
+                        .uri(&quot;http://news.baidu.com/guonei&quot;)).build();
+        return routes.build();
+    }
+}
+</code></pre><p>测试</p><pre><code>http://localhost:9527/guonei
+</code></pre><h3 id="通过微服务名实现动态路由"><a href="#通过微服务名实现动态路由" class="headerlink" title="通过微服务名实现动态路由"></a>通过微服务名实现动态路由</h3><p>默认情况下Gateway会根据注册中心的服务列表，以注册中心上微服务名为路径创建动态路由进行转发，从而实现动态路由的功能</p><p>修改yaml</p><pre><code class="lang-yaml">server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001   #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/get/**   #断言,路径相匹配的进行路由
+
+        - id: payment_routh2
+          #uri: http://localhost:8001   #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/lb/**   #断言,路径相匹配的进行路由
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka7001.com:7001/eureka
+</code></pre><p>需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能。</p><p>lb://serviceName是spring cloud gateway在微服务中自动为我们创建的负载均衡uri</p><p>测试</p><pre><code>http://localhost:9527/payment/lb
+</code></pre><p>8001/8002两个端口切换</p><h2 id="Predicate的使用"><a href="#Predicate的使用" class="headerlink" title="Predicate的使用"></a>Predicate的使用</h2><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597054276153.png" alt="1597054276153"></div><span class="image-caption">1597054276153</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597054330113.png" alt="1597054330113"></div><span class="image-caption">1597054330113</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597054313552.png" alt="1597054313552"></div><span class="image-caption">1597054313552</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597054346178.png" alt="1597054346178"></div><span class="image-caption">1597054346178</span></div><h3 id="常用的Route-Predicate"><a href="#常用的Route-Predicate" class="headerlink" title="常用的Route Predicate"></a>常用的Route Predicate</h3><h4 id="After-Route-Predicate"><a href="#After-Route-Predicate" class="headerlink" title="After Route Predicate"></a>After Route Predicate</h4><pre><code class="lang-yml">   - After=2020-03-08T10:59:34.102+08:00[Asia/Shanghai]
+   # 在？？？时间后生效
+</code></pre><p>时间可以这样获取：</p><pre><code class="lang-java"> ZonedDateTime zbj = ZonedDateTime.now();
+ System.out.println(zbj);
+</code></pre><h4 id="Before-Route-Predicate"><a href="#Before-Route-Predicate" class="headerlink" title="Before Route Predicate"></a>Before Route Predicate</h4><pre><code class="lang-yaml">   - After=2020-03-08T10:59:34.102+08:00[Asia/Shanghai]
+   - Before=2020-03-08T10:59:34.102+08:00[Asia/Shanghai]
+</code></pre><h4 id="Between-Route-Predicate"><a href="#Between-Route-Predicate" class="headerlink" title="Between Route Predicate"></a>Between Route Predicate</h4><pre><code>   - Between=2020-03-08T10:59:34.102+08:00[Asia/Shanghai] ,  2020-03-08T10:59:34.102+08:00[Asia/Shanghai]
+</code></pre><h4 id="Cookie-Route-Predicate"><a href="#Cookie-Route-Predicate" class="headerlink" title="Cookie Route Predicate"></a>Cookie Route Predicate</h4><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597054584109.png" alt="1597054584109"></div><span class="image-caption">1597054584109</span></div><pre><code class="lang-yaml">  - Cookie=username,kayleh    #并且Cookie是username=kayleh才能访问
+</code></pre><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597054626731.png" alt="1597054626731"></div><span class="image-caption">1597054626731</span></div><p>不带cookies访问</p><pre><code>-&gt; cmd
+curl http://localhost:9527/payment/lb
+
+curl http://localhost:9527/payment/lb --cookie &quot;username,kayleh&quot; 
+#返回端口号表示访问成功
+</code></pre><p>带上cookies访问</p><blockquote><p>加入curl返回中文乱码</p><p><a href="https://blog.csdn.net/leedee/article/details/82685636" target="_blank" rel="noopener">https://blog.csdn.net/leedee/article/details/82685636</a></p></blockquote><h4 id="Header-Route-Predicate"><a href="#Header-Route-Predicate" class="headerlink" title="Header Route Predicate"></a>Header Route Predicate</h4><pre><code class="lang-yaml">- Header=X-Request-Id, \d+   #请求头中要有X-Request-Id属性并且值为整数的正则表达式
+</code></pre><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597054747638.png" alt="1597054747638"></div><span class="image-caption">1597054747638</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597054756074.png" alt="1597054756074"></div><span class="image-caption">1597054756074</span></div><h4 id="Host-Route-Predicate"><a href="#Host-Route-Predicate" class="headerlink" title="Host Route Predicate"></a>Host Route Predicate</h4><pre><code>  - Host=**.atguigu.com
+</code></pre><h4 id="Method-Route-Predicate"><a href="#Method-Route-Predicate" class="headerlink" title="Method Route Predicate"></a>Method Route Predicate</h4><pre><code>    - Method=GET
+</code></pre><h4 id="Path-Route-Predicate"><a href="#Path-Route-Predicate" class="headerlink" title="Path Route Predicate"></a>Path Route Predicate</h4><h4 id="Query-Route-Predicate"><a href="#Query-Route-Predicate" class="headerlink" title="Query Route Predicate"></a>Query Route Predicate</h4><pre><code>  - Query=username, \d+ #要有参数名称并且是正整数才能路由
+</code></pre><p>测试</p><pre><code>curl http://localhost:9527/payment/lb?username=1
+curl http://localhost:9527/payment/lb?username=-1
+</code></pre><p>ALL</p><pre><code class="lang-yaml">server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001   #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/get/**   #断言,路径相匹配的进行路由
+
+        - id: payment_routh2
+          #uri: http://localhost:8001   #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/lb/**   #断言,路径相匹配的进行路由
+            #- After=2020-03-08T10:59:34.102+08:00[Asia/Shanghai]
+            #- Cookie=username,zhangshuai #并且Cookie是username=zhangshuai才能访问
+            #- Header=X-Request-Id, \d+ #请求头中要有X-Request-Id属性并且值为整数的正则表达式
+            #- Host=**.atguigu.com
+            #- Method=GET
+            #- Query=username, \d+ #要有参数名称并且是正整数才能路由
+
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka7001.com:7001/eureka
+</code></pre><blockquote><p>说白了，Predicate就是为了实现一组匹配规则，</p><p>让请求过来找到对应的Route进行处理</p></blockquote><h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h2><p>是什么？</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597068671697.png" alt="1597068671697"></div><span class="image-caption">1597068671697</span></div><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>pre 在业务逻辑之前</p><p>post 在业务逻辑之后</p><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><p>GatewayFilter 单一</p><p>GlobalFilter 全局</p><h3 id="常用的GatewayFilter"><a href="#常用的GatewayFilter" class="headerlink" title="常用的GatewayFilter"></a>常用的GatewayFilter</h3><p>AddRequestParameter</p><p>yml：</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597068815115.png" alt="1597068815115"></div><span class="image-caption">1597068815115</span></div><h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><h4 id="自定义全局GlobalFilter"><a href="#自定义全局GlobalFilter" class="headerlink" title="自定义全局GlobalFilter"></a>自定义全局GlobalFilter</h4><h5 id="两个主要接口介绍"><a href="#两个主要接口介绍" class="headerlink" title="两个主要接口介绍"></a>两个主要接口介绍</h5><p>impiemerts GlobalFilter ，Ordered</p><h5 id="能干嘛"><a href="#能干嘛" class="headerlink" title="能干嘛"></a>能干嘛</h5><p>全局日志记录</p><p>统一网关鉴权</p><p>。。。</p><p>案例：</p><pre><code class="lang-java">package com.kayleh.springcloud.filter;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.core.Ordered;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
+
+import java.util.Date;
+
+@Component
+@Slf4j
+public class MyLogGateWayFilter implements GlobalFilter,Ordered {
+    @Override
+    public Mono&lt;Void&gt; filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+
+        log.info(&quot;*********come in MyLogGateWayFilter: &quot;+new Date());
+        String uname = exchange.getRequest().getQueryParams().getFirst(&quot;username&quot;);
+        if(StringUtils.isEmpty(username)){
+            log.info(&quot;*****用户名为Null 非法用户,(┬＿┬)&quot;);
+            exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);//给人家一个回应
+            return exchange.getResponse().setComplete();
+        }
+        return chain.filter(exchange);
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
+    }
+}
+</code></pre><p>启动：</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/分布式的微服务架构4/1597068959493.png" alt="1597068959493"></div><span class="image-caption">1597068959493</span></div><p>测试：</p><pre><code>正确：http://localhost:9527/payment/lb?uname=z3
+错误 http://localhost:9527/payment/lb
+</code></pre><div class="footer"><div class="copyright"><blockquote><p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p><p>本文永久链接是：<a href="https://blog.kayleh.top/gateway-service-current-limit/">https://blog.kayleh.top/gateway-service-current-limit/</a></p></blockquote></div><div class="donate"><div class="imgs"><img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/wechatpay.jpg"> <img src="https://cdn.jsdelivr.net/gh/kayleh/cdn/img/alipay.jpg"></div></div></div><div class="article-meta" id="bottom"><div class="new-meta-box"><div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-12T01:11:28+08:00"><a class="notlink"><i class="fas fa-edit fa-fw" aria-hidden="true"></i><p>更新于：2021年4月12日</p></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/DistributedMicroservices/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>DistributedMicroservices</p></a></div><div class="new-meta-item share -mob-share-list"><div class="-mob-share-list share-body"><a class="-mob-share-qq" rel="external nofollow noopener noreferrer noopener" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.kayleh.top/gateway-service-current-limit/&title=GateWay服务限流 - Kayleh&summary=GateWay服务限流" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png"> </a><a class="-mob-share-qzone" rel="external nofollow noopener noreferrer noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.kayleh.top/gateway-service-current-limit/&title=GateWay服务限流 - Kayleh&summary=GateWay服务限流" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png"> </a><a class="-mob-share-weibo" rel="external nofollow noopener noreferrer noopener" href="http://service.weibo.com/share/share.php?url=https://blog.kayleh.top/gateway-service-current-limit/&title=GateWay服务限流 - Kayleh&summary=GateWay服务限流" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png"></a><div class="hoverbox"><a class="share"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png"></a><div class="target"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADqUlEQVR42u3aQW7DMAwEwPz/0+29RWBxydR0Mbq5cGRxdFmQfX1Z0XohAAcOHDgLHLglcK9w/drwx9+r718e+OL9d9+7Ole1XnDgwIEDBw4cuG1w0wWkoNULubqYq/OUvw8OHDhw4MCBA7cU7jIAFgPlVCEpWHp+cODAgQMHDhw4cLVgnAJ2zwEOHDhw4MCBAwcuG0BPnaPbWAUHDhw4cODAgXsqXDogrgbV0wF1dYD9mEk+OHDgwIEDBw7cENx0Y3D7c1wvOHDgwIEDBw7cErjuOg20Uw3F00BcDbrH9YIDBw4cOHDgwC2BSwNi2rhMC+wG32594MCBAwcOHDhwT4FLDzA1yE6D8enFpBcKDhw4cODAgQO3Ba4KkUJ2g3Y1KJ+es7oPOHDgwIEDBw7cFrhuQEwD6VSjceo7x8EdHDhw4MCBAwfuIXCnMFPB9679jvcBBw4cOHDgwIFbBjfdSJwaGKdQ3YD/tj5w4MCBAwcOHLhlcOkHq++lg+upwXZ1gD7WAQYHDhw4cODAgbsJLn3vdPB7GqjTIFuFHQvA4MCBAwcOHDhwH4abCqSfCqbVxma1MXr8DA4cOHDgwIEDtwyuO7A9DZRpAO0G6PTCxwbS4MCBAwcOHDhwH4I7HsgOD36ng3Q36F7uDw4cOHDgwIEDtxSuesDu4Hhq8B03JovnBgcOHDhw4MCBewpcCjwFW21MTg+kjxuZ4MCBAwcOHDhwS+CqA9/jAJk2EMOC04F3eSANDhw4cODAgQN3E1xaaBpA04F2eqFjg21w4MCBAwcOHLhlcFWIaoNwGrAbbOMLAQcOHDhw4MCBewjcVBBNgbsN0HTft8/gwIEDBw4cOHDL4KoBsVpw3Dgs/m56UF0eSIMDBw4cOHDgwN0EVw2MacOxC5g2TNOGJzhw4MCBAwcO3Ha4NPBWB83pBXQH0d2gDw4cOHDgwIEDtxWuCnVaeLewFPQVLnDgwIEDBw4cuO1w3dUNqtUG5NTFxQ1ScODAgQMHDhy4JXDdgHjamEwPfNfz8UAaHDhw4MCBAwfuZrhqwdXAmgbUqWCeXiA4cODAgQMHDtxT4MoD2qF/9Ouep7vaARgcOHDgwIEDB+7hcFXIKfjToN1udIIDBw4cOHDgwP0zuDTgdgfUn2qM/lkABgcOHDhw4MCBG4KrBtEqTHW/bmC++l21HnDgwIEDBw4cuG1w3QFuGoinAFOgcr3gwIEDBw4cOHBL4KxigxMBOHDgwFngwN27vgGTHAEXC5mzLgAAAABJRU5ErkJggg=="></div></div><a class="-mob-share-telegram" rel="external nofollow noopener noreferrer noopener" href="https://t.me/share/url?url=https://blog.kayleh.top/gateway-service-current-limit/&text=GateWay服务限流 - Kayleh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png"></a></div></div></div></div><div class="prev-next"><a class="prev" href="/springcloud-config-distributed-configuration-center/"><p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>SpringCloud config分布式配置中心</p><p class="content">SpringCloud config分布式配置中心 分布式系统面临的配置问题1597116784397 1597116831303 1597116840717 能干嘛？集中管理配置文件 不同...</p></a><a class="next" href="/ribbon-load-balancing-service-call-degradation/"><p class="title">Ribbon负载均衡服务调用、服务降级<i class="fas fa-chevron-right" aria-hidden="true"></i></p><p class="content">Ribbon负载均衡服务调用、服务降级 1596715648722 LB(负载均衡) 1596726399842 集中式LB即在服务的消费方和提供方之间使用独立的LB设施(可以是硬件,如F5...</p></a></div></article><article class="post white-box reveal shadow" id="comments"><p ct><i class="fas fa-comments"></i> 评论</p><div id="valine_container" class="valine_thread"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div></article></div><aside class="l_side"><section class="widget toc-wrapper shadow desktop mobile" id="toc-div"><header><i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span></header><div class="content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gateway的三大核心概念"><span class="toc-text">Gateway的三大核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Route-路由"><span class="toc-text">Route(路由)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Predicate（断言）"><span class="toc-text">Predicate（断言）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Filter-过滤"><span class="toc-text">Filter(过滤)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工作流程"><span class="toc-text">工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过微服务名实现动态路由"><span class="toc-text">通过微服务名实现动态路由</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Predicate的使用"><span class="toc-text">Predicate的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的Route-Predicate"><span class="toc-text">常用的Route Predicate</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#After-Route-Predicate"><span class="toc-text">After Route Predicate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Before-Route-Predicate"><span class="toc-text">Before Route Predicate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Between-Route-Predicate"><span class="toc-text">Between Route Predicate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie-Route-Predicate"><span class="toc-text">Cookie Route Predicate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Header-Route-Predicate"><span class="toc-text">Header Route Predicate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Host-Route-Predicate"><span class="toc-text">Host Route Predicate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Method-Route-Predicate"><span class="toc-text">Method Route Predicate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Path-Route-Predicate"><span class="toc-text">Path Route Predicate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Query-Route-Predicate"><span class="toc-text">Query Route Predicate</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter"><span class="toc-text">Filter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#种类"><span class="toc-text">种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的GatewayFilter"><span class="toc-text">常用的GatewayFilter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-text">自定义过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义全局GlobalFilter"><span class="toc-text">自定义全局GlobalFilter</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#两个主要接口介绍"><span class="toc-text">两个主要接口介绍</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#能干嘛"><span class="toc-text">能干嘛</span></a></li></ol></li></ol></li></ol></li></div></section></aside><script>window.pdata={},pdata.ispage=!0,pdata.postTitle="GateWay服务限流",pdata.commentPath="",pdata.commentPlaceholder="";var l_header=document.getElementById("l_header");l_header.classList.remove("show")</script></div><script src="/live2d-widget/autoload.js"></script><footer class="footer clearfix"><br><br><div class="aplayer-container"></div><br><div class="social-wrapper"><a href="https://github.com/Kayleh" class="social fas fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div></div><div class="copyright"><p><a href="/">Copyright © 2019-2021 Kayleh</a></p></div><div style="text-align:center"><a href="https://info.flagcounter.com/cDh1" target="_blank" rel="noopener"><img src="https://s11.flagcounter.com/count/cDh1/bg_49B1F5/txt_000000/border_49B1F5/columns_4/maxflags_16/viewers_0/labels_1/pageviews_0/flags_0/percent_1/" alt="Flag Counter" border="0"></a></div></footer><a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a></div></div><div><script>function loadScript(e,t){var n=document.getElementsByTagName("head")[0]||document.documentElement,o=document.createElement("script");o.setAttribute("type","text/javascript"),t&&(o.onload=t),o.setAttribute("src",e),n.appendChild(o)}window.volantis={},window.volantis.loadcss=document.getElementById("loadcss");var loadCSS=function(e,t,n,o){var d,i=window.document,r=i.createElement("link"),a=t||(d=(i.body||i.getElementsByTagName("head")[0]).childNodes)[d.length-1],s=i.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&r.setAttribute(l,o[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){return i.body?t():void setTimeout(function(){e(t)})}(function(){a.parentNode.insertBefore(r,t?a:a.nextSibling)});var c=function(e){for(var t=r.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};function u(){r.addEventListener&&r.removeEventListener("load",u),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",u),(r.onloadcssdefined=c)(u),r}</script><script>loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css",window.volantis.loadcss),loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css",window.volantis.loadcss)</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script>function pjax_fancybox(){$(".md .gallery").find("img").each(function(){var a=document.createElement("a");$(a).attr("class","fancybox"),$(a).attr("pjax-fancybox",""),$(a).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(a).attr("href",$(this).attr("data-original")),$(a).attr("data-fancybox","images");var t="";$(this).attr("alt")&&($(a).attr("data-caption",$(this).attr("alt")),t=$(this).attr("alt"));var n=document.createElement("div");$(n).addClass("fancybox"),$(this).wrap(n);var e=document.createElement("span");$(e).addClass("image-caption"),$(e).text(t),$(this).after(e),$(this).wrap(a)}),$(".md .gallery").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}function SCload_fancybox(){0!=$(".md .gallery").find("img").length&&(loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),setTimeout(function(){loadScript("https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js",pjax_fancybox)},1))}$(function(){SCload_fancybox()})</script><script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript">var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];function shuffle(t){for(var n=t.length;n--;){var i=Math.floor(Math.random()*n),l=t[i];t[i]=t[n],t[n]=l}}function Pjax_backstretch(){$.backstretch(imgs,{duration:"5000",fade:"1500"})}shuffle(imgs),loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)</script><div id="rightmenu-wrapper"><ul class="list-v rightmenu" id="rightmenu-content"><li class="option"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-text" onclick='document.execCommand("copy")'><i class="fa fa-copy fa-fw"></i>复制文本</a><hr id="hr-text"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-href"><i class="fa fa-link fa-fw"></i>复制链接</a> <a class="vlts-menu opt fix-cursor-default" id="menu-open-href"><i class="fa fa-external-link-square-alt fa-fw"></i>在新标签页打开</a><hr id="hr-href"><a class="vlts-menu opt fix-cursor-default" id="menu-copy-src"><i class="fa fa-image fa-fw"></i>复制图片地址</a><hr id="hr-src"></li><li class="navigation"><a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa fa-arrow-left fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa fa-arrow-right fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa fa-redo fa-fw"></i></a> <a class="nav icon-only fix-cursor-default" href="/"><i class="fa fa-home fa-fw"></i></a></li><hr><li><a class="vlts-menu fix-cursor-default" href="/about" id="about"><i class="fa fa-question fa-fw"></i> 我</a></li><hr><li><a class="vlts-menu fix-cursor-default" onclick='document.execCommand("print")'><i class="fa fa-print fa-fw"></i> 打印页面</a></li><hr><li><a class="vlts-menu fix-cursor-default" href="mailto:kaylehisdied@gmail.com" id="mailto:kaylehisdied@gmailcom"><i class="fa fa-fan fa-spin fa-fw"></i> 联系</a></li></ul></div><script>window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('true' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if ('' == true && ('help,hr,print,hr,contributors'||[]).includes('music')) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');</script><script>window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:5,hoverDelay:25}</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script><script>var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });</script><script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script><script type="text/javascript">function pjax_scrollrebeal(){ScrollReveal().reveal(".l_main .reveal",{distance:"32px",duration:"800",interval:"20",scale:"1",easing:"ease-out"})}$(function(){pjax_scrollrebeal()})</script><script src="/js/valine.js"></script><script>var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz",
+      appKey: "OBHyEdMVsi8FSFA0aqJNh4HE",
+      pageSize: '5',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });</script><script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script><script src="/js/app.js"></script><script src="/js/search.js"></script><script>const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);</script><script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script><script type="text/javascript">$(function(){Waves.attach(".flat-btn",["waves-button"]),Waves.attach(".float-btn",["waves-button","waves-float"]),Waves.attach(".float-btn-light",["waves-button","waves-float","waves-light"]),Waves.attach(".flat-box",["waves-block"]),Waves.attach(".float-box",["waves-block","waves-float"]),Waves.attach(".waves-image"),Waves.init()})</script><script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad()</script><script defer>const LCCounter = {
+    app_id: 'FgNaybmwy1yu74JH4lXMgH5S-gzGzoHsz',
+    app_key: 'OBHyEdMVsi8FSFA0aqJNh4HE',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://blog.kayleh.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://blog.kayleh.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://blog.kayleh.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });</script><script>function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);</script><!-- more --><script async src="https://widget.daovoice.io/widget/38b1c911.js" charset="utf-8"></script><script data-ad-client="ca-pub-7457165067653912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7457165067653912" data-ad-slot="9837525717"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2cd1dc193190f18fed292accb735c684";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+          pjax_scrollrebeal();
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });</script></div></body></html>

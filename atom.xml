@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kayleh.top/"/>
-  <updated>2021-06-20T07:07:37.310Z</updated>
+  <updated>2021-07-07T16:01:30.944Z</updated>
   <id>https://blog.kayleh.top/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Head First JVM(2)</title>
+    <link href="https://blog.kayleh.top/head-first-JVM(2)/"/>
+    <id>https://blog.kayleh.top/head-first-JVM(2)/</id>
+    <published>2021-07-07T16:00:05.000Z</published>
+    <updated>2021-07-07T16:01:30.944Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;code&gt;深入理解虚拟机&lt;/code&gt;&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="jvm" scheme="https://blog.kayleh.top/tags/jvm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>head first JVM(1)</title>
+    <link href="https://blog.kayleh.top/head-first-JVM(1)/"/>
+    <id>https://blog.kayleh.top/head-first-JVM(1)/</id>
+    <published>2021-07-07T15:07:06.000Z</published>
+    <updated>2021-07-07T15:58:15.025Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;自动内存管理机制&quot;&gt;&lt;a href=&quot;#自动内存管理机制&quot; class=&quot;headerlink&quot; title=&quot;自动内存管理机制&quot;&gt;&lt;/a&gt;自动内存管理机制&lt;/h2&gt;&lt;h4 id=&quot;一-运行时数据区域&quot;&gt;&lt;a href=&quot;#一-运行时数据区域&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="jvm" scheme="https://blog.kayleh.top/tags/jvm/"/>
+    
+  </entry>
   
   <entry>
     <title>Nacos配置Mysql数据源</title>
@@ -462,59 +513,6 @@
     
     
       <category term="security" scheme="https://blog.kayleh.top/tags/security/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Front end security</title>
-    <link href="https://blog.kayleh.top/Front-end-security/"/>
-    <id>https://blog.kayleh.top/Front-end-security/</id>
-    <published>2021-04-04T07:56:49.000Z</published>
-    <updated>2021-04-11T17:11:28.754Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;前端安全&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;xss&quot;&gt;&lt;a href=&quot;#xss&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="security" scheme="https://blog.kayleh.top/tags/security/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>What happened from entering the URL to displaying the page?</title>
-    <link href="https://blog.kayleh.top/What-happened-from-entering-the-URL-to-displaying-the-page/"/>
-    <id>https://blog.kayleh.top/What-happened-from-entering-the-URL-to-displaying-the-page/</id>
-    <published>2021-03-30T09:22:51.000Z</published>
-    <updated>2021-04-15T15:10:07.693Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;从输入URL到显示页面经历了什么&quot;&gt;&lt;a href=&quot;#从输入URL到显示页面经历了什么&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="network" scheme="https://blog.kayleh.top/tags/network/"/>
     
   </entry>
   

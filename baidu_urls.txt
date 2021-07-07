@@ -1,1 +1,1 @@
-https://blog.kayleh.top/Nacos%EF%BC%9AConfigure-MySQL-data-source/
+https://blog.kayleh.top/head-first-JVM(2)/

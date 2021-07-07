@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.kayleh.top/head-first-JVM(2)/</loc>
+    
+    <lastmod>2021-07-07T16:01:30.944Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kayleh.top/head-first-JVM(1)/</loc>
+    
+    <lastmod>2021-07-07T15:58:15.025Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.kayleh.top/Nacos%EF%BC%9AConfigure-MySQL-data-source/</loc>
     
     <lastmod>2021-06-20T07:07:37.310Z</lastmod>

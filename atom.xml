@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kayleh.top/"/>
-  <updated>2021-07-07T16:01:30.944Z</updated>
+  <updated>2021-07-07T16:54:41.471Z</updated>
   <id>https://blog.kayleh.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.kayleh.top/head-first-JVM(2)/"/>
     <id>https://blog.kayleh.top/head-first-JVM(2)/</id>
     <published>2021-07-07T16:00:05.000Z</published>
-    <updated>2021-07-07T16:01:30.944Z</updated>
+    <updated>2021-07-07T16:54:41.471Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,7 @@
       
         
         
-          &lt;p&gt;&lt;code&gt;深入理解虚拟机&lt;/code&gt;&lt;/p&gt;
-
+          &lt;h2 id=&quot;垃圾收集器与内存分配策略&quot;&gt;&lt;a href=&quot;#垃圾收集器与内存分配策略&quot; class=&quot;headerlink&quot; title=&quot;垃圾收集器与内存分配策略&quot;&gt;&lt;/a&gt;垃圾收集器与内存分配策略&lt;/h2&gt;&lt;h4 id=&quot;判断对象存活&quot;&gt;&lt;a
         
       
     

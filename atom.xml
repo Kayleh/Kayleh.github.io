@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kayleh.top/"/>
-  <updated>2021-07-07T16:54:41.471Z</updated>
+  <updated>2021-07-10T16:24:52.163Z</updated>
   <id>https://blog.kayleh.top/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>head first JVM(3)</title>
+    <link href="https://blog.kayleh.top/head-first-JVM(3)/"/>
+    <id>https://blog.kayleh.top/head-first-JVM(3)/</id>
+    <published>2021-07-10T16:24:20.000Z</published>
+    <updated>2021-07-10T16:24:52.163Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="JVM" scheme="https://blog.kayleh.top/tags/JVM/"/>
+    
+  </entry>
   
   <entry>
     <title>Head First JVM(2)</title>
@@ -478,32 +495,6 @@
         
           &lt;h2 id=&quot;字体下载网站的反射XSS漏洞&quot;&gt;&lt;a href=&quot;#字体下载网站的反射XSS漏洞&quot; class=&quot;headerlink&quot; title=&quot;字体下载网站的反射XSS漏洞&quot;&gt;&lt;/a&gt;字体下载网站的反射XSS漏洞&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;URL:&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="security" scheme="https://blog.kayleh.top/tags/security/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL injection</title>
-    <link href="https://blog.kayleh.top/SQL-injection-vulnerability/"/>
-    <id>https://blog.kayleh.top/SQL-injection-vulnerability/</id>
-    <published>2021-04-05T17:48:59.000Z</published>
-    <updated>2021-04-15T15:08:14.772Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SQL注入&quot;&gt;&lt;a href=&quot;#SQL注入&quot; class=&quot;headerlink&quot; title=&quot;SQL注入&quot;&gt;&lt;/a&gt;SQL注入&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a
         
       
     

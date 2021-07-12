@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kayleh.top/"/>
-  <updated>2021-07-10T16:56:53.205Z</updated>
+  <updated>2021-07-12T16:16:11.181Z</updated>
   <id>https://blog.kayleh.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>head first JVM(4)</title>
+    <link href="https://blog.kayleh.top/null/"/>
+    <id>https://blog.kayleh.top/null/</id>
+    <published>2021-07-12T15:51:24.000Z</published>
+    <updated>2021-07-12T16:16:11.181Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;调优案例分析与实战&quot;&gt;&lt;a href=&quot;#调优案例分析与实战&quot; class=&quot;headerlink&quot; title=&quot;调优案例分析与实战&quot;&gt;&lt;/a&gt;调优案例分析与实战&lt;/h2&gt;&lt;h3 id=&quot;高性能硬件上的程序部署策略&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>head first JVM(3)</title>
@@ -71,7 +94,7 @@
     <link href="https://blog.kayleh.top/head-first-JVM(1)/"/>
     <id>https://blog.kayleh.top/head-first-JVM(1)/</id>
     <published>2021-07-07T15:07:06.000Z</published>
-    <updated>2021-07-07T15:58:15.025Z</updated>
+    <updated>2021-07-12T15:35:13.831Z</updated>
     
     <summary type="html">
     
@@ -485,32 +508,6 @@
     
     
       <category term="test" scheme="https://blog.kayleh.top/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Reflected XSS Vulnerability in Font Download Website</title>
-    <link href="https://blog.kayleh.top/Reflected-XSS-Vulnerability-inFont-Download-Website/"/>
-    <id>https://blog.kayleh.top/Reflected-XSS-Vulnerability-inFont-Download-Website/</id>
-    <published>2021-04-10T10:26:29.000Z</published>
-    <updated>2021-04-15T15:11:27.382Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;字体下载网站的反射XSS漏洞&quot;&gt;&lt;a href=&quot;#字体下载网站的反射XSS漏洞&quot; class=&quot;headerlink&quot; title=&quot;字体下载网站的反射XSS漏洞&quot;&gt;&lt;/a&gt;字体下载网站的反射XSS漏洞&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;URL:&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="security" scheme="https://blog.kayleh.top/tags/security/"/>
     
   </entry>
   
